@@ -104,10 +104,6 @@ export const networkReqObj: RequestArguments = {
   ],
 };
 
-export function calcRange(size: number, startAt = 0) {
-  return [...Array(size).keys()].map((i) => i + startAt);
-}
-
 export const connectToOptimism = () => {
   (window as WindowInstanceWithEthereum).ethereum?.request(networkReqObj);
 };
