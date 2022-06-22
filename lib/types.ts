@@ -68,3 +68,7 @@ export interface iResultEntity {
 
 export type WindowInstanceWithEthereum = Window &
   typeof globalThis & { ethereum?: any };
+
+export type Quote = { quote: string; name: string };
+
+export type Quotes = Quote[];

@@ -1,6 +1,6 @@
 import { CreditCardIcon } from "@heroicons/react/outline";
 import { useWeb3React } from "@web3-react/core";
-import { metaMask, hooks } from "../lib/connectors/metaMask";
+import { metaMask } from "../lib/connectors/metaMask";
 import { UserRejectedRequestError } from "@web3-react/injected-connector";
 import { useEffect, useState } from "react";
 import useMetaMaskOnboarding from "../lib/hooks/useMetaMaskOnboarding";
@@ -9,7 +9,6 @@ import ETHBalance from "./ETHBalance";
 const Account = () => {
   const { account, error, isActive } = useWeb3React();
   const [connecting, setConnecting] = useState<boolean>(false);
-  const [hasTriedEagerly, setHasTriedEagerly] = useState<boolean | null>(null);
 
   const {
     isMetaMaskInstalled,

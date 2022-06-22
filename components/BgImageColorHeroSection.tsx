@@ -1,12 +1,34 @@
 import React from "react";
 import Image from "next/image";
 
-import bg from "../public/images/castle.webp";
+import chadGymOne from "../public/images/chad-gym-1.jpg";
+import chadGymTwo from "../public/images/chad-gym-2.jpeg";
+import chadGymThree from "../public/images/chad-gym-3.jpeg";
+import chadGymFour from "../public/images/chad-gym-4.jpeg";
+import chadGymFive from "../public/images/chad-gym-5.jpeg";
+import chadGymSix from "../public/images/chad-gym-6.jpeg";
+
 import Link from "next/link";
+import { getBaseUrl } from "../lib/helpers";
+import useSWR from "swr";
+
+const gymPics = [
+  chadGymOne,
+  chadGymTwo,
+  chadGymThree,
+  chadGymFour,
+  chadGymFive,
+  chadGymSix,
+];
+const bg = gymPics[Math.floor(Math.random() * gymPics.length)];
 
 export default function BgImageColorHeroSection() {
-  return (
-    <div className="relative -mx-5 -my-6 sm:-mx-6 bg-gray-900 rounded-lg">
+  const baseUrl = getBaseUrl();
+  const url = `${baseUrl}/api/quotes/health/`;
+  const { data } = useSWR(url);
+
+  return data ? (
+    <div className="relative -mx-5 -mt-6 mb-12 sm:-mx-6 bg-gray-900 bg-gradient-to-bl from-[#da10109e] via-transparent to-[#da10109e] rounded-lg">
       <div className="max-w-7xl mx-auto">
         <div className="relative shadow-xl sm:rounded-lg sm:overflow-hidden">
           <div className="absolute inset-0 bg-gray-900">
@@ -18,30 +40,51 @@ export default function BgImageColorHeroSection() {
             <div className="absolute inset-0 bg-red-700 mix-blend-multiply" />
           </div>
           <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-            <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              <span className="block text-white">Welcome traveler</span>
-              <span className="block text-red-200">take a seat.</span>
+            <h1 className="text-center text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl space-y-4">
+              <span className="block text-white">Daily Health Quote</span>
+              <span className="block text-red-200">{data.name}</span>
+            </h1>
+            <p className="mt-6 px-3 max-w-lg mx-auto text-center text-2xl text-red-200 sm:max-w-xl">
+              {data.quote}
+            </p>
+            <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+              <div className="space-y-4 sm:space-y-0 sm:mx-auto">
+                <Link href="/mint" passHref>
+                  <div className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8 cursor-pointer">
+                    Mint a Chad
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div className="relative -mx-5 -mt-6 sm:-mx-6 bg-gray-900 bg-gradient-to-bl from-[#da10109e] via-transparent to-[#da10109e] rounded-lg">
+      <div className="max-w-7xl mx-auto">
+        <div className="relative shadow-xl sm:rounded-lg sm:overflow-hidden">
+          <div className="absolute inset-0 bg-gray-900">
+            <Image
+              className="h-full w-full object-cover"
+              src={bg}
+              alt="happy bunnies in jackets and winter clothes making a snowman"
+            />
+            <div className="absolute inset-0 bg-red-700 mix-blend-multiply" />
+          </div>
+          <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+            <h1 className="text-center text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
+              <span className="block text-white">Daily Health Quote</span>
+              <span className="block text-red-200">be inspired.</span>
             </h1>
             <p className="mt-6 max-w-lg mx-auto text-center text-2xl text-red-200 sm:max-w-2xl">
-              The stories contained within this section of the Library of Bran
-              are not for the faint of heart. On occasion a historian or a
-              drunkard seeking shelter have been known to get lost in its pages.
-              You find yourself drawn to a dark brown book at knee height in the
-              corner. As you draw it back towards you its cover is soft yet
-              rigid, like an ember that has lost its flame. As you open it, you
-              feel a sharp cold wind rise up your chest and pass around your
-              neck. Should you read it?
+              The Author
             </p>
             <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                <Link href="/stories" passHref>
-                  <div className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-red-700 bg-white hover:bg-red-50 sm:px-8 cursor-pointer">
-                    Read on without hesitation
-                  </div>
-                </Link>
-                <Link href="/guild" passHref>
+                <Link href="/mint" passHref>
                   <div className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8 cursor-pointer">
-                    Nay, Meet the Guild
+                    Mint a Chad
                   </div>
                 </Link>
               </div>
