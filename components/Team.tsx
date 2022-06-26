@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 
 import QuixoticCircle from "/public/images/quixotic_logo_circle.png";
-import guildMaster from "/public/images/940-square.webp";
-import loreMaster from "/public/images/1009-square2.webp";
-import steve from "/public/images/692-square.webp";
+import guildMaster from "/public/images/hero-img.png";
+import loreMaster from "/public/images/hero-img.png";
+import steve from "/public/images/hero-img.png";
 import { Person } from "../lib";
 
 const people: Person[] = [

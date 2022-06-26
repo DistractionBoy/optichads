@@ -1,18 +1,22 @@
 import { Contract } from "@ethersproject/contracts";
-import { CVMetadata } from ".";
+import { ChadMetadata } from ".";
 import { WindowInstanceWithEthereum } from "./types";
 
-export const getImgUrl = () =>
-  `https://distractors-of-dracula.s3.amazonaws.com/library/`;
+export const getImgUrl = (id: string) =>
+  `https://optichads.s3.amazonaws.com/${id}`;
 
 export function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+export function calcRange(size: number, startAt = 0) {
+  return [...Array(size).keys()].map((i) => i + startAt);
+}
+
 export const getLocalMetadata = async (token: string, tokenId: number) => {
   try {
     const res: Response = await fetch(`/api/meta/${token}?id=${tokenId}`);
-    const data: CVMetadata = await res.json();
+    const data: ChadMetadata = await res.json();
     return data;
   } catch (e) {
     console.log(e);

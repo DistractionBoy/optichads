@@ -2,9 +2,9 @@ import React from "react";
 import Head from "next/head";
 
 export default function HeadMeta({
-  title = "BranLibs: Entrance",
-  description = "In a dark corner in the Library of Bran often missed by its readers, a section not maintained by clurgy awaits you to discover its secrets.",
-  keywords = "Cryptovania, @CryptovaniaNFT, Non-Fungible Token, Optimism, Ethereum, Vampires",
+  title = "Optichads",
+  description = "With a FREE public mint and 50% donated to retroactive public goods, Optichads proves it cares about the community. We aim to inspire charitable giving and improving health and wellness.",
+  keywords = "OptiChads, @OptiChads, Non-Fungible Token, Optimism, Ethereum, Chads",
 }) {
   return (
     <Head>
@@ -15,13 +15,13 @@ export default function HeadMeta({
       <meta name="author" content="Jason Pierce 'distractionboy.eth'" />
       <meta
         property="og:image"
-        content="https://distractors-of-dracula.s3.amazonaws.com/library/940-square.webp"
+        content="https://optichads.s3.amazonaws.com/library/perfect-logo.png"
       />
       <meta
         name="twitter:image:alt"
-        content="an image of a man holding a beer with evil eyes around him"
+        content="a strong black and white man facing right with a white outline aroung him and a red background"
       ></meta>
-      <meta property="og:site_name" content="BranLibs" />
+      <meta property="og:site_name" content="OptiChads" />
 
       {/* Favicons */}
       <link

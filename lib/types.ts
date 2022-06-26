@@ -18,7 +18,7 @@ export interface iNavLink {
   onClick?: () => void;
 }
 
-export interface iCVMetadata {
+export interface iChadMetadata {
   dna: string;
   name: string;
   description: string;
