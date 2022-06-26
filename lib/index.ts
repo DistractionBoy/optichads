@@ -1,7 +1,7 @@
 import {
   iPerson,
   iNavLink,
-  iCVMetadata,
+  iChadMetadata,
   iResponse,
   iResultEntity,
   iAttribute,
@@ -9,7 +9,7 @@ import {
 
 export type Person = iPerson;
 export type NavLink = iNavLink;
-export type CVMetadata = iCVMetadata;
+export type ChadMetadata = iChadMetadata;
 export type Response = iResponse;
 export type ResultEntity = iResultEntity;
 export type Attribute = iAttribute;

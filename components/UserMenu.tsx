@@ -21,7 +21,7 @@ export default function UserMenu() {
 
   if (typeof account !== "string") {
     return (
-      <div className="max-w-xs px-3 py-1 bg-gray-900 text-gray-400 hover:text-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white cursor-pointer">
+      <div className="max-w-xs px-3 py-1 bg-red-700 hover:bg-red-600 text-gray-100 hover:text-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-800 focus:ring-white cursor-pointer">
         <Account />
       </div>
     );
@@ -29,7 +29,7 @@ export default function UserMenu() {
 
   return (
     <Menu as="div" className="ml-3 relative">
-      <Menu.Button className="max-w-xs px-3 py-1 bg-gray-900 text-gray-400 hover:text-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+      <Menu.Button className="max-w-xs px-3 py-1 bg-red-700 hover:bg-red-600 text-gray-100 hover:text-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-800 focus:ring-white">
         <span className="sr-only">open account menu</span>
         <Account />
       </Menu.Button>
@@ -42,7 +42,7 @@ export default function UserMenu() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-red-800 ring-opacity-5 focus:outline-none">
           {userNavigation?.map((item) => (
             <Menu.Item key={item.name}>
               {({ active }) =>

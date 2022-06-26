@@ -14,11 +14,13 @@ import UserMenuMobile from "./UserMenuMobile";
 import { useEffect } from "react";
 import { useState } from "react";
 import { iNavLink } from "../lib/types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const navDefaultState: NavLink[] = [
-  { name: "Entrance", href: "/", current: false },
-  { name: "Guild", href: "/guild", current: false },
-  { name: "Stories", href: "/stories", current: false },
+  { name: "The Pad", href: "/", current: false },
+  { name: "Mint", href: "/mint", current: false },
+  // { name: "About", href: "/about", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -48,16 +50,16 @@ export default function Navbar() {
   const { account } = useWeb3React();
 
   return (
-    <Disclosure as="nav" className="bg-gray-900 z-10">
+    <Disclosure as="nav" className="bg-red-700 z-10">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div className="border-b border-gray-700">
+            <div className="border-b border-gray-50">
               <div className="flex items-center justify-between h-16 px-4 sm:px-0">
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
                     <Image
-                      className="bg-red-600 rounded-full"
+                      className="bg-red-600 rounded-sm"
                       src={heroImg}
                       alt="Workflow"
                       width={38}
@@ -74,8 +76,8 @@ export default function Navbar() {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? "bg-gray-800 text-white"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                              ? "bg-red-800 text-white"
+                              : "text-gray-300 hover:bg-red-700 hover:text-white",
                             "px-3 py-2 rounded-md text-sm font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
@@ -86,14 +88,30 @@ export default function Navbar() {
                     </div>
                   </div>
                 </div>
-                <div className="hidden md:block">
-                  <div className="ml-4 flex items-center md:ml-6">
+                <div className="hidden md:flex">
+                  <div className="flex items-center md:ml-6">
+                    <a
+                      href="https://discord.gg/optichads"
+                      className="text-gray-300 hover:text-gray-50"
+                    >
+                      <FontAwesomeIcon icon={faDiscord} className="h-6 w-6" />
+                    </a>
+                  </div>
+                  <div className="flex items-center md:ml-6">
+                    <a
+                      href="https://twitter.com/OptiChads"
+                      className="text-gray-300 hover:text-gray-50"
+                    >
+                      <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" />
+                    </a>
+                  </div>
+                  <div className="ml-4 flex items-center">
                     <UserMenu />
                   </div>
                 </div>
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                  <Disclosure.Button className="bg-red-700 inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-800 focus:ring-white">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -106,7 +124,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Disclosure.Panel className="border-b border-gray-700 md:hidden">
+          <Disclosure.Panel className="border-b border-gray-50 md:hidden">
             <div className="px-2 py-3 space-y-1 sm:px-3">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -115,8 +133,8 @@ export default function Navbar() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-gray-800 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      ? "bg-red-700 text-white"
+                      : "text-gray-300 hover:bg-red-600 hover:text-white",
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
@@ -125,8 +143,8 @@ export default function Navbar() {
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="pt-4 pb-3 border-t border-gray-700">
-              <span className="text-gray-300 pl-5">
+            <div className="pt-4 pb-3 border-t border-red-300">
+              <span className="text-gray-50 pl-5">
                 <Account />
               </span>
               {account && <UserMenuMobile />}
