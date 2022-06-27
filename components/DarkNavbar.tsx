@@ -57,9 +57,9 @@ export default function Navbar() {
             <div className="border-b border-gray-50">
               <div className="flex items-center justify-between h-16 px-4 sm:px-0">
                 <div className="flex items-center">
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 -mb-1">
                     <Image
-                      className="bg-red-600 rounded-sm"
+                      className="bg-red-600 rounded-full"
                       src={heroImg}
                       alt="Workflow"
                       width={38}
@@ -68,6 +68,9 @@ export default function Navbar() {
                       priority
                     />
                   </div>
+                  <span className="text-white font-semibold text-base ml-4 -mr-2">
+                    OptiChads
+                  </span>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
                       {navigation.map((item) => (
