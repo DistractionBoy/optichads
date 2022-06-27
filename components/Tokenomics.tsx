@@ -3,11 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import { hooks } from "../lib/connectors/metaMask";
 import CV_CONTRACT_ABI from "../lib/contracts/cryptovania.json";
-import {
-  getNumberHumans,
-  getTotalSupply,
-  getNumberVampires,
-} from "../lib/helpers";
+import { getTotalSupply } from "../lib/helpers";
 
 const { useProvider } = hooks;
 
@@ -34,18 +30,6 @@ export default function Tokenomics() {
         getTotalSupply(cvContract)
           .then((totalMinted) => setTotalSupply(BigNumber.from(totalMinted)))
           .catch(() => setTotalSupply(undefined));
-      }
-
-      if (!numberHumans) {
-        getNumberHumans(cvContract)
-          .then((totalMinted) => setNumberHumans(BigNumber.from(totalMinted)))
-          .catch(() => setNumberHumans(undefined));
-      }
-
-      if (!numberVampires) {
-        getNumberVampires(cvContract)
-          .then((totalMinted) => setNumberVampires(BigNumber.from(totalMinted)))
-          .catch(() => setNumberVampires(undefined));
       }
     }
   }, [provider, contract, totalSupply, numberHumans, numberVampires]);

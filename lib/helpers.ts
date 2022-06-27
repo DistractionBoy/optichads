@@ -24,30 +24,6 @@ export const getLocalMetadata = async (token: string, tokenId: number) => {
   }
 };
 
-export const getTotalMinted = async (contract: Contract) => {
-  try {
-    return await contract?.totalSupply();
-  } catch (e) {
-    return e;
-  }
-};
-
-export const getNumberHumans = async (contract: Contract) => {
-  try {
-    return await contract?.numberHumans();
-  } catch (e) {
-    return e;
-  }
-};
-
-export const getNumberVampires = async (contract: Contract) => {
-  try {
-    return await contract?.numberVampires();
-  } catch (e) {
-    return e;
-  }
-};
-
 export const getTotalSupply = async (contract: Contract) => {
   try {
     return await contract?.totalSupply();
@@ -120,7 +96,7 @@ export const getEtherscanTokenHref = (tokenId: string) =>
 
 export const getBaseUrl = () => {
   return process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
-    ? `https://www.distractors-of-dracula.vercel.app`
+    ? `https://www.optichads.art/`
     : process.env.NEXT_PUBLIC_VERCEL_URL
     ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
     : process.env.NEXT_PUBLIC_BASEURL;
