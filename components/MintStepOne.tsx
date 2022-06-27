@@ -46,7 +46,7 @@ export default function MintStepOne() {
   };
 
   return (
-    <div className="bg-white overflow-hidden sm-rounded-b-lg pt-16">
+    <div className="bg-white overflow-hidden pt-16">
       <div className="px-4 py-5 sm:p-6 sm:mb-16">
         <div className="text-lg max-w-prose mx-auto">
           <h1>
