@@ -46,12 +46,12 @@ export default function MintStepOne() {
   };
 
   return (
-    <div className="bg-white overflow-hidden sm-rounded-b-lg pt-16">
+    <div className="bg-white overflow-hidden rounded-b-lg pt-16">
       <div className="px-4 py-5 sm:p-6 sm:mb-16">
         <div className="text-lg max-w-prose mx-auto">
           <h1>
             <span className="block text-base text-center text-red-600 font-semibold tracking-wide uppercase">
-              optiland minting
+              optichad minting
             </span>
             <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               Are you ready?

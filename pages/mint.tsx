@@ -17,9 +17,9 @@ const MintPage: NextPage = () => {
   return (
     <>
       <HeadMeta
-        title={`Mint Optiland NFT's`}
+        title={`Mint OptiChads`}
         description={`Connect and Mint! (while supplies last)`}
-        keywords={`View, Optiland, Non-Fungible Tokens`}
+        keywords={`Mint, OptiChad, Non-Fungible Tokens`}
       />
       <DarkOverlapShell title="Mint">
         <div className="relative bg-white rounded-lg shadow">

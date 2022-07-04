@@ -61,19 +61,19 @@ const postMsgToMintyBot = async (message: string) => {
 const updateRabbitHole = (quantity: number, txnLink: string, total: number) => {
   if (quantity === 1) {
     postMsgToMintyBot(
-      `Someone just minted one Bunny from https://optiland.xyz/mint (transaction: ${txnLink} )! ${total} have been minted so far. Maybe they'll show some of them off in #show-off-your-bunny?! `
+      `Someone just minted one Chad from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
     );
-  } else if (quantity === 10) {
+  } else if (quantity === 2) {
     postMsgToMintyBot(
-      `WOW!!! Someone just minted 10 Bunnies at once from https://optiland.xyz/mint (transaction: ${txnLink} )! ${total} have been minted so far. Maybe they'll show some of them off in #show-off-your-bunny?!`
+      `Two Chads were just minted from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
     );
-  } else if (quantity >= 5) {
+  } else if (quantity === 3) {
     postMsgToMintyBot(
-      `Someone just minted a handful of Bunnies from https://optiland.xyz/mint (transaction: ${txnLink} )! ${total} have been minted so far. Maybe they'll show some of them off in #show-off-your-bunny?!`
+      `Woah, bruh. Someone just minted three whole Chads from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
     );
   } else {
     postMsgToMintyBot(
-      `Someone just minted some Bunnies! from https://optiland.xyz/mint (transaction: ${txnLink}). ${total} have been minted so far. Maybe they'll show some of them off in #show-off-your-bunny?!`
+      `Someone just minted some Bunnies! from https://optichads.art/mint (transaction: ${txnLink}). ${total} have been minted so far.`
     );
   }
 };
@@ -234,7 +234,7 @@ export default function MintStepTwo() {
                   value={quantity.value}
                   type="range"
                   min="0"
-                  max="10"
+                  max="3"
                   step="1"
                   onChange={numBunnyChangeHandler}
                 />

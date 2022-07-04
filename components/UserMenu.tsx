@@ -13,9 +13,7 @@ export default function UserMenu() {
 
   useEffect(() => {
     if (account) {
-      setUserNavigation([
-        { name: "Your Cryptovania NFT's", href: `/view/${account}` },
-      ]);
+      setUserNavigation([{ name: "Your Chads", href: `/view/${account}` }]);
     }
   }, [account]);
 
