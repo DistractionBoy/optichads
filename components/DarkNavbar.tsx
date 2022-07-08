@@ -19,7 +19,7 @@ import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
-  // { name: "Mint", href: "/mint", current: false },
+  { name: "Mint", href: "/mint", current: false },
   // { name: "About", href: "/about", current: false },
 ];
 

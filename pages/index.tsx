@@ -1,11 +1,15 @@
 import type { NextPage } from "next";
-import BgImageColorHeroSection from "../components/BgImageColorHeroSection";
-import DarkHeroSectionClouds from "../components/DarkHeroSectionClouds";
-import DarkOverlapShell from "../components/DarkOverlapShell";
-import FAQs from "../components/FAQs";
-import FeatureList from "../components/FeatureList";
-import HeadMeta from "../components/HeadMeta";
-import PricingPlan from "../components/PricingPlan";
+
+import {
+  BgImageColorHeroSection,
+  DarkHeroSectionClouds,
+  DarkOverlapShell,
+  FAQs,
+  FeatureList,
+  HeadMeta,
+  PricingPlan,
+  Team,
+} from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -17,6 +21,7 @@ const Home: NextPage = () => {
         <div className="bg-white rounded-lg shadow pb-6">
           <PricingPlan />
           <FeatureList />
+          <Team />
           <FAQs />
         </div>
       </DarkOverlapShell>

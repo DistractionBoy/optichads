@@ -3,7 +3,7 @@ import React from "react";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 
-import brain12 from "../public/images/brain12.png";
+import murderChad from "../public/images/murderChad.jpg";
 import eee from "../public/images/eee.png";
 import pizza from "../public/images/pizza.png";
 import Image from "next/image";
@@ -51,18 +51,18 @@ export default function PricingPlan() {
               <div className="mx-auto max-w-md lg:mx-0 lg:max-w-none lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3">
                 <div className="h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-l-lg">
                   <div className="flex-1 flex flex-col">
-                    {/* <div className="bg-white px-6 py-10">
+                    <div className="bg-white px-6 py-10">
                       <div>
                         <h3
                           className="text-center text-2xl font-medium text-gray-900"
                           id="tier-hobby"
                         >
-                          Health
+                          Decentralized
                         </h3>
                       </div>
-                    </div> */}
+                    </div>
                     <Image
-                      src={brain12}
+                      src={murderChad}
                       alt="a chad with a huge brain, bro"
                       width={400}
                       height={400}
@@ -101,20 +101,19 @@ export default function PricingPlan() {
                       </span>
                     </div>
                   </div>
-                  <div className="bg-white rounded-t-lg m-1">
-                    {/* <div>
+                  <div className="bg-white rounded-t-lg px-6 py-10">
+                    <div>
                       <h3
                         className="text-center text-3xl font-semibold text-gray-900 sm:-mx-6"
                         id="tier-growth"
                       >
-                        Strength
+                        Health
                       </h3>
-                    </div> */}
+                    </div>
                   </div>
-                  <div className="rounded-t-lg mx-[2px] pt-[2px]">
+                  <div className="rounded-t-lg mx-[2px]">
                     <Image
                       src={eee}
-                      className="rounded-t-md"
                       alt="a chad with a pizza hanging from his mouth"
                       width={400}
                       height={400}
@@ -156,16 +155,16 @@ export default function PricingPlan() {
               <div className="mt-10 mx-auto max-w-md lg:m-0 lg:max-w-none lg:col-start-6 lg:col-end-8 lg:row-start-2 lg:row-end-3">
                 <div className="h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-r-lg">
                   <div className="flex-1 flex flex-col">
-                    {/* <div className="bg-white px-6 py-10">
+                    <div className="bg-white px-6 py-10">
                       <div>
                         <h3
                           className="text-center text-2xl font-medium text-gray-900"
                           id="tier-scale"
                         >
-                          Attractiveness
+                          Wellness
                         </h3>
                       </div>
-                    </div> */}
+                    </div>
                     <Image
                       src={pizza}
                       alt="a chad with a huge brain, bro"

@@ -3,8 +3,10 @@ import Head from "next/head";
 
 export default function HeadMeta({
   title = "Optichads",
-  description = "With a FREE public mint and 50% donated to retroactive public goods, Optichads proves it cares about the community. We aim to inspire charitable giving and improving health and wellness.",
-  keywords = "OptiChads, @OptiChads, Non-Fungible Token, Optimism, Ethereum, Chads",
+  description = `With a FREE public mint and 50% donated to retroactive public goods, 
+    Optichads proves it cares about the community. We aim to inspire charitable giving 
+    and improving health and wellness.`,
+  keywords = "OptiChads, @OptiChads, Non-Fungible Token, Optimism, Ethereum, Decentralized",
 }) {
   return (
     <Head>

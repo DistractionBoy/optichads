@@ -21,6 +21,8 @@ import Team from "./Team";
 import Tokenomics from "./Tokenomics";
 import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
+import FeatureList from "./FeatureList";
+import PricingPlan from "./PricingPlan";
 
 export {
   Account,
@@ -33,6 +35,7 @@ export {
   DarkOverlapShell,
   ETHBalance,
   FAQs,
+  FeatureList,
   Footer,
   HeadMeta,
   Layout,
@@ -41,6 +44,7 @@ export {
   MintStepThree,
   Modal,
   MoreInfoModal,
+  PricingPlan,
   Stepper,
   Team,
   Tokenomics,
