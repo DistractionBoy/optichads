@@ -7,6 +7,7 @@ import { ChevronRightIcon } from "@heroicons/react/solid";
 
 import superheroImg from "../public/images/chad-t.png";
 import Link from "next/link";
+import { shortenHex } from "../lib/utils";
 
 const { useProvider } = hooks;
 
@@ -27,7 +28,7 @@ const postMsgToSuggestionBot = async (message: string) => {
 const updateDiscord = (message: string, account: string) => {
   const post = `--------------------------------------------------------------
 A Chad from the internet says:\`\`\`${message}\`\`\`
-Account#: ${account}
+Account#: ${shortenHex(account, 4)}
 --------------------------------------------------------------`;
   postMsgToSuggestionBot(post);
 };
