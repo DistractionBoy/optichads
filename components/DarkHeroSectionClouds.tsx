@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const { useProvider } = hooks;
 
-const postMsgToWorkoutBot = async (message: string) => {
+const postMsgToSuggestionBot = async (message: string) => {
   const msg = { content: message };
   try {
     return await fetch(`${process.env.NEXT_PUBLIC_GYMBOT}`, {
@@ -29,30 +29,31 @@ const updateDiscord = (message: string, account: string) => {
 A Chad from the internet says:\`\`\`${message}\`\`\`
 Account#: ${account}
 --------------------------------------------------------------`;
-  postMsgToWorkoutBot(post);
+  postMsgToSuggestionBot(post);
 };
 
 export default function DarkHeroSectionClouds() {
   const { account, chainId } = useWeb3React();
   const provider = useProvider();
 
-  const addLogbookEntry = async (
+  const addBoxEntry = async (
     signer: ethers.Signer,
     message: string
   ): Promise<string | Error> => await signer.signMessage(message);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const message = e.target?.message?.value;
+    const message = e && e.target.message.value;
+    debugger;
     if (account && chainId === Number(process.env.NEXT_PUBLIC_CHAIN_ID)) {
       try {
         const signer = provider && provider.getSigner(account);
-        addLogbookEntry(
+        addBoxEntry(
           signer as ethers.Signer,
-          `${process.env.NEXT_PUBLIC_LOGBOOK_KEY}`
+          `${process.env.NEXT_PUBLIC_GYMBOOK_KEY}`
         ).then((signature) => {
           const result = ethers.utils.verifyMessage(
-            `${process.env.NEXT_PUBLIC_LOGBOOK_KEY}`,
+            `${process.env.NEXT_PUBLIC_GYMBOOK_KEY}`,
             signature as string
           );
           if (result === account) {
