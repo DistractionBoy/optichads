@@ -6,7 +6,7 @@ import React from "react";
 const navigation = {
   main: [
     { name: "The Pad", href: "/", current: false },
-    { name: "Mint", href: "/guild", current: false },
+    { name: "Mint", href: "/mint", current: false },
     // { name: "Stories", href: "/stories", current: false },
   ],
   social: [
