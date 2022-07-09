@@ -45,7 +45,6 @@ export default function DarkHeroSectionClouds() {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const message = e && e.target.message.value;
-    debugger;
     if (account && chainId === Number(process.env.NEXT_PUBLIC_CHAIN_ID)) {
       try {
         const signer = provider && provider.getSigner(account);
