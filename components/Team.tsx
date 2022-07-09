@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React from "react";
 
-import eee from "/public/images/eee.png";
-import pizza from "/public/images/pizza.png";
 import brain12 from "/public/images/brain12.png";
 import monke from "/public/images/monke.png";
 import lifestrike from "/public/images/lifestrike.png";
@@ -19,7 +17,7 @@ const people: Person[] = [
     role: "Artist / Project Lead",
     imageUrl: monke,
     bio: `Dicaso used to draw dicks on L1, but now he draws OptiChads on Optimism for free.`,
-    twitterUrl: "https://twitter.com/OPBunnies",
+    twitterUrl: "https://twitter.com/Dicaso5",
   },
   {
     name: "DistractionBoy",
@@ -61,7 +59,7 @@ const people: Person[] = [
     role: "Discord Expert",
     imageUrl: millynish,
     bio: `Ultimate gym-bro, to get you gains one muscle at a time - neck, back, bi's, lats`,
-    twitterUrl: "https://twitter.com/anish_katwal,",
+    twitterUrl: "https://twitter.com/anish_katwal",
   },
 ];
 
