@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 import distraction from "/public/images/distraction.png";
-import monke from "/public/images/monke.png";
+import dicaso from "/public/images/dicaso.png";
 import lifestrike from "/public/images/lifestrike.png";
 import dope from "/public/images/dope.png";
 import beeps from "/public/images/beeps.png";
@@ -15,7 +15,7 @@ const people: Person[] = [
   {
     name: "Dicaso",
     role: "Artist / Project Lead",
-    imageUrl: monke,
+    imageUrl: dicaso,
     bio: `Dicaso used to draw dicks on L1, but now he draws OptiChads on Optimism for free.`,
     twitterUrl: "https://twitter.com/Dicaso5",
   },
