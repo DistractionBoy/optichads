@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-import brain12 from "/public/images/brain12.png";
+import distraction from "/public/images/distraction.png";
 import monke from "/public/images/monke.png";
 import lifestrike from "/public/images/lifestrike.png";
-import jojogoku from "/public/images/jojogoku.png";
-import youngbeeps from "/public/images/headphones.png";
+import dope from "/public/images/dope.png";
+import beeps from "/public/images/beeps.png";
 import krscMax from "/public/images/krscmaxgang.png";
 import millynish from "/public/images/millynish.png";
 
@@ -22,7 +22,7 @@ const people: Person[] = [
   {
     name: "DistractionBoy",
     role: "Developer",
-    imageUrl: brain12,
+    imageUrl: distraction,
     bio: `DistractionBoy has no life so he chills with Dicaso because he's funny for free.`,
     twitterUrl: "https://twitter.com/DistractionBoy_",
   },
@@ -36,14 +36,14 @@ const people: Person[] = [
   {
     name: "Dope",
     role: "Team Advisor",
-    imageUrl: jojogoku,
+    imageUrl: dope,
     bio: `Dope only needs simple things - chicken, chorizo risotto, cidre, & being max Chad.`,
     twitterUrl: "https://twitter.com/dopesdope2021",
   },
   {
     name: "Youngbeeps",
     role: "Operations Lead",
-    imageUrl: youngbeeps,
+    imageUrl: beeps,
     bio: "Beeps came, Beeps lifted, Beeps conquered his inner OptiChad.",
     twitterUrl: "https://twitter.com/cryptonftbeeps",
   },
