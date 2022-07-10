@@ -58,7 +58,7 @@ const people: Person[] = [
     name: "Millynish",
     role: "Discord Expert",
     imageUrl: millynish,
-    bio: `Ultimate gym-bro, to get you gains one muscle at a time - neck, back, bi's, lats`,
+    bio: `Chillin like a villain on the Opti Island makin a killin`,
     twitterUrl: "https://twitter.com/anish_katwal",
   },
 ];
