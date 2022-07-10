@@ -92,6 +92,7 @@ export default function Team() {
                       src={person.imageUrl}
                       alt=""
                       layout="intrinsic"
+                      priority
                     />
                   </div>
                 )}
