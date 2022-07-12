@@ -71,7 +71,8 @@ export default function FAQs() {
                 <dd className="mt-2 text-base text-gray-500">
                   We have no clue at this point but we believe in you being able
                   to figure it out on your own. We just started the art work a
-                  week ago and cannot wait to get you your sw
+                  few weeks ago and cannot wait to get you your sweet sweet
+                  Chads, bro.
                 </dd>
               </div>
               <div>
