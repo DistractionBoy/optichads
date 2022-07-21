@@ -60,6 +60,7 @@ export default function DarkHeroSectionClouds() {
             updateDiscord(message, account);
           }
         });
+        e.target.message.value = "";
       } catch (e) {
         console.log(e);
       }
