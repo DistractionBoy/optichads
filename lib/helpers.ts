@@ -2,8 +2,10 @@ import { Contract } from "@ethersproject/contracts";
 import { ChadMetadata } from ".";
 import { WindowInstanceWithEthereum } from "./types";
 
-export const getImgUrl = (id: string) =>
-  `https://optichads.s3.amazonaws.com/${id}`;
+export const getImgUrl = (id: string, collection?: string) =>
+  `https://optichads.s3.amazonaws.com/${
+    collection + "/images-all/" || ""
+  }${id}.webp`;
 
 export function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -89,10 +91,10 @@ export const connectToOptimism = () => {
 };
 
 export const getQuixoticTradeHref = (tokenId: string) =>
-  `https://quixotic.io/asset/opt/${process.env.NEXT_PUBLIC_CV_ADDRESS?.toUpperCase()}/${tokenId}`;
+  `https://quixotic.io/asset/opt/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS?.toUpperCase()}/${tokenId}`;
 
 export const getEtherscanTokenHref = (tokenId: string) =>
-  `${process.env.NEXT_PUBLIC_ETHERSCAN_BASE_URL}/token/${process.env.NEXT_PUBLIC_CV_ADDRESS}?a=${tokenId}`;
+  `${process.env.NEXT_PUBLIC_ETHERSCAN_BASE_URL}/token/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}?a=${tokenId}`;
 
 export const getBaseUrl = () => {
   return process.env.NEXT_PUBLIC_VERCEL_ENV === "production"

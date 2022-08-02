@@ -87,7 +87,7 @@ export default function MintStepTwo() {
     useContext(MintFormContext);
   const { dispatch: stepperDispatch } = useContext(StepperContext);
   const [costPerToken, setCostPerToken] = useState<BigNumber>(
-    BigNumber.from("2500000000000000")
+    BigNumber.from("150000000000000")
   );
   const [quantity, setQuantity] = useState<{ value: string }>({ value: "0" });
   const [isValid, setIsValid] = useState<boolean>(false);
@@ -95,7 +95,7 @@ export default function MintStepTwo() {
   const [hasEnoughEth, setHasEnoughEth] = useState<boolean>(true);
   const { data: ethBal } = useETHBalance(account as string);
 
-  const numBunnyChangeHandler = ({
+  const numChadChangeHandler = ({
     target: { value },
   }: ChangeEvent<HTMLInputElement>): void => {
     const valid =
@@ -172,7 +172,7 @@ export default function MintStepTwo() {
         message="Please wait while your transaction is being accepted and verified. Click outside this box to dismiss"
       />
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 md:col-span-7 px-4 py-5 sm:p-6 sm:pb-16">
+        <div className="col-span-12 px-4 py-5 sm:p-6 sm:pb-16">
           <div className="text-lg max-w-prose mx-auto">
             <h1>
               <span className="block text-base text-center text-red-600 font-semibold tracking-wide uppercase">
@@ -195,17 +195,17 @@ export default function MintStepTwo() {
                         payload: receipt,
                       });
                       stepperDispatch({ type: "setStepComplete", payload: 1 });
-                      const txnLink = formatEtherscanLink(
-                        "Transaction",
-                        receipt.transactionHash
-                      );
+                      // const txnLink = formatEtherscanLink(
+                      //   "Transaction",
+                      //   receipt.transactionHash
+                      // );
                       getTotalMinted(formState.contract as Contract).then(
                         (total: string) => {
-                          updateRabbitHole(
-                            Number(quantity.value),
-                            txnLink,
-                            Number(total)
-                          );
+                          // updateRabbitHole(
+                          //   Number(quantity.value),
+                          //   txnLink,
+                          //   Number(total)
+                          // );
                           formDispatch({
                             type: "setStartingTokenId",
                             payload: Number(total) - Number(quantity.value),
@@ -236,7 +236,7 @@ export default function MintStepTwo() {
                   min="0"
                   max="3"
                   step="1"
-                  onChange={numBunnyChangeHandler}
+                  onChange={numChadChangeHandler}
                 />
               </div>
               <div className="flex flex-col justify-center items-center text-7xl p-16">
@@ -276,64 +276,6 @@ export default function MintStepTwo() {
                 ></input>
               </div>
             </form>
-          </div>
-        </div>
-        <div className="col-span-12 md:col-span-5 bg-gray-50 px-4 py-5 sm:p-6 sm:pb-16">
-          <div className="text-lg max-w-prose mx-auto h-full">
-            <div className="flex justify-center items-center h-full">
-              <ul
-                role="list"
-                className="flex flex-col justify-center border-t border-gray-200 divide-y divide-gray-200 md:border-t-0"
-              >
-                <li className="py-4 flex md:border-t-0">
-                  <CheckIcon
-                    className="flex-shrink-0 h-6 w-6 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3 text-base text-gray-500">
-                    {quantity.value + " "} Optimistic Bunnies
-                  </span>
-                </li>
-                <li className="py-4 flex">
-                  <CheckIcon
-                    className="flex-shrink-0 h-6 w-6 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3 text-base text-gray-500">
-                    {quantity.value + " "} Pixelated Bunnies
-                  </span>
-                </li>
-                {Number(quantity.value) > 0 && (
-                  <li className="py-4 flex">
-                    <CheckIcon
-                      className="flex-shrink-0 h-6 w-6 text-green-500"
-                      aria-hidden="true"
-                    />
-                    <span className="ml-3 text-base text-gray-500">
-                      1 Optiland Citizen (per holder)
-                    </span>
-                  </li>
-                )}
-                <li className="py-4 flex">
-                  <CheckIcon
-                    className="flex-shrink-0 h-6 w-6 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3 text-base text-gray-500">
-                    Specialized content in Discord server
-                  </span>
-                </li>
-                <li className="py-4 flex">
-                  <CheckIcon
-                    className="flex-shrink-0 h-6 w-6 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3 text-base text-gray-500">
-                    Access to future airdrops
-                  </span>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

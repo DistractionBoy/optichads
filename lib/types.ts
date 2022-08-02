@@ -19,15 +19,16 @@ export interface iNavLink {
 }
 
 export interface iChadMetadata {
-  dna: string;
   name: string;
   description: string;
+  external_url: string;
   image: string;
-  imageHash: string;
-  edition: number;
-  date: number;
   attributes: iAttribute[];
-  creator: string;
+  properties: {
+    files: { uri: string; type: string }[];
+    creators: string[];
+  };
+  compiler: string;
 }
 
 export interface iResponse {

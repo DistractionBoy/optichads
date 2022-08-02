@@ -26,8 +26,8 @@ export default function MintStepOne() {
   const markStepOneComplete = () => {
     const abi: ContractInterface = BUNNIES_CONTRACT_ABI;
     stepperDispatch({ type: "setStepComplete", payload: 0 });
-    const opBunnyContract = new Contract(
-      process.env.NEXT_PUBLIC_BUNNY_ADDRESS as string,
+    const chadContract = new Contract(
+      process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string,
       abi,
       signer
     );
@@ -35,7 +35,7 @@ export default function MintStepOne() {
       type: "setMintFormState",
       payload: {
         ...formState,
-        contract: opBunnyContract,
+        contract: chadContract,
         isOnOptimismChain: true,
       },
     });

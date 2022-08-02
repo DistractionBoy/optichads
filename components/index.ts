@@ -3,6 +3,7 @@ import AttributeBox from "./AttributeBox";
 import Attributes from "./Attributes";
 import BgImageColorHeroSection from "./BgImageColorHeroSection";
 import Button from "./Button";
+import Breadcrumbs from "./Breadcrumbs";
 import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
 import DarkNavbar from "./DarkNavbar";
 import DarkOverlapShell from "./DarkOverlapShell";
@@ -16,6 +17,7 @@ import MintStepTwo from "./MintStepTwo";
 import MintStepThree from "./MintStepThree";
 import Modal from "./Modal";
 import MoreInfoModal from "./MoreInfoModal";
+import NFTDetailView from "./NFTDetailView";
 import Stepper from "./Stepper";
 import Team from "./Team";
 import Tokenomics from "./Tokenomics";
@@ -30,6 +32,7 @@ export {
   Attributes,
   BgImageColorHeroSection,
   Button,
+  Breadcrumbs,
   DarkHeroSectionClouds,
   DarkNavbar,
   DarkOverlapShell,
@@ -44,6 +47,7 @@ export {
   MintStepThree,
   Modal,
   MoreInfoModal,
+  NFTDetailView,
   PricingPlan,
   Stepper,
   Team,
