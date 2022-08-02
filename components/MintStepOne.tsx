@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { hooks } from "../lib/connectors/metaMask";
 
-import BUNNIES_CONTRACT_ABI from "../lib/contracts/cryptovania.json";
+import BUNNIES_CONTRACT_ABI from "../lib/contracts/optichads.json";
 import { connectToOptimism } from "../lib/helpers";
 import { MintFormContext } from "../lib/state/mintForm";
 import { StepperContext } from "../lib/state/stepper";
