@@ -32,7 +32,6 @@ export default function MintStepOne() {
   const setToMintChad = () => {
     const abi: ContractInterface = CONTRACT_ABI;
     stepperDispatch({ type: "setStepComplete", payload: 0 });
-    debugger;
     const chadContract = new Contract(
       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string,
       abi,
@@ -46,7 +45,6 @@ export default function MintStepOne() {
         isOnOptimismChain: true,
       },
     });
-    debugger;
     setTimeout(() => {
       formDispatch({ type: "stepOneComplete", payload: true });
       stepperDispatch({ type: "setCurrentStep", payload: 1 });
