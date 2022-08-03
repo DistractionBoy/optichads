@@ -40,6 +40,7 @@ type Action =
 
 const setStepComplete = (steps: Step[], completedStepIndex: number): Step[] => {
   const stepsCopy = R.clone(steps);
+  debugger;
   stepsCopy.map((step, idx) => {
     if (idx <= completedStepIndex) {
       step.status = "complete";

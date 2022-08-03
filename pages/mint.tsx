@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { NextPage } from "next";
 
 import {
   DarkOverlapShell,
@@ -11,7 +10,7 @@ import {
 } from "../components";
 import { MintFormContext } from "../lib/state/mintForm";
 
-const MintPage: NextPage = () => {
+const MintPage = () => {
   const { state: formState } = useContext(MintFormContext);
 
   return (
@@ -21,7 +20,7 @@ const MintPage: NextPage = () => {
         description={`Connect and Mint! (while supplies last)`}
         keywords={`Mint, OptiChad, Non-Fungible Tokens`}
       />
-      <DarkOverlapShell title="mint date not yet set">
+      <DarkOverlapShell title="Mint OptiChads">
         <div className="relative bg-white rounded-lg shadow">
           <Stepper />
           {!formState.isReadyForStep2 && <MintStepOne />}

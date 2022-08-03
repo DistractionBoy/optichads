@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { hooks } from "../lib/connectors/metaMask";
 
-import BUNNIES_CONTRACT_ABI from "../lib/contracts/optichads.json";
+import CONTRACT_ABI from "../lib/contracts/optichads.json";
 import { connectToOptimism } from "../lib/helpers";
 import { MintFormContext } from "../lib/state/mintForm";
 import { StepperContext } from "../lib/state/stepper";
@@ -10,6 +10,7 @@ import Account from "./Account";
 import Button from "./Button";
 import { Contract, ContractInterface } from "@ethersproject/contracts";
 import MoreInfoModal from "./MoreInfoModal";
+import { ethers } from "ethers";
 
 const { useProvider } = hooks;
 
@@ -18,14 +19,20 @@ export default function MintStepOne() {
   const provider = useProvider();
   const signer = provider?.getSigner(account);
 
+  const sign = async (
+    signer: ethers.Signer,
+    message: string
+  ): Promise<string | Error> => await signer.signMessage(message);
+
   const { state: formState, dispatch: formDispatch } =
     useContext(MintFormContext);
   const { dispatch: stepperDispatch } = useContext(StepperContext);
   const [modalOpen, toggleModalOpen] = useState(false);
 
-  const markStepOneComplete = () => {
-    const abi: ContractInterface = BUNNIES_CONTRACT_ABI;
+  const setToMintChad = () => {
+    const abi: ContractInterface = CONTRACT_ABI;
     stepperDispatch({ type: "setStepComplete", payload: 0 });
+    debugger;
     const chadContract = new Contract(
       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string,
       abi,
@@ -39,10 +46,31 @@ export default function MintStepOne() {
         isOnOptimismChain: true,
       },
     });
+    debugger;
     setTimeout(() => {
       formDispatch({ type: "stepOneComplete", payload: true });
       stepperDispatch({ type: "setCurrentStep", payload: 1 });
+      console.log("formState is: ", formState);
     }, 666);
+  };
+
+  const markStepOneComplete = () => {
+    const txnDate = new Date().toString();
+    sign(signer as ethers.Signer, `OptiChad Minting: ${txnDate}`).then(
+      (signature) => {
+        const result = ethers.utils.verifyMessage(
+          `OptiChad Minting: ${txnDate}`,
+          signature as string
+        );
+        if (result === account) {
+          setToMintChad();
+        } else {
+          alert(
+            "Oops, we have detected an invalid signature. Please refresh the page and try again."
+          );
+        }
+      }
+    );
   };
 
   return (

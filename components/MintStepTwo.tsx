@@ -14,8 +14,7 @@ import { BigNumber } from "@ethersproject/bignumber";
 import { MintFormContext } from "../lib/state/mintForm";
 import { StepperContext } from "../lib/state/stepper";
 import Modal from "./Modal";
-import { formatEtherscanLink, parseBalance } from "../lib/utils";
-import { CheckIcon } from "@heroicons/react/outline";
+import { parseBalance } from "../lib/utils";
 import { classNames } from "../lib/helpers";
 import { ethers } from "ethers";
 import {
@@ -24,12 +23,20 @@ import {
 } from "@ethersproject/providers";
 import useETHBalance from "../lib/hooks/useEthBalance";
 
-const getCostPerToken = async (contract: Contract) => {
+const getPrice = async (contract: Contract) => {
   try {
-    return await contract?.cost();
+    return await contract?.PRICE();
   } catch (e) {
     console.error(e);
     return e;
+  }
+};
+
+const getMintingOpen = async (contract: Contract) => {
+  try {
+    return await contract?.mintingOpen();
+  } catch (e) {
+    console.error(e);
   }
 };
 
@@ -41,42 +48,42 @@ const getTotalMinted = async (contract: Contract) => {
   }
 };
 
-const postMsgToMintyBot = async (message: string) => {
-  const msg = { content: message };
-  try {
-    return await fetch(
-      "https://discord.com/api/webhooks/904945097651671041/WHT5o_Did8QLJKUbDPvr1cGGPD988BvzsMrTpMnetYbUwYLyYeTLnX_DE73-E-ZvRnEl",
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(msg),
-      }
-    );
-  } catch (e) {
-    console.error(e);
-    return e;
-  }
-};
+// const postMsgToMintyBot = async (message: string) => {
+//   const msg = { content: message };
+//   try {
+//     return await fetch(
+//       "https://discord.com/api/webhooks/904945097651671041/WHT5o_Did8QLJKUbDPvr1cGGPD988BvzsMrTpMnetYbUwYLyYeTLnX_DE73-E-ZvRnEl",
+//       {
+//         method: "POST",
+//         headers: { "content-type": "application/json" },
+//         body: JSON.stringify(msg),
+//       }
+//     );
+//   } catch (e) {
+//     console.error(e);
+//     return e;
+//   }
+// };
 
-const updateRabbitHole = (quantity: number, txnLink: string, total: number) => {
-  if (quantity === 1) {
-    postMsgToMintyBot(
-      `Someone just minted one Chad from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
-    );
-  } else if (quantity === 2) {
-    postMsgToMintyBot(
-      `Two Chads were just minted from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
-    );
-  } else if (quantity === 3) {
-    postMsgToMintyBot(
-      `Woah, bruh. Someone just minted three whole Chads from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
-    );
-  } else {
-    postMsgToMintyBot(
-      `Someone just minted some Bunnies! from https://optichads.art/mint (transaction: ${txnLink}). ${total} have been minted so far.`
-    );
-  }
-};
+// const updateRabbitHole = (quantity: number, txnLink: string, total: number) => {
+//   if (quantity === 1) {
+//     postMsgToMintyBot(
+//       `Someone just minted one Chad from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
+//     );
+//   } else if (quantity === 2) {
+//     postMsgToMintyBot(
+//       `Two Chads were just minted from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
+//     );
+//   } else if (quantity === 3) {
+//     postMsgToMintyBot(
+//       `Woah, bruh. Someone just minted three whole Chads from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
+//     );
+//   } else {
+//     postMsgToMintyBot(
+//       `Someone just minted some Bunnies! from https://optichads.art/mint (transaction: ${txnLink}). ${total} have been minted so far.`
+//     );
+//   }
+// };
 
 const { useProvider } = hooks;
 
@@ -89,6 +96,7 @@ export default function MintStepTwo() {
   const [costPerToken, setCostPerToken] = useState<BigNumber>(
     BigNumber.from("150000000000000")
   );
+  const [isMintingAvailable, setIsMintingAvailable] = useState<boolean>(false);
   const [quantity, setQuantity] = useState<{ value: string }>({ value: "0" });
   const [isValid, setIsValid] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -114,21 +122,33 @@ export default function MintStepTwo() {
 
   useEffect(() => {
     if (formState.contract && formState.pricePerUnit.eq(BigNumber.from("0"))) {
-      getCostPerToken(formState.contract).then(
-        (cost: BigNumber) => {
-          if (cost) {
-            setCostPerToken(BigNumber.from(cost));
-            formDispatch({
-              type: "setMintFormState",
-              payload: {
-                ...formState,
-                pricePerUnit: BigNumber.from(cost),
+      debugger;
+      getMintingOpen(formState.contract)
+        .then((isAvailable: boolean) => {
+          debugger;
+          setIsMintingAvailable(isAvailable);
+          return isAvailable;
+        })
+        .then((isAvailable) => {
+          if (isAvailable) {
+            getPrice(formState.contract as Contract).then(
+              (cost: BigNumber) => {
+                debugger;
+                if (cost) {
+                  setCostPerToken(BigNumber.from(cost));
+                  formDispatch({
+                    type: "setMintFormState",
+                    payload: {
+                      ...formState,
+                      pricePerUnit: BigNumber.from(cost),
+                    },
+                  });
+                }
               },
-            });
+              (error) => console.log(error)
+            );
           }
-        },
-        (error) => console.log(error)
-      );
+        });
     }
   }, [formState, formDispatch]);
 
@@ -227,7 +247,7 @@ export default function MintStepTwo() {
             >
               <div className="flex mt-12 justify-between">
                 <label htmlFor="quantity" className="text-lg">
-                  Quantity (max: 10 per transaction)
+                  Quantity (max: 3 per transaction)
                 </label>
                 <input
                   name="quantity"

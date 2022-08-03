@@ -34,6 +34,7 @@ type Action =
   | { type: "resetForm" };
 
 const markStepOneComplete = (state: MintForm, payload: boolean): MintForm => {
+  debugger;
   return { ...state, isReadyForStep2: payload };
 };
 
