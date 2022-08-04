@@ -308,14 +308,9 @@ export default function MintStepTwo() {
                 <span className="block text-base text-center text-red-600 font-semibold tracking-wide uppercase">
                   Select Quantity
                 </span>
-                <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900">
-                  {!hasEnoughEth
-                    ? "You need to select a quantity you can afford"
-                    : "How many?"}
-                </span>
               </h1>
 
-              <div className="flex mt-12 justify-between">
+              {/* <div className="flex mt-12 justify-between">
                 <label htmlFor="quantity" className="text-lg">
                   Quantity (max: {`${maxNumToMint}`} per person)
                 </label>
@@ -363,51 +358,50 @@ export default function MintStepTwo() {
                   type="submit"
                   value="Purchase"
                   disabled={!isValid}
-                ></input>
-                <div
-                  id="rampp-minting-container-f6881fdb-33bf-44e5-b200-cba929c86e6d"
-                  className="rampp-minting-container"
-                >
-                  <button
-                    id="rampp-minting-button-f6881fdb-33bf-44e5-b200-cba929c86e6d"
-                    className="rampp-minting-button"
-                    style={{ display: "none" }}
-                    data-merkle-proof-uri="https://us-central1-nft-rampp.cloudfunctions.net/allowlist/N6ddW3Ynir3TTznZtOTM/merkle/verify"
-                    data-styles="eyJvcGVuIjp7InRleHQiOiJNaW50Iiwic3R5bGVzIjoiYm9yZGVyOm5vbmU7d2lkdGg6IDE1cmVtO3BhZGRpbmc6MC41cmVtO2ZvbnQtc2l6ZTogMS4xMjVyZW07bGluZS1oZWlnaHQ6IDEuNzVyZW07dGV4dC1hbGlnbjogY2VudGVyO2N1cnNvcjogcG9pbnRlcjtib3JkZXItcmFkaXVzOjAuMzc1cmVtO2NvbG9yOiNmZmZmZmY7YmFja2dyb3VuZC1jb2xvcjojYTgwMDAwOyJ9LCJwYXVzZWQiOnsidGV4dCI6Ik1pbnQlMjBDbG9zZWQiLCJzdHlsZXMiOiJib3JkZXI6bm9uZTt3aWR0aDogMTVyZW07cGFkZGluZzowLjVyZW07Zm9udC1zaXplOiAxLjEyNXJlbTtsaW5lLWhlaWdodDogMS43NXJlbTt0ZXh0LWFsaWduOiBjZW50ZXI7Y3Vyc29yOiBwb2ludGVyO2JvcmRlci1yYWRpdXM6MC4zNzVyZW07Y29sb3I6IzY3NjU2NTtiYWNrZ3JvdW5kLWNvbG9yOiNDQ0RCREM7Y3Vyc29yOm5vdC1hbGxvd2VkOyJ9LCJzdXBwbHlSZWFjaGVkIjp7InRleHQiOiJBbGwlMjBUb2tlbnMlMjBNaW50ZWQhIiwic3R5bGVzIjoiYm9yZGVyOm5vbmU7d2lkdGg6IDE1cmVtO3BhZGRpbmc6MC41cmVtO2ZvbnQtc2l6ZTogMS4xMjVyZW07bGluZS1oZWlnaHQ6IDEuNzVyZW07dGV4dC1hbGlnbjogY2VudGVyO2N1cnNvcjogcG9pbnRlcjtib3JkZXItcmFkaXVzOjAuMzc1cmVtO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojMDBmZjJhO2N1cnNvcjpub3QtYWxsb3dlZDsifSwiZXJyb3IiOnsidGV4dCI6Ik1pbnRpbmcgVW5hdmFpbGFibGUiLCJzdHlsZXMiOiJib3JkZXI6bm9uZTt3aWR0aDogMTVyZW07cGFkZGluZzowLjVyZW07Zm9udC1zaXplOiAxLjEyNXJlbTtsaW5lLWhlaWdodDogMS43NXJlbTt0ZXh0LWFsaWduOiBjZW50ZXI7Y3Vyc29yOiBwb2ludGVyO2JvcmRlci1yYWRpdXM6MC4zNzVyZW07Y29sb3I6I2ZmMDAwMDtiYWNrZ3JvdW5kLWNvbG9yOiNmZmI4Yjg7Y3Vyc29yOm5vdC1hbGxvd2VkOyJ9LCJjbGFpbVRleHQiOnsidGV4dCI6bnVsbCwic3R5bGVzIjoiY29sb3I6IHJnYmEoMTU2LCAxNjMsIDE3NSk7Zm9udC1zaXplOiAwLjc1cmVtO2xpbmUtaGVpZ2h0OiAxcmVtO3RleHQtYWxpZ246IGNlbnRlcjtwYWRkaW5nLXRvcDogMC4yNXJlbTtwYWRkaW5nLWJvdHRvbTogMC4yNXJlbTttYXJnaW46MDtmb250LWZhbWlseTpzYW5zLXNlcmlmOyJ9LCJxdWFudGl0eSI6eyJ0ZXh0IjpudWxsLCJzdHlsZXMiOiJ3aWR0aDo0MHB4O2NvbG9yOiNhODAwMDA7Ym9yZGVyLXN0eWxlOnNvbGlkO2JvcmRlci13aWR0aDoxcHg7Ym9yZGVyLWNvbG9yOiNhODAwMDA7Ym9yZGVyLXJhZGl1czowLjM3NXJlbTtmb250LXNpemU6MS4zcmVtO3RleHQtYWxpZ246Y2VudGVyOyJ9fQ=="
-                    data-abi-link="https://firebasestorage.googleapis.com/v0/b/nft-rampp.appspot.com/o/solidity_outputs%2FN6ddW3Ynir3TTznZtOTM%2FOptiChadsContract_data-9870ab62-dd7d-451f-a40a-a576d1c969f1.json?alt=media"
-                    data-redirect="quixotic.com"
-                    data-contract-address="0x9B9F542456ad12796cCB8EB6644f29E3314e68e1"
-                    data-show-claim-count="false"
-                    data-network="optimism"
-                    data-format="multi"
-                    data-erc20-payments=""
-                    data-use-winter="false"
-                    data-winter-project-id="null"
-                  ></button>
-                </div>
-                <Script
-                  src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
-                  crossOrigin="anonymous"
-                  referrerPolicy="no-referrer"
-                ></Script>
-                <Script
-                  type="text/javascript"
-                  src="https://unpkg.com/web3modal@1.9.8/dist/index.js"
-                ></Script>
-                <Script
-                  type="text/javascript"
-                  src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"
-                ></Script>
-                <Script
-                  type="text/javascript"
-                  src="https://unpkg.com/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"
-                ></Script>
-                <Script
-                  type="text/javascript"
-                  src="https://rampp.xyz/embeds/v2.1/embed.js"
-                  data-uuid="f6881fdb-33bf-44e5-b200-cba929c86e6d"
-                ></Script>
+                ></input> */}
+              <div
+                id="rampp-minting-container-f6881fdb-33bf-44e5-b200-cba929c86e6d"
+                className="rampp-minting-container"
+              >
+                <button
+                  id="rampp-minting-button-f6881fdb-33bf-44e5-b200-cba929c86e6d"
+                  className="rampp-minting-button"
+                  style={{ display: "none" }}
+                  data-merkle-proof-uri="https://us-central1-nft-rampp.cloudfunctions.net/allowlist/N6ddW3Ynir3TTznZtOTM/merkle/verify"
+                  data-styles="eyJvcGVuIjp7InRleHQiOiJNaW50Iiwic3R5bGVzIjoiYm9yZGVyOm5vbmU7d2lkdGg6IDE1cmVtO3BhZGRpbmc6MC41cmVtO2ZvbnQtc2l6ZTogMS4xMjVyZW07bGluZS1oZWlnaHQ6IDEuNzVyZW07dGV4dC1hbGlnbjogY2VudGVyO2N1cnNvcjogcG9pbnRlcjtib3JkZXItcmFkaXVzOjAuMzc1cmVtO2NvbG9yOiNmZmZmZmY7YmFja2dyb3VuZC1jb2xvcjojYTgwMDAwOyJ9LCJwYXVzZWQiOnsidGV4dCI6Ik1pbnQlMjBDbG9zZWQiLCJzdHlsZXMiOiJib3JkZXI6bm9uZTt3aWR0aDogMTVyZW07cGFkZGluZzowLjVyZW07Zm9udC1zaXplOiAxLjEyNXJlbTtsaW5lLWhlaWdodDogMS43NXJlbTt0ZXh0LWFsaWduOiBjZW50ZXI7Y3Vyc29yOiBwb2ludGVyO2JvcmRlci1yYWRpdXM6MC4zNzVyZW07Y29sb3I6IzY3NjU2NTtiYWNrZ3JvdW5kLWNvbG9yOiNDQ0RCREM7Y3Vyc29yOm5vdC1hbGxvd2VkOyJ9LCJzdXBwbHlSZWFjaGVkIjp7InRleHQiOiJBbGwlMjBUb2tlbnMlMjBNaW50ZWQhIiwic3R5bGVzIjoiYm9yZGVyOm5vbmU7d2lkdGg6IDE1cmVtO3BhZGRpbmc6MC41cmVtO2ZvbnQtc2l6ZTogMS4xMjVyZW07bGluZS1oZWlnaHQ6IDEuNzVyZW07dGV4dC1hbGlnbjogY2VudGVyO2N1cnNvcjogcG9pbnRlcjtib3JkZXItcmFkaXVzOjAuMzc1cmVtO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojMDBmZjJhO2N1cnNvcjpub3QtYWxsb3dlZDsifSwiZXJyb3IiOnsidGV4dCI6Ik1pbnRpbmcgVW5hdmFpbGFibGUiLCJzdHlsZXMiOiJib3JkZXI6bm9uZTt3aWR0aDogMTVyZW07cGFkZGluZzowLjVyZW07Zm9udC1zaXplOiAxLjEyNXJlbTtsaW5lLWhlaWdodDogMS43NXJlbTt0ZXh0LWFsaWduOiBjZW50ZXI7Y3Vyc29yOiBwb2ludGVyO2JvcmRlci1yYWRpdXM6MC4zNzVyZW07Y29sb3I6I2ZmMDAwMDtiYWNrZ3JvdW5kLWNvbG9yOiNmZmI4Yjg7Y3Vyc29yOm5vdC1hbGxvd2VkOyJ9LCJjbGFpbVRleHQiOnsidGV4dCI6bnVsbCwic3R5bGVzIjoiY29sb3I6IHJnYmEoMTU2LCAxNjMsIDE3NSk7Zm9udC1zaXplOiAwLjc1cmVtO2xpbmUtaGVpZ2h0OiAxcmVtO3RleHQtYWxpZ246IGNlbnRlcjtwYWRkaW5nLXRvcDogMC4yNXJlbTtwYWRkaW5nLWJvdHRvbTogMC4yNXJlbTttYXJnaW46MDtmb250LWZhbWlseTpzYW5zLXNlcmlmOyJ9LCJxdWFudGl0eSI6eyJ0ZXh0IjpudWxsLCJzdHlsZXMiOiJ3aWR0aDo0MHB4O2NvbG9yOiNhODAwMDA7Ym9yZGVyLXN0eWxlOnNvbGlkO2JvcmRlci13aWR0aDoxcHg7Ym9yZGVyLWNvbG9yOiNhODAwMDA7Ym9yZGVyLXJhZGl1czowLjM3NXJlbTtmb250LXNpemU6MS4zcmVtO3RleHQtYWxpZ246Y2VudGVyOyJ9fQ=="
+                  data-abi-link="https://firebasestorage.googleapis.com/v0/b/nft-rampp.appspot.com/o/solidity_outputs%2FN6ddW3Ynir3TTznZtOTM%2FOptiChadsContract_data-9870ab62-dd7d-451f-a40a-a576d1c969f1.json?alt=media"
+                  data-redirect="quixotic.com"
+                  data-contract-address="0x9B9F542456ad12796cCB8EB6644f29E3314e68e1"
+                  data-show-claim-count="false"
+                  data-network="optimism"
+                  data-format="multi"
+                  data-erc20-payments=""
+                  data-use-winter="false"
+                  data-winter-project-id="null"
+                ></button>
               </div>
+              <Script
+                src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
+                crossOrigin="anonymous"
+                referrerPolicy="no-referrer"
+              ></Script>
+              <Script
+                type="text/javascript"
+                src="https://unpkg.com/web3modal@1.9.8/dist/index.js"
+              ></Script>
+              <Script
+                type="text/javascript"
+                src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"
+              ></Script>
+              <Script
+                type="text/javascript"
+                src="https://unpkg.com/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"
+              ></Script>
+              <Script
+                type="text/javascript"
+                src="https://rampp.xyz/embeds/v2.1/embed.js"
+                data-uuid="f6881fdb-33bf-44e5-b200-cba929c86e6d"
+              ></Script>
             </div>
           ) : (
             <div className="text-lg max-w-prose mx-auto">
