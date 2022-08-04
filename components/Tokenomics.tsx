@@ -2,7 +2,7 @@ import { BigNumber, Contract, ContractInterface } from "ethers";
 import React, { useEffect, useState } from "react";
 
 import { hooks } from "../lib/connectors/metaMask";
-import CV_CONTRACT_ABI from "../lib/contracts/cryptovania.json";
+import OPTICHADS_CONTRACT_ABI from "../lib/contracts/optichads.json";
 import { getTotalSupply } from "../lib/helpers";
 
 const { useProvider } = hooks;
@@ -16,7 +16,7 @@ export default function Tokenomics() {
 
   useEffect(() => {
     if (provider && !contract) {
-      const abi: ContractInterface = CV_CONTRACT_ABI;
+      const abi: ContractInterface = OPTICHADS_CONTRACT_ABI;
 
       const cvContract = new Contract(
         process.env.NEXT_PUBLIC_CV_ADDRESS as string,
@@ -39,11 +39,11 @@ export default function Tokenomics() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-gray-200 sm:text-4xl">
-            Cryptovania Tokenomics
+            OptiChads Tokenomics
           </h2>
           {!provider && (
             <p className="mt-3 text-xl text-gray-500 sm:mt-4">
-              sign the logbook to see what is unseen
+              Connect wallet to see contract totals
             </p>
           )}
         </div>

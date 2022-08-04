@@ -62,18 +62,18 @@ export default function MintStepThree() {
               products.map((product) => (
                 <li key={product} className="flex py-6 space-x-6">
                   <div className="h-32 w-36">
-                    <NFTCard collection="bunny" id={product} variant="noinfo" />
+                    <NFTCard collection="chads" id={product} variant="noinfo" />
                   </div>
 
                   <div className="flex-auto space-y-1">
                     <h3 className="text-gray-900">
-                      <Link href={`/collections/bunny/${product}`} passHref>
+                      <Link href={`/collections/chads/${product}`} passHref>
                         <a
                           rel="noreferrer"
                           target="_blank"
-                          href={`/collections/bunny/${product}`}
+                          href={`/collections/chads/${product}`}
                         >
-                          Bunny{`#${product}`}
+                          OptiChad {`#${product}`}
                         </a>
                       </Link>
                     </h3>
@@ -83,41 +83,6 @@ export default function MintStepThree() {
                       <FontAwesomeIcon icon={faEthereum} />
                     </span>{" "}
                     {parseBalance(formState.pricePerUnit.toString())}
-                  </p>
-                </li>
-              ))}
-            {products &&
-              products.map((product) => (
-                <li key={product} className="flex py-6 space-x-6">
-                  <div className="h-32 w-36">
-                    <NFTCard
-                      collection="pbunny"
-                      id={product}
-                      variant="noinfo"
-                    />
-                  </div>
-
-                  <div className="flex-auto space-y-1">
-                    <h3 className="text-gray-900">
-                      <Link href={`/collections/pbunny/${product}`} passHref>
-                        <a
-                          rel="noreferrer"
-                          target="_blank"
-                          href={`/collections/pbunny/${product}`}
-                        >
-                          Pixelated Bunny{`#${product}`}
-                        </a>
-                      </Link>
-                    </h3>
-                    <p>To be airdropped within 1-2 weeks</p>
-                  </div>
-                  <p className="flex flex-none font-medium text-gray-900">
-                    <span className="mt-0 mr-2 h-2 w-2">
-                      <FontAwesomeIcon icon={faEthereum} />
-                    </span>{" "}
-                    <span className="line-through">
-                      {parseBalance(formState.pricePerUnit.toString())}
-                    </span>
                   </p>
                 </li>
               ))}
@@ -177,7 +142,7 @@ export default function MintStepThree() {
                 <div className="not-italic">
                   <span className="block">
                     Smart Contract Address:{" "}
-                    {process.env.NEXT_PUBLIC_BUNNY_ADDRESS}
+                    {process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}
                   </span>
                   <span className="block">
                     Etherscan:{" "}

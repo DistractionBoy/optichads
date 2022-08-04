@@ -2,7 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["ipfs.io"],
+    domains: ["ipfs.io", "optichads.s3.amazonaws.com"],
   },
   webpack(config) {
     config.module.rules.push({

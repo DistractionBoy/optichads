@@ -14,22 +14,73 @@ import { BigNumber } from "@ethersproject/bignumber";
 import { MintFormContext } from "../lib/state/mintForm";
 import { StepperContext } from "../lib/state/stepper";
 import Modal from "./Modal";
-import { formatEtherscanLink, parseBalance } from "../lib/utils";
-import { CheckIcon } from "@heroicons/react/outline";
+import { parseBalance } from "../lib/utils";
 import { classNames } from "../lib/helpers";
 import { ethers } from "ethers";
+import { MerkleTree } from "merkletreejs";
+import Script from "next/script";
+import whitelist from "../lib/whitelist";
 import {
   TransactionReceipt,
   TransactionResponse,
 } from "@ethersproject/providers";
 import useETHBalance from "../lib/hooks/useEthBalance";
 
-const getCostPerToken = async (contract: Contract) => {
+const tempWhitelist = [
+  "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
+  "0x3ED9d38601748734e94Ee8480077cc8D4C8ffb0C",
+];
+
+const padBuffer = (addr: string) => {
+  return Buffer.from(addr.substring(2).padStart(32 * 2, "0"), "hex");
+};
+
+const leaves = tempWhitelist.map((account) => padBuffer(account));
+const tree = new MerkleTree(leaves, ethers.utils.keccak256, { sort: true });
+
+const getPrice = async (contract: Contract) => {
   try {
-    return await contract?.cost();
+    return await contract?.PRICE();
   } catch (e) {
     console.error(e);
     return e;
+  }
+};
+
+const getEarlyPrice = async (contract: Contract) => {
+  try {
+    return await contract?.EARLY_MINT_PRICE();
+  } catch (e) {
+    console.error(e);
+    return e;
+  }
+};
+
+const getMintingOpen = async (contract: Contract) => {
+  try {
+    return await contract?.mintingOpen();
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+const onlyAllowlistMode = async (contract: Contract) => {
+  try {
+    return await contract?.onlyAllowlistMode();
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+const canMintAmount = async (
+  contract: Contract,
+  address: string,
+  amount: number
+) => {
+  try {
+    return await contract?.canMintAmount(address, amount);
+  } catch (e) {
+    console.error(e);
   }
 };
 
@@ -41,42 +92,75 @@ const getTotalMinted = async (contract: Contract) => {
   }
 };
 
-const postMsgToMintyBot = async (message: string) => {
-  const msg = { content: message };
+const getNextTokenId = async (contract: Contract) => {
   try {
-    return await fetch(
-      "https://discord.com/api/webhooks/904945097651671041/WHT5o_Did8QLJKUbDPvr1cGGPD988BvzsMrTpMnetYbUwYLyYeTLnX_DE73-E-ZvRnEl",
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(msg),
-      }
-    );
+    return await contract?.totalSupply();
   } catch (e) {
-    console.error(e);
     return e;
   }
 };
 
-const updateRabbitHole = (quantity: number, txnLink: string, total: number) => {
-  if (quantity === 1) {
-    postMsgToMintyBot(
-      `Someone just minted one Chad from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
-    );
-  } else if (quantity === 2) {
-    postMsgToMintyBot(
-      `Two Chads were just minted from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
-    );
-  } else if (quantity === 3) {
-    postMsgToMintyBot(
-      `Woah, bruh. Someone just minted three whole Chads from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
-    );
-  } else {
-    postMsgToMintyBot(
-      `Someone just minted some Bunnies! from https://optichads.art/mint (transaction: ${txnLink}). ${total} have been minted so far.`
-    );
+const earlyMintOwnershipCap = async (contract: Contract) => {
+  try {
+    return await contract?.earlyMintOwnershipCap();
+  } catch (e) {
+    return e;
   }
 };
+
+const getCanMintAmount = async (
+  contract: Contract,
+  address: string,
+  amount: number
+) => {
+  try {
+    return await contract?.canMintAmount(address, amount);
+  } catch (e) {
+    return e;
+  }
+};
+
+const getPriceAndByMode = async (
+  mode: "public" | "allowlist",
+  contract: Contract
+) => (mode === "public" ? await getPrice(contract) : getEarlyPrice(contract));
+
+// const postMsgToMintyBot = async (message: string) => {
+//   const msg = { content: message };
+//   try {
+//     return await fetch(
+//       "https://discord.com/api/webhooks/904945097651671041/WHT5o_Did8QLJKUbDPvr1cGGPD988BvzsMrTpMnetYbUwYLyYeTLnX_DE73-E-ZvRnEl",
+//       {
+//         method: "POST",
+//         headers: { "content-type": "application/json" },
+//         body: JSON.stringify(msg),
+//       }
+//     );
+//   } catch (e) {
+//     console.error(e);
+//     return e;
+//   }
+// };
+
+// const updateRabbitHole = (quantity: number, txnLink: string, total: number) => {
+//   if (quantity === 1) {
+//     postMsgToMintyBot(
+//       `Someone just minted one Chad from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
+//     );
+//   } else if (quantity === 2) {
+//     postMsgToMintyBot(
+//       `Two Chads were just minted from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
+//     );
+//   } else if (quantity === 3) {
+//     postMsgToMintyBot(
+//       `Woah, bruh. Someone just minted three whole Chads from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
+//     );
+//   } else {
+//     postMsgToMintyBot(
+//       `Someone just minted some Bunnies! from https://optichads.art/mint (transaction: ${txnLink}). ${total} have been minted so far.`
+//     );
+//   }
+// };
 
 const { useProvider } = hooks;
 
@@ -87,15 +171,23 @@ export default function MintStepTwo() {
     useContext(MintFormContext);
   const { dispatch: stepperDispatch } = useContext(StepperContext);
   const [costPerToken, setCostPerToken] = useState<BigNumber>(
-    BigNumber.from("2500000000000000")
+    BigNumber.from("150000000000000")
   );
+  const [isMintingAvailable, setIsMintingAvailable] = useState<
+    boolean | undefined
+  >(undefined);
+  const [isInOnlyAllowListMode, setIsInOnlyAllowListMode] =
+    useState<boolean>(false);
+  const [welcomeMessage, setWelcomeMessage] = useState<string>();
   const [quantity, setQuantity] = useState<{ value: string }>({ value: "0" });
   const [isValid, setIsValid] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
+  const [canMintAmount, setCanMintAmount] = useState<boolean>(false);
+  const [maxNumToMint, setMaxNumToMint] = useState<number | undefined>();
   const [hasEnoughEth, setHasEnoughEth] = useState<boolean>(true);
   const { data: ethBal } = useETHBalance(account as string);
 
-  const numBunnyChangeHandler = ({
+  const numChadChangeHandler = ({
     target: { value },
   }: ChangeEvent<HTMLInputElement>): void => {
     const valid =
@@ -113,55 +205,92 @@ export default function MintStepTwo() {
   };
 
   useEffect(() => {
-    if (formState.contract && formState.pricePerUnit.eq(BigNumber.from("0"))) {
-      getCostPerToken(formState.contract).then(
-        (cost: BigNumber) => {
-          if (cost) {
-            setCostPerToken(BigNumber.from(cost));
-            formDispatch({
-              type: "setMintFormState",
-              payload: {
-                ...formState,
-                pricePerUnit: BigNumber.from(cost),
+    if (formState.contract && account && isMintingAvailable === undefined) {
+      const chadContract = formState.contract as Contract;
+      getMintingOpen(chadContract).then((isAvailable: boolean) => {
+        setIsMintingAvailable(isAvailable);
+        onlyAllowlistMode(chadContract).then((isInWhitelistMode) => {
+          setIsInOnlyAllowListMode(isInWhitelistMode);
+          setMaxNumToMint(isInWhitelistMode ? 2 : 5);
+          if (isAvailable) {
+            getPriceAndByMode(
+              isInWhitelistMode ? "allowlist" : "public",
+              chadContract
+            ).then(
+              (cost: BigNumber) => {
+                if (cost) {
+                  setCostPerToken(BigNumber.from(cost));
+                  formDispatch({
+                    type: "setMintFormState",
+                    payload: {
+                      ...formState,
+                      pricePerUnit: BigNumber.from(cost),
+                    },
+                  });
+                }
               },
-            });
+              (error) => console.log(error)
+            );
+          } else {
+            setWelcomeMessage("Minting is not available. Check back soon!");
           }
-        },
-        (error) => console.log(error)
-      );
+        });
+      });
     }
-  }, [formState, formDispatch]);
+  }, [
+    formState,
+    formDispatch,
+    isInOnlyAllowListMode,
+    account,
+    isMintingAvailable,
+  ]);
 
-  const handleSubmit = (e: FormEvent) => async (contract: Contract) => {
-    e.preventDefault();
-    const signer = provider && provider.getSigner(account);
-    const connectedContract = contract.connect(signer as ethers.Signer);
-    setLoading(true);
-    if (
-      account &&
-      hasEnoughEth &&
-      chainId === Number(process.env.NEXT_PUBLIC_CHAIN_ID)
-    ) {
-      const quan = BigNumber.from(quantity.value);
-      const total = costPerToken?.mul(quan);
-      try {
-        const response: TransactionResponse = await connectedContract.mint(
-          quantity.value,
-          {
-            value: total,
-          }
-        );
-        const fullReceipt: TransactionReceipt = await response.wait();
-        return fullReceipt;
-      } catch (e) {
-        console.log(e);
-      }
-    } else {
-      throw new Error(
-        "You need to switch to Optimism and/or make sure you have enough Eth"
-      );
-    }
-  };
+  // const handleSubmit = (e: FormEvent) => async (contract: Contract) => {
+  //   e.preventDefault();
+  //   const signer = provider && provider.getSigner(account);
+  //   const connectedContract = contract.connect(signer as ethers.Signer);
+  //   setLoading(true);
+  //   if (
+  //     account &&
+  //     hasEnoughEth &&
+  //     chainId === Number(process.env.NEXT_PUBLIC_CHAIN_ID)
+  //   ) {
+  //     const quan = BigNumber.from(quantity.value);
+  //     const total = costPerToken?.mul(quan);
+  //     if (isInOnlyAllowListMode) {
+  //       try {
+  //         const merkleProof = tree.getHexProof(padBuffer(account));
+  //         debugger;
+  //         const response: TransactionResponse =
+  //           await connectedContract.mintToMultipleAL(
+  //             account,
+  //             quantity.value,
+  //             merkleProof
+  //           );
+  //         const fullReceipt: TransactionReceipt = await response.wait();
+  //         return fullReceipt;
+  //       } catch (e) {
+  //         console.error(e);
+  //       }
+  //     } else {
+  //       try {
+  //         const response: TransactionResponse =
+  //           await connectedContract.mintToMultiple(quantity.value, {
+  //             to: account,
+  //             amount: total,
+  //           });
+  //         const fullReceipt: TransactionReceipt = await response.wait();
+  //         return fullReceipt;
+  //       } catch (e) {
+  //         console.log(e);
+  //       }
+  //     }
+  //   } else {
+  //     throw new Error(
+  //       "You need to switch to Optimism and/or make sure you have enough Eth"
+  //     );
+  //   }
+  // };
 
   return (
     <div className="bg-white overflow-hidden sm-rounded-b-lg pt-16">
@@ -172,71 +301,27 @@ export default function MintStepTwo() {
         message="Please wait while your transaction is being accepted and verified. Click outside this box to dismiss"
       />
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 md:col-span-7 px-4 py-5 sm:p-6 sm:pb-16">
-          <div className="text-lg max-w-prose mx-auto">
-            <h1>
-              <span className="block text-base text-center text-red-600 font-semibold tracking-wide uppercase">
-                Select Quantity
-              </span>
-              <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900">
-                {!hasEnoughEth
-                  ? "You need to select a quantity you can afford"
-                  : "How many?"}
-              </span>
-            </h1>
-            <form
-              className="flex flex-col justify-center"
-              onSubmit={(e) => {
-                handleSubmit(e)(formState.contract as Contract)
-                  .then((receipt: TransactionReceipt | undefined) => {
-                    if (receipt) {
-                      formDispatch({
-                        type: "setReceipt",
-                        payload: receipt,
-                      });
-                      stepperDispatch({ type: "setStepComplete", payload: 1 });
-                      const txnLink = formatEtherscanLink(
-                        "Transaction",
-                        receipt.transactionHash
-                      );
-                      getTotalMinted(formState.contract as Contract).then(
-                        (total: string) => {
-                          updateRabbitHole(
-                            Number(quantity.value),
-                            txnLink,
-                            Number(total)
-                          );
-                          formDispatch({
-                            type: "setStartingTokenId",
-                            payload: Number(total) - Number(quantity.value),
-                          });
-                        }
-                      );
-                      setTimeout(() => {
-                        stepperDispatch({ type: "setCurrentStep", payload: 2 });
-                        formDispatch({
-                          type: "stepTwoComplete",
-                          payload: true,
-                        });
-                      }, 1250);
-                      setLoading(false);
-                    }
-                  })
-                  .catch((e) => alert(e));
-              }}
-            >
-              <div className="flex mt-12 justify-between">
+        <div className="col-span-12 px-4 py-5 sm:p-6 sm:pb-16">
+          {isMintingAvailable ? (
+            <div className="text-lg max-w-prose mx-auto">
+              <h1>
+                <span className="block text-base text-center text-red-600 font-semibold tracking-wide uppercase">
+                  Select Quantity
+                </span>
+              </h1>
+
+              {/* <div className="flex mt-12 justify-between">
                 <label htmlFor="quantity" className="text-lg">
-                  Quantity (max: 10 per transaction)
+                  Quantity (max: {`${maxNumToMint}`} per person)
                 </label>
                 <input
                   name="quantity"
                   value={quantity.value}
                   type="range"
                   min="0"
-                  max="3"
+                  max={maxNumToMint}
                   step="1"
-                  onChange={numBunnyChangeHandler}
+                  onChange={numChadChangeHandler}
                 />
               </div>
               <div className="flex flex-col justify-center items-center text-7xl p-16">
@@ -273,68 +358,65 @@ export default function MintStepTwo() {
                   type="submit"
                   value="Purchase"
                   disabled={!isValid}
-                ></input>
+                ></input> */}
+              <div className="flex w-full justify-center items-center p-24 text-sm font-semibold">
+                <div
+                  id="rampp-minting-container-d1d4ae5b-c12a-441d-9033-161c5181e86a"
+                  className="rampp-minting-container"
+                >
+                  <button
+                    id="rampp-minting-button-d1d4ae5b-c12a-441d-9033-161c5181e86a"
+                    className="rampp-minting-button"
+                    style={{ display: "none" }}
+                    data-merkle-proof-uri="https://us-central1-nft-rampp.cloudfunctions.net/allowlist/N6ddW3Ynir3TTznZtOTM/merkle/verify"
+                    data-styles="eyJvcGVuIjp7InRleHQiOiJNaW50Iiwic3R5bGVzIjoiYm9yZGVyOm5vbmU7d2lkdGg6IDE1cmVtO3BhZGRpbmc6MC41cmVtO2ZvbnQtc2l6ZTogMS4xMjVyZW07bGluZS1oZWlnaHQ6IDEuNzVyZW07dGV4dC1hbGlnbjogY2VudGVyO2N1cnNvcjogcG9pbnRlcjtib3JkZXItcmFkaXVzOjk5OTlweDtjb2xvcjojZmZmZmZmO2JhY2tncm91bmQtY29sb3I6I2E4MDAwMDsifSwicGF1c2VkIjp7InRleHQiOiJNaW50JTIwQ2xvc2VkIiwic3R5bGVzIjoiYm9yZGVyOm5vbmU7d2lkdGg6IDE1cmVtO3BhZGRpbmc6MC41cmVtO2ZvbnQtc2l6ZTogMS4xMjVyZW07bGluZS1oZWlnaHQ6IDEuNzVyZW07dGV4dC1hbGlnbjogY2VudGVyO2N1cnNvcjogcG9pbnRlcjtib3JkZXItcmFkaXVzOjk5OTlweDtjb2xvcjojNjc2NTY1O2JhY2tncm91bmQtY29sb3I6I0NDREJEQztjdXJzb3I6bm90LWFsbG93ZWQ7In0sInN1cHBseVJlYWNoZWQiOnsidGV4dCI6IkFsbCUyMFRva2VucyUyME1pbnRlZCEiLCJzdHlsZXMiOiJib3JkZXI6bm9uZTt3aWR0aDogMTVyZW07cGFkZGluZzowLjVyZW07Zm9udC1zaXplOiAxLjEyNXJlbTtsaW5lLWhlaWdodDogMS43NXJlbTt0ZXh0LWFsaWduOiBjZW50ZXI7Y3Vyc29yOiBwb2ludGVyO2JvcmRlci1yYWRpdXM6OTk5OXB4O2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojMDBmZjJhO2N1cnNvcjpub3QtYWxsb3dlZDsifSwiZXJyb3IiOnsidGV4dCI6Ik1pbnRpbmcgVW5hdmFpbGFibGUiLCJzdHlsZXMiOiJib3JkZXI6bm9uZTt3aWR0aDogMTVyZW07cGFkZGluZzowLjVyZW07Zm9udC1zaXplOiAxLjEyNXJlbTtsaW5lLWhlaWdodDogMS43NXJlbTt0ZXh0LWFsaWduOiBjZW50ZXI7Y3Vyc29yOiBwb2ludGVyO2JvcmRlci1yYWRpdXM6OTk5OXB4O2NvbG9yOiNmZjAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZiOGI4O2N1cnNvcjpub3QtYWxsb3dlZDsifSwiY2xhaW1UZXh0Ijp7InRleHQiOm51bGwsInN0eWxlcyI6ImNvbG9yOiByZ2JhKDE1NiwgMTYzLCAxNzUpO2ZvbnQtc2l6ZTogMC43NXJlbTtsaW5lLWhlaWdodDogMXJlbTt0ZXh0LWFsaWduOiBjZW50ZXI7cGFkZGluZy10b3A6IDAuMjVyZW07cGFkZGluZy1ib3R0b206IDAuMjVyZW07bWFyZ2luOjA7Zm9udC1mYW1pbHk6c2Fucy1zZXJpZjsifSwicXVhbnRpdHkiOnsidGV4dCI6bnVsbCwic3R5bGVzIjoid2lkdGg6NDBweDtjb2xvcjojYTgwMDAwO2JvcmRlci1zdHlsZTpzb2xpZDtib3JkZXItd2lkdGg6MXB4O2JvcmRlci1jb2xvcjojYTgwMDAwO2JvcmRlci1yYWRpdXM6OTk5OXB4O2ZvbnQtc2l6ZToxLjNyZW07dGV4dC1hbGlnbjpjZW50ZXI7In19"
+                    data-abi-link="https://firebasestorage.googleapis.com/v0/b/nft-rampp.appspot.com/o/solidity_outputs%2FN6ddW3Ynir3TTznZtOTM%2FOptiChadsContract_data-9870ab62-dd7d-451f-a40a-a576d1c969f1.json?alt=media"
+                    data-redirect="quixotic.com"
+                    data-contract-address="0x9B9F542456ad12796cCB8EB6644f29E3314e68e1"
+                    data-show-claim-count="true"
+                    data-network="optimism"
+                    data-format="multi"
+                    data-erc20-payments=""
+                    data-use-winter="false"
+                    data-winter-project-id="null"
+                  ></button>
+                </div>
+                <Script
+                  src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
+                  crossOrigin="anonymous"
+                  referrerPolicy="no-referrer"
+                ></Script>
+                <Script
+                  type="text/javascript"
+                  src="https://unpkg.com/web3modal@1.9.8/dist/index.js"
+                ></Script>
+                <Script
+                  type="text/javascript"
+                  src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"
+                ></Script>
+                <Script
+                  type="text/javascript"
+                  src="https://unpkg.com/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"
+                ></Script>
+                <Script
+                  type="text/javascript"
+                  src="https://rampp.xyz/embeds/v2.1/embed.js"
+                  data-uuid="d1d4ae5b-c12a-441d-9033-161c5181e86a"
+                ></Script>
               </div>
-            </form>
-          </div>
-        </div>
-        <div className="col-span-12 md:col-span-5 bg-gray-50 px-4 py-5 sm:p-6 sm:pb-16">
-          <div className="text-lg max-w-prose mx-auto h-full">
-            <div className="flex justify-center items-center h-full">
-              <ul
-                role="list"
-                className="flex flex-col justify-center border-t border-gray-200 divide-y divide-gray-200 md:border-t-0"
-              >
-                <li className="py-4 flex md:border-t-0">
-                  <CheckIcon
-                    className="flex-shrink-0 h-6 w-6 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3 text-base text-gray-500">
-                    {quantity.value + " "} Optimistic Bunnies
-                  </span>
-                </li>
-                <li className="py-4 flex">
-                  <CheckIcon
-                    className="flex-shrink-0 h-6 w-6 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3 text-base text-gray-500">
-                    {quantity.value + " "} Pixelated Bunnies
-                  </span>
-                </li>
-                {Number(quantity.value) > 0 && (
-                  <li className="py-4 flex">
-                    <CheckIcon
-                      className="flex-shrink-0 h-6 w-6 text-green-500"
-                      aria-hidden="true"
-                    />
-                    <span className="ml-3 text-base text-gray-500">
-                      1 Optiland Citizen (per holder)
-                    </span>
-                  </li>
-                )}
-                <li className="py-4 flex">
-                  <CheckIcon
-                    className="flex-shrink-0 h-6 w-6 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3 text-base text-gray-500">
-                    Specialized content in Discord server
-                  </span>
-                </li>
-                <li className="py-4 flex">
-                  <CheckIcon
-                    className="flex-shrink-0 h-6 w-6 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3 text-base text-gray-500">
-                    Access to future airdrops
-                  </span>
-                </li>
-              </ul>
             </div>
-          </div>
+          ) : (
+            <div className="text-lg max-w-prose mx-auto">
+              <h1>
+                <span className="block text-base text-center text-red-600 font-semibold tracking-wide uppercase">
+                  Oooohhh, so close, bruh
+                </span>
+                <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900">
+                  {welcomeMessage}
+                </span>
+              </h1>
+            </div>
+          )}
         </div>
       </div>
     </div>

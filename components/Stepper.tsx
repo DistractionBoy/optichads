@@ -2,7 +2,6 @@ import React from "react";
 import { CheckIcon } from "@heroicons/react/solid";
 import { classNames } from "../lib/helpers";
 import { StepperContext } from "../lib/state/stepper";
-import { useRouter } from "next/router";
 
 export interface Step {
   id: string;
@@ -13,7 +12,6 @@ export interface Step {
 }
 
 export default function Stepper() {
-  const router = useRouter();
   const { state } = React.useContext(StepperContext);
 
   return state?.length > 0 ? (
