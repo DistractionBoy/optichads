@@ -359,13 +359,13 @@ export default function MintStepTwo() {
                   value="Purchase"
                   disabled={!isValid}
                 ></input> */}
-              <div className="flex w-full justify-center items-center p-24">
+              <div className="flex w-full justify-center items-center p-24 text-sm font-semibold">
                 <div
-                  id="rampp-minting-container-2bb08d4c-86aa-4736-bffe-9f289c30cec8"
+                  id="rampp-minting-container-d1d4ae5b-c12a-441d-9033-161c5181e86a"
                   className="rampp-minting-container"
                 >
                   <button
-                    id="rampp-minting-button-2bb08d4c-86aa-4736-bffe-9f289c30cec8"
+                    id="rampp-minting-button-d1d4ae5b-c12a-441d-9033-161c5181e86a"
                     className="rampp-minting-button"
                     style={{ display: "none" }}
                     data-merkle-proof-uri="https://us-central1-nft-rampp.cloudfunctions.net/allowlist/N6ddW3Ynir3TTznZtOTM/merkle/verify"
@@ -401,7 +401,7 @@ export default function MintStepTwo() {
                 <Script
                   type="text/javascript"
                   src="https://rampp.xyz/embeds/v2.1/embed.js"
-                  data-uuid="2bb08d4c-86aa-4736-bffe-9f289c30cec8"
+                  data-uuid="d1d4ae5b-c12a-441d-9033-161c5181e86a"
                 ></Script>
               </div>
             </div>
