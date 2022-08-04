@@ -385,23 +385,28 @@ export default function MintStepTwo() {
                   src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
                   crossOrigin="anonymous"
                   referrerPolicy="no-referrer"
+                  strategy="lazyOnload"
                 ></Script>
                 <Script
                   type="text/javascript"
                   src="https://unpkg.com/web3modal@1.9.8/dist/index.js"
+                  strategy="lazyOnload"
                 ></Script>
                 <Script
                   type="text/javascript"
                   src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"
+                  strategy="lazyOnload"
                 ></Script>
                 <Script
                   type="text/javascript"
                   src="https://unpkg.com/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"
+                  strategy="lazyOnload"
                 ></Script>
                 <Script
                   type="text/javascript"
                   src="https://rampp.xyz/embeds/v2.1/embed.js"
                   data-uuid="ea826e68-02f6-4b31-8420-6ba1bda7cbe0"
+                  strategy="lazyOnload"
                 ></Script>
               </div>
             </div>
