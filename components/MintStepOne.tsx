@@ -48,7 +48,6 @@ export default function MintStepOne() {
     setTimeout(() => {
       formDispatch({ type: "stepOneComplete", payload: true });
       stepperDispatch({ type: "setCurrentStep", payload: 1 });
-      console.log("formState is: ", formState);
     }, 666);
   };
 
