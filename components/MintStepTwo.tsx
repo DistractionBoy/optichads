@@ -405,7 +405,7 @@ export default function MintStepTwo() {
                 <Script
                   type="text/javascript"
                   src="https://rampp.xyz/embeds/v2.1/embed.js"
-                  data-uuid="0be641b2-62dd-42b8-9c49-1f7f57fb409d"
+                  data-uuid="85bf34a6-36c5-4972-8365-8e87dd3b8ef9"
                   strategy="lazyOnload"
                 ></Script>
               </div>
