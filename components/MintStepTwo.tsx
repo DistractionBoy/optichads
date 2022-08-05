@@ -248,7 +248,7 @@ export default function MintStepTwo() {
                         //   receipt.transactionHash
                         // );
                         getTotalMinted(formState.contract as Contract).then(
-                          (total: string) => {
+                          (totalSupply: string) => {
                             // updateRabbitHole(
                             //   Number(quantity.value),
                             //   txnLink,
@@ -256,7 +256,8 @@ export default function MintStepTwo() {
                             // );
                             formDispatch({
                               type: "setStartingTokenId",
-                              payload: Number(total) - Number(quantity.value),
+                              payload:
+                                Number(totalSupply) - Number(quantity.value),
                             });
                           }
                         );

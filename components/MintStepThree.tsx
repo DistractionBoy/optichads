@@ -3,18 +3,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 import { useWeb3React } from "@web3-react/core";
 import { BigNumber } from "@ethersproject/bignumber";
+import { hooks } from "../lib/connectors/metaMask";
+import CONTRACT_ABI from "../lib/contracts/optichads.json";
 import { MintFormContext } from "../lib/state/mintForm";
 import { formatEtherscanLink, parseBalance, shortenHex } from "../lib/utils";
 import NFTCard from "./NFTCard";
-import { calcRange } from "../lib/helpers";
+import { calcRange, getMyTokenIds } from "../lib/helpers";
 import Link from "next/link";
 import { WindowInstanceWithEthereum } from "../lib/types";
+import { Contract, ContractInterface } from "ethers";
+
+const { useProvider } = hooks;
 
 export default function MintStepThree() {
   const { account } = useWeb3React();
+  const provider = useProvider();
   const { state: formState, dispatch: formDispatch } =
     useContext(MintFormContext);
-  const [products, setProducts] = useState<number[]>();
+  const [myChads, setMyChads] = useState<number[]>([]);
   const [subtotal, setSubtotal] = useState<BigNumber>();
 
   const startOver = () => {
@@ -26,10 +32,25 @@ export default function MintStepThree() {
     if (formState.startingTokenId && formState.quantity && !subtotal) {
       const quan = BigNumber.from(formState.quantity);
       const total = formState.pricePerUnit?.mul(quan);
-      setProducts(calcRange(formState.quantity, formState.startingTokenId));
+      setMyChads(calcRange(formState.quantity, formState.startingTokenId));
       setSubtotal(total);
     }
   }, [formState, formDispatch, subtotal]);
+
+  useEffect(() => {
+    if (typeof account !== "undefined" && provider) {
+      const chadContract: Contract = new Contract(
+        process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string,
+        CONTRACT_ABI as ContractInterface,
+        provider
+      );
+      getMyTokenIds(chadContract, account).then((tokenIds) => {
+        setMyChads(
+          calcRange(formState.quantity, tokenIds[tokenIds.length - 1])
+        );
+      });
+    }
+  }, [account, provider, formState]);
 
   return (
     <div>
@@ -58,14 +79,14 @@ export default function MintStepThree() {
             role="list"
             className="mt-6 text-sm font-medium text-gray-500 border-t border-gray-200 divide-y divide-gray-200"
           >
-            {products &&
-              products.map((product) => (
-                <li key={product} className="flex py-6 space-x-6">
+            {myChads &&
+              myChads.map((myChads) => (
+                <li key={myChads} className="flex py-6 space-x-6">
                   <div className="h-32 w-36">
-                    <Link href={`/collection/chads/${product}`} passHref>
+                    <Link href={`/collection/chads/${myChads}`} passHref>
                       <NFTCard
                         collection="chads"
-                        id={product}
+                        id={myChads}
                         variant="noinfo"
                       />
                     </Link>
@@ -73,13 +94,13 @@ export default function MintStepThree() {
 
                   <div className="flex-auto space-y-1">
                     <h3 className="text-red-800">
-                      <Link href={`/collection/chads/${product}`} passHref>
+                      <Link href={`/collection/chads/${myChads}`} passHref>
                         <a
                           rel="noreferrer"
                           target="_blank"
-                          href={`/collection/chads/${product}`}
+                          href={`/collection/chads/${myChads}`}
                         >
-                          OptiChad {`#${product}`}
+                          OptiChad {`#${myChads}`}
                         </a>
                       </Link>
                     </h3>
