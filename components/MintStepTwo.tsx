@@ -139,6 +139,7 @@ export default function MintStepTwo() {
   const [quantity, setQuantity] = useState<{ value: string }>({ value: "0" });
   const [isValid, setIsValid] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<Error | boolean>();
   const [maxNumToMint] = useState<number | undefined>(5);
   const [hasEnoughEth, setHasEnoughEth] = useState<boolean>(true);
   const { data: ethBal } = useETHBalance(account as string);
@@ -214,7 +215,7 @@ export default function MintStepTwo() {
         const fullReceipt: TransactionReceipt = await response.wait();
         return fullReceipt;
       } catch (e) {
-        console.log(e);
+        throw new Error("Public Minting not available");
       }
     } else {
       throw new Error(
@@ -231,6 +232,13 @@ export default function MintStepTwo() {
         title="Transaction Processing"
         message="Please wait while your transaction is being accepted and verified. Click outside this box to dismiss"
       />
+      <Modal
+        open={!!error}
+        setOpen={setError}
+        title="Minting not Available"
+        message="Please wait while we get our T bars crossed and Bi's dotted"
+      />
+      ;
       <div className="grid grid-cols-12 gap-4">
         <div className="col-span-12 px-4 py-5 sm:p-6 sm:pb-16">
           {isMintingAvailable ? (
@@ -289,7 +297,10 @@ export default function MintStepTwo() {
                         setLoading(false);
                       }
                     })
-                    .catch((e) => alert(e));
+                    .catch((e) => {
+                      setLoading(false);
+                      setError(e);
+                    });
                 }}
               >
                 <div className="flex mt-12 justify-between">
