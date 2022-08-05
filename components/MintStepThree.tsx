@@ -62,7 +62,13 @@ export default function MintStepThree() {
               products.map((product) => (
                 <li key={product} className="flex py-6 space-x-6">
                   <div className="h-32 w-36">
-                    <NFTCard collection="chads" id={product} variant="noinfo" />
+                    <Link href={`/collection/chads/${product}`} passHref>
+                      <NFTCard
+                        collection="chads"
+                        id={product}
+                        variant="noinfo"
+                      />
+                    </Link>
                   </div>
 
                   <div className="flex-auto space-y-1">
