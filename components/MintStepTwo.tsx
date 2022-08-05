@@ -239,7 +239,7 @@ export default function MintStepTwo() {
         message="Please wait while we get our T bars crossed and Bi's dotted"
       />
       ;
-      <div className="grid grid-cols-12 gap-4">
+      <div className="grid grid-cols-12 gap-4 rounded-b-lg">
         <div className="col-span-12 px-4 py-5 sm:p-6 sm:pb-16">
           {isMintingAvailable ? (
             <div className="text-lg max-w-prose mx-auto">
