@@ -22,6 +22,7 @@ import {
   TransactionResponse,
 } from "@ethersproject/providers";
 import useETHBalance from "../lib/hooks/useEthBalance";
+import Tokenomics from "./Tokenomics";
 
 const getPrice = async (contract: Contract) => {
   try {
@@ -213,6 +214,7 @@ export default function MintStepTwo() {
       ;
       <div className="grid grid-cols-12 gap-4 rounded-b-lg">
         <div className="col-span-12 px-4 py-5 sm:p-6 sm:pb-16">
+          <Tokenomics />
           {isMintingAvailable ? (
             <div className="text-lg max-w-prose mx-auto">
               <h1>
