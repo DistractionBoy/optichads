@@ -3,7 +3,7 @@ import Head from "next/head";
 
 export default function HeadMeta({
   title = "Optichads",
-  description = `With a FREE public mint and 50% donated to retroactive public goods, 
+  description = `With a cheap public mint and 50% donated to retroactive public goods, 
     Optichads proves it cares about the community. We aim to inspire charitable giving 
     and improving health and wellness.`,
   keywords = "OptiChads, @OptiChads, Non-Fungible Token, Optimism, Ethereum, Decentralized",
@@ -24,6 +24,15 @@ export default function HeadMeta({
         content="a strong black and white man facing right with a white outline aroung him and a red background"
       ></meta>
       <meta property="og:site_name" content="OptiChads" />
+
+      {/* Mobile */}
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+      />
+      <link rel="apple-touch-startup-image" href="/images/hero-img.png" />
+      <meta name="apple-mobile-web-app-title" content="OptiChads" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
 
       {/* Favicons */}
       <link

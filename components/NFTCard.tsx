@@ -27,7 +27,7 @@ export default function NFTCard({
     data ? null : url
   );
 
-  const [image] = useState<string>(getImgUrl(id.toString()));
+  const [image] = useState<string>(getImgUrl(id.toString(), collection));
 
   if (data || fetchedData) {
     const metadata: ChadMetadata | undefined = data || fetchedData;

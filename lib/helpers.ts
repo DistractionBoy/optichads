@@ -46,12 +46,19 @@ export const getTokenOfOwnerByIndex = async (
   }
 };
 
-export const getMyTokenIds = async (contract: Contract, account: string) => {
+export const getMyTokenIds = async (
+  contract: Contract,
+  account: string,
+  maxNumToGet?: number
+) => {
   let tokenIds: number[] = [];
   let index = 0;
   let hasError;
   while (!hasError) {
     await getTokenOfOwnerByIndex(contract, account, index).then((id) => {
+      if (index === (maxNumToGet && maxNumToGet - 1)) {
+        hasError = true;
+      }
       if (!Number(id)) {
         hasError = true;
       } else {
