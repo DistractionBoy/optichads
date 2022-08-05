@@ -15,7 +15,7 @@ import { MintFormContext } from "../lib/state/mintForm";
 import { StepperContext } from "../lib/state/stepper";
 import Modal from "./Modal";
 import { parseBalance } from "../lib/utils";
-import { classNames } from "../lib/helpers";
+import { classNames, getMyTokenIds } from "../lib/helpers";
 import { ethers } from "ethers";
 import {
   TransactionReceipt,
@@ -32,38 +32,9 @@ const getPrice = async (contract: Contract) => {
   }
 };
 
-const getEarlyPrice = async (contract: Contract) => {
-  try {
-    return await contract?.EARLY_MINT_PRICE();
-  } catch (e) {
-    console.error(e);
-    return e;
-  }
-};
-
 const getMintingOpen = async (contract: Contract) => {
   try {
     return await contract?.mintingOpen();
-  } catch (e) {
-    console.error(e);
-  }
-};
-
-const onlyAllowlistMode = async (contract: Contract) => {
-  try {
-    return await contract?.onlyAllowlistMode();
-  } catch (e) {
-    console.error(e);
-  }
-};
-
-const canMintAmount = async (
-  contract: Contract,
-  address: string,
-  amount: number
-) => {
-  try {
-    return await contract?.canMintAmount(address, amount);
   } catch (e) {
     console.error(e);
   }
@@ -76,11 +47,6 @@ const getTotalMinted = async (contract: Contract) => {
     return e;
   }
 };
-
-const getPriceAndByMode = async (
-  mode: "public" | "allowlist",
-  contract: Contract
-) => (mode === "public" ? await getPrice(contract) : getEarlyPrice(contract));
 
 // const postMsgToMintyBot = async (message: string) => {
 //   const msg = { content: message };
@@ -99,7 +65,7 @@ const getPriceAndByMode = async (
 //   }
 // };
 
-// const updateRabbitHole = (quantity: number, txnLink: string, total: number) => {
+// const updateChadPad = (quantity: number, txnLink: string, total: number) => {
 //   if (quantity === 1) {
 //     postMsgToMintyBot(
 //       `Someone just minted one Chad from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
@@ -133,14 +99,16 @@ export default function MintStepTwo() {
   const [isMintingAvailable, setIsMintingAvailable] = useState<
     boolean | undefined
   >(undefined);
-  const [isInOnlyAllowListMode, setIsInOnlyAllowListMode] =
-    useState<boolean>(false);
   const [welcomeMessage, setWelcomeMessage] = useState<string>();
   const [quantity, setQuantity] = useState<{ value: string }>({ value: "0" });
   const [isValid, setIsValid] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | boolean>();
-  const [maxNumToMint] = useState<number | undefined>(5);
+  const [numTokensOwned, setNumTokensOwned] = useState<number | undefined>(
+    undefined
+  );
+  const [errorMessage, setErrorMessage] = useState<string>();
+  const [maxNumToMint, setMaxNumToMint] = useState<number | undefined>(5);
   const [hasEnoughEth, setHasEnoughEth] = useState<boolean>(true);
   const { data: ethBal } = useETHBalance(account as string);
 
@@ -187,13 +155,17 @@ export default function MintStepTwo() {
         }
       });
     }
-  }, [
-    formState,
-    formDispatch,
-    isInOnlyAllowListMode,
-    account,
-    isMintingAvailable,
-  ]);
+  }, [formState, formDispatch, account, isMintingAvailable]);
+
+  useEffect(() => {
+    if (formState.contract && account && numTokensOwned === undefined) {
+      const chadContract = formState.contract as Contract;
+      getMyTokenIds(chadContract, account, 5).then((tokenIds) => {
+        setNumTokensOwned(tokenIds.length);
+        setMaxNumToMint(5 - tokenIds.length);
+      });
+    }
+  }, [numTokensOwned, setNumTokensOwned, account, formState]);
 
   const handleSubmit = (e: FormEvent) => async (contract: Contract) => {
     e.preventDefault();
@@ -214,8 +186,8 @@ export default function MintStepTwo() {
           });
         const fullReceipt: TransactionReceipt = await response.wait();
         return fullReceipt;
-      } catch (e) {
-        throw new Error("Public Minting not available");
+      } catch (e: any) {
+        setErrorMessage("Public Mint not currently available");
       }
     } else {
       throw new Error(
@@ -236,7 +208,7 @@ export default function MintStepTwo() {
         open={!!error}
         setOpen={setError}
         title="Minting not Available"
-        message="Please wait while we get our T bars crossed and Bi's dotted"
+        message={errorMessage as string}
       />
       ;
       <div className="grid grid-cols-12 gap-4 rounded-b-lg">
@@ -250,6 +222,8 @@ export default function MintStepTwo() {
                 <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900">
                   {!hasEnoughEth
                     ? "You need to select a quantity you can afford"
+                    : maxNumToMint !== undefined && maxNumToMint === 0
+                    ? "You have already MAXXXXED out, Chad!"
                     : "How many?"}
                 </span>
               </h1>
@@ -299,15 +273,16 @@ export default function MintStepTwo() {
                     })
                     .catch((e) => {
                       setLoading(false);
-                      setError(e);
+                      setError(true);
                     });
                 }}
               >
                 <div className="flex mt-12 justify-between">
                   <label htmlFor="quantity" className="text-lg">
-                    Quantity (max: {`${maxNumToMint}`} per person)
+                    Quantity (max: 5 per person)
                   </label>
                   <input
+                    disabled={maxNumToMint !== undefined && maxNumToMint === 0}
                     name="quantity"
                     value={quantity.value}
                     type="range"
