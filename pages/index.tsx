@@ -9,6 +9,7 @@ import {
   HeadMeta,
   PricingPlan,
   Team,
+  Tokenomics,
 } from "../components";
 
 const Home: NextPage = () => {
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
         <div className="bg-white rounded-lg shadow pb-6">
           <PricingPlan />
           <FeatureList />
+          <Tokenomics />
           <Team />
           <FAQs />
         </div>
