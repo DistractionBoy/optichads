@@ -67,11 +67,11 @@ export default function MintStepThree() {
 
                   <div className="flex-auto space-y-1">
                     <h3 className="text-gray-900">
-                      <Link href={`/collections/chads/${product}`} passHref>
+                      <Link href={`/collection/chads/${product}`} passHref>
                         <a
                           rel="noreferrer"
                           target="_blank"
-                          href={`/collections/chads/${product}`}
+                          href={`/collection/chads/${product}`}
                         >
                           OptiChad {`#${product}`}
                         </a>
