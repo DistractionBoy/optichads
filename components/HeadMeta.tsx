@@ -25,6 +25,15 @@ export default function HeadMeta({
       ></meta>
       <meta property="og:site_name" content="OptiChads" />
 
+      {/* Mobile */}
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+      />
+      <link rel="apple-touch-startup-image" href="/images/hero-img.png" />
+      <meta name="apple-mobile-web-app-title" content="OptiChads" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+
       {/* Favicons */}
       <link
         rel="shortcut icon"
