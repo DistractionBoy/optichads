@@ -72,7 +72,7 @@ export default function MintStepThree() {
                   </div>
 
                   <div className="flex-auto space-y-1">
-                    <h3 className="text-gray-900">
+                    <h3 className="text-red-800">
                       <Link href={`/collection/chads/${product}`} passHref>
                         <a
                           rel="noreferrer"
