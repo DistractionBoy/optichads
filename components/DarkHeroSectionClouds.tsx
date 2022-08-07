@@ -139,7 +139,7 @@ export default function DarkHeroSectionClouds() {
                         by hitting us up, you totally send a message with your
                         wallet address to our <br />
                         <a
-                          href="https://discord.com/invite/yTcZHS2JTb"
+                          href="Discord.gg/optichads"
                           className="font-medium text-white hover:text-red-600"
                         >
                           Discord server
