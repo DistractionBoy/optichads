@@ -17,7 +17,7 @@ export interface NFTDetailViewProps {
   data?: ChadMetadata;
   id: number;
   collection: string;
-  rarity: { rank: number; tokenId: number; rarityScore: number };
+  rarity?: { rank: string; tokenId: string; rarityScore: string }[];
   showBreadcrumbs?: boolean;
 }
 
@@ -28,6 +28,7 @@ export default function NFTDetailView({
   showBreadcrumbs,
   rarity,
 }: NFTDetailViewProps) {
+  console.log("rarity obj: ", rarity);
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/api/meta/${collection}/${id}`;
   const { data: fetchedData }: { data?: ChadMetadata } = useSWR(
@@ -107,9 +108,10 @@ export default function NFTDetailView({
               Product information
             </h2>
 
-            <div className="mt-0 md:mt-4 space-y-6">
-              <p className="text-base text-gray-500">
-                {metadata && metadata.description} - Rank: {rarity.rank}
+            <div className="space-y-8">
+              <p className="text-3xl text-gray-800 font-bold">
+                {metadata && metadata.description}{" "}
+                {rarity && `Rank: ${rarity[0].rank}`}
               </p>
             </div>
           </section>
@@ -124,6 +126,7 @@ export default function NFTDetailView({
               width={680}
               height={680}
               layout="responsive"
+              priority
             />
           </div>
           <div className="-mt-px flex divide-x divide-gray-200 rounded-b-md shadow">

@@ -16,8 +16,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const resOne: Response = await fetch(`${baseUrl}/api/meta/chads/${tokenId}`);
   const resTwo: Response = await fetch(`${baseUrl}/api/rarity/${tokenId}`);
   const metadata: ChadMetadata = await resOne.json();
-  const rarity: { rank: number; tokenId: number; rarityScore: number } =
-    await resTwo.json();
+  const rarity = await resTwo.json();
   return {
     props: removeUndefinedForNextJsSerializing({
       metadata,
@@ -32,6 +31,7 @@ export default function ChadDetail({
   tokenId,
   rarity,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  console.log("rarity obj: ", rarity);
   return (
     <>
       <HeadMeta

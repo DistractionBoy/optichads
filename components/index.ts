@@ -4,6 +4,7 @@ import Attributes from "./Attributes";
 import BgImageColorHeroSection from "./BgImageColorHeroSection";
 import Button from "./Button";
 import Breadcrumbs from "./Breadcrumbs";
+import Collection from "./Collection";
 import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
 import DarkNavbar from "./DarkNavbar";
 import DarkOverlapShell from "./DarkOverlapShell";
@@ -33,6 +34,7 @@ export {
   BgImageColorHeroSection,
   Button,
   Breadcrumbs,
+  Collection,
   DarkHeroSectionClouds,
   DarkNavbar,
   DarkOverlapShell,
