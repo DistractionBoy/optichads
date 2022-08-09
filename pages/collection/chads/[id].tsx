@@ -13,12 +13,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
     ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
     : process.env.NEXT_PUBLIC_BASEURL;
-  const res: Response = await fetch(`${baseUrl}/api/meta/chads/${tokenId}`);
-  const metadata: ChadMetadata = await res.json();
+  const resOne: Response = await fetch(`${baseUrl}/api/meta/chads/${tokenId}`);
+  const resTwo: Response = await fetch(`${baseUrl}/api/rarity/${tokenId}`);
+  const metadata: ChadMetadata = await resOne.json();
+  const rarity: { rank: number; tokenId: number; rarityScore: number } =
+    await resTwo.json();
   return {
     props: removeUndefinedForNextJsSerializing({
       metadata,
       tokenId,
+      rarity,
     }),
   };
 };
@@ -26,6 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default function ChadDetail({
   metadata,
   tokenId,
+  rarity,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
@@ -40,6 +45,7 @@ export default function ChadDetail({
             data={metadata}
             collection="chads"
             id={Number(tokenId)}
+            rarity={rarity}
             showBreadcrumbs
           />
         </div>

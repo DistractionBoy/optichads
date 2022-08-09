@@ -17,6 +17,7 @@ export interface NFTDetailViewProps {
   data?: ChadMetadata;
   id: number;
   collection: string;
+  rarity: { rank: number; tokenId: number; rarityScore: number };
   showBreadcrumbs?: boolean;
 }
 
@@ -25,6 +26,7 @@ export default function NFTDetailView({
   collection,
   id,
   showBreadcrumbs,
+  rarity,
 }: NFTDetailViewProps) {
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/api/meta/${collection}/${id}`;
@@ -107,7 +109,7 @@ export default function NFTDetailView({
 
             <div className="mt-0 md:mt-4 space-y-6">
               <p className="text-base text-gray-500">
-                {metadata && metadata.description}
+                {metadata && metadata.description} - Rank: {rarity.rank}
               </p>
             </div>
           </section>
