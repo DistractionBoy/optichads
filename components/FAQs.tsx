@@ -5,7 +5,7 @@ const faqs = [
   {
     question: "What are OptiChads?",
     answer: `OptiChads is an NFT collection, nah, a movement that promotes health and
-            charity through a free public mint and up to 50% of secondary sales going
+            charity through a cheap public mint and up to 50% of secondary sales going
             to retroactive public goods. Wanna Chad it up with us? Our Discord server
             would love to hear your Chaddest ideas`,
   },
@@ -53,28 +53,6 @@ export default function FAQs() {
                 ))}
             </dl>
             <dl className="mt-12 space-y-12">
-              <div>
-                <dt className="text-lg leading-6 font-medium text-gray-900">
-                  How do I get on the whitelist?
-                </dt>
-                <dd className="mt-2 text-base text-gray-500">
-                  Now this is a great question. Probably our most freuquently
-                  asked question of all, we are happy you are taking an interest
-                  in the Chaddest project on Optimism and cannot wait to answer
-                  it.
-                </dd>
-              </div>
-              <div>
-                <dt className="text-lg leading-6 font-medium text-gray-900">
-                  When are you going to mint?
-                </dt>
-                <dd className="mt-2 text-base text-gray-500">
-                  We have no clue at this point but we believe in you being able
-                  to figure it out on your own. We just started the art work a
-                  few weeks ago and cannot wait to get you your sweet sweet
-                  Chads, bro.
-                </dd>
-              </div>
               <div>
                 <dt className="mt-12 text-lg leading-6 font-medium text-gray-900">
                   How do I mint a Chad?
