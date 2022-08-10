@@ -137,12 +137,12 @@ export default function DarkHeroSectionClouds() {
                       </div>
                       <p className="mt-3 text-sm text-gray-300 sm:mt-4">
                         by hitting us up, you totally send a message with your
-                        wallet address to our <br />
+                        wallet address to our{" "}
                         <a
-                          href="Discord.gg/optichads"
+                          href="https://discord.gg/optichads"
                           className="font-medium text-white hover:text-red-600"
                         >
-                          Discord server
+                          Discord
                         </a>
                         . Sweet, huh?
                       </p>
