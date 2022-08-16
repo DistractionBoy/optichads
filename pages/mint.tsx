@@ -1,33 +1,28 @@
-import React, { useContext } from "react";
+import Image from "next/image";
+import React from "react";
 
-import {
-  DarkOverlapShell,
-  Stepper,
-  MintStepOne,
-  MintStepTwo,
-  MintStepThree,
-  HeadMeta,
-} from "../components";
-import { MintFormContext } from "../lib/state/mintForm";
+import { DarkOverlapShell, HeadMeta } from "../components";
+
+import vitalikApproves from "../public/images/vitalik_approves.png";
 
 const MintPage = () => {
-  const { state: formState } = useContext(MintFormContext);
-
   return (
     <>
       <HeadMeta
-        title={`Mint OptiChads`}
-        description={`Connect and Mint! (while supplies last)`}
+        title={`Mint Closed!`}
+        description={`Supplies ran out. Pick up an OptiChad in secondary!`}
         keywords={`Mint, OptiChad, Non-Fungible Tokens`}
       />
-      <DarkOverlapShell title="Mint OptiChads">
+      <DarkOverlapShell title="Minting Closed! Pick up some sweet chads in secondary bruh">
         <div className="relative bg-white rounded-lg shadow">
-          <Stepper />
-          {!formState.isReadyForStep2 && <MintStepOne />}
-          {formState.isReadyForStep2 && !formState.isReadyForStep3 && (
-            <MintStepTwo />
-          )}
-          {formState.isReadyForStep3 && <MintStepThree />}
+          <Image
+            alt="a sick tweet bro"
+            className="rounded-lg"
+            src={vitalikApproves}
+            height={900}
+            width={1255}
+            layout="responsive"
+          />
         </div>
       </DarkOverlapShell>
     </>

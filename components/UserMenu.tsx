@@ -11,11 +11,11 @@ export default function UserMenu() {
 
   const [userNavigation, setUserNavigation] = useState<NavLink[]>();
 
-  useEffect(() => {
-    if (account) {
-      setUserNavigation([{ name: "Your Chads", href: `/view/${account}` }]);
-    }
-  }, [account]);
+  // useEffect(() => {
+  //   if (account) {
+  //     setUserNavigation([{ name: "Your Chads", href: `/view/${account}` }]);
+  //   }
+  // }, [account]);
 
   if (typeof account !== "string") {
     return (
