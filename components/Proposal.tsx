@@ -188,7 +188,7 @@ export default function Proposal() {
           <p>
             We&apos;ve partnered with{" "}
             <Link href="https://quest3.xyz">
-              <span className="text-red-600 font-semibold underline">
+              <span className="text-red-600 font-semibold underline cursor-pointer">
                 https://quest3.xyz/
               </span>
             </Link>{" "}
