@@ -198,9 +198,9 @@ export default function Proposal() {
             would be the first of their kind, essentially the NFT community’s
             equivalent to DeFi’s incentivized liquidity mining as I see it. For
             verification we are able to review submissions manually through the
-            platform before rewards are dispersed.We plan to use some of the
+            platform before rewards are dispersed. We plan to use some of the
             funds to set a reward of 1 OP for users who follow our social media
-            channels.This direct marketing approach is a more effective and
+            channels. This direct marketing approach is a more effective and
             efficient use of capital by leveraging Web3. The result should be
             exponential growth and awareness, and a positive network effect. We
             would like to have a series of weekly quests over a period of 2
@@ -210,9 +210,8 @@ export default function Proposal() {
           </p>
           <blockquote>
             <p>
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
+              We plan to use some of the funds to set a reward of 1 OP for users
+              who follow our social media channels.
             </p>
           </blockquote>
           <p>
