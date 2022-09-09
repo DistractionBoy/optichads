@@ -18,6 +18,7 @@ import MintStepTwo from "./MintStepTwo";
 import MintStepThree from "./MintStepThree";
 import Modal from "./Modal";
 import MoreInfoModal from "./MoreInfoModal";
+import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
 import Stepper from "./Stepper";
 import Team from "./Team";
@@ -50,6 +51,7 @@ export {
   Modal,
   MoreInfoModal,
   NFTDetailView,
+  Proposal,
   PricingPlan,
   Stepper,
   Team,

@@ -7,6 +7,7 @@ import {
   FAQs,
   FeatureList,
   HeadMeta,
+  Proposal,
   PricingPlan,
   Team,
   Tokenomics,
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
       <BgImageColorHeroSection />
       <DarkOverlapShell title="Promoting Health and Charity">
         <div className="bg-white rounded-lg shadow pb-6">
+          <Proposal />
           <PricingPlan />
           <FeatureList />
           <Tokenomics />
