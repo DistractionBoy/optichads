@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+// import Link from "next/link";
 
 const faqs = [
   {
@@ -52,7 +52,7 @@ export default function FAQs() {
                   </div>
                 ))}
             </dl>
-            <dl className="mt-12 space-y-12">
+            {/* <dl className="mt-12 space-y-12">
               <div>
                 <dt className="mt-12 text-lg leading-6 font-medium text-gray-900">
                   How do I mint a Chad?
@@ -81,7 +81,7 @@ export default function FAQs() {
                   complete.
                 </dd>
               </div>
-            </dl>
+            </dl> */}
           </div>
         </div>
       </div>

@@ -80,14 +80,12 @@ export default function DarkHeroSectionClouds() {
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                 <div className="lg:py-24">
                   <div className="inline-flex items-center text-white bg-gray-900 rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200 cursor-pointer">
-                    <Link href="/mint" passHref>
+                    <Link href="/proposal" passHref>
                       <span className="flex items-center">
                         <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-red-600 rounded-full">
-                          Minting available
+                          Minting Closed
                         </span>
-                        <span className="ml-4 text-sm">
-                          Visit the Mint page
-                        </span>
+                        <span className="ml-4 text-sm">View Top Chads</span>
                         <ChevronRightIcon
                           className="ml-2 w-5 h-5 text-gray-500"
                           aria-hidden="true"

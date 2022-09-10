@@ -19,8 +19,8 @@ import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
-  { name: "Mint", href: "/mint", current: false },
-  // { name: "About", href: "/about", current: false },
+  { name: "Proposal", href: "/proposal", current: false },
+  { name: "Top Chads", href: "/sales", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -96,6 +96,8 @@ export default function Navbar() {
                     <a
                       href="https://discord.gg/optichads"
                       className="text-gray-300 hover:text-gray-50"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <FontAwesomeIcon icon={faDiscord} className="h-6 w-6" />
                     </a>
@@ -104,6 +106,8 @@ export default function Navbar() {
                     <a
                       href="https://twitter.com/OptiChads"
                       className="text-gray-300 hover:text-gray-50"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" />
                     </a>
