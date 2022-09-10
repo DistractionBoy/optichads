@@ -80,7 +80,10 @@ export default function DarkHeroSectionClouds() {
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                 <div className="lg:py-24">
                   <div className="inline-flex items-center text-white bg-gray-900 rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200 cursor-pointer">
-                    <Link href="/proposal" passHref>
+                    <Link
+                      href="https://qx.app/collection/optichads?sort=rank%3Aasc&query="
+                      passHref
+                    >
                       <span className="flex items-center">
                         <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-red-600 rounded-full">
                           Minting Closed
@@ -150,7 +153,6 @@ export default function DarkHeroSectionClouds() {
               </div>
               <div className="mt-12 -mb-16 sm:-mb-28 lg:m-0 lg:relative">
                 <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-                  {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
                   <Image
                     className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                     src={superheroImg}
@@ -165,8 +167,6 @@ export default function DarkHeroSectionClouds() {
             </div>
           </div>
         </div>
-
-        {/* More main page content here... */}
       </main>
     </div>
   );

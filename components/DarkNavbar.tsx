@@ -1,18 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Disclosure } from "@headlessui/react";
+import { useWeb3React } from "@web3-react/core";
 
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 import heroImg from "../public/images/hero-img.png";
+import quixLogo from "../public/images/quixotic_logo_circle.png";
 import { NavLink } from "../lib";
 import Account from "./Account";
-import { useWeb3React } from "@web3-react/core";
 import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
-import { useEffect } from "react";
-import { useState } from "react";
 import { iNavLink } from "../lib/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -20,7 +19,11 @@ import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
   { name: "Proposal", href: "/proposal", current: false },
-  { name: "Top Chads", href: "/sales", current: false },
+  {
+    name: "Top Chads",
+    href: "https://qx.app/collection/optichads?sort=rank%3Aasc&query=",
+    current: false,
+  },
 ];
 
 function classNames(...classes: string[]) {
@@ -38,7 +41,11 @@ export default function Navbar() {
           let link = navLink;
           const pathPartToMatch = router.pathname.split("/")[1];
           const linkPartToMatch = link.href?.split("/")[1];
-          if (pathPartToMatch === linkPartToMatch) {
+          if (
+            pathPartToMatch === linkPartToMatch &&
+            link.href !==
+              "https://qx.app/collection/optichads?sort=rank%3Aasc&query="
+          ) {
             link.current = true;
           }
           return link;
@@ -73,29 +80,64 @@ export default function Navbar() {
                   </span>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
-                      {navigation.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className={classNames(
-                            item.current
-                              ? "bg-red-800 text-white"
-                              : "text-gray-300 hover:bg-red-700 hover:text-white",
-                            "px-3 py-2 rounded-md text-sm font-medium"
-                          )}
-                          aria-current={item.current ? "page" : undefined}
-                        >
-                          {item.name}
-                        </a>
-                      ))}
+                      {navigation.map((item) =>
+                        item.href ===
+                        "https://qx.app/collection/optichads?sort=rank%3Aasc&query=" ? (
+                          <a
+                            key={item.name}
+                            href={item.href as string}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={classNames(
+                              item.current
+                                ? "bg-red-800 text-white"
+                                : "text-gray-300 hover:bg-red-700 hover:text-white",
+                              "px-3 py-2 rounded-md text-sm font-medium"
+                            )}
+                            aria-current={item.current ? "page" : undefined}
+                          >
+                            {item.name}
+                          </a>
+                        ) : (
+                          <a
+                            key={item.name}
+                            href={item.href as string}
+                            className={classNames(
+                              item.current
+                                ? "bg-red-800 text-white"
+                                : "text-gray-300 hover:bg-red-700 hover:text-white",
+                              "px-3 py-2 rounded-md text-sm font-medium"
+                            )}
+                            aria-current={item.current ? "page" : undefined}
+                          >
+                            {item.name}
+                          </a>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
-                <div className="hidden md:flex">
+                <div className="hidden md:flex items-center">
+                  <div className="flex items-center md:ml-6">
+                    <a
+                      href="https://qx.app/collection/optichads"
+                      className="flex items-center"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        alt="quix logo"
+                        src={quixLogo}
+                        layout="intrinsic"
+                        height={24}
+                        width={24}
+                      />
+                    </a>
+                  </div>
                   <div className="flex items-center md:ml-6">
                     <a
                       href="https://discord.gg/optichads"
-                      className="text-gray-300 hover:text-gray-50"
+                      className="text-gray-300 hover:text-gray-50 flex items-center"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -105,7 +147,7 @@ export default function Navbar() {
                   <div className="flex items-center md:ml-6">
                     <a
                       href="https://twitter.com/OptiChads"
-                      className="text-gray-300 hover:text-gray-50"
+                      className="text-gray-300 hover:text-gray-50 flex items-center"
                       target="_blank"
                       rel="noreferrer"
                     >

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Proposal() {
   return (
-    <div className="relative overflow-hidden bg-white py-16">
+    <div className="relative rounded-lg overflow-hidden bg-white py-16">
       <div className="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full">
         <div
           className="relative mx-auto h-full max-w-prose text-lg"

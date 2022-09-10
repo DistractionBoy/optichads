@@ -139,12 +139,12 @@ export default function PricingPlan() {
                     <div className="mt-10">
                       <div className="rounded-lg shadow-md">
                         <Link
-                          href="/sales"
+                          href="https://qx.app/collection/optichads"
                           passHref
                           aria-describedby="tier-growth"
                         >
                           <div className="cursor-pointer block w-full text-center rounded-lg border border-transparent bg-red-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-red-700">
-                            View Top Chads
+                            Become a Chad!
                           </div>
                         </Link>
                       </div>
