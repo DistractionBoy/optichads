@@ -1,5 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
+export type ContractMetadata = {
+  name: string;
+  symbol: string;
+  tokenType: string;
+  totalSupply: string;
+};
+
 export type ContractMetadataResponse = {
   address: string;
   contractMetadata: {
