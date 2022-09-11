@@ -49,43 +49,6 @@ const getTotalMinted = async (contract: Contract) => {
   }
 };
 
-// const postMsgToMintyBot = async (message: string) => {
-//   const msg = { content: message };
-//   try {
-//     return await fetch(
-//       "https://discord.com/api/webhooks/904945097651671041/WHT5o_Did8QLJKUbDPvr1cGGPD988BvzsMrTpMnetYbUwYLyYeTLnX_DE73-E-ZvRnEl",
-//       {
-//         method: "POST",
-//         headers: { "content-type": "application/json" },
-//         body: JSON.stringify(msg),
-//       }
-//     );
-//   } catch (e) {
-//     console.error(e);
-//     return e;
-//   }
-// };
-
-// const updateChadPad = (quantity: number, txnLink: string, total: number) => {
-//   if (quantity === 1) {
-//     postMsgToMintyBot(
-//       `Someone just minted one Chad from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
-//     );
-//   } else if (quantity === 2) {
-//     postMsgToMintyBot(
-//       `Two Chads were just minted from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
-//     );
-//   } else if (quantity === 3) {
-//     postMsgToMintyBot(
-//       `Woah, bruh. Someone just minted three whole Chads from https://optichads.art/mint (transaction: ${txnLink} )! ${total} have been minted so far.`
-//     );
-//   } else {
-//     postMsgToMintyBot(
-//       `Someone just minted some Bunnies! from https://optichads.art/mint (transaction: ${txnLink}). ${total} have been minted so far.`
-//     );
-//   }
-// };
-
 const { useProvider } = hooks;
 
 export default function MintStepTwo() {
