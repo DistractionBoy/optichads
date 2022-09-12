@@ -11,6 +11,7 @@ import DarkOverlapShell from "./DarkOverlapShell";
 import ETHBalance from "./ETHBalance";
 import FAQs from "./FAQs";
 import Footer from "./Footer";
+import GymFloor from "./GymFloor";
 import HeadMeta from "./HeadMeta";
 import Layout from "./Layout";
 import MintStepOne from "./MintStepOne";
@@ -18,11 +19,13 @@ import MintStepTwo from "./MintStepTwo";
 import MintStepThree from "./MintStepThree";
 import Modal from "./Modal";
 import MoreInfoModal from "./MoreInfoModal";
+import NumOwners from "./NumOwners";
 import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
 import Stepper from "./Stepper";
 import Team from "./Team";
 import Tokenomics from "./Tokenomics";
+import TokenomicsLoading from "./TokenomicLoading";
 import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import FeatureList from "./FeatureList";
@@ -43,6 +46,7 @@ export {
   FAQs,
   FeatureList,
   Footer,
+  GymFloor,
   HeadMeta,
   Layout,
   MintStepOne,
@@ -51,11 +55,13 @@ export {
   Modal,
   MoreInfoModal,
   NFTDetailView,
+  NumOwners,
   Proposal,
   PricingPlan,
   Stepper,
   Team,
   Tokenomics,
+  TokenomicsLoading,
   UserMenu,
   UserMenuMobile,
 };

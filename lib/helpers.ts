@@ -114,3 +114,110 @@ export const getBaseUrl = () => {
 export const DEFAULT_PAGE = 1;
 export const DEFAULT_PAGES = 1;
 export const DEFAULT_PAGESIZE = 50;
+
+export const fetchOwnerAddresses = async (contractAddress: string) => {
+  try {
+    const url = `https://opt-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_APIKEY}/getOwnersForCollection?contractAddress=${contractAddress}`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    });
+    const { ownerAddresses } = await response.json();
+    return ownerAddresses;
+  } catch (e) {
+    return e;
+  }
+};
+
+export const getIsHolderOfCollection = async (
+  account: string,
+  collection: string
+) => {
+  try {
+    const url = `https://opt-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_APIKEY}/isHolderOfCollection?wallet=${account}&contractAddress=${collection}`;
+
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    });
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    return e;
+  }
+};
+
+export const summarizeNftAttributes = async (collection: string) => {
+  try {
+    const url = `https://opt-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_APIKEY}/summarizeNftAttributes?contractAddress=${collection}`;
+
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    });
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    return e;
+  }
+};
+
+export const computeRarity = async (collection: string, tokenId: number) => {
+  try {
+    const url = `https://opt-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_APIKEY}/computeRarity?contractAddress=${collection}&tokenId=${tokenId}`;
+
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    });
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    return e;
+  }
+};
+
+export const getNftMetadata = async (collection: string, tokenId: number) => {
+  try {
+    const url = `https://opt-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_APIKEY}/getNFTMetadata?contractAddress=${collection}&tokenId=${tokenId}`;
+
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    });
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    return e;
+  }
+};
+
+export const getContractMetadata = async (collection: string) => {
+  try {
+    const url = `https://opt-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_APIKEY}/getContractMetadata?contractAddress=${collection}`;
+
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    });
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    return e;
+  }
+};
+
+export const getFloorPrice = async (collection: string) => {
+  try {
+    const url = `https://opt-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_APIKEY}/getFloorPrice?contractAddress=${collection}`;
+
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    });
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    return e;
+  }
+};
