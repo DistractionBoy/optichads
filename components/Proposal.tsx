@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import firstCampaign from "../public/images/first-campaign.png";
+
 export default function Proposal() {
   return (
-    <div className="relative rounded-lg overflow-hidden bg-white py-16">
+    <div className="relative overflow-hidden rounded-lg bg-white py-16">
       <div className="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full">
         <div
           className="relative mx-auto h-full max-w-prose text-lg"
@@ -124,7 +126,7 @@ export default function Proposal() {
             giveaways and fitness challenges, we have grown to be one of the top
             NFT projects on Optimism by trading{" "}
             <Link href="https://qx.app/stats">
-              <span className="text-red-600 font-semibold underline">
+              <span className="font-semibold text-red-600 underline">
                 volume.
               </span>
             </Link>
@@ -142,7 +144,7 @@ export default function Proposal() {
             />
             <figcaption className="flex justify-center">
               <Link href="https://gov.optimism.io/t/draft-gf-phase-1-proposal-optichads-nft-project/3430">
-                <span className="text-red-600 font-semibold underline">
+                <span className="font-semibold text-red-600 underline">
                   Full Unadulterated Proposal Link Here, bro
                 </span>
               </Link>
@@ -156,17 +158,17 @@ export default function Proposal() {
             normal users, as well as degenerates into Optimism. As far as street
             cred is concerned, Vitalik has{" "}
             <Link href="https://twitter.com/OptiChads/status/1539888345731440641">
-              <span className="text-red-600 font-semibold underline">
+              <span className="font-semibold text-red-600 underline">
                 liked
               </span>
             </Link>{" "}
             some of our posts regarding our donations to{" "}
             <Link href="https://twitter.com/OptiChads/status/1555417627052359682">
-              <span className="text-red-600 font-semibold underline">RPGF</span>
+              <span className="font-semibold text-red-600 underline">RPGF</span>
             </Link>
             , and we are the only project on Optimism followed by{" "}
             <Link href="https://twitter.com/BigCryptoAlert/status/1562141890144866306">
-              <span className="text-red-600 font-semibold underline">
+              <span className="font-semibold text-red-600 underline">
                 Opensea.
               </span>
             </Link>{" "}
@@ -188,7 +190,7 @@ export default function Proposal() {
           <p>
             We&apos;ve partnered with{" "}
             <Link href="https://quest3.xyz">
-              <span className="text-red-600 font-semibold underline cursor-pointer">
+              <span className="cursor-pointer font-semibold text-red-600 underline">
                 https://quest3.xyz/
               </span>
             </Link>{" "}
@@ -226,6 +228,54 @@ export default function Proposal() {
             hope to use the funds strategically, as we’ve done before to drive
             volume to Optimism. NFT projects such as OptiChads in turn benefit
             Public Goods funding and the ecosystem as a whole.
+          </p>
+        </div>
+      </div>
+      <div className="relative mt-32 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-prose text-lg">
+          <h1>
+            <span className="block text-center text-lg font-semibold text-red-600">
+              Proof of Concept
+            </span>
+            <span className="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
+              Our First Quest3 Campaign
+            </span>
+          </h1>
+          <p className="mt-8 text-xl leading-8 text-gray-500">
+            We received a lot of positive feedback from the first draft we
+            posted (above) and a lot more questions. We decided to run our first
+            Quest3 campaign and show how user engagement can be tracked on a
+            granular level.
+          </p>
+        </div>
+        <div className="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
+          <figure>
+            <Image
+              className="w-full rounded-lg"
+              src={firstCampaign}
+              alt=""
+              width={2026}
+              height={1532}
+              layout="responsive"
+            />
+            <figcaption className="flex justify-center">
+              What it looks like on our end - can export to CSV too!
+            </figcaption>
+          </figure>
+          <p>
+            We posted a tweet to the official @OptiChads twitter account and as
+            part of the quest, the holder would have to:
+          </p>
+          <ul role="list">
+            <li>Connect their wallet to Quest</li>
+            <li>Connect Quest to Discord</li>
+            <li>Connect Quest to Twitter</li>
+            <li>Follow the official OptiChads Twitter account</li>
+            <li>Retweet the specified Tweet</li>
+          </ul>
+          <p>
+            Once the quest has been fulfilled, an on-chain reward was sent to
+            each user and we could track the users who completed it!
           </p>
         </div>
       </div>
