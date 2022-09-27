@@ -26,6 +26,7 @@ import Stepper from "./Stepper";
 import Team from "./Team";
 import Tokenomics from "./Tokenomics";
 import TokenomicsLoading from "./TokenomicLoading";
+import TotalSupply from "./TotalSupply";
 import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import FeatureList from "./FeatureList";
@@ -62,6 +63,7 @@ export {
   Team,
   Tokenomics,
   TokenomicsLoading,
+  TotalSupply,
   UserMenu,
   UserMenuMobile,
 };

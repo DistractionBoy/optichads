@@ -9,12 +9,7 @@ export type ContractMetadata = {
 
 export type ContractMetadataResponse = {
   address: string;
-  contractMetadata: {
-    name: string;
-    symbol: string;
-    tokenType: string;
-    totalSupply: string;
-  };
+  contractMetadata: ContractMetadata;
 };
 
 export default async function handler(
