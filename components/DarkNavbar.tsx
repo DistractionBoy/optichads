@@ -20,11 +20,6 @@ import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
   { name: "Proposal", href: "/proposal", current: false },
-  {
-    name: "Top Chads",
-    href: "https://qx.app/collection/optichads?sort=rank%3Aasc&query=",
-    current: false,
-  },
 ];
 
 function classNames(...classes: string[]) {
