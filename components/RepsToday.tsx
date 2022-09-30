@@ -28,7 +28,7 @@ const TotalSupply = () => {
   return data ? (
     <div className="flex flex-col border-gray-100 p-6 text-center sm:border-0 sm:border-r">
       <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-700">
-        Reps Today
+        Daily Reps
       </dt>
       <dd className="order-1 text-5xl font-extrabold text-red-600">
         {data.stats?.one_day_sales}
