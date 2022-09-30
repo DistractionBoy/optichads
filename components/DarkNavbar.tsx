@@ -8,14 +8,15 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 import heroImg from "../public/images/hero-img.png";
 import quixLogo from "../public/images/quixotic_logo_circle.png";
+import coinGeckoLogo from "../public/images/coingecko_logo.png";
 import osLogo from "../public/images/os-logo-trans.png";
 import { NavLink } from "../lib";
 import Account from "./Account";
 import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import { iNavLink } from "../lib/types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
@@ -148,22 +149,18 @@ export default function Navbar() {
                   </div>
                   <div className="flex items-center md:ml-6">
                     <a
-                      href="https://discord.gg/optichads"
-                      className="flex items-center text-gray-300 hover:text-gray-50"
+                      href="https://www.coingecko.com/en/nft/optichads"
+                      className="flex items-center"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FontAwesomeIcon icon={faDiscord} className="h-6 w-6" />
-                    </a>
-                  </div>
-                  <div className="flex items-center md:ml-6">
-                    <a
-                      href="https://twitter.com/OptiChads"
-                      className="flex items-center text-gray-300 hover:text-gray-50"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" />
+                      <Image
+                        alt="quix logo"
+                        src={coinGeckoLogo}
+                        layout="intrinsic"
+                        height={24}
+                        width={24}
+                      />
                     </a>
                   </div>
                   <div className="ml-4 flex items-center">

@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
+import quixLogo from "../public/images/quixotic_logo_circle.png";
+import coinGeckoLogo from "../public/images/coingecko_logo.png";
+import osLogo from "../public/images/os-logo-trans.png";
 
 import React from "react";
+import Image from "next/image";
 
 const navigation = {
   main: [
@@ -34,7 +38,7 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-gray-900">
-      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
         <nav
           className="-mx-5 -my-2 flex flex-wrap justify-center"
           aria-label="Footer"
@@ -61,6 +65,54 @@ export default function Footer() {
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
           ))}
+          <div className="flex h-6 w-6 items-center">
+            <a
+              href="https://opensea.io/collection/optichads"
+              className="flex items-center"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                alt="opensea logo"
+                src={osLogo}
+                layout="intrinsic"
+                height={20}
+                width={20}
+              />
+            </a>
+          </div>
+          <div className="flex h-6 w-6 items-center">
+            <a
+              href="https://qx.app/collection/optichads"
+              className="flex items-center"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                alt="quix logo"
+                src={quixLogo}
+                layout="intrinsic"
+                height={20}
+                width={20}
+              />
+            </a>
+          </div>
+          <div className="flex h-6 w-6 items-center">
+            <a
+              href="https://www.coingecko.com/en/nft/optichads"
+              className="flex items-center"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                alt="coingecko logo"
+                src={coinGeckoLogo}
+                layout="intrinsic"
+                height={20}
+                width={20}
+              />
+            </a>
+          </div>
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
           &copy; 2022 OptiChads. All rights reserved.
