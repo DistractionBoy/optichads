@@ -118,22 +118,6 @@ export default function Navbar() {
                 <div className="hidden items-center md:flex">
                   <div className="flex items-center md:ml-6">
                     <a
-                      href="https://opensea.io/collection/optichads"
-                      className="flex items-center"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        alt="opensea logo"
-                        src={osLogo}
-                        layout="intrinsic"
-                        height={24}
-                        width={24}
-                      />
-                    </a>
-                  </div>
-                  <div className="flex items-center md:ml-6">
-                    <a
                       href="https://www.coingecko.com/en/nft/optichads"
                       className="flex items-center"
                       target="_blank"
@@ -142,6 +126,22 @@ export default function Navbar() {
                       <Image
                         alt="quix logo"
                         src={coinGeckoLogo}
+                        layout="intrinsic"
+                        height={24}
+                        width={24}
+                      />
+                    </a>
+                  </div>
+                  <div className="flex items-center md:ml-6">
+                    <a
+                      href="https://opensea.io/collection/optichads"
+                      className="flex items-center"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        alt="opensea logo"
+                        src={osLogo}
                         layout="intrinsic"
                         height={24}
                         width={24}
