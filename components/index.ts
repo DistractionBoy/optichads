@@ -22,6 +22,7 @@ import MoreInfoModal from "./MoreInfoModal";
 import NumOwners from "./NumOwners";
 import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
+import RepsToday from "./RepsToday";
 import Stepper from "./Stepper";
 import Team from "./Team";
 import Tokenomics from "./Tokenomics";
@@ -59,6 +60,7 @@ export {
   NumOwners,
   Proposal,
   PricingPlan,
+  RepsToday,
   Stepper,
   Team,
   Tokenomics,

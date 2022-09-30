@@ -1,5 +1,5 @@
 import React from "react";
-import { GymFloor, NumOwners, TotalSupply } from ".";
+import { GymFloor, NumOwners, RepsToday } from ".";
 
 export default function Tokenomics() {
   return (
@@ -17,7 +17,7 @@ export default function Tokenomics() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
               <dl className="rounded-lg bg-gray-100 shadow-lg sm:grid sm:grid-cols-3">
-                <TotalSupply />
+                <RepsToday />
                 <GymFloor />
                 <NumOwners />
               </dl>

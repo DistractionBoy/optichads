@@ -8,6 +8,7 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 import heroImg from "../public/images/hero-img.png";
 import quixLogo from "../public/images/quixotic_logo_circle.png";
+import quixLogoWord from "../public/images/quix_white.png";
 import coinGeckoLogo from "../public/images/coingecko_logo.png";
 import osLogo from "../public/images/os-logo-trans.png";
 import { NavLink } from "../lib";
@@ -133,22 +134,6 @@ export default function Navbar() {
                   </div>
                   <div className="flex items-center md:ml-6">
                     <a
-                      href="https://qx.app/collection/optichads"
-                      className="flex items-center"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        alt="quix logo"
-                        src={quixLogo}
-                        layout="intrinsic"
-                        height={24}
-                        width={24}
-                      />
-                    </a>
-                  </div>
-                  <div className="flex items-center md:ml-6">
-                    <a
                       href="https://www.coingecko.com/en/nft/optichads"
                       className="flex items-center"
                       target="_blank"
@@ -160,6 +145,22 @@ export default function Navbar() {
                         layout="intrinsic"
                         height={24}
                         width={24}
+                      />
+                    </a>
+                  </div>
+                  <div className="flex items-center md:ml-6">
+                    <a
+                      href="https://qx.app/collection/optichads"
+                      className="flex items-center"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        alt="quix logo"
+                        src={quixLogoWord}
+                        layout="intrinsic"
+                        height={24}
+                        width={50}
                       />
                     </a>
                   </div>

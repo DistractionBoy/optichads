@@ -1,11 +1,11 @@
 import React from "react";
 import useSWR from "swr";
-import { ContractMetadataResponse } from "../pages/api/contractMetadata";
+import { CollectionStatsResponse } from "../pages/api/quixCollectionStats";
 import TokenomicsLoading from "./TokenomicLoading";
 
 const GymFloor = () => {
-  const { data, error, isValidating } = useSWR<ContractMetadataResponse>(
-    `/api/contractMetadata?contractAddress=${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`
+  const { data, error, isValidating } = useSWR<CollectionStatsResponse>(
+    `/api/quixCollectionStats?contractAddress=${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`
   );
 
   const loading = !data && !error && isValidating;
@@ -17,7 +17,7 @@ const GymFloor = () => {
   if (error) {
     return (
       <div className="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-r">
-        <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-700">
+        <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-700">
           Symbol
         </dt>
         <dd className="order-1 text-5xl font-extrabold text-red-600">$CHAD</dd>
@@ -27,10 +27,10 @@ const GymFloor = () => {
 
   return data ? (
     <div className="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-r">
-      <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-700">
-        Symbol
+      <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-700">
+        Gym Floor
       </dt>
-      <dd className="order-1 text-5xl font-extrabold text-red-600">{`$${data.contractMetadata.symbol}`}</dd>
+      <dd className="order-1 text-5xl font-extrabold text-red-600">{`${data.stats.floor_price}OΞ`}</dd>
     </div>
   ) : null;
 };
