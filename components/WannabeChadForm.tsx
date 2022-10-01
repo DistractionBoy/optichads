@@ -23,7 +23,7 @@ const postMsgToSuggestionBot = async (message: string) => {
 
 const suggestionChad = (message: string, account: string) => {
   const post = `--------------------------------------------------------------
-  A wannabe Chad says:\`\`\`${message}\`\`\`
+  A wannabe Chad gives this reason:\`\`\`${message}\`\`\`
   Account#: ${account}
   --------------------------------------------------------------`;
   postMsgToSuggestionBot(post);

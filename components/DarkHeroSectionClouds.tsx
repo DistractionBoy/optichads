@@ -12,9 +12,10 @@ import DisconnectedChadForm from "./DisconnectedChadForm";
 
 export default function DarkHeroSectionClouds() {
   const { account } = useWeb3React();
+  const [statefulAccount, setStatefulAccount] = useState<string>();
   const [isChadBro, setIsChadBro] = useState<boolean>();
 
-  const { data, error, isValidating } = useSWR<OwnerAddressesResponse>(
+  const { data } = useSWR<OwnerAddressesResponse>(
     `/api/ownerAddresses?contractAddress=${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`,
     {
       onSuccess(data) {
@@ -23,16 +24,24 @@ export default function DarkHeroSectionClouds() {
     }
   );
 
-  const loading = !data && !error && isValidating;
-
   useEffect(() => {
     if (account) {
-      getIsHolderOfCollection(
-        account,
-        process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string
-      ).then((isHolder) => setIsChadBro(isHolder));
+      if (
+        typeof statefulAccount === "undefined" ||
+        statefulAccount !== account
+      ) {
+        setStatefulAccount(account);
+        getIsHolderOfCollection(
+          account,
+          process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string
+        )
+          .then(({ isHolderOfCollection }) =>
+            setIsChadBro(isHolderOfCollection)
+          )
+          .catch((e) => console.log(e));
+      }
     }
-  }, [account, isChadBro]);
+  }, [account, isChadBro, statefulAccount]);
 
   return (
     <div className="relative overflow-hidden">
