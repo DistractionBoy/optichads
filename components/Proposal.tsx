@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import firstCampaign from "../public/images/first-campaign.png";
+import firstCampaign from "../public/images/topZapperChads.png";
 
 export default function Proposal() {
   return (

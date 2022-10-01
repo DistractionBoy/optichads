@@ -34,6 +34,7 @@ import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import FeatureList from "./FeatureList";
 import PricingPlan from "./PricingPlan";
+import ZapperChad from "./ZapperChad";
 
 export {
   Account,
@@ -72,4 +73,5 @@ export {
   TotalSupply,
   UserMenu,
   UserMenuMobile,
+  ZapperChad,
 };
