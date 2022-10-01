@@ -125,7 +125,7 @@ export const WannabeChadForm = () => {
           </div>
           <p className="mt-3 text-sm text-gray-300 sm:mt-4">
             By becoming a Chad you can enter into our weekly challenges. Good
-            luck!
+            luck! (starts late 2022)
           </p>
         </form>
       </div>
