@@ -89,12 +89,12 @@ export const WannabeChadForm = () => {
 
       <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
         <span className="block">OptiChads</span>
-        <span className="block text-red-600">Have a healthy day!</span>
+        <span className="block text-red-600">Become a Chad!</span>
       </h1>
       <p className="mt-3 text-base text-gray-200 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-        Hey, how is it going? Have you gone for a walk or eaten a healthy meal
-        today? Let us know how we can help you make your life like ours. - The
-        Chads
+        Sup bro, did you know we are offering free chads each week we are
+        conducting challenges through Quest3? Oh, you did? Then, in a few words,
+        tell us how you live the Chad life.
       </p>
       <div className="mt-10 sm:mt-12">
         <form
@@ -104,14 +104,14 @@ export const WannabeChadForm = () => {
           <div className="sm:flex">
             <div className="min-w-0 flex-1">
               <label htmlFor="email" className="sr-only">
-                Suggestion Box
+                How&apos;re you a Chad?
               </label>
               <input
                 name="message"
                 type="text"
                 maxLength={240}
                 minLength={12}
-                placeholder="Suggestion Box"
+                placeholder="How're you a Chad?"
                 className="block w-full rounded-md border-0 px-4 py-3 text-base text-gray-900 placeholder-gray-500 invalid:ring-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-900"
               />
             </div>
@@ -120,20 +120,13 @@ export const WannabeChadForm = () => {
                 type="submit"
                 className="block w-full rounded-md bg-red-600 py-3 px-4 font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-900"
               >
-                Tell us why we&apos;re great
+                Submit my wallet address
               </button>
             </div>
           </div>
           <p className="mt-3 text-sm text-gray-300 sm:mt-4">
-            by hitting us up, you totally send a message with your wallet
-            address to our{" "}
-            <a
-              href="https://discord.gg/optichads"
-              className="font-medium text-white hover:text-red-600"
-            >
-              Discord
-            </a>
-            . Sweet, huh?
+            By becoming a Chad you can enter into our weekly challenges. Good
+            luck!
           </p>
         </form>
       </div>

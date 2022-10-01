@@ -1,40 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useWeb3React } from "@web3-react/core";
-import { ethers } from "ethers";
-import { hooks } from "../lib/connectors/metaMask";
 
 import superheroImg from "../public/images/chad-t.png";
-import { shortenHex } from "../lib/utils";
 import useSWR from "swr";
 import { OwnerAddressesResponse } from "../pages/api/ownerAddresses";
 import SuggestionChadForm from "./SuggestionChadForm";
 import WannabeChadForm from "./WannabeChadForm";
 import { getIsHolderOfCollection } from "../lib/helpers";
-
-const { useProvider } = hooks;
-
-const postMsgToSuggestionBot = async (message: string) => {
-  const msg = { content: message };
-  try {
-    return await fetch(`${process.env.NEXT_PUBLIC_GYMBOT}`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(msg),
-    });
-  } catch (e) {
-    console.error(e);
-    return e;
-  }
-};
-
-const updateDiscord = (message: string, account: string) => {
-  const post = `--------------------------------------------------------------
-A Chad from the internet says:\`\`\`${message}\`\`\`
-Account#: ${shortenHex(account, 4)}
---------------------------------------------------------------`;
-  postMsgToSuggestionBot(post);
-};
+import DisconnectedChadForm from "./DisconnectedChadForm";
 
 export default function DarkHeroSectionClouds() {
   const { account } = useWeb3React();
@@ -51,14 +25,14 @@ export default function DarkHeroSectionClouds() {
 
   const loading = !data && !error && isValidating;
 
-  // useEffect(() => {
-  //   if (account && typeof isChadBro === "undefined") {
-  //     getIsHolderOfCollection(
-  //       account,
-  //       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string
-  //     ).then((isHolder) => setIsChadBro(isHolder));
-  //   }
-  // }, [account, isChadBro]);
+  useEffect(() => {
+    if (account && typeof isChadBro === "undefined") {
+      getIsHolderOfCollection(
+        account,
+        process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string
+      ).then((isHolder) => setIsChadBro(isHolder));
+    }
+  }, [account, isChadBro]);
 
   return data ? (
     <div className="relative overflow-hidden">
@@ -74,7 +48,7 @@ export default function DarkHeroSectionClouds() {
                     <WannabeChadForm />
                   )
                 ) : (
-                  <SuggestionChadForm />
+                  <DisconnectedChadForm />
                 )}
               </div>
               <div className="mt-12 -mb-16 sm:-mb-28 lg:relative lg:m-0">

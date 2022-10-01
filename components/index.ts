@@ -8,6 +8,7 @@ import Collection from "./Collection";
 import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
 import DarkNavbar from "./DarkNavbar";
 import DarkOverlapShell from "./DarkOverlapShell";
+import DisconnectedChadForm from "./DisconnectedChadForm";
 import ETHBalance from "./ETHBalance";
 import FAQs from "./FAQs";
 import Footer from "./Footer";
@@ -45,6 +46,7 @@ export {
   DarkHeroSectionClouds,
   DarkNavbar,
   DarkOverlapShell,
+  DisconnectedChadForm,
   ETHBalance,
   FAQs,
   FeatureList,
