@@ -34,7 +34,7 @@ export default function DarkHeroSectionClouds() {
     }
   }, [account, isChadBro]);
 
-  return data ? (
+  return (
     <div className="relative overflow-hidden">
       <main>
         <div className="bg-gray-900 bg-gradient-to-br from-[#da10109e] via-transparent to-[#da10109e] pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
@@ -42,7 +42,7 @@ export default function DarkHeroSectionClouds() {
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
                 {account ? (
-                  isChadBro ? (
+                  data && isChadBro ? (
                     <SuggestionChadForm />
                   ) : (
                     <WannabeChadForm />
@@ -69,5 +69,5 @@ export default function DarkHeroSectionClouds() {
         </div>
       </main>
     </div>
-  ) : null;
+  );
 }
