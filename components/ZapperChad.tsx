@@ -120,8 +120,9 @@ export default function Proposal() {
             </span>
           </h1>
           <p className="mt-8 text-xl leading-8 text-gray-500">
-            Zapper has been sweatin' hard at integrating NFTs on Optimism and
-            they are happy to finally launch this feature! You can now see your{" "}
+            Zapper has been sweatin&apos; hard at integrating NFTs on Optimism
+            and they are happy to finally launch this feature! You can now see
+            your{" "}
             <Link href="https://qx.app/stats">
               <span className="font-semibold text-red-600 underline">
                 OptiChads
