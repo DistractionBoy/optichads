@@ -24,6 +24,7 @@ import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
 import RepsToday from "./RepsToday";
 import Stepper from "./Stepper";
+import SuggestionChadForm from "./SuggestionChadForm";
 import Team from "./Team";
 import Tokenomics from "./Tokenomics";
 import TokenomicsLoading from "./TokenomicLoading";
@@ -62,6 +63,7 @@ export {
   PricingPlan,
   RepsToday,
   Stepper,
+  SuggestionChadForm,
   Team,
   Tokenomics,
   TokenomicsLoading,
