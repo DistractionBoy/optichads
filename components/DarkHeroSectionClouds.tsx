@@ -26,7 +26,7 @@ export default function DarkHeroSectionClouds() {
   const loading = !data && !error && isValidating;
 
   useEffect(() => {
-    if (account && typeof isChadBro === "undefined") {
+    if (account) {
       getIsHolderOfCollection(
         account,
         process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string

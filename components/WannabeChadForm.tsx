@@ -2,7 +2,6 @@ import { ChevronRightIcon } from "@heroicons/react/solid";
 import { useWeb3React } from "@web3-react/core";
 import Link from "next/link";
 import React from "react";
-import { shortenHex } from "../lib/utils";
 import { hooks } from "../lib/connectors/metaMask";
 import { ethers } from "ethers";
 
@@ -11,7 +10,7 @@ const { useProvider } = hooks;
 const postMsgToSuggestionBot = async (message: string) => {
   const msg = { content: message };
   try {
-    return await fetch(`${process.env.NEXT_PUBLIC_GYMBOT}`, {
+    return await fetch(`${process.env.NEXT_PUBLIC_GIVEAWAY_BOT}`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(msg),
@@ -24,8 +23,8 @@ const postMsgToSuggestionBot = async (message: string) => {
 
 const suggestionChad = (message: string, account: string) => {
   const post = `--------------------------------------------------------------
-  A Chad from the internet says:\`\`\`${message}\`\`\`
-  Account#: ${shortenHex(account, 4)}
+  A wannabe Chad says:\`\`\`${message}\`\`\`
+  Account#: ${account}
   --------------------------------------------------------------`;
   postMsgToSuggestionBot(post);
 };
