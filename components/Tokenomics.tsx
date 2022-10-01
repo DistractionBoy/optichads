@@ -25,6 +25,9 @@ export default function Tokenomics() {
           </div>
         </div>
       </div>
+      <div className="flex justify-center">
+        <p>*By &quot;reps&quot; I mean sales, bro</p>
+      </div>
     </div>
   );
 }

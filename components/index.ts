@@ -8,6 +8,7 @@ import Collection from "./Collection";
 import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
 import DarkNavbar from "./DarkNavbar";
 import DarkOverlapShell from "./DarkOverlapShell";
+import DisconnectedChadForm from "./DisconnectedChadForm";
 import ETHBalance from "./ETHBalance";
 import FAQs from "./FAQs";
 import Footer from "./Footer";
@@ -24,6 +25,7 @@ import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
 import RepsToday from "./RepsToday";
 import Stepper from "./Stepper";
+import SuggestionChadForm from "./SuggestionChadForm";
 import Team from "./Team";
 import Tokenomics from "./Tokenomics";
 import TokenomicsLoading from "./TokenomicLoading";
@@ -44,6 +46,7 @@ export {
   DarkHeroSectionClouds,
   DarkNavbar,
   DarkOverlapShell,
+  DisconnectedChadForm,
   ETHBalance,
   FAQs,
   FeatureList,
@@ -62,6 +65,7 @@ export {
   PricingPlan,
   RepsToday,
   Stepper,
+  SuggestionChadForm,
   Team,
   Tokenomics,
   TokenomicsLoading,
