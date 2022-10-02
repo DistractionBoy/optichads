@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import screenshotOne from "../public/images/screenshot_1.png";
 import screenshotTwo from "../public/images/screenshot_2.png";
+import traits from "../public/images/traits-zapper.png";
 import screenshotThree from "../public/images/screenshot_3.png";
 import screenshotFour from "../public/images/screenshot_4.png";
 import screenshotFive from "../public/images/screenshot_5.png";
@@ -198,7 +199,7 @@ export default function Proposal() {
             <div className="mt-4 rounded-lg p-4 shadow">
               <Image
                 className="w-full rounded-lg"
-                src={screenshotFour}
+                src={traits}
                 alt=""
                 width={873}
                 height={404}
@@ -224,11 +225,23 @@ export default function Proposal() {
             </div>
             <figcaption className="flex justify-center">
               <Link href="https://gov.optimism.io/t/draft-gf-phase-1-proposal-optichads-nft-project/3430">
-                <span className="cursor-pointer font-semibold text-red-600 underline">
-                  Like for example, optichad.eth that holds 645 NFTs 👀
+                <span className="cursor-pointer font-semibold text-red-700">
+                  Like for example, optichads.eth that holds 670 NFTs 👀
                 </span>
               </Link>
             </figcaption>
+          </figure>
+          <figure>
+            <div className="mt-4 rounded-lg p-4 shadow">
+              <Image
+                className="w-full rounded-lg"
+                src={screenshotFour}
+                alt=""
+                width={873}
+                height={404}
+                layout="responsive"
+              />
+            </div>
           </figure>
         </div>
       </div>
