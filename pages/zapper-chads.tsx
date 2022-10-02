@@ -6,9 +6,9 @@ const ProposalPage = () => {
   return (
     <>
       <HeadMeta
-        title={`Power Proposal`}
-        description={`We are working on using the engagement we have received in Discord and at the gym to help promote our favorite chain, Optimism`}
-        keywords={`Proposal, Funding, Governance`}
+        title={`Zapper Chads do Stats`}
+        description={`Zapper Fi has some new and exciting features we wanna show off at the gym. Check it out, bro.`}
+        keywords={`Zapper Fi, Dashboard, Stats`}
       />
       <DarkOverlapShell title="Zapper Fi Keeping Track of Reps">
         <div className="relative rounded-lg bg-white shadow">
