@@ -249,19 +249,6 @@ export default function Proposal() {
           </p>
         </div>
         <div className="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
-          <figure>
-            <Image
-              className="w-full rounded-lg"
-              src={firstCampaign}
-              alt=""
-              width={2026}
-              height={1532}
-              layout="responsive"
-            />
-            <figcaption className="flex justify-center">
-              What it looks like on our end - can export to CSV too!
-            </figcaption>
-          </figure>
           <p>
             We posted a tweet to the official @OptiChads twitter account and as
             part of the quest, the holder would have to:

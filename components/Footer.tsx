@@ -11,6 +11,7 @@ const navigation = {
   main: [
     { name: "The Pad", href: "/", current: false },
     { name: "Proposal", href: "/proposal", current: false },
+    { name: "Zapper Bros", href: "/zapper-chads", current: false },
     {
       name: "Top Chads",
       href: "https://qx.app/collection/optichads?sort=rank%3Aasc&query=",
