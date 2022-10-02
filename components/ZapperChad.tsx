@@ -128,24 +128,24 @@ export default function Proposal() {
             and they are happy to finally launch this feature! You can now see
             your{" "}
             <Link href="https://qx.app/stats">
-              <span className="font-semibold text-red-600 underline">
-                OptiChads
-              </span>
+              <span className="font-semibold text-red-700">OptiChads</span>
             </Link>{" "}
             in your wallet along with all your other assets!
           </p>
           <figure>
-            <Image
-              className="w-full rounded-lg"
-              src={screenshotOne}
-              alt=""
-              width={873}
-              height={404}
-              layout="responsive"
-            />
+            <div className="mt-4 rounded-lg p-4 shadow">
+              <Image
+                className="flex w-full"
+                src={screenshotOne}
+                alt=""
+                width={873}
+                height={404}
+                layout="responsive"
+              />
+            </div>
             <figcaption className="flex justify-center">
               <Link href="https://gov.optimism.io/t/draft-gf-phase-1-proposal-optichads-nft-project/3430">
-                <span className="mt-3 cursor-pointer font-semibold text-red-600 underline">
+                <span className="mt-3 cursor-pointer font-semibold text-red-700">
                   Easily find top chads with Zapper&apos;s new Dashboard
                 </span>
               </Link>
@@ -169,17 +169,19 @@ export default function Proposal() {
           </ul>
 
           <figure>
-            <Image
-              className="w-full rounded-lg"
-              src={screenshotTwo}
-              alt=""
-              width={873}
-              height={404}
-              layout="responsive"
-            />
+            <div className="mt-4 rounded-lg p-4 shadow">
+              <Image
+                className="w-full rounded-lg"
+                src={screenshotTwo}
+                alt=""
+                width={873}
+                height={404}
+                layout="responsive"
+              />
+            </div>
             <figcaption className="flex justify-center">
               <Link href="https://gov.optimism.io/t/draft-gf-phase-1-proposal-optichads-nft-project/3430">
-                <span className="font-semibold text-red-600 underline">
+                <span className="font-semibold text-red-700">
                   Spot the amazing number of OptiChads of this holder 👀🤖:
                 </span>
               </Link>
@@ -193,14 +195,16 @@ export default function Proposal() {
             specific sales that occurred.
           </p>
           <figure>
-            <Image
-              className="w-full rounded-lg"
-              src={screenshotThree}
-              alt=""
-              width={873}
-              height={404}
-              layout="responsive"
-            />
+            <div className="mt-4 rounded-lg p-4 shadow">
+              <Image
+                className="w-full rounded-lg"
+                src={screenshotFour}
+                alt=""
+                width={873}
+                height={404}
+                layout="responsive"
+              />
+            </div>
           </figure>
           <p>
             You can also spy on the biggest whales in the collection 👀. You can
@@ -208,28 +212,20 @@ export default function Proposal() {
             chains, and in other spheres of Web3 (DAOs, DeFi, NFTs).
           </p>
           <figure>
-            <Image
-              className="w-full rounded-lg"
-              src={screenshotFour}
-              alt=""
-              width={873}
-              height={404}
-              layout="responsive"
-            />
-          </figure>
-          <figure>
-            <Image
-              className="w-full rounded-lg"
-              src={screenshotFour}
-              alt=""
-              width={873}
-              height={404}
-              layout="responsive"
-            />
+            <div className="mt-4 rounded-lg p-4 shadow">
+              <Image
+                className="w-full rounded-lg"
+                src={screenshotThree}
+                alt=""
+                width={873}
+                height={404}
+                layout="responsive"
+              />
+            </div>
             <figcaption className="flex justify-center">
               <Link href="https://gov.optimism.io/t/draft-gf-phase-1-proposal-optichads-nft-project/3430">
                 <span className="cursor-pointer font-semibold text-red-600 underline">
-                  Like for example, optichad.eth that holds 645 NFTs �
+                  Like for example, optichad.eth that holds 645 NFTs 👀
                 </span>
               </Link>
             </figcaption>
@@ -262,18 +258,20 @@ export default function Proposal() {
             on Zapper will see your OptiChads avatar when they navigate.
           </p>
           <figure>
-            <Image
-              className="w-full rounded-lg py-6"
-              src={screenshotFive}
-              alt=""
-              width={873}
-              height={404}
-              layout="responsive"
-            />
+            <div className="mt-4 rounded-lg p-4 shadow">
+              <Image
+                className="w-full rounded-lg py-6"
+                src={screenshotFive}
+                alt=""
+                width={873}
+                height={550}
+                layout="responsive"
+              />
+            </div>
             <figcaption className="flex justify-center">
               {/* <span className="cursor-pointer font-semibold text-red-600 underline"> */}
               It&apos;s time to see all those owners turn their avatars into
-              OptiChads �{/* </span> */}
+              OptiChads {/* </span> */}
             </figcaption>
           </figure>
         </div>
