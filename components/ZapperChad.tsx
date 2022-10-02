@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import topZapperChads from "../public/images/topZapperChads.png";
+import screenshotOne from "../public/images/screenshot_1.png";
+import screenshotTwo from "../public/images/screenshot_2.png";
+import screenshotThree from "../public/images/screenshot_3.png";
+import screenshotFour from "../public/images/screenshot_4.png";
+import screenshotFive from "../public/images/screenshot_5.png";
 
 export default function Proposal() {
   return (
@@ -133,7 +137,7 @@ export default function Proposal() {
           <figure>
             <Image
               className="w-full rounded-lg"
-              src={topZapperChads}
+              src={screenshotOne}
               alt=""
               width={873}
               height={404}
@@ -167,7 +171,7 @@ export default function Proposal() {
           <figure>
             <Image
               className="w-full rounded-lg"
-              src={topZapperChads}
+              src={screenshotTwo}
               alt=""
               width={873}
               height={404}
@@ -191,7 +195,7 @@ export default function Proposal() {
           <figure>
             <Image
               className="w-full rounded-lg"
-              src={topZapperChads}
+              src={screenshotThree}
               alt=""
               width={873}
               height={404}
@@ -206,7 +210,7 @@ export default function Proposal() {
           <figure>
             <Image
               className="w-full rounded-lg"
-              src={topZapperChads}
+              src={screenshotFour}
               alt=""
               width={873}
               height={404}
@@ -216,7 +220,7 @@ export default function Proposal() {
           <figure>
             <Image
               className="w-full rounded-lg"
-              src={topZapperChads}
+              src={screenshotFour}
               alt=""
               width={873}
               height={404}
@@ -260,7 +264,7 @@ export default function Proposal() {
           <figure>
             <Image
               className="w-full rounded-lg py-6"
-              src={topZapperChads}
+              src={screenshotFive}
               alt=""
               width={873}
               height={404}

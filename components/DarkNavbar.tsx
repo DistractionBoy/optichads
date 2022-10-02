@@ -7,7 +7,6 @@ import { useWeb3React } from "@web3-react/core";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 import heroImg from "../public/images/hero-img.png";
-import quixLogo from "../public/images/quixotic_logo_circle.png";
 import quixLogoWord from "../public/images/quix_white.png";
 import coinGeckoLogo from "../public/images/coingecko_logo.png";
 import osLogo from "../public/images/os-logo-trans.png";
@@ -16,8 +15,6 @@ import Account from "./Account";
 import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import { iNavLink } from "../lib/types";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },

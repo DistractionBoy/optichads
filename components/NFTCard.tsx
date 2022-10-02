@@ -32,11 +32,11 @@ export default function NFTCard({
   if (data || fetchedData) {
     const metadata: ChadMetadata | undefined = data || fetchedData;
     return (
-      <div className="group relative mb-10 border rounded-md">
+      <div className="group relative mb-10 rounded-md border">
         <div
           className={classNames(
             variant && variant === "noinfo" ? "rounded-b-md" : "",
-            "w-full bg-gray-200 rounded-t-md overflow-hidden group-hover:opacity-75 object-center object-cover"
+            "w-full overflow-hidden rounded-t-md bg-gray-200 object-cover object-center group-hover:opacity-75"
           )}
         >
           <Image
@@ -51,7 +51,7 @@ export default function NFTCard({
           variant && variant === "noinfo" ? (
             <></>
           ) : (
-            <div className="flex-1 p-4 space-y-2 flex flex-col">
+            <div className="flex flex-1 flex-col space-y-2 p-4">
               <h3 className="text-sm font-medium text-gray-900">
                 <a href={`/collections/${collection}/${id}`}>
                   <span aria-hidden="true" className="absolute inset-0" />
@@ -67,9 +67,9 @@ export default function NFTCard({
     );
   } else {
     return (
-      <div className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden">
-        <div className="aspect-w-3 aspect-h-4 bg-gray-200 animate-pulse group-hover:opacity-75 sm:aspect-none sm:h-96"></div>
-        <div className="flex-1 p-4 space-y-2 flex flex-col">
+      <div className="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
+        <div className="aspect-w-3 aspect-h-4 animate-pulse bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96"></div>
+        <div className="flex flex-1 flex-col space-y-2 p-4">
           <h3 className="text-sm font-medium text-gray-900">
             Data could not be loaded
           </h3>
