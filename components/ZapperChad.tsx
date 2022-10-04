@@ -128,7 +128,7 @@ export default function Proposal() {
             Zapper has been sweatin&apos; hard at integrating NFTs on Optimism
             and they are happy to finally launch this feature! You can now see
             your{" "}
-            <Link href="https://qx.app/stats">
+            <Link href="https://zapper.fi/nft/optimism/0x9b9f542456ad12796ccb8eb6644f29e3314e68e1?collectionTitle=OptiChads%20%F0%9F%94%B4%E2%9C%A8%F0%9F%92%AA">
               <span className="font-semibold text-red-700">OptiChads</span>
             </Link>{" "}
             in your wallet along with all your other assets!
@@ -145,7 +145,7 @@ export default function Proposal() {
               />
             </div>
             <figcaption className="flex justify-center">
-              <Link href="https://gov.optimism.io/t/draft-gf-phase-1-proposal-optichads-nft-project/3430">
+              <Link href="https://zapper.fi/nft?network=optimism">
                 <span className="mt-3 cursor-pointer font-semibold text-red-700">
                   Easily find top chads with Zapper&apos;s new Dashboard
                 </span>
@@ -181,11 +181,9 @@ export default function Proposal() {
               />
             </div>
             <figcaption className="flex justify-center">
-              <Link href="https://gov.optimism.io/t/draft-gf-phase-1-proposal-optichads-nft-project/3430">
-                <span className="font-semibold text-red-700">
-                  Spot the amazing number of OptiChads of this holder 👀🤖:
-                </span>
-              </Link>
+              <span className="font-semibold text-red-700">
+                Spot the amazing number of OptiChads of this holder 👀🤖:
+              </span>
             </figcaption>
           </figure>
 
@@ -224,7 +222,7 @@ export default function Proposal() {
               />
             </div>
             <figcaption className="flex justify-center">
-              <Link href="https://gov.optimism.io/t/draft-gf-phase-1-proposal-optichads-nft-project/3430">
+              <Link href="https://zapper.fi/account/optichads.eth?">
                 <span className="cursor-pointer font-semibold text-red-700">
                   Like for example, optichads.eth that holds 670 NFTs 👀
                 </span>

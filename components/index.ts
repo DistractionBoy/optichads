@@ -23,6 +23,7 @@ import MoreInfoModal from "./MoreInfoModal";
 import NumOwners from "./NumOwners";
 import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
+import Partners from "./Partners";
 import RepsToday from "./RepsToday";
 import Stepper from "./Stepper";
 import SuggestionChadForm from "./SuggestionChadForm";
@@ -62,6 +63,7 @@ export {
   MoreInfoModal,
   NFTDetailView,
   NumOwners,
+  Partners,
   Proposal,
   PricingPlan,
   RepsToday,

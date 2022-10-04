@@ -7,6 +7,7 @@ import {
   FAQs,
   FeatureList,
   HeadMeta,
+  Partners,
   PricingPlan,
   Team,
   Tokenomics,
@@ -19,12 +20,13 @@ const Home: NextPage = () => {
       <DarkHeroSectionClouds />
       <BgImageColorHeroSection />
       <DarkOverlapShell title="Promoting Health and Charity">
-        <div className="bg-white rounded-lg shadow pb-6">
+        <div className="rounded-lg bg-white pb-6 shadow">
           <PricingPlan />
           <FeatureList />
           <Tokenomics />
           <Team />
           <FAQs />
+          {/* <Partners /> */}
         </div>
       </DarkOverlapShell>
     </>
