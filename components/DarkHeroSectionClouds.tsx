@@ -3,8 +3,6 @@ import Image from "next/image";
 import { useWeb3React } from "@web3-react/core";
 
 import superheroImg from "../public/images/chad-t.png";
-import useSWR from "swr";
-import { OwnerAddressesResponse } from "../pages/api/ownerAddresses";
 import SuggestionChadForm from "./SuggestionChadForm";
 import WannabeChadForm from "./WannabeChadForm";
 import { getIsHolderOfCollection } from "../lib/helpers";
@@ -15,15 +13,6 @@ export default function DarkHeroSectionClouds() {
   const [statefulAccount, setStatefulAccount] = useState<string>();
   const [isChadBro, setIsChadBro] = useState<boolean>();
 
-  const { data } = useSWR<OwnerAddressesResponse>(
-    `/api/ownerAddresses?contractAddress=${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`,
-    {
-      onSuccess(data) {
-        setIsChadBro(account ? data.ownerAddresses.includes(account) : false);
-      },
-    }
-  );
-
   useEffect(() => {
     if (account) {
       if (
@@ -31,15 +20,13 @@ export default function DarkHeroSectionClouds() {
         statefulAccount !== account
       ) {
         setStatefulAccount(account);
-        getIsHolderOfCollection(
-          account,
-          process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string
-        )
-          .then(({ isHolderOfCollection }) =>
-            setIsChadBro(isHolderOfCollection)
-          )
-          .catch((e) => console.log(e));
       }
+      getIsHolderOfCollection(
+        account,
+        process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string
+      )
+        .then(({ isHolderOfCollection }) => setIsChadBro(isHolderOfCollection))
+        .catch((e) => console.log(e));
     }
   }, [account, isChadBro, statefulAccount]);
 
@@ -51,7 +38,7 @@ export default function DarkHeroSectionClouds() {
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
                 {account ? (
-                  data && isChadBro ? (
+                  isChadBro ? (
                     <SuggestionChadForm />
                   ) : (
                     <WannabeChadForm />

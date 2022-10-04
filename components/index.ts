@@ -23,6 +23,7 @@ import MoreInfoModal from "./MoreInfoModal";
 import NumOwners from "./NumOwners";
 import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
+import Partners from "./Partners";
 import RepsToday from "./RepsToday";
 import Stepper from "./Stepper";
 import SuggestionChadForm from "./SuggestionChadForm";
@@ -34,6 +35,7 @@ import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import FeatureList from "./FeatureList";
 import PricingPlan from "./PricingPlan";
+import ZapperChad from "./ZapperChad";
 
 export {
   Account,
@@ -61,6 +63,7 @@ export {
   MoreInfoModal,
   NFTDetailView,
   NumOwners,
+  Partners,
   Proposal,
   PricingPlan,
   RepsToday,
@@ -72,4 +75,5 @@ export {
   TotalSupply,
   UserMenu,
   UserMenuMobile,
+  ZapperChad,
 };

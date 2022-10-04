@@ -222,7 +222,7 @@ export const getFloorPrice = async (collection: string) => {
   }
 };
 
-const postMsgToSuggestionBot = async (message: string) => {
+export const postMsgToSuggestionBot = async (message: string) => {
   const msg = { content: message };
   try {
     return await fetch(`${process.env.NEXT_PUBLIC_GYMBOT}`, {
