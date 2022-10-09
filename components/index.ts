@@ -5,7 +5,10 @@ import BgImageColorHeroSection from "./BgImageColorHeroSection";
 import Button from "./Button";
 import Breadcrumbs from "./Breadcrumbs";
 import Collection from "./Collection";
+import DailyChad from "./DailyChad";
+import DailyChadForm from "./DailyChadForm";
 import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
+import DarkHeroSectionForm from "./DarkHeroSectionForm";
 import DarkNavbar from "./DarkNavbar";
 import DarkOverlapShell from "./DarkOverlapShell";
 import DisconnectedChadForm from "./DisconnectedChadForm";
@@ -24,6 +27,7 @@ import NumOwners from "./NumOwners";
 import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
 import Partners from "./Partners";
+import QuestsOpener from "./QuestsOpener";
 import RepsToday from "./RepsToday";
 import Stepper from "./Stepper";
 import SuggestionChadForm from "./SuggestionChadForm";
@@ -45,7 +49,10 @@ export {
   Button,
   Breadcrumbs,
   Collection,
+  DailyChad,
+  DailyChadForm,
   DarkHeroSectionClouds,
+  DarkHeroSectionForm,
   DarkNavbar,
   DarkOverlapShell,
   DisconnectedChadForm,
@@ -65,6 +72,7 @@ export {
   NumOwners,
   Partners,
   Proposal,
+  QuestsOpener,
   PricingPlan,
   RepsToday,
   Stepper,

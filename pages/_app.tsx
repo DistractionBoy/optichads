@@ -29,8 +29,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <MintFormProvider>
           <StepperProvider>
             <Layout>
-              <DarkNavbar />
-              <Component {...pageProps} />
+              <div>
+                <DarkNavbar />
+                <Component {...pageProps} />
+              </div>
               <Footer />
             </Layout>
           </StepperProvider>

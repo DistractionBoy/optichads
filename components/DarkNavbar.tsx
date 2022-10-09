@@ -121,7 +121,7 @@ export default function Navbar() {
                       rel="noreferrer"
                     >
                       <Image
-                        alt="quix logo"
+                        alt="coinGecko logo"
                         src={coinGeckoLogo}
                         layout="intrinsic"
                         height={24}

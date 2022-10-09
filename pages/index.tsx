@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 
 import {
   BgImageColorHeroSection,
+  DailyChad,
   DarkHeroSectionClouds,
   DarkOverlapShell,
   FAQs,
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
       <DarkOverlapShell title="Promoting Health and Charity">
         <div className="rounded-lg bg-white pb-6 shadow">
           <PricingPlan />
+          <DailyChad />
           <FeatureList />
           <Tokenomics />
           <Team />
