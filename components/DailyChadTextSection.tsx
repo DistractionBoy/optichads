@@ -66,13 +66,13 @@ export default function DailyChadTextSection() {
               />
             </a>
           </div>
-          <div className="flex justify-center px-1">
+          {/* <div className="flex justify-center px-1">
             <img
               className="h-9 sm:h-10"
               src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
               alt="StaticKit"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

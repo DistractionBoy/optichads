@@ -4,7 +4,7 @@ import React from "react";
 import dailyChadImage from "../public/images/murderChad.jpg";
 
 export type DailyChadProps = {
-  targetId: string;
+  targetId?: string;
 };
 
 export default function DailyChad({ targetId }: DailyChadProps) {
@@ -122,7 +122,7 @@ export default function DailyChad({ targetId }: DailyChadProps) {
               </p>
               <a
                 className="block w-full rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-red-800 shadow-md hover:bg-gray-50 sm:inline-block sm:w-auto"
-                href={targetId ? targetId : "#"}
+                href={targetId ? targetId : "/quests#username"}
               >
                 Sign up for the Chad raffle
               </a>
