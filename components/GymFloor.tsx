@@ -30,7 +30,9 @@ const GymFloor = () => {
       <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-700">
         Gym Floor
       </dt>
-      <dd className="order-1 text-5xl font-extrabold text-red-600">{`${data.stats.floor_price}OΞ`}</dd>
+      <dd className="order-1 text-5xl font-extrabold text-red-600">{`${data.stats.floor_price.toFixed(
+        3
+      )}OΞ`}</dd>
     </div>
   ) : null;
 };

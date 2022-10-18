@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import firstCampaign from "../public/images/topZapperChads.png";
-
 export default function Proposal() {
   return (
     <div className="relative overflow-hidden rounded-lg bg-white py-16">

@@ -5,7 +5,10 @@ import BgImageColorHeroSection from "./BgImageColorHeroSection";
 import Button from "./Button";
 import Breadcrumbs from "./Breadcrumbs";
 import Collection from "./Collection";
+import DailyChad from "./DailyChad";
+import DailyChadForm from "./DailyChadForm";
 import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
+import DarkHeroSectionForm from "./DarkHeroSectionForm";
 import DarkNavbar from "./DarkNavbar";
 import DarkOverlapShell from "./DarkOverlapShell";
 import DisconnectedChadForm from "./DisconnectedChadForm";
@@ -24,6 +27,8 @@ import NumOwners from "./NumOwners";
 import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
 import Partners from "./Partners";
+import QuestsOpener from "./QuestsOpener";
+import QuestsClosingSection from "./QuestsClosingSection";
 import RepsToday from "./RepsToday";
 import Stepper from "./Stepper";
 import SuggestionChadForm from "./SuggestionChadForm";
@@ -35,6 +40,7 @@ import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import FeatureList from "./FeatureList";
 import PricingPlan from "./PricingPlan";
+import WeeklyTable from "./WeeklyTable";
 import ZapperChad from "./ZapperChad";
 
 export {
@@ -45,7 +51,10 @@ export {
   Button,
   Breadcrumbs,
   Collection,
+  DailyChad,
+  DailyChadForm,
   DarkHeroSectionClouds,
+  DarkHeroSectionForm,
   DarkNavbar,
   DarkOverlapShell,
   DisconnectedChadForm,
@@ -65,6 +74,8 @@ export {
   NumOwners,
   Partners,
   Proposal,
+  QuestsOpener,
+  QuestsClosingSection,
   PricingPlan,
   RepsToday,
   Stepper,
@@ -75,5 +86,6 @@ export {
   TotalSupply,
   UserMenu,
   UserMenuMobile,
+  WeeklyTable,
   ZapperChad,
 };

@@ -22,11 +22,11 @@ const Home: NextPage = () => {
       <DarkOverlapShell title="Promoting Health and Charity">
         <div className="rounded-lg bg-white pb-6 shadow">
           <PricingPlan />
+          <Partners />
           <FeatureList />
           <Tokenomics />
           <Team />
           <FAQs />
-          {/* <Partners /> */}
         </div>
       </DarkOverlapShell>
     </>
