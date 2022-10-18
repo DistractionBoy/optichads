@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import quixLogo from "../public/images/quix.png";
+import quixLogo from "../public/images/Quix.png";
 import bluesweepLogo from "../public/images/bluesweep-logo-2.png";
 import mintplexLogo from "../public/images/mintplex-logo.png";
 
