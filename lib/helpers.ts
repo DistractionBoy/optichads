@@ -235,3 +235,17 @@ export const postMsgToSuggestionBot = async (message: string) => {
     return e;
   }
 };
+
+export const postMsgToRaffleBot = async (message: string) => {
+  const msg = { content: message };
+  try {
+    return await fetch(`${process.env.NEXT_PUBLIC_GIVEAWAY_BOT}`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(msg),
+    });
+  } catch (e) {
+    console.error(e);
+    return e;
+  }
+};

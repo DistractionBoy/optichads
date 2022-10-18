@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 
 import {
   BgImageColorHeroSection,
+  DailyChad,
   DarkHeroSectionClouds,
   DarkOverlapShell,
   FAQs,
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
           <Partners />
           <FeatureList />
           <Tokenomics />
+          <DailyChad />
           <Team />
           <FAQs />
         </div>

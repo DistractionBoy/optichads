@@ -1,7 +1,91 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Script from "next/script";
+import { useWeb3React } from "@web3-react/core";
+import Account from "./Account";
+import { shortenHex } from "../lib/utils";
+import { postMsgToRaffleBot } from "../lib/helpers";
+import { hooks } from "../lib/connectors/metaMask";
+import { ethers } from "ethers";
+
+const { useProvider } = hooks;
+
+type SuggestionChadOptions = {
+  username: string;
+  address: string;
+  reason: string;
+  account: string;
+};
+
+const suggestionChad = ({
+  username,
+  address,
+  reason,
+  account,
+}: SuggestionChadOptions) => {
+  const post = `--------------------------------------------------------------
+  A raffle Chad gives this reason:\`\`\`${reason}\`\`\`
+  for user: ${username}
+  and address: ${address}
+
+  Signee Account#: ${account}
+  --------------------------------------------------------------`;
+  postMsgToRaffleBot(post);
+};
 
 export default function DailyChadForm() {
+  const { account, chainId } = useWeb3React();
+  const provider = useProvider();
+  const [statefulAccount, setStatefulAccount] = useState<string>();
+
+  const addBoxEntry = async (
+    signer: ethers.Signer,
+    message: string
+  ): Promise<string | Error> => await signer.signMessage(message);
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    const reason = e && e.target.howchad.value;
+    const username = e && e.target.username.value;
+    const address = e && e.target.address.value;
+    if (account && chainId === Number(process.env.NEXT_PUBLIC_CHAIN_ID)) {
+      try {
+        const signer = provider && provider.getSigner(account);
+        addBoxEntry(
+          signer as ethers.Signer,
+          `${process.env.NEXT_PUBLIC_GYMBOOK_KEY}`
+        ).then((signature) => {
+          const result = ethers.utils.verifyMessage(
+            `${process.env.NEXT_PUBLIC_GYMBOOK_KEY}`,
+            signature as string
+          );
+          if (result === account) {
+            suggestionChad({ username, reason, address, account });
+          }
+        });
+        e.target.howchad.value = "";
+        e.target.username.value = "";
+        e.target.address.value = "";
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      throw new Error(
+        "You need to switch to Optimism and/or make sure you have enough Eth"
+      );
+    }
+  };
+
+  useEffect(() => {
+    if (account) {
+      if (
+        typeof statefulAccount === "undefined" ||
+        statefulAccount !== account
+      ) {
+        setStatefulAccount(account);
+      }
+    }
+  }, [account, statefulAccount]);
+
   return (
     <>
       <Script
@@ -102,7 +186,7 @@ export default function DailyChadForm() {
           </div>
 
           <div className="mt-6">
-            <form action="#" method="POST" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="username" className="sr-only">
                   Twitter / Discord name
@@ -134,27 +218,34 @@ export default function DailyChadForm() {
               </div>
 
               <div>
-                <label htmlFor="how-chad" className="sr-only">
+                <label htmlFor="howchad" className="sr-only">
                   How you are a Chad
                 </label>
                 <input
-                  id="how-chad"
-                  name="how-chad"
+                  id="howchad"
+                  name="howchad"
                   type="text"
                   placeholder="How you are a Chad"
-                  autoComplete="how-chad"
+                  autoComplete="howchad"
                   required
                   className="block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm"
                 />
               </div>
 
               <div>
-                <button
-                  type="submit"
-                  className="flex w-full justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-                >
-                  Enter FREE Raffle
-                </button>
+                {statefulAccount ? (
+                  <button
+                    type="submit"
+                    disabled={!statefulAccount}
+                    className="flex w-full justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                  >
+                    Enter FREE Raffle
+                  </button>
+                ) : (
+                  <div className="flex w-full justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                    <Account />
+                  </div>
+                )}
               </div>
             </form>
           </div>

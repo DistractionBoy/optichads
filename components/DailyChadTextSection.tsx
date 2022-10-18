@@ -5,7 +5,6 @@ import React from "react";
 import quixLogoWord from "../public/images/quix_white.png";
 import bluesweepLogo from "../public/images/bluesweep-logo.png";
 import mintplexLogo from "../public/images/mintplex-logo.png";
-import mintplexLogoTwo from "../public/images/mintplex-logo-dark.a6e989bc.svg";
 
 export default function DailyChadTextSection() {
   return (

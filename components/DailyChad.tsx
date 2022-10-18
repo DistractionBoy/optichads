@@ -116,7 +116,8 @@ export default function DailyChad({ targetId }: DailyChadProps) {
               <p className="text-lg text-white">
                 If you have never been an OptiChad holder and would like to be a
                 part of our weekly challenges and $OP token airdrops, click the
-                button below to be entered into our OptiChad raffles.
+                button below to be entered into our OptiChad raffles. (starting
+                soon)
               </p>
               <a
                 className="block w-full rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-red-800 shadow-md hover:bg-gray-50 sm:inline-block sm:w-auto"

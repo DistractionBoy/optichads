@@ -4,29 +4,16 @@ import Link from "next/link";
 import React from "react";
 import { hooks } from "../lib/connectors/metaMask";
 import { ethers } from "ethers";
+import { postMsgToRaffleBot } from "../lib/helpers";
 
 const { useProvider } = hooks;
-
-const postMsgToSuggestionBot = async (message: string) => {
-  const msg = { content: message };
-  try {
-    return await fetch(`${process.env.NEXT_PUBLIC_GIVEAWAY_BOT}`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(msg),
-    });
-  } catch (e) {
-    console.error(e);
-    return e;
-  }
-};
 
 const suggestionChad = (message: string, account: string) => {
   const post = `--------------------------------------------------------------
   A wannabe Chad gives this reason:\`\`\`${message}\`\`\`
   Account#: ${account}
   --------------------------------------------------------------`;
-  postMsgToSuggestionBot(post);
+  postMsgToRaffleBot(post);
 };
 
 export const WannabeChadForm = () => {
