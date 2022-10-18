@@ -5,7 +5,9 @@ import {
   DarkHeroSectionForm,
   DarkOverlapShell,
   HeadMeta,
+  QuestsClosingSection,
   QuestsOpener,
+  WeeklyTable,
 } from "../components";
 
 const QuestsPage = () => {
@@ -20,7 +22,9 @@ const QuestsPage = () => {
       <DarkOverlapShell title="OptiChad Quests">
         <div className="rounded-lg bg-white shadow">
           <QuestsOpener />
+          <WeeklyTable />
           <DailyChad targetId="#username" />
+          <QuestsClosingSection />
         </div>
       </DarkOverlapShell>
     </>

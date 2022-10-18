@@ -3,7 +3,9 @@ import Image from "next/image";
 import React from "react";
 
 import quixLogoWord from "../public/images/quix_white.png";
-import zapperLogo from "../public/images/zapper-logo.png";
+import bluesweepLogo from "../public/images/bluesweep-logo.png";
+import mintplexLogo from "../public/images/mintplex-logo.png";
+import mintplexLogoTwo from "../public/images/mintplex-logo-dark.a6e989bc.svg";
 
 export default function DailyChadTextSection() {
   return (
@@ -27,7 +29,7 @@ export default function DailyChadTextSection() {
       <p className="mt-3 text-base text-gray-100 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
         Whether you&apos;re new to crypto or new to Optimism (or just to
         OptiChads), we want you to be able to earn $OP just like our current
-        holders. If that describes you, fill out the form bro.
+        holders. Fill out the form bro.
       </p>
       <p className="mt-8 text-base font-semibold text-white sm:mt-10">
         Partnered With
@@ -50,29 +52,38 @@ export default function DailyChadTextSection() {
               />
             </a>
           </div>
-          <div className="flex justify-center px-1">
+          <div className="flex items-center justify-center px-1 pt-2">
             <a
-              href="https://zapper.fi/nft/optimism/0x9b9f542456ad12796ccb8eb6644f29e3314e68e1?collectionTitle=OptiChads%20%F0%9F%94%B4%E2%9C%A8%F0%9F%92%AA"
+              href="https://mintplex.xyz/"
               className="flex items-center"
               target="_blank"
               rel="noreferrer"
             >
               <Image
-                alt="Zapper Finance logo"
-                src={zapperLogo}
+                alt="Mintplex logo"
+                src={mintplexLogo}
                 layout="intrinsic"
-                height={48}
-                width={168}
+                height={36}
+                width={155}
               />
             </a>
           </div>
-          {/* <div className="flex justify-center px-1">
-            <img
-              className="h-9 sm:h-10"
-              src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-              alt="StaticKit"
-            />
-          </div> */}
+          <div className="flex justify-center px-1">
+            <a
+              href="https://www.bluesweep.xyz/collections/optichads"
+              className="flex items-center"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                alt="Bluesweep logo"
+                src={bluesweepLogo}
+                layout="intrinsic"
+                height={55}
+                width={178}
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

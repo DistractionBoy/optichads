@@ -19,7 +19,7 @@ export default function QuestsOpener() {
         </div>
         <div className="block rounded-t-xl lg:hidden">
           <Image
-            className="h-56 w-full rounded-t-xl object-cover"
+            className="h-56 w-full rounded-t-lg object-cover"
             src={ChadRope}
             alt=""
             width={1920}
