@@ -15,7 +15,7 @@ const QuestsPage = () => {
     <>
       <HeadMeta
         title={`OptiChad Quests`}
-        description={`With daily giveaways and weekly challenges we are raising awareness of health in Web3 and paying you to do it!`}
+        description={`With giveaways and weekly challenges we are raising awareness of health in Web3 and paying you to do it`}
         keywords={`Quests, OptiChads, Health in Web3`}
       />
       <DarkHeroSectionForm />

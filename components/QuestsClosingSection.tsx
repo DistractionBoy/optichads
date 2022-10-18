@@ -21,6 +21,17 @@ export default function QuestsClosingSection() {
             refrain from causing any harm to yourself or others. Reach out to us
             if you want to complete the weekly quest but cannot for that week.
           </p>
+          <p className="mt-8 text-xl leading-8 text-gray-500">
+            The person who associated a work with this deed has dedicated the
+            work to the public domain by waiving all of his or her rights to the
+            work worldwide under copyright law, including all related and
+            neighboring rights, to the extent allowed by law.
+          </p>
+          <p className="mt-8 text-xl leading-8 text-gray-500">
+            You can copy, modify, distribute and perform the work, even for
+            commercial purposes, all without asking permission. The blockchain
+            proves ownership and you are your own Chad.
+          </p>
         </div>
         <div className="prose prose-lg prose-indigo mx-auto my-12 text-gray-500">
           <h3>Get Active</h3>

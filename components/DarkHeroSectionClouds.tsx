@@ -4,7 +4,7 @@ import { useWeb3React } from "@web3-react/core";
 
 import superheroImg from "../public/images/chad-t.png";
 import SuggestionChadForm from "./SuggestionChadForm";
-import WannabeChadForm from "./WannabeChadForm";
+// import WannabeChadForm from "./WannabeChadForm";
 import { getIsHolderOfCollection } from "../lib/helpers";
 import DisconnectedChadForm from "./DisconnectedChadForm";
 
