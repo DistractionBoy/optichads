@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { hooks } from "../../lib/connectors/metaMask";
 
-import BUNNIES_CONTRACT_ABI from "../../lib/contracts/bunny.json";
-import PIXEL_CONTRACT_ABI from "../../lib/contracts/pbunny.json";
-import CITIZENS_CONTRACT_ABI from "../../lib/contracts/citizens.json";
+import BUNNIES_CONTRACT_ABI from "../../lib/contracts/optichads.json";
+// import PIXEL_CONTRACT_ABI from "../../lib/contracts/pbunny.json";
+// import CITIZENS_CONTRACT_ABI from "../../lib/contracts/citizens.json";
 import DarkOverlapShell from "../../components/DarkOverlapShell";
 import { Contract, ContractInterface } from "@ethersproject/contracts";
 import NFTDetailView from "../../components/NFTDetailView";
@@ -43,12 +43,12 @@ export default function View({
       );
       const pixelBunnyContract: Contract = new Contract(
         process.env.NEXT_PUBLIC_BUNNY_ADDRESS as string,
-        PIXEL_CONTRACT_ABI as ContractInterface,
+        BUNNIES_CONTRACT_ABI as ContractInterface,
         provider
       );
       const citizensContract: Contract = new Contract(
         process.env.NEXT_PUBLIC_CITIZEN_ADDRESS as string,
-        CITIZENS_CONTRACT_ABI as ContractInterface,
+        BUNNIES_CONTRACT_ABI as ContractInterface,
         provider
       );
       getMyTokenIds(opBunnyContract, accountNum).then((tokenIds) => {
@@ -72,22 +72,22 @@ export default function View({
         keywords={`View, Optiland, Non-Fungible Tokens`}
       />
       <DarkOverlapShell title="My Optiland NFT's">
-        <div className="flex flex-col bg-white rounded-lg shadow">
+        <div className="flex flex-col rounded-lg bg-white shadow">
           {myBunniesLoading && myBunnies.length === 0 && (
-            <div className="px-4 py-5 sm:p-6 sm:mb-16">
+            <div className="px-4 py-5 sm:mb-16 sm:p-6">
               <h3 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
                 Loading...
               </h3>
             </div>
           )}
           {myBunnies.length > 0 && (
-            <div className="px-4 py-5 sm:p-6 sm:mb-16">
+            <div className="px-4 py-5 sm:mb-16 sm:p-6">
               <h3 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
                 Optimistic Bunnies
               </h3>
 
               {myBunnies.length <= 5 ? (
-                <div className="flex flex-col mt-6">
+                <div className="mt-6 flex flex-col">
                   {myBunnies.map((tokenId, idx) => (
                     <NFTDetailView
                       key={idx}
@@ -98,7 +98,7 @@ export default function View({
                   ))}
                 </div>
               ) : (
-                <div className="mt-12 grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-8 2xl:grid-cols-12 md:gap-y-0 lg:gap-x-8">
+                <div className="mt-12 grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-0 lg:grid-cols-8 lg:gap-x-8 2xl:grid-cols-12">
                   {myBunnies.map((tokenId, idx) => (
                     <NFTCard key={idx} id={tokenId} collection="bunny" />
                   ))}
@@ -107,13 +107,13 @@ export default function View({
             </div>
           )}
           {myPixelBunnies.length > 0 && (
-            <div className="px-4 py-5 sm:p-6 sm:mb-16">
+            <div className="px-4 py-5 sm:mb-16 sm:p-6">
               <h3 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
                 Pixelated Bunnies
               </h3>
 
               {myPixelBunnies.length <= 5 ? (
-                <div className="flex flex-col mt-6">
+                <div className="mt-6 flex flex-col">
                   {myPixelBunnies.map((tokenId, idx) => (
                     <NFTDetailView
                       key={idx}
@@ -124,7 +124,7 @@ export default function View({
                   ))}
                 </div>
               ) : (
-                <div className="mt-12 grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-8 2xl:grid-cols-12 md:gap-y-0 lg:gap-x-8">
+                <div className="mt-12 grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-0 lg:grid-cols-8 lg:gap-x-8 2xl:grid-cols-12">
                   {myPixelBunnies.map((tokenId, idx) => (
                     <NFTCard key={idx} id={tokenId} collection="pbunny" />
                   ))}
@@ -133,13 +133,13 @@ export default function View({
             </div>
           )}
           {myCitizens.length > 0 && (
-            <div className="px-4 py-5 sm:p-6 sm:mb-16">
+            <div className="px-4 py-5 sm:mb-16 sm:p-6">
               <h3 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
                 Optiland Citizens
               </h3>
 
               {myCitizens.length <= 5 ? (
-                <div className="flex flex-col mt-6">
+                <div className="mt-6 flex flex-col">
                   {myCitizens.map((tokenId, idx) => (
                     <NFTDetailView
                       key={idx}
@@ -150,7 +150,7 @@ export default function View({
                   ))}
                 </div>
               ) : (
-                <div className="mt-12 grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-8 2xl:grid-cols-12 md:gap-y-0 lg:gap-x-8">
+                <div className="mt-12 grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-0 lg:grid-cols-8 lg:gap-x-8 2xl:grid-cols-12">
                   {myCitizens.map((tokenId, idx) => (
                     <NFTCard key={idx} id={tokenId} collection="citizen" />
                   ))}
