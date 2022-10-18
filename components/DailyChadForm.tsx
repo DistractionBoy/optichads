@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Script from "next/script";
 import { useWeb3React } from "@web3-react/core";
 import Account from "./Account";
-import { shortenHex } from "../lib/utils";
 import { postMsgToRaffleBot } from "../lib/helpers";
 import { hooks } from "../lib/connectors/metaMask";
 import { ethers } from "ethers";

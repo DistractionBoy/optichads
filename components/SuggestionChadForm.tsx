@@ -98,6 +98,7 @@ export const SuggestionChadForm = () => {
                 type="text"
                 maxLength={240}
                 minLength={12}
+                required
                 placeholder="Suggestion Box"
                 className="block w-full rounded-md border-0 px-4 py-3 text-base text-gray-900 placeholder-gray-500 invalid:ring-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-900"
               />
