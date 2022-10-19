@@ -3,7 +3,7 @@ import { GymFloor, NumOwners, RepsToday } from ".";
 
 export default function Tokenomics() {
   return (
-    <div className="bg-white py-4 sm:py-6">
+    <div className="rounded-t-lg bg-white py-4 sm:py-6 lg:pt-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-extrabold text-gray-700 sm:text-4xl">

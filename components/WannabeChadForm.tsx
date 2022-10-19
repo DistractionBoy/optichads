@@ -5,14 +5,14 @@ import React from "react";
 import { hooks } from "../lib/connectors/metaMask";
 import { ethers } from "ethers";
 import { postMsgToRaffleBot } from "../lib/helpers";
+import { shortenHex } from "../lib/utils";
 
 const { useProvider } = hooks;
 
 const suggestionChad = (message: string, account: string) => {
-  const post = `--------------------------------------------------------------
+  const post = `
   A wannabe Chad gives this reason:\`\`\`${message}\`\`\`
-  Account#: ${account}
-  --------------------------------------------------------------`;
+  Account#: ${shortenHex(account, 4)}`;
   postMsgToRaffleBot(post);
 };
 
@@ -95,6 +95,7 @@ export const WannabeChadForm = () => {
               <input
                 name="message"
                 type="text"
+                required
                 maxLength={240}
                 minLength={12}
                 placeholder="How're you a Chad?"

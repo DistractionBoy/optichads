@@ -249,7 +249,7 @@ export default function DailyChadForm() {
             </form>
           </div>
         </div>
-        <div className="border-t-2 border-gray-200 bg-gray-50 px-4 py-6 sm:px-10">
+        {/* <div className="border-t-2 border-gray-200 bg-gray-50 px-4 py-6 sm:px-10">
           <p className="text-xs leading-5 text-gray-500">
             By signing up, you agree to our{" "}
             <a href="#" className="font-medium text-gray-900 hover:underline">
@@ -261,7 +261,7 @@ export default function DailyChadForm() {
             </a>
             .
           </p>
-        </div>
+        </div> */}
       </div>
     </>
   );

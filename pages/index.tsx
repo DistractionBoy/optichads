@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+import Image from "next/image";
+import vitalikApproves from "../public/images/vitalik_approves.png";
 
 import {
   BgImageColorHeroSection,
@@ -19,16 +21,24 @@ const Home: NextPage = () => {
     <>
       <HeadMeta />
       <DarkHeroSectionClouds />
-      <BgImageColorHeroSection />
+      {/* <BgImageColorHeroSection /> */}
       <DarkOverlapShell title="Promoting Health and Charity">
         <div className="rounded-lg bg-white pb-6 shadow">
-          <PricingPlan />
-          <Partners />
-          <FeatureList />
+          <Image
+            alt="a sick tweet bro"
+            className="rounded-lg"
+            src={vitalikApproves}
+            height={900}
+            width={1255}
+            layout="responsive"
+          />
           <Tokenomics />
+          <Partners />
           <DailyChad />
-          <Team />
+          <PricingPlan />
+          <FeatureList />
           <FAQs />
+          <Team />
         </div>
       </DarkOverlapShell>
     </>

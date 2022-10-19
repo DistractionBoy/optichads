@@ -15,7 +15,7 @@ export default function DarkOverlapShell({
       <div className="bg-gray-900 bg-gradient-to-r from-[#da10109e] pb-32">
         {title && (
           <header className="py-10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <h1 className="text-3xl font-bold text-white">{title}</h1>
             </div>
           </header>
@@ -23,7 +23,7 @@ export default function DarkOverlapShell({
       </div>
 
       <main className="-mt-32">
-        <div className="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
           {children}
         </div>
       </main>
