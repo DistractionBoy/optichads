@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import dailyChadImage from "../public/images/murderChad.jpg";
+import dailyChadImage from "../public/images/4029.webp";
 
 export type DailyChadProps = {
   targetId?: string;
