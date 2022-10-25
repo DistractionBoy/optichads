@@ -82,10 +82,10 @@ export default function QuestsOpener() {
               <h3>Workouts</h3>
               <p>
                 Workout challenges will be relatively simple, and just enough to
-                give you something to do between actual workouts. We will do our
-                best to provide an alternate exercise each week, so if you are
-                injured and cannot perform the main exercise, you may still be
-                able to do the alternate exercise.
+                give you something to do between actual workouts. If you are
+                injured or cannot perform the main exercise for any reason, you
+                can modify the exercise as needed to avoid further injury at
+                your own discretion.
               </p>
               <p>
                 And remember, participation is voluntary and we are not

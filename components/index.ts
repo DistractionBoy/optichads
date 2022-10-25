@@ -29,6 +29,7 @@ import NFTDetailView from "./NFTDetailView";
 import Partners from "./Partners";
 import QuestsOpener from "./QuestsOpener";
 import QuestsClosingSection from "./QuestsClosingSection";
+import RaffleChadModal from "./RaffleChadModal";
 import RepsToday from "./RepsToday";
 import Stepper from "./Stepper";
 import SuggestionChadForm from "./SuggestionChadForm";
@@ -50,6 +51,7 @@ export {
   BgImageColorHeroSection,
   Button,
   Breadcrumbs,
+  RaffleChadModal,
   Collection,
   DailyChad,
   DailyChadForm,

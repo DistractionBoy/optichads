@@ -16,11 +16,16 @@ export default function Tokenomics() {
           <div className="absolute inset-0 h-1/2 bg-white" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
-              <dl className="rounded-lg bg-gray-100 shadow-lg sm:grid sm:grid-cols-3">
+              <dl className="rounded-t-lg bg-gray-100 shadow-lg sm:grid sm:grid-cols-3">
                 <RepsToday />
                 <GymFloor />
                 <NumOwners />
               </dl>
+              {/* <dl className="rounded-b-lg bg-gray-100 shadow-lg sm:grid sm:grid-cols-3">
+                <RepsToday />
+                <GymFloor />
+                <NumOwners />
+              </dl> */}
             </div>
           </div>
         </div>

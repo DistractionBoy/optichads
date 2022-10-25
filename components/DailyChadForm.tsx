@@ -2,39 +2,50 @@ import React, { useEffect, useState } from "react";
 import Script from "next/script";
 import { useWeb3React } from "@web3-react/core";
 import Account from "./Account";
-import { postMsgToRaffleBot } from "../lib/helpers";
 import { hooks } from "../lib/connectors/metaMask";
 import { ethers } from "ethers";
+import RaffleChadModal from "./RaffleChadModal";
 
 const { useProvider } = hooks;
 
-type SuggestionChadOptions = {
+const handledErrorMsg = `We're sorry, you must enter an address that has not held an OptiChad before. This raffle's purpose is to give an opportunity to people who are new to OptiChads.`;
+
+type SubmitToApiRouteParams = {
+  account: string;
+  reason: string;
   username: string;
   address: string;
-  reason: string;
-  account: string;
 };
 
-const suggestionChad = ({
+const submitToApiRoute = async ({
+  account,
+  reason,
   username,
   address,
-  reason,
-  account,
-}: SuggestionChadOptions) => {
-  const post = `--------------------------------------------------------------
-  A raffle Chad gives this reason:\`\`\`${reason}\`\`\`
-  for user: ${username}
-  and address: ${address}
-
-  Signee Account#: ${account}
-  --------------------------------------------------------------`;
-  postMsgToRaffleBot(post);
+}: SubmitToApiRouteParams) => {
+  try {
+    const response = await fetch(`/api/quests/${account}`, {
+      method: "POST",
+      body: JSON.stringify({ reason, username, address }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (e: any) {
+    return e;
+  }
 };
 
 export default function DailyChadForm() {
   const { account, chainId } = useWeb3React();
   const provider = useProvider();
   const [statefulAccount, setStatefulAccount] = useState<string>();
+  const [modalOpen, toggleModalOpen] = useState<boolean>(false);
+  const [modalMessage, setModalMessage] = useState<string>("Loading...");
+
+  const resetModal = (isOpen: boolean) => {
+    toggleModalOpen(isOpen);
+    setModalMessage("Loading...");
+  };
 
   const addBoxEntry = async (
     signer: ethers.Signer,
@@ -43,6 +54,7 @@ export default function DailyChadForm() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    toggleModalOpen(true);
     const reason = e && e.target.howchad.value;
     const username = e && e.target.username.value;
     const address = e && e.target.address.value;
@@ -58,7 +70,19 @@ export default function DailyChadForm() {
             signature as string
           );
           if (result === account) {
-            suggestionChad({ username, reason, address, account });
+            submitToApiRoute({ account, reason, username, address }).then(
+              (response) => {
+                if (response.isEligible) {
+                  setModalMessage(
+                    `Congratulations! The address you submitted has been added to our raffle giveaways. Now hit the gym. Submitted Address: ${address}`
+                  );
+                } else {
+                  setModalMessage(
+                    response.isEligible === false ? handledErrorMsg : response
+                  );
+                }
+              }
+            );
           }
         });
         e.target.howchad.value = "";
@@ -68,9 +92,7 @@ export default function DailyChadForm() {
         console.log(e);
       }
     } else {
-      throw new Error(
-        "You need to switch to Optimism and/or make sure you have enough Eth"
-      );
+      throw new Error("You need to switch to the Optimism Network");
     }
   };
 
@@ -249,8 +271,11 @@ export default function DailyChadForm() {
             </form>
           </div>
         </div>
-        {/* <div className="border-t-2 border-gray-200 bg-gray-50 px-4 py-6 sm:px-10">
+        <div className="border-t-2 border-gray-200 bg-gray-50 px-4 py-6 sm:px-10">
           <p className="text-xs leading-5 text-gray-500">
+            To be eligible, you must not have been an OptiChad holder.
+          </p>
+          {/* <p className="text-xs leading-5 text-gray-500">
             By signing up, you agree to our{" "}
             <a href="#" className="font-medium text-gray-900 hover:underline">
               Terms
@@ -260,9 +285,16 @@ export default function DailyChadForm() {
               Data Policy
             </a>
             .
-          </p>
-        </div> */}
+          </p> */}
+        </div>
       </div>
+      {modalOpen && (
+        <RaffleChadModal
+          toggle={resetModal}
+          open={modalOpen}
+          modalMessage={modalMessage}
+        />
+      )}
     </>
   );
 }

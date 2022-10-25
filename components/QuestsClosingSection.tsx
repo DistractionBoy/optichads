@@ -20,6 +20,7 @@ export default function QuestsClosingSection() {
             like to participate in a challenge but cannot that week, please
             refrain from causing any harm to yourself or others. Reach out to us
             if you want to complete the weekly quest but cannot for that week.
+            Consult a physician before performing any exercise as needed.
           </p>
           <p className="mt-8 text-xl leading-8 text-gray-500">
             The person who associated a work with this deed has dedicated the

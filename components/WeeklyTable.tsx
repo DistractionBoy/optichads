@@ -2,20 +2,17 @@ import React from "react";
 
 const weeks = [
   {
-    startDate: new Date("November, 2022"),
+    startDate: "TBD",
     exercise: "10 Press Ups",
-    alternate: "20 Flutter Kicks",
     questLink: "https://quest3.xyz/something",
   },
   {
-    startDate: new Date("November, 2022"),
+    startDate: "TBD",
     exercise: "20 Crunches",
-    alternate: "20 Air Military Press",
   },
   {
-    startDate: new Date("November, 2022"),
+    startDate: "TBD",
     exercise: "15 Burpees",
-    alternate: "15 Lunges",
   },
 ];
 
@@ -50,12 +47,6 @@ export default function WeeklyTable() {
               </th>
               <th
                 scope="col"
-                className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell"
-              >
-                Alternate
-              </th>
-              <th
-                scope="col"
                 className="py-3.5 pl-3 pr-6 text-right text-sm font-semibold text-gray-900"
               >
                 Start
@@ -63,24 +54,18 @@ export default function WeeklyTable() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200 bg-white">
-            {weeks.map(({ startDate, exercise, alternate, questLink }, idx) => (
+            {weeks.map(({ startDate, exercise, questLink }, idx) => (
               <tr key={idx}>
                 <td className="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
-                  {startDate.toDateString()}
+                  {startDate}
                   <dl className="font-normal lg:hidden">
                     <dt className="sr-only">Exercise</dt>
                     <dd className="mt-1 truncate text-gray-700">{exercise}</dd>
                     <dt className="sr-only sm:hidden">Alternate</dt>
-                    <dd className="mt-1 truncate text-gray-500 sm:hidden">
-                      {alternate}
-                    </dd>
                   </dl>
                 </td>
                 <td className="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">
                   {exercise}
-                </td>
-                <td className="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">
-                  {alternate}
                 </td>
                 <td className="py-4 pl-3 pr-6 text-right text-sm font-medium">
                   {questLink && (

@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     <>
       <HeadMeta />
       <DarkHeroSectionClouds />
-      {/* <BgImageColorHeroSection /> */}
+      <BgImageColorHeroSection />
       <DarkOverlapShell title="Promoting Health and Charity">
         <div className="rounded-lg bg-white pb-6 shadow">
           <Image
