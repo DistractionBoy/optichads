@@ -41,7 +41,7 @@ export default function DarkHeroSectionClouds() {
                   isChadBro ? (
                     <SuggestionChadForm />
                   ) : (
-                    <WannabeChadForm />
+                    <SuggestionChadForm />
                   )
                 ) : (
                   <DisconnectedChadForm />
