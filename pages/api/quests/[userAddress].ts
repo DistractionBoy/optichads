@@ -29,7 +29,7 @@ const suggestionChad = ({
   
     Signee Account#: ${account}
     --------------------------------------------------------------`;
-  postMsgToRaffleBot(post);
+  postMsgToRaffleBot(post).then((response) => console.log(response));
 };
 
 const handledErrorMsg = `We're sorry, you must enter an address that has not held an OptiChad before. This raffle's purpose is to give an opportunity to people who are new to OptiChads.`;
