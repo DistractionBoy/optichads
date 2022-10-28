@@ -2,17 +2,54 @@ import React from "react";
 
 const weeks = [
   {
-    startDate: "TBD",
+    startDate: new Date("October 27, 2022"),
     exercise: "10 Press Ups",
-    questLink: "https://quest3.xyz/something",
+    questLink: "https://app.quest3.xyz/quest/700111975306224097",
   },
   {
-    startDate: "TBD",
-    exercise: "20 Crunches",
+    startDate: new Date("November 7, 2022"),
+    exercise: "To Be Determined",
+    questLink: "",
   },
   {
-    startDate: "TBD",
-    exercise: "15 Burpees",
+    startDate: new Date("November 14, 2022"),
+    exercise: "To Be Determined",
+    questLink: "",
+  },
+  {
+    startDate: new Date("November 21, 2022"),
+    exercise: "To Be Determined",
+    questLink: "",
+  },
+  {
+    startDate: new Date("November 28, 2022"),
+    exercise: "To Be Determined",
+    questLink: "",
+  },
+  {
+    startDate: new Date("December 5, 2022"),
+    exercise: "To Be Determined",
+    questLink: "",
+  },
+  {
+    startDate: new Date("December 12, 2022"),
+    exercise: "To Be Determined",
+    questLink: "",
+  },
+  {
+    startDate: new Date("December 19, 2022"),
+    exercise: "To Be Determined",
+    questLink: "",
+  },
+  {
+    startDate: new Date("December 26, 2022"),
+    exercise: "To Be Determined",
+    questLink: "",
+  },
+  {
+    startDate: new Date("January 2, 2022"),
+    exercise: "To Be Determined",
+    questLink: "",
   },
 ];
 
@@ -57,11 +94,10 @@ export default function WeeklyTable() {
             {weeks.map(({ startDate, exercise, questLink }, idx) => (
               <tr key={idx}>
                 <td className="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
-                  {startDate}
+                  {startDate.toDateString()}
                   <dl className="font-normal lg:hidden">
                     <dt className="sr-only">Exercise</dt>
                     <dd className="mt-1 truncate text-gray-700">{exercise}</dd>
-                    <dt className="sr-only sm:hidden">Alternate</dt>
                   </dl>
                 </td>
                 <td className="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">
