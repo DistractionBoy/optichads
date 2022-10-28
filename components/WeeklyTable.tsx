@@ -109,7 +109,8 @@ export default function WeeklyTable() {
                       href={`${questLink}`}
                       className="text-indigo-600 hover:text-indigo-900"
                     >
-                      Link<span className="sr-only">, {questLink}</span>
+                      Quest Start Page
+                      <span className="sr-only">, {questLink}</span>
                     </a>
                   )}
                 </td>
