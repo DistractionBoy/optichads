@@ -44,7 +44,7 @@ export default function QuestsOpener() {
             </p>
             <div className="prose prose-indigo mt-5 text-gray-500">
               <p>
-                Each week, for 8 weeks, we are giving a portion of the 50,000
+                Each week, for 10 weeks, we are giving a portion of the 50,000
                 $OP tokens we were granted. Holders need to complete a health
                 related challenge (Proof of Work), Tweet about it, and retweet
                 one other specified tweet to be entered into that week&apos;s OP
@@ -62,12 +62,11 @@ export default function QuestsOpener() {
                 NFT Creators that helps track and reward engagement online.
               </p>
               <p>
-                We are giving away 6 OptiChads per week (8 in the final week) to
-                those who want to be a part of this but do not currently own an
-                OptiChad. There is no need to sign up each week. you only need
-                to sign up once, using the form at the top of this page. We will
-                put a higher priority on users who are new to Optimism. We are
-                doing this because:
+                We are giving away 5 OptiChads per week to those who want to be
+                a part of this but do not currently own an OptiChad. There is no
+                need to sign up each week. you only need to sign up once, using
+                the form at the top of this page. We will put a higher priority
+                on users who are new to Optimism. We are doing this because:
               </p>
               <ul role="list">
                 <li>
