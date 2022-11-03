@@ -257,10 +257,15 @@ export default function DailyChadForm() {
                 {statefulAccount ? (
                   <button
                     type="submit"
-                    disabled={!statefulAccount}
-                    className="flex w-full justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                    disabled={
+                      !statefulAccount ||
+                      chainId !== Number(process.env.NEXT_PUBLIC_CHAIN_ID)
+                    }
+                    className="disabled:focus-ring-red-500 flex w-full justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:bg-gray-600"
                   >
-                    Enter FREE Raffle
+                    {chainId !== Number(process.env.NEXT_PUBLIC_CHAIN_ID)
+                      ? "Switch to Optimism"
+                      : "Enter FREE Raffle"}
                   </button>
                 ) : (
                   <div className="flex w-full justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
