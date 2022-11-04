@@ -7,9 +7,9 @@ const weeks = [
     questLink: "https://app.quest3.xyz/quest/700111975306224097",
   },
   {
-    startDate: new Date("November 7, 2022"),
-    exercise: "To Be Determined",
-    questLink: "",
+    startDate: new Date("November 4, 2022"),
+    exercise: "10 Squats",
+    questLink: "https://app.quest3.xyz/quest/702816059253449001",
   },
   {
     startDate: new Date("November 14, 2022"),
