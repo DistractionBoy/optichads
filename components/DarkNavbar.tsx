@@ -19,7 +19,6 @@ import { iNavLink } from "../lib/types";
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
   { name: "Quests", href: "/quests", current: false },
-  { name: "Zapper Bros", href: "/zapper-chads", current: false },
 ];
 
 function classNames(...classes: string[]) {

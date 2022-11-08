@@ -21,7 +21,7 @@ const faqs = [
 export default function FAQs() {
   return (
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+      <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900">
@@ -38,12 +38,12 @@ export default function FAQs() {
               server.
             </p>
           </div>
-          <div className="mt-12 lg:mt-0 lg:col-span-2">
+          <div className="mt-12 lg:col-span-2 lg:mt-0">
             <dl className="space-y-12">
               {faqs &&
                 faqs.map((faq) => (
                   <div key={faq.question}>
-                    <dt className="text-lg leading-6 font-medium text-gray-900">
+                    <dt className="text-lg font-medium leading-6 text-gray-900">
                       {faq.question}
                     </dt>
                     <dd className="mt-2 text-base text-gray-500">

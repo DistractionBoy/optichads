@@ -15,7 +15,6 @@ export default function UserMenu() {
     if (account) {
       setUserNavigation([
         { name: "Your Chads", href: `https://qx.app/${account}` },
-        { name: "Whole Gym", href: "https://qx.app/collection/optichads" },
       ]);
     }
   }, [account]);
