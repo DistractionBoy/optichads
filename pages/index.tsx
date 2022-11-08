@@ -24,6 +24,9 @@ const Home: NextPage = () => {
       <BgImageColorHeroSection />
       <DarkOverlapShell title="Promoting Health and Charity">
         <div className="rounded-lg bg-white pb-6 shadow">
+          <Team />
+          <Tokenomics />
+          <DailyChad />
           <Image
             alt="a sick tweet bro"
             className="rounded-lg"
@@ -32,12 +35,9 @@ const Home: NextPage = () => {
             width={1255}
             layout="responsive"
           />
-          <Tokenomics />
-          <Partners />
-          <DailyChad />
           <PricingPlan />
           <FeatureList />
-          <Team />
+          <Partners />
         </div>
       </DarkOverlapShell>
     </>
