@@ -12,7 +12,7 @@ const faqs = [
             to do with any refunded tokens.`,
   },
   {
-    question: "Wen OptiBabes",
+    question: "Wen OptiBabes?",
     answer: `Our second collection, OptiBabes, is currently under construction and 
             Livic, the famous Pudgy Penguins artist has joined us as a consultant to help
             us portray a balanced and strong image for our beloved babes. We are taking 
