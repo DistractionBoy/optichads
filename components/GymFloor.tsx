@@ -31,7 +31,7 @@ const GymFloor = () => {
         Gym Floor
       </dt>
       <dd className="order-1 text-5xl font-extrabold text-red-600">{`${data.stats.floor_price.toFixed(
-        3
+        2
       )}OΞ`}</dd>
     </div>
   ) : null;
