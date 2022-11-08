@@ -8,6 +8,7 @@ import dope from "/public/images/dope.png";
 import beeps from "/public/images/beeps.png";
 import krscMax from "/public/images/krscmaxgang.png";
 import millynish from "/public/images/millynish.png";
+import livici3 from "/public/images/livixi3.png";
 
 import { Person } from "../lib";
 
@@ -16,7 +17,7 @@ const people: Person[] = [
     name: "Dicaso",
     role: "Artist / Project Lead",
     imageUrl: dicaso,
-    bio: `Dicaso used to draw dicks on L1, but now he draws OptiChads on Optimism for free.`,
+    bio: `Dicaso used to draw dicks on L1, but now he draws Chads and Babes on Optimism.`,
     twitterUrl: "https://twitter.com/Dicaso5",
   },
   {
@@ -25,6 +26,13 @@ const people: Person[] = [
     imageUrl: distraction,
     bio: `DistractionBoy has no life so he chills with Dicaso because he's funny for free.`,
     twitterUrl: "https://twitter.com/DistractionBoy_",
+  },
+  {
+    name: "LiViCi3",
+    role: "Advisor",
+    imageUrl: livici3,
+    bio: "Livix, THE artist of Pudgy Penguins, came out the igloo to get swole on L2.",
+    twitterUrl: "https://twitter.com/LiViXi3",
   },
   {
     name: "Lifestrike",
@@ -65,7 +73,7 @@ const people: Person[] = [
 
 export default function Team() {
   return (
-    <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+    <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
       <div className="space-y-12">
         <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -88,7 +96,7 @@ export default function Team() {
                 {person.imageUrl && (
                   <div className="aspect-w-3">
                     <Image
-                      className="object-cover shadow-lg rounded-lg"
+                      className="rounded-lg object-cover shadow-lg"
                       src={person.imageUrl}
                       alt=""
                       layout="intrinsic"
@@ -98,7 +106,7 @@ export default function Team() {
                 )}
 
                 <div className="space-y-2">
-                  <div className="text-lg leading-6 font-medium space-y-1">
+                  <div className="space-y-1 text-lg font-medium leading-6">
                     <h3>{person.name}</h3>
                     <p className="text-red-700">{person.role}</p>
                     <p className="text-gray-500">{person.bio}</p>
@@ -107,11 +115,13 @@ export default function Team() {
                     <li>
                       <a
                         href={person.twitterUrl}
+                        target="_blank"
+                        rel="noreferrer"
                         className="text-gray-400 hover:text-gray-500"
                       >
                         <span className="sr-only">Twitter</span>
                         <svg
-                          className="w-5 h-5"
+                          className="h-5 w-5"
                           aria-hidden="true"
                           fill="currentColor"
                           viewBox="0 0 20 20"
@@ -128,7 +138,7 @@ export default function Team() {
                         >
                           <span className="sr-only">LinkedIn</span>
                           <svg
-                            className="w-5 h-5"
+                            className="h-5 w-5"
                             aria-hidden="true"
                             fill="currentColor"
                             viewBox="0 0 20 20"

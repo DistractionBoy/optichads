@@ -37,7 +37,6 @@ const Home: NextPage = () => {
           <DailyChad />
           <PricingPlan />
           <FeatureList />
-          <FAQs />
           <Team />
         </div>
       </DarkOverlapShell>

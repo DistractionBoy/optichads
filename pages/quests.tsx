@@ -4,6 +4,7 @@ import {
   DailyChad,
   DarkHeroSectionForm,
   DarkOverlapShell,
+  FAQs,
   HeadMeta,
   QuestsClosingSection,
   QuestsOpener,
@@ -25,6 +26,7 @@ const QuestsPage = () => {
           <WeeklyTable />
           <DailyChad targetId="#username" />
           <QuestsClosingSection />
+          <FAQs />
         </div>
       </DarkOverlapShell>
     </>
