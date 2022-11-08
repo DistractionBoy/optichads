@@ -3,6 +3,23 @@ import React from "react";
 
 const faqs = [
   {
+    question: "I've completed this week's quest. Wen rewards?",
+    answer: `We have to manually verify each submitted video, so please be patient 
+            with us, but we usually are able to check submissions every couple of 
+            hours. We lock in the rewards using Quest3's system and at the end of 
+            each quest's period, the funds are dispersed. We then contact Quest3 to 
+            get any remaining funds that haven't been dispersed and figure out what 
+            to do with any refunded tokens.`,
+  },
+  {
+    question: "Wen OptiBabes",
+    answer: `Our second collection, OptiBabes, is currently under construction and 
+            Livic, the famous Pudgy Penguins artist has joined us as a consultant to help
+            us portray a balanced and strong image for our beloved babes. We are taking 
+            great care in our designs and will not rush the process. It will be a smaller 
+            collection however, and things will run smoothly so we are hoping to launch soon.`,
+  },
+  {
     question: "What are OptiChads?",
     answer: `OptiChads is an NFT collection, nah, a movement that promotes health and
             charity through a cheap public mint and up to 50% of secondary sales going
