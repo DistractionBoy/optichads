@@ -33,6 +33,28 @@ export default function QuestsClosingSection() {
             commercial purposes, all without asking permission. The blockchain
             proves ownership and you are your own Chad.
           </p>
+          <p>
+            The exercises provided by OptiChads (and optichads.art) are for
+            educational and entertainment purposes only, and is not to be
+            interpreted as a recommendation for a specific treatment plan,
+            product, or course of action. Exercise is not without its risks, and
+            this or any other exercise program may result in injury. They
+            include but are not limited to: risk of injury, aggravation of a
+            pre-existing condition, or adverse effect of over-exertion such as
+            muscle strain, abnormal blood pressure, fainting, disorders of
+            heartbeat, and very rare instances of heart attack. To reduce the
+            risk of injury, before beginning this or any exercise program,
+            please consult a healthcare provider for appropriate exercise
+            prescription and safety precautions.
+          </p>
+          <p>
+            The exercise instruction and advice presented are in no way intended
+            as a substitute for medical consultation. OptiChads (and
+            optichads.art) disclaims any liability from and in connection with
+            this program. As with any exercise program, if at any point during
+            your workout you begin to feel faint, dizzy, or have physical
+            discomfort, you should stop immediately and consult a physician.
+          </p>
         </div>
         <div className="prose prose-lg prose-indigo mx-auto my-12 text-gray-500">
           <h3>Get Active</h3>
