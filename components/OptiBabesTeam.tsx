@@ -62,7 +62,7 @@ export default function OptiBabesTeam() {
               OptiBabes
             </h2>
             <p className="text-xl text-gray-500">
-              50% to the{" "}
+              50% of all proceeds to the{" "}
               <Link
                 target="_blank"
                 rel="noreferrer"
