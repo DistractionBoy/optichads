@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "What will you donate?",
-    answer: `We will be donating 50% of all mint proceeds to the Malala Fund. The Malala Fund 
+    answer: `We will be donating 50% of all proceeds to the Malala Fund. The Malala Fund 
              "is working for a world where every girl can learn and lead". We will be donating as 
              much as we can to further this necessary cause.`,
   },
