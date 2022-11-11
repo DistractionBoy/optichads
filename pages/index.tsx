@@ -10,6 +10,7 @@ import {
   FAQs,
   FeatureList,
   HeadMeta,
+  OptiBabesTeam,
   Partners,
   PricingPlan,
   Team,
@@ -27,6 +28,7 @@ const Home: NextPage = () => {
           <Team />
           <Tokenomics />
           <DailyChad />
+          <OptiBabesTeam />
           <Image
             alt="a sick tweet bro"
             src={vitalikApproves}

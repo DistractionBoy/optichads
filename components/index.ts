@@ -26,6 +26,7 @@ import MoreInfoModal from "./MoreInfoModal";
 import NumOwners from "./NumOwners";
 import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
+import OptiBabesTeam from "./OptiBabesTeam";
 import Partners from "./Partners";
 import QuestsOpener from "./QuestsOpener";
 import QuestsClosingSection from "./QuestsClosingSection";
@@ -73,6 +74,7 @@ export {
   Modal,
   MoreInfoModal,
   NFTDetailView,
+  OptiBabesTeam,
   NumOwners,
   Partners,
   Proposal,
