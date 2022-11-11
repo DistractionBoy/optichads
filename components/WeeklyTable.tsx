@@ -12,42 +12,42 @@ const weeks = [
     questLink: "https://app.quest3.xyz/quest/702816059253449001",
   },
   {
-    startDate: new Date("November 14, 2022"),
+    startDate: new Date("November 11, 2022"),
+    exercise: "10 Sit Ups",
+    questLink: "https://app.quest3.xyz/quest/705317620782342488",
+  },
+  {
+    startDate: new Date("November 18, 2022"),
     exercise: "To Be Determined",
     questLink: "",
   },
   {
-    startDate: new Date("November 21, 2022"),
+    startDate: new Date("November 25, 2022"),
     exercise: "To Be Determined",
     questLink: "",
   },
   {
-    startDate: new Date("November 28, 2022"),
+    startDate: new Date("December 2, 2022"),
     exercise: "To Be Determined",
     questLink: "",
   },
   {
-    startDate: new Date("December 5, 2022"),
+    startDate: new Date("December 9, 2022"),
     exercise: "To Be Determined",
     questLink: "",
   },
   {
-    startDate: new Date("December 12, 2022"),
+    startDate: new Date("December 16, 2022"),
     exercise: "To Be Determined",
     questLink: "",
   },
   {
-    startDate: new Date("December 19, 2022"),
+    startDate: new Date("December 23, 2022"),
     exercise: "To Be Determined",
     questLink: "",
   },
   {
-    startDate: new Date("December 26, 2022"),
-    exercise: "To Be Determined",
-    questLink: "",
-  },
-  {
-    startDate: new Date("January 2, 2022"),
+    startDate: new Date("December 30, 2022"),
     exercise: "To Be Determined",
     questLink: "",
   },
@@ -109,7 +109,7 @@ export default function WeeklyTable() {
                       href={`${questLink}`}
                       className="text-indigo-600 hover:text-indigo-900"
                     >
-                      Quest Start Page
+                      Start-Page
                       <span className="sr-only">, {questLink}</span>
                     </a>
                   )}

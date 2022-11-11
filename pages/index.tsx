@@ -29,7 +29,6 @@ const Home: NextPage = () => {
           <DailyChad />
           <Image
             alt="a sick tweet bro"
-            className="rounded-lg"
             src={vitalikApproves}
             height={900}
             width={1255}
