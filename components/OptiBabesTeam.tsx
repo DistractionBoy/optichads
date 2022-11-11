@@ -4,6 +4,7 @@ import babeOne from "/public/images/optibabe421.png";
 import babeTwo from "/public/images/optibabes-hentaimouth.png";
 import babeThree from "/public/images/demonbabe.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -16,7 +17,9 @@ const faqs = [
   },
   {
     question: "What will you donate?",
-    answer: `We will be donating 50% of all mint proceeds to a women's charity`,
+    answer: `We will be donating 50% of all mint proceeds to the Malala Fund. The Malala Fund 
+             "is working for a world where every girl can learn and lead". We will be donating as 
+             much as we can to further this necessary cause.`,
   },
   {
     question: "How to get on the Whitelist (Allow List)?",
@@ -33,11 +36,6 @@ const faqs = [
 
 const babes = [
   {
-    title: "Too Hot",
-    subtitle: "You want it",
-    imageSrc: babeThree,
-  },
-  {
     title: "Shawty",
     subtitle: "Fun and Giggly",
     imageSrc: babeOne,
@@ -46,6 +44,11 @@ const babes = [
     title: "Maximum Babe",
     subtitle: "Volumptuous Traits",
     imageSrc: babeTwo,
+  },
+  {
+    title: "Too Hot",
+    subtitle: "You want it",
+    imageSrc: babeThree,
   },
 ];
 
@@ -59,7 +62,16 @@ export default function OptiBabesTeam() {
               OptiBabes
             </h2>
             <p className="text-xl text-gray-500">
-              50% to Women&apos;s Charities
+              50% to the{" "}
+              <Link
+                target="_blank"
+                rel="noreferrer"
+                href="https://malala.org/donate/cryptocurrency"
+                passHref
+              >
+                <span className="cursor-pointer text-red-700">Malala</span>
+              </Link>{" "}
+              Fund
             </p>
           </div>
           <ul
@@ -75,6 +87,7 @@ export default function OptiBabesTeam() {
                     width={500}
                     height={500}
                     alt=""
+                    priority
                     layout="responsive"
                   />
                   <div className="space-y-2">
@@ -89,7 +102,7 @@ export default function OptiBabesTeam() {
           </ul>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 pb-12 text-center sm:px-6 lg:px-8 lg:pb-24">
         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
           <div className="text-left">
             <h2 className="text-3xl font-extrabold text-gray-900">OptiBabes</h2>

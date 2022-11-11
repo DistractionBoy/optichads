@@ -3,22 +3,23 @@ import React from "react";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 
-import murderChad from "../public/images/murderChad.jpg";
+// import murderChad from "../public/images/murderChad.jpg";
 import eee from "../public/images/eee.png";
 import pizza from "../public/images/pizza.png";
+import babeThree from "/public/images/demonbabe.png";
 import Image from "next/image";
 
-const citizenFeatures = ["Over 150 accessories and traits"];
-const pbunnyFeatures = ["CCO License degree of Freedom"];
+const citizenFeatures = ["Max accessories and traits"];
+const pbunnyFeatures = ["OptiBabes coming soon!"];
 const bunnyFeatures = [
   "Realistic shading and contour",
-  "Chadtastic smile level of detail",
-  "Thousands of combinations",
+  "Chadtastic level of detail",
+  "Millions of combinations",
 ];
 
 export default function PricingPlan() {
   return (
-    <div className="rounded-b-lg bg-red-800">
+    <div className="rounded-lg bg-red-800">
       <div className="px-4 pt-12 sm:px-6 lg:px-8 lg:pt-20">
         <div className="text-center">
           <h2 className="text-lg font-semibold uppercase leading-6 tracking-wider text-white">
@@ -61,7 +62,7 @@ export default function PricingPlan() {
                       </div>
                     </div>
                     <Image
-                      src={murderChad}
+                      src={babeThree}
                       alt="a chad with a huge brain, bro"
                       width={400}
                       height={400}
