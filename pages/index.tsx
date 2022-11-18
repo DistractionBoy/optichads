@@ -10,6 +10,7 @@ import {
   FAQs,
   FeatureList,
   HeadMeta,
+  OptiBabesTeam,
   Partners,
   PricingPlan,
   Team,
@@ -24,9 +25,12 @@ const Home: NextPage = () => {
       <BgImageColorHeroSection />
       <DarkOverlapShell title="Promoting Health and Charity">
         <div className="rounded-lg bg-white pb-6 shadow">
-          <Team />
+          <PricingPlan />
+          <FeatureList />
           <Tokenomics />
+          <OptiBabesTeam />
           <DailyChad />
+          <Team />
           <Image
             alt="a sick tweet bro"
             src={vitalikApproves}
@@ -34,8 +38,6 @@ const Home: NextPage = () => {
             width={1255}
             layout="responsive"
           />
-          <PricingPlan />
-          <FeatureList />
           <FAQs />
           <Partners />
         </div>

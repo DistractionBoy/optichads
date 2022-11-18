@@ -55,13 +55,13 @@ const people: Person[] = [
     bio: "Beeps came, Beeps lifted, Beeps conquered his inner OptiChad.",
     twitterUrl: "https://twitter.com/cryptonftbeeps",
   },
-  {
-    name: "Krscmax",
-    role: "Thai Community Manager",
-    imageUrl: krscMax,
-    bio: "KRSC chills with Tony Jaa and Sitthichai when he's not doing arts at the gym.",
-    twitterUrl: "https://twitter.com/krscmax",
-  },
+  // {
+  //   name: "Krscmax",
+  //   role: "Thai Community Manager",
+  //   imageUrl: krscMax,
+  //   bio: "KRSC chills with Tony Jaa and Sitthichai when he's not doing arts at the gym.",
+  //   twitterUrl: "https://twitter.com/krscmax",
+  // },
   {
     name: "Millynish",
     role: "Discord Expert",
