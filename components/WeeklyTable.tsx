@@ -18,8 +18,8 @@ const weeks = [
   },
   {
     startDate: new Date("November 18, 2022"),
-    exercise: "To Be Determined",
-    questLink: "",
+    exercise: "3 Pull-ups or 30 Jumping Jacks",
+    questLink: "https://app.quest3.xyz/quest/707775132295209141",
   },
   {
     startDate: new Date("November 25, 2022"),
