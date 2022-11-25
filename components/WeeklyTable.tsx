@@ -23,8 +23,8 @@ const weeks = [
   },
   {
     startDate: new Date("November 25, 2022"),
-    exercise: "To Be Determined",
-    questLink: "",
+    exercise: "run in place with high knees for 30 sec.",
+    questLink: "https://app.quest3.xyz/quest/710528037533471229",
   },
   {
     startDate: new Date("December 2, 2022"),
