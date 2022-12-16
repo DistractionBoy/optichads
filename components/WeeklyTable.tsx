@@ -38,8 +38,8 @@ const weeks = [
   },
   {
     startDate: new Date("December 16, 2022"),
-    exercise: "To Be Determined",
-    questLink: "",
+    exercise: "10 Bicep Curls",
+    questLink: "https://app.quest3.xyz/quest/718026244385362005",
   },
   {
     startDate: new Date("December 23, 2022"),
