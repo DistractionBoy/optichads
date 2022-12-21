@@ -43,7 +43,7 @@ const weeks = [
   },
   {
     startDate: new Date("December 23, 2022"),
-    exercise: "To Be Determined",
+    exercise: "10 PROTEIN UPS",
     questLink: "",
   },
   {
