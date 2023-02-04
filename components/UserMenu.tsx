@@ -14,7 +14,7 @@ export default function UserMenu() {
   useEffect(() => {
     if (account) {
       setUserNavigation([
-        { name: "Your Chads", href: `https://qx.app/${account}` },
+        { name: "Your Chads", href: `https://opensea.io/${account}/optichads` },
       ]);
     }
   }, [account]);

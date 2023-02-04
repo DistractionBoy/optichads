@@ -1,15 +1,15 @@
 import React from "react";
 
 const faqs = [
-  {
-    question: "I've completed this week's quest. Wen rewards?",
-    answer: `We have to manually verify each submitted video, so please be patient 
-            with us, but we usually are able to check submissions every couple of 
-            hours. We lock in the rewards using Quest3's system and at the end of 
-            each quest's period, the funds are dispersed. We then contact Quest3 to 
-            get any remaining funds that haven't been dispersed and figure out what 
-            to do with any refunded tokens.`,
-  },
+  // {
+  //   question: "I've completed this week's quest. Wen rewards?",
+  //   answer: `We have to manually verify each submitted video, so please be patient
+  //           with us, but we usually are able to check submissions every couple of
+  //           hours. We lock in the rewards using Quest3's system and at the end of
+  //           each quest's period, the funds are dispersed. We then contact Quest3 to
+  //           get any remaining funds that haven't been dispersed and figure out what
+  //           to do with any refunded tokens.`,
+  // },
   {
     question: "Wen OptiBabes?",
     answer: `Our second collection, OptiBabes, is currently under construction and 

@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
-import quixLogo from "../public/images/quixotic_logo_circle.png";
 import coinGeckoLogo from "../public/images/coingecko_logo.png";
 import osLogo from "../public/images/os-logo-trans.png";
 
@@ -15,7 +14,7 @@ const navigation = {
     { name: "Zapper Bros", href: "/zapper-chads", current: false },
     {
       name: "Top Chads",
-      href: "https://qx.app/collection/optichads?sort=rank%3Aasc&query=",
+      href: "https://opensea.io/collection/optichads?search[sortAscending]=true&search[sortBy]=RARITY_RANK",
       current: false,
     },
   ],
@@ -85,22 +84,6 @@ export default function Footer() {
           </div>
           <div className="flex h-6 w-6 items-center">
             <a
-              href="https://qx.app/collection/optichads"
-              className="flex items-center"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                alt="quix logo"
-                src={quixLogo}
-                layout="intrinsic"
-                height={20}
-                width={20}
-              />
-            </a>
-          </div>
-          <div className="flex h-6 w-6 items-center">
-            <a
               href="https://www.coingecko.com/en/nft/optichads"
               className="flex items-center"
               target="_blank"
@@ -117,7 +100,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2022 OptiChads. All rights reserved.
+          &copy; 2023 OptiChads. All rights reserved.
         </p>
       </div>
     </footer>

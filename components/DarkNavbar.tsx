@@ -7,7 +7,6 @@ import { useWeb3React } from "@web3-react/core";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 import heroImg from "../public/images/hero-img.png";
-import quixLogoWord from "../public/images/quix_white.png";
 import coinGeckoLogo from "../public/images/coingecko_logo.png";
 import osLogo from "../public/images/os-logo-trans.png";
 import { NavLink } from "../lib";
@@ -18,7 +17,6 @@ import { iNavLink } from "../lib/types";
 
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
-  { name: "Quests", href: "/quests", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -115,6 +113,22 @@ export default function Navbar() {
                 <div className="hidden items-center md:flex">
                   <div className="flex items-center md:ml-6">
                     <a
+                      href="https://opensea.io/collection/optichads"
+                      className="flex items-center"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        alt="opensea logo"
+                        src={osLogo}
+                        layout="intrinsic"
+                        height={24}
+                        width={24}
+                      />
+                    </a>
+                  </div>
+                  {/* <div className="flex items-center md:ml-6">
+                    <a
                       href="https://qx.app/collection/optichads"
                       className="flex items-center"
                       target="_blank"
@@ -128,7 +142,7 @@ export default function Navbar() {
                         width={50}
                       />
                     </a>
-                  </div>
+                  </div> */}
                   <div className="flex items-center md:ml-6">
                     <a
                       href="https://www.coingecko.com/en/nft/optichads"
@@ -145,22 +159,6 @@ export default function Navbar() {
                       />
                     </a>
                   </div>
-                  {/* <div className="flex items-center md:ml-6">
-                    <a
-                      href="https://opensea.io/collection/optichads"
-                      className="flex items-center"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        alt="opensea logo"
-                        src={osLogo}
-                        layout="intrinsic"
-                        height={24}
-                        width={24}
-                      />
-                    </a>
-                  </div> */}
                   <div className="ml-4 flex items-center">
                     <UserMenu />
                   </div>
