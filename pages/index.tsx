@@ -14,7 +14,6 @@ import {
   Partners,
   PricingPlan,
   Team,
-  Tokenomics,
 } from "../components";
 
 const Home: NextPage = () => {
@@ -27,9 +26,7 @@ const Home: NextPage = () => {
         <div className="rounded-lg bg-white pb-6 shadow">
           <PricingPlan />
           <FeatureList />
-          <Tokenomics />
           <OptiBabesTeam />
-          <DailyChad />
           <Team />
           <Image
             alt="a sick tweet bro"
@@ -39,7 +36,6 @@ const Home: NextPage = () => {
             layout="responsive"
           />
           <FAQs />
-          <Partners />
         </div>
       </DarkOverlapShell>
     </>

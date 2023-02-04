@@ -2,7 +2,6 @@ import { ChevronRightIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import React from "react";
 
-import quixLogoWord from "../public/images/quix_white.png";
 import bluesweepLogo from "../public/images/bluesweep-logo.png";
 import mintplexLogo from "../public/images/mintplex-logo.png";
 
@@ -35,22 +34,6 @@ export default function DailyChadTextSection() {
       </p>
       <div className="mt-5 w-full sm:mx-auto sm:max-w-lg lg:ml-0">
         <div className="flex flex-wrap items-start justify-between">
-          <div className="flex justify-center px-1">
-            <a
-              href="https://qx.app/collection/optichads"
-              className="flex items-center"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                alt="quix logo"
-                src={quixLogoWord}
-                layout="intrinsic"
-                height={48}
-                width={100}
-              />
-            </a>
-          </div>
           <div className="flex items-center justify-center px-1 pt-2">
             <a
               href="https://mintplex.xyz/"

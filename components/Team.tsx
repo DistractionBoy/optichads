@@ -6,7 +6,6 @@ import dicaso from "/public/images/dicaso.png";
 import lifestrike from "/public/images/lifestrike.png";
 import dope from "/public/images/dope.png";
 import beeps from "/public/images/beeps.png";
-import krscMax from "/public/images/krscmaxgang.png";
 import millynish from "/public/images/millynish.png";
 import livici3 from "/public/images/livixi3.png";
 
@@ -55,13 +54,6 @@ const people: Person[] = [
     bio: "Beeps came, Beeps lifted, Beeps conquered his inner OptiChad.",
     twitterUrl: "https://twitter.com/cryptonftbeeps",
   },
-  // {
-  //   name: "Krscmax",
-  //   role: "Thai Community Manager",
-  //   imageUrl: krscMax,
-  //   bio: "KRSC chills with Tony Jaa and Sitthichai when he's not doing arts at the gym.",
-  //   twitterUrl: "https://twitter.com/krscmax",
-  // },
   {
     name: "Millynish",
     role: "Discord Expert",

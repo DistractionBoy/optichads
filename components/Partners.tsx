@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 
-import quixLogo from "../public/images/Quix.png";
 import bluesweepLogo from "../public/images/bluesweep-logo-2.png";
 import mintplexLogo from "../public/images/mintplex-logo.png";
 
@@ -18,10 +17,10 @@ export const Partners = () => {
               <div className="mt-4 ml-8 flex flex-shrink-0 flex-grow justify-center lg:ml-4 lg:flex-grow-0">
                 <Image
                   className="h-12"
-                  src={quixLogo}
+                  src={mintplexLogo}
                   alt="Workcation"
-                  width={148}
-                  height={82}
+                  width={155}
+                  height={36}
                   layout="intrinsic"
                 />
               </div>
