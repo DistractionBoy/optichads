@@ -4,14 +4,12 @@ import vitalikApproves from "../public/images/vitalik_approves.png";
 
 import {
   BgImageColorHeroSection,
-  DailyChad,
   DarkHeroSectionClouds,
   DarkOverlapShell,
   FAQs,
   FeatureList,
   HeadMeta,
   OptiBabesTeam,
-  Partners,
   PricingPlan,
   Team,
 } from "../components";

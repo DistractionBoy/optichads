@@ -139,7 +139,7 @@ export default function PricingPlan() {
                     <div className="mt-10">
                       <div className="rounded-lg shadow-md">
                         <Link
-                          href="https://qx.app/collection/optichads"
+                          href="https://opensea.io/collection/optichads"
                           passHref
                           aria-describedby="tier-growth"
                         >

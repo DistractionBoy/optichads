@@ -34,11 +34,7 @@ export default function Navbar() {
           let link = navLink;
           const pathPartToMatch = router.pathname.split("/")[1];
           const linkPartToMatch = link.href?.split("/")[1];
-          if (
-            pathPartToMatch === linkPartToMatch &&
-            link.href !==
-              "https://qx.app/collection/optichads?sort=rank%3Aasc&query="
-          ) {
+          if (pathPartToMatch === linkPartToMatch) {
             link.current = true;
           }
           return link;
@@ -73,40 +69,21 @@ export default function Navbar() {
                   </span>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
-                      {navigation.map((item) =>
-                        item.href ===
-                        "https://qx.app/collection/optichads?sort=rank%3Aasc&query=" ? (
-                          <a
-                            key={item.name}
-                            href={item.href as string}
-                            target="_blank"
-                            rel="noreferrer"
-                            className={classNames(
-                              item.current
-                                ? "bg-red-800 text-white"
-                                : "text-gray-300 hover:bg-red-700 hover:text-white",
-                              "rounded-md px-3 py-2 text-sm font-medium"
-                            )}
-                            aria-current={item.current ? "page" : undefined}
-                          >
-                            {item.name}
-                          </a>
-                        ) : (
-                          <a
-                            key={item.name}
-                            href={item.href as string}
-                            className={classNames(
-                              item.current
-                                ? "bg-red-800 text-white"
-                                : "text-gray-300 hover:bg-red-700 hover:text-white",
-                              "rounded-md px-3 py-2 text-sm font-medium"
-                            )}
-                            aria-current={item.current ? "page" : undefined}
-                          >
-                            {item.name}
-                          </a>
-                        )
-                      )}
+                      {navigation.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href as string}
+                          className={classNames(
+                            item.current
+                              ? "bg-red-800 text-white"
+                              : "text-gray-300 hover:bg-red-700 hover:text-white",
+                            "rounded-md px-3 py-2 text-sm font-medium"
+                          )}
+                          aria-current={item.current ? "page" : undefined}
+                        >
+                          {item.name}
+                        </a>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -127,22 +104,6 @@ export default function Navbar() {
                       />
                     </a>
                   </div>
-                  {/* <div className="flex items-center md:ml-6">
-                    <a
-                      href="https://qx.app/collection/optichads"
-                      className="flex items-center"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        alt="quix logo"
-                        src={quixLogoWord}
-                        layout="intrinsic"
-                        height={24}
-                        width={50}
-                      />
-                    </a>
-                  </div> */}
                   <div className="flex items-center md:ml-6">
                     <a
                       href="https://www.coingecko.com/en/nft/optichads"

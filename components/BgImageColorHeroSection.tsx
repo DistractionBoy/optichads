@@ -28,9 +28,9 @@ export default function BgImageColorHeroSection() {
   const { data } = useSWR(url);
 
   return data ? (
-    <div className="relative -mx-5 -mt-6 mb-12 sm:-mx-6 bg-gray-900 bg-gradient-to-bl from-[#da10109e] via-transparent to-[#da10109e] rounded-lg">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative shadow-xl sm:rounded-lg sm:overflow-hidden">
+    <div className="relative -mx-5 -mt-6 mb-12 rounded-lg bg-gray-900 bg-gradient-to-bl from-[#da10109e] via-transparent to-[#da10109e] sm:-mx-6">
+      <div className="mx-auto max-w-7xl">
+        <div className="relative shadow-xl sm:overflow-hidden sm:rounded-lg">
           <div className="absolute inset-0 bg-gray-900">
             <Image
               className="h-full w-full object-cover"
@@ -40,17 +40,17 @@ export default function BgImageColorHeroSection() {
             <div className="absolute inset-0 bg-red-700 mix-blend-multiply" />
           </div>
           <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-            <h1 className="text-center text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl space-y-4">
+            <h1 className="space-y-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
               <span className="block text-white">Daily Health Quote</span>
               <span className="block text-red-200">{data.name}</span>
             </h1>
-            <p className="mt-6 px-3 max-w-lg mx-auto text-center text-2xl text-red-200 sm:max-w-xl">
+            <p className="mx-auto mt-6 max-w-lg px-3 text-center text-2xl text-red-200 sm:max-w-xl">
               {data.quote}
             </p>
-            <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
-              <div className="space-y-4 sm:space-y-0 sm:mx-auto">
-                <Link href="https://qx.app/collection/optichads" passHref>
-                  <div className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8 cursor-pointer">
+            <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+              <div className="space-y-4 sm:mx-auto sm:space-y-0">
+                <Link href="https://opensea.io/collection/optichads" passHref>
+                  <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-red-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">
                     Become a Chad!
                   </div>
                 </Link>
@@ -61,9 +61,9 @@ export default function BgImageColorHeroSection() {
       </div>
     </div>
   ) : (
-    <div className="relative -mx-5 -mt-6 sm:-mx-6 bg-gray-900 bg-gradient-to-bl from-[#da10109e] via-transparent to-[#da10109e] rounded-lg">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative shadow-xl sm:rounded-lg sm:overflow-hidden">
+    <div className="relative -mx-5 -mt-6 rounded-lg bg-gray-900 bg-gradient-to-bl from-[#da10109e] via-transparent to-[#da10109e] sm:-mx-6">
+      <div className="mx-auto max-w-7xl">
+        <div className="relative shadow-xl sm:overflow-hidden sm:rounded-lg">
           <div className="absolute inset-0 bg-gray-900">
             <Image
               className="h-full w-full object-cover"
@@ -77,13 +77,13 @@ export default function BgImageColorHeroSection() {
               <span className="block text-white">Daily Health Quote</span>
               <span className="block text-red-200">be inspired.</span>
             </h1>
-            <p className="mt-6 max-w-lg mx-auto text-center text-2xl text-red-200 sm:max-w-2xl">
+            <p className="mx-auto mt-6 max-w-lg text-center text-2xl text-red-200 sm:max-w-2xl">
               The Author
             </p>
-            <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
-              <div className="space-y-4 sm:space-y-0 sm:mx-auto">
-                <Link href="https://qx.app/collection/optichads" passHref>
-                  <div className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8 cursor-pointer">
+            <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+              <div className="space-y-4 sm:mx-auto sm:space-y-0">
+                <Link href="https://opensea.io/collection/optichads" passHref>
+                  <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-red-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">
                     Become a Chad!
                   </div>
                 </Link>

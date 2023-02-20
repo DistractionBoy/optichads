@@ -7,7 +7,7 @@ export const DisconnectedChadForm = () => {
   return (
     <div className="lg:py-24">
       <div className="inline-flex cursor-pointer items-center rounded-full bg-gray-900 p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base">
-        <Link href="https://qx.app/collection/optichads" passHref>
+        <Link href="https://opensea.io/collection/optichads" passHref>
           <span className="flex items-center">
             <span className="rounded-full bg-red-600 px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
               Minting Closed

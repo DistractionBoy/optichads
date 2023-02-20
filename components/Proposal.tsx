@@ -122,12 +122,7 @@ export default function Proposal() {
             have a very active and passionate community of Chads focused on self
             improvement in and out of the gym. Through community efforts such as
             giveaways and fitness challenges, we have grown to be one of the top
-            NFT projects on Optimism by trading{" "}
-            <Link href="https://qx.app/stats">
-              <span className="font-semibold text-red-600 underline">
-                volume.
-              </span>
-            </Link>
+            NFT projects on Optimism by trading volume.
           </p>
         </div>
         <div className="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
