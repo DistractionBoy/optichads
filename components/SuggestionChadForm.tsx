@@ -81,48 +81,6 @@ export const SuggestionChadForm = () => {
       {/* <p className="mt-3 text-base text-gray-200 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
         Hey, sup. Pull up a bench and see what makes us great.
       </p> */}
-      <div className="mt-10 sm:mt-12">
-        <form
-          onSubmit={handleSubmit}
-          className="sm:mx-auto sm:max-w-xl lg:mx-0"
-        >
-          <div className="sm:flex">
-            <div className="min-w-0 flex-1">
-              <label htmlFor="email" className="sr-only">
-                Suggestion Box
-              </label>
-              <input
-                name="message"
-                type="text"
-                maxLength={240}
-                minLength={12}
-                required
-                placeholder="Suggestion Box"
-                className="block w-full rounded-md border-0 px-4 py-3 text-base text-gray-900 placeholder-gray-500 invalid:ring-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-900"
-              />
-            </div>
-            <div className="mt-3 sm:mt-0 sm:ml-3">
-              <button
-                type="submit"
-                className="block w-full rounded-md bg-red-600 py-3 px-4 font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-900"
-              >
-                Tell us why we&apos;re great
-              </button>
-            </div>
-          </div>
-          <p className="mt-3 text-sm text-gray-300 sm:mt-4">
-            by hitting us up, you totally send a message with your wallet
-            address to our{" "}
-            <a
-              href="https://discord.gg/optichads"
-              className="font-medium text-white hover:text-red-600"
-            >
-              Discord
-            </a>
-            . Sweet, huh?
-          </p>
-        </form>
-      </div>
     </div>
   );
 };
