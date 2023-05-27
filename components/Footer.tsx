@@ -9,8 +9,6 @@ import Image from "next/image";
 const navigation = {
   main: [
     { name: "The Pad", href: "/", current: false },
-    { name: "Quests", href: "/quests", current: false },
-    { name: "Proposal", href: "/proposal", current: false },
     { name: "Zapper Bros", href: "/zapper-chads", current: false },
     {
       name: "Top Chads",

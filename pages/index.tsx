@@ -25,7 +25,6 @@ const Home: NextPage = () => {
           <PricingPlan />
           <FeatureList />
           <OptiBabesTeam />
-          <Team />
           <Image
             alt="a sick tweet bro"
             src={vitalikApproves}
@@ -33,7 +32,7 @@ const Home: NextPage = () => {
             width={1255}
             layout="responsive"
           />
-          <FAQs />
+          <Team />
         </div>
       </DarkOverlapShell>
     </>
