@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import superheroImg from "../public/images/chad-t.png";
+import superheroImg from "../public/images/arbibabe-example.png";
 import DisconnectedChadForm from "./DisconnectedChadForm";
 
 export default function DarkHeroSectionClouds() {
