@@ -22,14 +22,14 @@ export const DisconnectedChadForm = () => {
       </div>
 
       <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-        <span className="block">OptiChads</span>
-        <span className="block text-red-600">Sign in, bro?</span>
+        <span className="block">ArbiBabes</span>
+        <span className="block text-red-600">Whatcha got?</span>
       </h1>
       <p className="mt-3 text-base text-gray-200 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-        Bro, you are not going to be able to enter the gym without signing in...
-        I mean connecting your wallet. You can still take a tour of the gym, but
-        if you wanna get those sweet gains I just can&apos;t let you in without
-        committing at least a click of a button.
+        Hey Chads, you&apos;ve been working so hard at the gym lately, and we
+        noticed. We cannot wait for our big debut on Arbitrum. Follow us on
+        Twitter and Discord to get the latest news on mint and stay{" "}
+        <strong>abreast</strong> about what is going on in the community.
       </p>
       <div className="mt-10 sm:mt-12">
         <div className="sm:flex sm:justify-center lg:justify-start">

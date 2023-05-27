@@ -1,34 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { useWeb3React } from "@web3-react/core";
 
 import superheroImg from "../public/images/chad-t.png";
-import SuggestionChadForm from "./SuggestionChadForm";
-import { getIsHolderOfCollection } from "../lib/helpers";
 import DisconnectedChadForm from "./DisconnectedChadForm";
 
 export default function DarkHeroSectionClouds() {
-  const { account } = useWeb3React();
-  const [statefulAccount, setStatefulAccount] = useState<string>();
-  const [isChadBro, setIsChadBro] = useState<boolean>();
-
-  useEffect(() => {
-    if (account) {
-      if (
-        typeof statefulAccount === "undefined" ||
-        statefulAccount !== account
-      ) {
-        setStatefulAccount(account);
-      }
-      getIsHolderOfCollection(
-        account,
-        process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string
-      )
-        .then(({ isHolderOfCollection }) => setIsChadBro(isHolderOfCollection))
-        .catch((e) => console.log(e));
-    }
-  }, [account, isChadBro, statefulAccount]);
-
   return (
     <div className="relative overflow-hidden">
       <main>
@@ -36,15 +12,7 @@ export default function DarkHeroSectionClouds() {
           <div className="mx-auto max-w-7xl lg:px-8">
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
-                {account ? (
-                  isChadBro ? (
-                    <SuggestionChadForm />
-                  ) : (
-                    <SuggestionChadForm />
-                  )
-                ) : (
-                  <DisconnectedChadForm />
-                )}
+                <DisconnectedChadForm />
               </div>
               <div className="mt-12 -mb-16 sm:-mb-28 lg:relative lg:m-0">
                 <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
