@@ -35,7 +35,7 @@ export default function BgImageColorHeroSection() {
             <Image
               className="h-full w-full object-cover"
               src={bg}
-              alt="happy bunnies in jackets and winter clothes making a snowman"
+              alt="women are awesome when they are working out"
             />
             <div className="absolute inset-0 bg-red-700 mix-blend-multiply" />
           </div>
