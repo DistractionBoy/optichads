@@ -31,15 +31,6 @@ export const DisconnectedChadForm = () => {
         Twitter and Discord to get the latest news on mint and stay{" "}
         <strong>abreast</strong> about what is going on in the community.
       </p>
-      <div className="mt-10 sm:mt-12">
-        <div className="sm:flex sm:justify-center lg:justify-start">
-          <div className="mt-3 sm:mt-0">
-            <div className="block w-full rounded-md bg-red-600 py-3 px-4 font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-900">
-              <Account />
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
