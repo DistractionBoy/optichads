@@ -2,12 +2,14 @@ import Account from "./Account";
 import AttributeBox from "./AttributeBox";
 import Attributes from "./Attributes";
 import BgImageColorHeroSection from "./BgImageColorHeroSection";
+import BgImageColorBabeSection from "./BgImageColorBabeSection";
 import Button from "./Button";
 import Breadcrumbs from "./Breadcrumbs";
 import Collection from "./Collection";
 import DailyChad from "./DailyChad";
 import DailyChadForm from "./DailyChadForm";
 import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
+import DarkBabeSectionClouds from "./DarkBabeSectionClouds";
 import DarkHeroSectionForm from "./DarkHeroSectionForm";
 import DarkNavbar from "./DarkNavbar";
 import DarkOverlapShell from "./DarkOverlapShell";
@@ -49,6 +51,7 @@ export {
   Account,
   AttributeBox,
   Attributes,
+  BgImageColorBabeSection,
   BgImageColorHeroSection,
   Button,
   Breadcrumbs,
@@ -57,6 +60,7 @@ export {
   DailyChad,
   DailyChadForm,
   DarkHeroSectionClouds,
+  DarkBabeSectionClouds,
   DarkHeroSectionForm,
   DarkNavbar,
   DarkOverlapShell,
