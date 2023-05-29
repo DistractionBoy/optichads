@@ -12,7 +12,7 @@ export default function DarkOverlapShell({
 }: DarkOverlapProps) {
   return (
     <>
-      <div className="bg-gray-900 bg-gradient-to-r from-[#3360d49e] pb-32">
+      <div className="bg-gray-900 bg-gradient-to-r from-[#da10109e] pb-32">
         {title && (
           <header className="py-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
