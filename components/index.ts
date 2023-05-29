@@ -11,7 +11,9 @@ import DailyChadForm from "./DailyChadForm";
 import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
 import DarkBabeSectionClouds from "./DarkBabeSectionClouds";
 import DarkHeroSectionForm from "./DarkHeroSectionForm";
+import DarkBabeNavbar from "./DarkBabeNavbar";
 import DarkNavbar from "./DarkNavbar";
+import DarkBabeOverlapShell from "./DarkBabeOverlapShell";
 import DarkOverlapShell from "./DarkOverlapShell";
 import DisconnectedChadForm from "./DisconnectedChadForm";
 import ETHBalance from "./ETHBalance";
@@ -62,7 +64,9 @@ export {
   DarkHeroSectionClouds,
   DarkBabeSectionClouds,
   DarkHeroSectionForm,
+  DarkBabeNavbar,
   DarkNavbar,
+  DarkBabeOverlapShell,
   DarkOverlapShell,
   DisconnectedChadForm,
   ETHBalance,

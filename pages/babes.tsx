@@ -5,7 +5,7 @@ import vitalikApproves from "../public/images/vitalik_approves.png";
 import {
   BgImageColorBabeSection,
   DarkBabeSectionClouds,
-  DarkOverlapShell,
+  DarkBabeOverlapShell,
   FAQs,
   FeatureList,
   HeadMeta,
@@ -14,13 +14,13 @@ import {
   Team,
 } from "../components";
 
-const BabesPage: NextPage = () => {
+const BabesPage: NextPage = (props) => {
   return (
     <>
       <HeadMeta />
       <DarkBabeSectionClouds />
       <BgImageColorBabeSection />
-      <DarkOverlapShell title="Promoting Health and Charity">
+      <DarkBabeOverlapShell title="Promoting Health and Charity">
         <div className="rounded-lg bg-white pb-6 shadow">
           <PricingPlan />
           <FeatureList />
@@ -35,7 +35,7 @@ const BabesPage: NextPage = () => {
           />
           <FAQs />
         </div>
-      </DarkOverlapShell>
+      </DarkBabeOverlapShell>
     </>
   );
 };
