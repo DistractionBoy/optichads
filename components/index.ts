@@ -11,7 +11,6 @@ import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
 import DarkHeroSectionForm from "./DarkHeroSectionForm";
 import DarkNavbar from "./DarkNavbar";
 import DarkOverlapShell from "./DarkOverlapShell";
-import DisconnectedChadForm from "./DisconnectedChadForm";
 import ETHBalance from "./ETHBalance";
 import FAQs from "./FAQs";
 import Footer from "./Footer";
@@ -60,7 +59,6 @@ export {
   DarkHeroSectionForm,
   DarkNavbar,
   DarkOverlapShell,
-  DisconnectedChadForm,
   ETHBalance,
   FAQs,
   FeatureList,

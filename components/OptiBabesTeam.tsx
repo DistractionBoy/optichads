@@ -9,28 +9,24 @@ import Link from "next/link";
 const faqs = [
   {
     question: "Wen OptiBabes?",
-    answer: `Our second collection, OptiBabes, is currently under construction and 
-              Livic, the famous Pudgy Penguins artist has joined us as a consultant to help
-              us portray a balanced and strong image for our beloved babes. We are taking 
-              great care in our designs and will not rush the process. It will be a smaller 
-              collection however, and things will run smoothly so we are hoping to launch soon.`,
+    answer:
+      "The much anticipated launch is coming soon! Be ready for it mid-June.",
   },
   {
     question: "What will you donate?",
-    answer: `We will be donating 50% of all proceeds to the Malala Fund. The Malala Fund 
+    answer: `We will be donating 50% of mint proceeds to the Malala Fund. The Malala Fund 
              "is working for a world where every girl can learn and lead". We will be donating as 
              much as we can to further this necessary cause.`,
   },
   {
     question: "How to get on the Whitelist (Allow List)?",
-    answer: `Easy bro, you just gotta hold at least 5 Chads to mint an OptiBabe. Keep checking 
+    answer: `Easy bro, you just gotta hold 1 Chad to mint each OptiBabe. Keep checking 
              in because our exact Tokenomics will not be finalized until just a little before 
-             launch.`,
+             launch. We may end up having a public mint phase`,
   },
   {
     question: "How many babes will there be?",
-    answer: `Right now we're thinking a total supply of 3,333 and allowing each person 
-            to mint 1 babe for every 5 Chads they own.`,
+    answer: `We are now set on a 1:1 claim for OptiChads to OptiBabes, so the full collection will have 10,000 $BABES`,
   },
 ];
 
@@ -62,7 +58,7 @@ export default function OptiBabesTeam() {
               OptiBabes
             </h2>
             <p className="text-xl text-gray-500">
-              50% of all proceeds to the{" "}
+              A portion of mint will be donated to the{" "}
               <Link
                 target="_blank"
                 rel="noreferrer"
