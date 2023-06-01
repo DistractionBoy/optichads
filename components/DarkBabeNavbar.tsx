@@ -23,14 +23,13 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const colorWallet = "bg-red-500"
-const collection  = "optichads"
-const collectionName = "Chads"
+const colorWallet = "bg-blue-500"
+const collection  = "optibabes"
+const collectionName = "Babes"
 
-export default function Navbar() {
+export default function DarkBabeNavbar() {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
-  const { address } = useAccount()
 
   useEffect(() => {
     if (router.isReady) {
@@ -48,8 +47,10 @@ export default function Navbar() {
     }
   }, [router]);
 
+  const { address, isConnected } = useAccount()
+
   return (
-    <Disclosure as="nav" className="z-10 bg-red-700">
+    <Disclosure as="nav" className="z-10 bg-blue-700">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -58,7 +59,7 @@ export default function Navbar() {
                 <div className="flex items-center">
                   <div className="-mb-1 flex-shrink-0">
                     <Image
-                      className="rounded-full bg-red-600"
+                      className="rounded-full bg-blue-600"
                       src={heroImg}
                       alt="Workflow"
                       width={38}
@@ -78,8 +79,8 @@ export default function Navbar() {
                           href={item.href as string}
                           className={classNames(
                             item.current
-                              ? "bg-red-800 text-white"
-                              : "text-gray-300 hover:bg-red-700 hover:text-white",
+                              ? "bg-blue-800 text-white"
+                              : "text-gray-300 hover:bg-blue-700 hover:text-white",
                             "rounded-md px-3 py-2 text-sm font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
@@ -129,7 +130,7 @@ export default function Navbar() {
                 </div>
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-red-700 p-2 text-gray-300 hover:bg-red-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-blue-700 p-2 text-gray-300 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -151,8 +152,8 @@ export default function Navbar() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-red-700 text-white"
-                      : "text-gray-300 hover:bg-red-600 hover:text-white",
+                      ? "bg-blue-700 text-white"
+                      : "text-gray-300 hover:bg-blue-600 hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
@@ -161,7 +162,7 @@ export default function Navbar() {
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="border-t border-red-300 pt-4 pb-3">
+            <div className="border-t border-blue-300 pt-4 pb-3">
               <span className="pl-5 text-gray-50">
                 <Account color={colorWallet}/>
               </span>
