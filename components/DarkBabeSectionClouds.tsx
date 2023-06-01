@@ -9,7 +9,7 @@ export default function DarkBabeSectionClouds() {
   return (
     <div className="relative overflow-hidden">
       <main>
-        <div className="bg-gray-900 bg-gradient-to-br from-[#3360d49e] via-transparent to-[#3360d49e] pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
+        <div className=" from-[#f9a8d4] via-transparent to-[#ec4899] pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
           <div className="mx-auto max-w-7xl lg:px-8">
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
@@ -20,7 +20,7 @@ export default function DarkBabeSectionClouds() {
                       passHref
                     >
                       <span className="flex items-center">
-                        <span className="rounded-full bg-red-600 px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
+                        <span className="rounded-full bg-pink-500 px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
                           Minting Soon
                         </span>
                         <span className="ml-4 text-sm">View Cheap Babes</span>
@@ -35,7 +35,7 @@ export default function DarkBabeSectionClouds() {
                   <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                     <span className="block">Arbibabes</span>
                   </h1>
-                  <p className="mt-3 text-base text-gray-200 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                  <p className="mt-3 text-base text-white sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                     Arbibabes page.
                   </p>
                 </div>

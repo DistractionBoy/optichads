@@ -28,7 +28,7 @@ export default function BgImageColorBabeSection() {
   const { data } = useSWR(url);
 
   return data ? (
-    <div className="relative -mx-5 -mt-6 mb-12 rounded-lg bg-gray-900 bg-gradient-to-bl from-[#3360d49e] via-transparent to-[#3360d49e] sm:-mx-6">
+    <div className="relative -mx-5 -mt-6 mb-12 rounded-lg bg-gray-300 bg-gradient-to-bl from-[#fef08a] via-transparent to-[#ec4899] sm:-mx-6">
       <div className="mx-auto max-w-7xl">
         <div className="relative shadow-xl sm:overflow-hidden sm:rounded-lg">
           <div className="absolute inset-0 bg-gray-900">
@@ -37,7 +37,7 @@ export default function BgImageColorBabeSection() {
               src={bg}
               alt="women are awesome when they are working out"
             />
-            <div className="absolute inset-0 bg-blue-700 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-pink-500 mix-blend-multiply" />
           </div>
           <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
             <h1 className="space-y-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
@@ -50,7 +50,7 @@ export default function BgImageColorBabeSection() {
             <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
               <div className="space-y-4 sm:mx-auto sm:space-y-0">
                 <Link href="https://opensea.io/collection/optichads" passHref>
-                  <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-blue-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">
+                  <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-pink-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-0 sm:px-8">
                     Become a Babe!
                   </div>
                 </Link>
@@ -61,7 +61,7 @@ export default function BgImageColorBabeSection() {
       </div>
     </div>
   ) : (
-    <div className="relative -mx-5 -mt-6 rounded-lg bg-gray-900 bg-gradient-to-bl from-[#3360d49e] via-transparent to-[#3360d49e] sm:-mx-6">
+    <div className="relative -mx-5 -mt-6 rounded-lg bg-gradient-to-bl from-[#ec4899] via-transparent to-[#f9a8d4] sm:-mx-6">
       <div className="mx-auto max-w-7xl">
         <div className="relative shadow-xl sm:overflow-hidden sm:rounded-lg">
           <div className="absolute inset-0 bg-gray-900">
@@ -70,20 +70,20 @@ export default function BgImageColorBabeSection() {
               src={bg}
               alt="happy bunnies in jackets and winter clothes making a snowman"
             />
-            <div className="absolute inset-0 bg-blue-700 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-yellow-200 mix-blend-multiply" />
           </div>
           <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
             <h1 className="text-center text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
               <span className="block text-white">Daily Health Quote</span>
-              <span className="block text-red-200">be inspired.</span>
+              <span className="block text-pink-500">be inspired.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-lg text-center text-2xl text-red-200 sm:max-w-2xl">
+            <p className="mx-auto mt-6 max-w-lg text-center text-2xl text-pink-300 sm:max-w-2xl">
               The Author
             </p>
             <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
               <div className="space-y-4 sm:mx-auto sm:space-y-0">
                 <Link href="https://opensea.io/collection/optichads" passHref>
-                  <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-blue-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">
+                  <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-pink-500 bg-opacity-80 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">
                     Become a Babe!
                   </div>
                 </Link>

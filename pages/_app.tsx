@@ -39,7 +39,7 @@ const wagmiConfig = createConfig({
   publicClient
 })
 
-const arbitrumColor: string =  "#3360d49e";
+const arbitrumColor: string =  "#ec4899";
 const optimismColor: string = "#da10109e";
 
 function MyApp({ Component, pageProps }: AppProps) {
