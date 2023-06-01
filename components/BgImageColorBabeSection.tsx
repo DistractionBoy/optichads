@@ -51,7 +51,7 @@ export default function BgImageColorBabeSection() {
               <div className="space-y-4 sm:mx-auto sm:space-y-0">
                 <Link href="https://opensea.io/collection/optichads" passHref>
                   <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-blue-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">
-                    Become a Chad!
+                    Become a Babe!
                   </div>
                 </Link>
               </div>
@@ -84,7 +84,7 @@ export default function BgImageColorBabeSection() {
               <div className="space-y-4 sm:mx-auto sm:space-y-0">
                 <Link href="https://opensea.io/collection/optichads" passHref>
                   <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-blue-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">
-                    Become a Chad!
+                    Become a Babe!
                   </div>
                 </Link>
               </div>

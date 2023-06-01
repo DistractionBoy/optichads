@@ -13,7 +13,35 @@ import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 import { useRouter } from 'next/router';
 
-const connectors: [MetaMask, Web3ReactHooks][] = [[metaMask, metaMaskHooks]];
+import '@rainbow-me/rainbowkit/styles.css';
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+} from '@rainbow-me/rainbowkit';
+import { configureChains, createConfig, WagmiConfig } from 'wagmi';
+import { optimism, arbitrum } from 'wagmi/chains';
+import { publicProvider } from 'wagmi/providers/public';
+
+const { chains, publicClient } = configureChains(
+  [optimism, arbitrum],
+  [
+    publicProvider()
+  ]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: 'My RainbowKit App',
+  projectId: 'YOUR_PROJECT_ID',
+  chains
+});
+
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors,
+  publicClient
+})
+
+// const connectors: [MetaMask, Web3ReactHooks][] = [[metaMask, metaMaskHooks]];
 const arbitrumColor: string =  "#3360d49e";
 const optimismColor: string = "#da10109e";
 
@@ -31,20 +59,24 @@ function MyApp({ Component, pageProps }: AppProps) {
           fetch(resource, init).then((res) => res.json()),
       }}
     >
-      <Web3ReactProvider connectors={connectors}>
-        <MintFormProvider>
-          <StepperProvider>
-            <Layout color={colorLayout}>
-              <div>
-                {router.asPath === "/babes" ? <DarkBabeNavbar/> : <DarkNavbar />}
-                
-                <Component {...pageProps} />
-              </div>
-              <Footer />
-            </Layout>
-          </StepperProvider>
-        </MintFormProvider>
-      </Web3ReactProvider>
+      {/* <Web3ReactProvider connectors={connectors}> */}
+      <WagmiConfig config={wagmiConfig}>
+        <RainbowKitProvider chains={chains}>
+          <MintFormProvider>
+            <StepperProvider>
+              <Layout color={colorLayout}>
+                <div>
+                  {router.asPath === "/babes" ? <DarkBabeNavbar/> : <DarkNavbar />}
+                  
+                  <Component {...pageProps} />
+                </div>
+                <Footer />
+              </Layout>
+            </StepperProvider>
+          </MintFormProvider>
+        </RainbowKitProvider>
+      </WagmiConfig>
+      {/* </Web3ReactProvider> */}
     </SWRConfig>
   );
 }

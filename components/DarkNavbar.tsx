@@ -43,7 +43,7 @@ export default function Navbar() {
     }
   }, [router]);
 
-  const { account } = useWeb3React();
+  // const { account } = useWeb3React();
 
   return (
     <Disclosure as="nav" className="z-10 bg-red-700">
@@ -121,7 +121,7 @@ export default function Navbar() {
                     </a>
                   </div>
                   <div className="ml-4 flex items-center">
-                    <UserMenu />
+                    {/* <UserMenu /> */}
                   </div>
                 </div>
                 <div className="-mr-2 flex md:hidden">
@@ -162,7 +162,7 @@ export default function Navbar() {
               <span className="pl-5 text-gray-50">
                 <Account />
               </span>
-              {account && <UserMenuMobile />}
+              {/* {account && <UserMenuMobile />} */}
             </div>
           </Disclosure.Panel>
         </>
