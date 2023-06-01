@@ -7,15 +7,10 @@ import Button from "./Button";
 import Breadcrumbs from "./Breadcrumbs";
 import Collection from "./Collection";
 import DailyChad from "./DailyChad";
-import DailyChadForm from "./DailyChadForm";
 import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
-import DarkBabeSectionClouds from "./DarkBabeSectionClouds";
-import DarkHeroSectionForm from "./DarkHeroSectionForm";
-import DarkBabeNavbar from "./DarkBabeNavbar";
 import DarkNavbar from "./DarkNavbar";
 import DarkBabeOverlapShell from "./DarkBabeOverlapShell";
 import DarkOverlapShell from "./DarkOverlapShell";
-import DisconnectedChadForm from "./DisconnectedChadForm";
 import ETHBalance from "./ETHBalance";
 import FAQs from "./FAQs";
 import Footer from "./Footer";
@@ -31,10 +26,7 @@ import NumOwners from "./NumOwners";
 import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
 import OptiBabesTeam from "./OptiBabesTeam";
-import Partners from "./Partners";
 import QuestsOpener from "./QuestsOpener";
-import QuestsClosingSection from "./QuestsClosingSection";
-import RaffleChadModal from "./RaffleChadModal";
 import RepsToday from "./RepsToday";
 import Stepper from "./Stepper";
 import SuggestionChadForm from "./SuggestionChadForm";
@@ -46,7 +38,6 @@ import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import FeatureList from "./FeatureList";
 import PricingPlan from "./PricingPlan";
-import WeeklyTable from "./WeeklyTable";
 import ZapperChad from "./ZapperChad";
 
 export {
@@ -57,18 +48,12 @@ export {
   BgImageColorHeroSection,
   Button,
   Breadcrumbs,
-  RaffleChadModal,
   Collection,
   DailyChad,
-  DailyChadForm,
   DarkHeroSectionClouds,
-  DarkBabeSectionClouds,
-  DarkHeroSectionForm,
-  DarkBabeNavbar,
   DarkNavbar,
   DarkBabeOverlapShell,
   DarkOverlapShell,
-  DisconnectedChadForm,
   ETHBalance,
   FAQs,
   FeatureList,
@@ -84,10 +69,8 @@ export {
   NFTDetailView,
   OptiBabesTeam,
   NumOwners,
-  Partners,
   Proposal,
   QuestsOpener,
-  QuestsClosingSection,
   PricingPlan,
   RepsToday,
   Stepper,
@@ -98,6 +81,5 @@ export {
   TotalSupply,
   UserMenu,
   UserMenuMobile,
-  WeeklyTable,
   ZapperChad,
 };

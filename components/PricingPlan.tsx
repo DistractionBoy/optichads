@@ -3,15 +3,14 @@ import React from "react";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 
-// import murderChad from "../public/images/murderChad.jpg";
-import eee from "../public/images/eee.png";
-import pizza from "../public/images/pizza.png";
-import babeThree from "/public/images/demonbabe.png";
+import babeMiddle from "../public/images/cherries-babe.png";
+import babeRight from "../public/images/flowers-babe.png";
+import babeLeft from "/public/images/strapped.png";
 import Image from "next/image";
 
-const citizenFeatures = ["Max accessories and traits"];
-const pbunnyFeatures = ["OptiBabes coming soon!"];
-const bunnyFeatures = [
+const wellnessFeatures = ["Max accessories and traits"];
+const decentralizedFeatures = ["ArbiBabes coming soon!"];
+const mainFeatures = [
   "Realistic shading and contour",
   "Chadtastic level of detail",
   "Millions of combinations",
@@ -23,22 +22,13 @@ export default function PricingPlan() {
       <div className="px-4 pt-12 sm:px-6 lg:px-8 lg:pt-20">
         <div className="text-center">
           <h2 className="text-lg font-semibold uppercase leading-6 tracking-wider text-white">
-            Proceeds
+            OptiChads
           </h2>
           <p className="mt-2 text-3xl font-extrabold text-gray-50 sm:text-4xl lg:text-5xl">
-            50% of profits donated
+            ArbiBabes coming soon
           </p>
           <p className="mx-auto mt-3 max-w-4xl text-xl text-white sm:mt-5 sm:text-xl">
-            OptiChads comprises of some of the most hardcore Optimism fans from
-            other projects who wanted to give something unique back to the
-            community and provide a large revenue stream to{" "}
-            <a
-              className="underline hover:text-red-100"
-              href="https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c"
-            >
-              retroactive public goods
-            </a>{" "}
-            so we will continue to donate 50% in perpetuity.
+            One Babe for every Chad
           </p>
         </div>
       </div>
@@ -62,15 +52,16 @@ export default function PricingPlan() {
                       </div>
                     </div>
                     <Image
-                      src={babeThree}
-                      alt="a chad with a huge brain, bro"
+                      src={babeMiddle}
+                      alt=""
                       width={400}
                       height={400}
+                      priority
                       layout="responsive"
                     />
                     <div className="flex flex-1 flex-col justify-between border-t-2 border-gray-100 bg-gray-50 p-6 sm:p-10 lg:p-6 xl:p-10">
                       <ul role="list" className="space-y-4">
-                        {pbunnyFeatures.map((feature, idx) => (
+                        {decentralizedFeatures.map((feature, idx) => (
                           <li key={idx} className="flex items-start">
                             <div className="flex-shrink-0">
                               <CheckIcon
@@ -113,16 +104,17 @@ export default function PricingPlan() {
                   </div>
                   <div className="mx-[2px] rounded-t-lg">
                     <Image
-                      src={eee}
-                      alt="a chad with a pizza hanging from his mouth"
+                      src={babeLeft}
+                      alt=""
                       width={400}
                       height={400}
+                      priority
                       layout="responsive"
                     />
                   </div>
                   <div className="rounded-b-lg border-t-2 border-gray-100 bg-gray-50 px-6 pt-10 pb-8 sm:px-10 sm:py-10">
                     <ul role="list" className="space-y-4">
-                      {bunnyFeatures.map((feature, idx) => (
+                      {mainFeatures.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
                           <div className="flex-shrink-0">
                             <CheckIcon
@@ -144,7 +136,7 @@ export default function PricingPlan() {
                           aria-describedby="tier-growth"
                         >
                           <div className="block w-full cursor-pointer rounded-lg border border-transparent bg-red-600 px-6 py-4 text-center text-xl font-medium leading-6 text-white hover:bg-red-700">
-                            Become a Chad!
+                            Become a Babe!
                           </div>
                         </Link>
                       </div>
@@ -166,15 +158,16 @@ export default function PricingPlan() {
                       </div>
                     </div>
                     <Image
-                      src={pizza}
-                      alt="a chad with a huge brain, bro"
+                      src={babeRight}
+                      alt=""
                       width={400}
                       height={400}
+                      priority
                       layout="responsive"
                     />
                     <div className="flex flex-1 flex-col justify-between border-t-2 border-gray-100 bg-gray-50 p-6 sm:p-10 lg:p-6 xl:p-10">
                       <ul role="list" className="space-y-4">
-                        {citizenFeatures.map((feature, idx) => (
+                        {wellnessFeatures.map((feature, idx) => (
                           <li key={idx} className="flex items-start">
                             <div className="flex-shrink-0">
                               <CheckIcon

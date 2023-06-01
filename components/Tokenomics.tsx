@@ -21,11 +21,6 @@ export default function Tokenomics() {
                 <GymFloor />
                 <NumOwners />
               </dl>
-              {/* <dl className="rounded-b-lg bg-gray-100 shadow-lg sm:grid sm:grid-cols-3">
-                <RepsToday />
-                <GymFloor />
-                <NumOwners />
-              </dl> */}
             </div>
           </div>
         </div>
