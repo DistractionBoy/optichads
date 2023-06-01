@@ -3,10 +3,9 @@ import React from "react";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 
-// import murderChad from "../public/images/murderChad.jpg";
-import eee from "../public/images/eee.png";
-import pizza from "../public/images/pizza.png";
-import babeThree from "/public/images/demonbabe.png";
+import babeMiddle from "../public/images/cherries-babe.png";
+import babeRight from "../public/images/flowers-babe.png";
+import babeLeft from "/public/images/strapped.png";
 import Image from "next/image";
 
 const wellnessFeatures = ["Max accessories and traits"];
@@ -26,18 +25,10 @@ export default function PricingPlan() {
             OptiChads
           </h2>
           <p className="mt-2 text-3xl font-extrabold text-gray-50 sm:text-4xl lg:text-5xl">
-            50% of mint donated
+            ArbiBabes coming soon
           </p>
           <p className="mx-auto mt-3 max-w-4xl text-xl text-white sm:mt-5 sm:text-xl">
-            OptiChads comprised of some of the most hardcore Layer 2 fans from
-            other projects who wanted to give something unique back to the
-            community and provide a large revenue stream to Optimism&apos;s{" "}
-            <Link href="https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c">
-              <span className="cursor-pointer underline hover:text-red-50">
-                retroactive public goods
-              </span>
-            </Link>{" "}
-            so we donated 50%.
+            One Babe for every Chad
           </p>
         </div>
       </div>
@@ -61,10 +52,11 @@ export default function PricingPlan() {
                       </div>
                     </div>
                     <Image
-                      src={babeThree}
-                      alt="a chad with a huge brain, bro"
+                      src={babeMiddle}
+                      alt=""
                       width={400}
                       height={400}
+                      priority
                       layout="responsive"
                     />
                     <div className="flex flex-1 flex-col justify-between border-t-2 border-gray-100 bg-gray-50 p-6 sm:p-10 lg:p-6 xl:p-10">
@@ -112,10 +104,11 @@ export default function PricingPlan() {
                   </div>
                   <div className="mx-[2px] rounded-t-lg">
                     <Image
-                      src={eee}
-                      alt="a chad with a pizza hanging from his mouth"
+                      src={babeLeft}
+                      alt=""
                       width={400}
                       height={400}
+                      priority
                       layout="responsive"
                     />
                   </div>
@@ -143,7 +136,7 @@ export default function PricingPlan() {
                           aria-describedby="tier-growth"
                         >
                           <div className="block w-full cursor-pointer rounded-lg border border-transparent bg-red-600 px-6 py-4 text-center text-xl font-medium leading-6 text-white hover:bg-red-700">
-                            Become a Chad!
+                            Become a Babe!
                           </div>
                         </Link>
                       </div>
@@ -165,10 +158,11 @@ export default function PricingPlan() {
                       </div>
                     </div>
                     <Image
-                      src={pizza}
-                      alt="a chad with a huge brain, bro"
+                      src={babeRight}
+                      alt=""
                       width={400}
                       height={400}
+                      priority
                       layout="responsive"
                     />
                     <div className="flex flex-1 flex-col justify-between border-t-2 border-gray-100 bg-gray-50 p-6 sm:p-10 lg:p-6 xl:p-10">

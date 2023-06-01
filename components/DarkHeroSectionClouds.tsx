@@ -39,9 +39,13 @@ export default function DarkHeroSectionClouds() {
                   <p className="mt-3 text-base text-gray-200 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                     Our first collection (OptiChads) was such a huge success
                     that we are launching another collection, this time on
-                    Arbitrum. ArbiBabes will donate large portions of proceeds
-                    to the Malala fund, to help women in the Middle East in
-                    education. For more, go to the &ldquo;babes&rdquo; page.
+                    Arbitrum. For more, go to the{" "}
+                    <Link href="/babes">
+                      <span className="underline hover:cursor-pointer">
+                        Babes
+                      </span>
+                    </Link>{" "}
+                    page.
                   </p>
                 </div>
               </div>

@@ -1,22 +1,15 @@
 import React from "react";
 
-import babeOne from "/public/images/optibabe421.png";
-import babeTwo from "/public/images/optibabes-hentaimouth.png";
-import babeThree from "/public/images/demonbabe.png";
+import babeOne from "/public/images/athena.png";
+import babeTwo from "/public/images/hands.png";
+import babeThree from "/public/images/ready.png";
 import Image from "next/image";
-import Link from "next/link";
 
 const faqs = [
   {
     question: "Wen OptiBabes?",
     answer:
       "The much anticipated launch is coming soon! Be ready for it mid-June.",
-  },
-  {
-    question: "What will you donate?",
-    answer: `We will be donating 50% of mint proceeds to the Malala Fund. The Malala Fund 
-             "is working for a world where every girl can learn and lead". We will be donating as 
-             much as we can to further this necessary cause.`,
   },
   {
     question: "How to get on the Whitelist (Allow List)?",
@@ -57,18 +50,6 @@ export default function OptiBabesTeam() {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               OptiBabes
             </h2>
-            <p className="text-xl text-gray-500">
-              A portion of mint will be donated to the{" "}
-              <Link
-                target="_blank"
-                rel="noreferrer"
-                href="https://malala.org/donate/cryptocurrency"
-                passHref
-              >
-                <span className="cursor-pointer text-red-700">Malala</span>
-              </Link>{" "}
-              Fund
-            </p>
           </div>
           <ul
             role="list"
