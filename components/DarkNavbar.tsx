@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Disclosure } from "@headlessui/react";
-import { useWeb3React } from "@web3-react/core";
 
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
@@ -14,6 +13,7 @@ import Account from "./Account";
 import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import { iNavLink } from "../lib/types";
+import { useAccount } from 'wagmi'
 
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
@@ -23,9 +23,14 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+const colorWallet = "bg-red-500"
+const collection  = "optichads"
+const collectionName = "Chads"
+
 export default function Navbar() {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
+  const { address } = useAccount()
 
   useEffect(() => {
     if (router.isReady) {
@@ -42,8 +47,6 @@ export default function Navbar() {
       });
     }
   }, [router]);
-
-  // const { account } = useWeb3React();
 
   return (
     <Disclosure as="nav" className="z-10 bg-red-700">
@@ -121,7 +124,7 @@ export default function Navbar() {
                     </a>
                   </div>
                   <div className="ml-4 flex items-center">
-                    {/* <UserMenu /> */}
+                    <UserMenu color={colorWallet} collection={collection} collectionName={collectionName}/>
                   </div>
                 </div>
                 <div className="-mr-2 flex md:hidden">
@@ -160,9 +163,9 @@ export default function Navbar() {
             </div>
             <div className="border-t border-red-300 pt-4 pb-3">
               <span className="pl-5 text-gray-50">
-                <Account />
+                <Account color={colorWallet}/>
               </span>
-              {/* {account && <UserMenuMobile />} */}
+              {address && <UserMenuMobile />}
             </div>
           </Disclosure.Panel>
         </>

@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { SWRConfig } from "swr";
 import type { AppProps } from "next/app";
-import { Web3ReactHooks, Web3ReactProvider } from "@web3-react/core";
 import "../styles/globals.css";
 import { StepperProvider } from "../lib/state/stepper";
 import { MintFormProvider } from "../lib/state/mintForm";
-import { MetaMask } from "@web3-react/metamask";
 import DarkNavbar from "../components/DarkNavbar";
 import { DarkBabeNavbar } from "../components";
 import { hooks as metaMaskHooks, metaMask } from "../lib/connectors/metaMask";
@@ -41,7 +39,6 @@ const wagmiConfig = createConfig({
   publicClient
 })
 
-// const connectors: [MetaMask, Web3ReactHooks][] = [[metaMask, metaMaskHooks]];
 const arbitrumColor: string =  "#3360d49e";
 const optimismColor: string = "#da10109e";
 
@@ -59,7 +56,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           fetch(resource, init).then((res) => res.json()),
       }}
     >
-      {/* <Web3ReactProvider connectors={connectors}> */}
       <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider chains={chains}>
           <MintFormProvider>
@@ -76,7 +72,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           </MintFormProvider>
         </RainbowKitProvider>
       </WagmiConfig>
-      {/* </Web3ReactProvider> */}
     </SWRConfig>
   );
 }

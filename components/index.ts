@@ -10,6 +10,8 @@ import DailyChad from "./DailyChad";
 import DarkHeroSectionClouds from "./DarkHeroSectionClouds";
 import DarkNavbar from "./DarkNavbar";
 import DarkBabeOverlapShell from "./DarkBabeOverlapShell";
+import DarkBabeSectionClouds from "./DarkBabeSectionClouds";
+import DarkBabeNavbar from "./DarkBabeNavbar";
 import DarkOverlapShell from "./DarkOverlapShell";
 import ETHBalance from "./ETHBalance";
 import FAQs from "./FAQs";
@@ -53,6 +55,8 @@ export {
   DarkHeroSectionClouds,
   DarkNavbar,
   DarkBabeOverlapShell,
+  DarkBabeSectionClouds,
+  DarkBabeNavbar,
   DarkOverlapShell,
   ETHBalance,
   FAQs,

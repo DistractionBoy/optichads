@@ -9,29 +9,30 @@ import NFTDetailView from "../../components/NFTDetailView";
 import NFTCard from "../../components/NFTCard";
 import { getMyTokenIds } from "../../lib/helpers";
 import HeadMeta from "../../components/HeadMeta";
+import { useAccount } from 'wagmi'
 
 const { useProvider } = hooks;
 
 export default function ViewPage() {
-  const { account } = useWeb3React();
+  const { address } = useAccount()
   const provider = useProvider();
   const [myChads, setMyChads] = useState<number[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    if (typeof account !== "undefined" && provider) {
+    if (typeof address !== "undefined" && provider) {
       setLoading(true);
       const chadtract: Contract = new Contract(
         process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string,
         CONTRACT_ABI as ContractInterface,
         provider
       );
-      getMyTokenIds(chadtract, account).then((tokenIds) => {
+      getMyTokenIds(chadtract, address).then((tokenIds) => {
         setLoading(false);
         setMyChads(tokenIds);
       });
     }
-  }, [account, provider]);
+  }, [address, provider]);
 
   return (
     <>

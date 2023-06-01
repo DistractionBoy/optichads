@@ -3,37 +3,35 @@ import { Menu, Transition } from "@headlessui/react";
 
 import { NavLink } from "../lib";
 import { classNames } from "../lib/helpers";
-import { useWeb3React } from "@web3-react/core";
 import Account from "./Account";
+import { useAccount, useDisconnect } from 'wagmi'
 
-export default function UserMenu() {
-  const { account } = useWeb3React();
+type Props = {
+  color?: string;
+  collection?:string;
+  collectionName?: string;
+};
 
+export default function UserMenu({ color, collection, collectionName }: Props)  {
   const [userNavigation, setUserNavigation] = useState<NavLink[]>();
+  const { address, isConnected } = useAccount()
+  const { disconnect } = useDisconnect()
 
   useEffect(() => {
-    if (account) {
+    if (address) {
       setUserNavigation([
-        { name: "Your Chads", href: `https://opensea.io/${account}/optichads` },
+        { name: `Your ${collectionName}`, href: `https://opensea.io/${address}/${collection}` },
       ]);
     }
-  }, [account]);
-
-  if (typeof account !== "string") {
-    return (
-      <div className="flex max-w-xs cursor-pointer items-center rounded-full bg-red-700 px-3 py-1 text-sm text-gray-100 hover:bg-red-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800">
-        <Account />
-      </div>
-    );
-  }
+  }, [address]);
 
   return (
     <Menu as="div" className="relative ml-3">
-      <Menu.Button className="flex max-w-xs items-center rounded-full bg-red-700 px-3 py-1 text-sm text-gray-100 hover:bg-red-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800">
+      <Menu.Button className="flex">
         <span className="sr-only">open account menu</span>
-        <Account />
+        <Account color={color}/>
       </Menu.Button>
-      <Transition
+      { isConnected ? <Transition
         as={Fragment}
         enter="transition ease-out duration-100"
         enterFrom="transform opacity-0 scale-95"
@@ -42,7 +40,7 @@ export default function UserMenu() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-red-800 ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-red-800 ring-opacity-5 focus:outline-none z-10">
           {userNavigation?.map((item) => (
             <Menu.Item key={item.name}>
               {({ active }) =>
@@ -70,8 +68,15 @@ export default function UserMenu() {
               }
             </Menu.Item>
           ))}
+            <div
+              onClick={() => disconnect()}
+              className="block px-4 py-2 text-sm text-gray-700 cursor-pointer"
+            >
+              Disconnect
+          </div>
         </Menu.Items>
       </Transition>
+      : <></>}
     </Menu>
   );
 }
