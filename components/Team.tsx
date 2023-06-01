@@ -8,6 +8,7 @@ import dope from "/public/images/dope.png";
 import beeps from "/public/images/beeps.png";
 import millynish from "/public/images/millynish.png";
 import livici3 from "/public/images/livixi3.png";
+import THREEt from "/public/images/3t.jpg";
 
 import { Person } from "../lib";
 
@@ -61,6 +62,13 @@ const people: Person[] = [
     bio: `Chillin like a villain on the Opti Island makin a killin`,
     twitterUrl: "https://twitter.com/anish_katwal",
   },
+  {
+    name: "3t",
+    role: "Developer",
+    imageUrl: THREEt,
+    bio: `Frontend developer helping with updates and creative direction`,
+    twitterUrl: "https://twitter.com/Prod3t"
+  }
 ];
 
 export default function Team() {
