@@ -25,6 +25,7 @@ function classNames(...classes: string[]) {
 
 const colorWallet = "bg-pink-500"
 const collection  = "arbibabes"
+const collectionName = "Babes"
 
 export default function DarkBabeNavbar() {
   const router = useRouter();
