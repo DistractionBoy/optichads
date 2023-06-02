@@ -13,7 +13,7 @@ export default function DarkBabeSectionClouds() {
           <div className="mx-auto max-w-7xl lg:px-8">
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
-              <div className="lg:py-24">
+                <div className="lg:py-24">
                   <div className="inline-flex cursor-pointer items-center rounded-full bg-gray-900 p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base">
                     <Link
                       href="https://opensea.io/collection/optichads"
@@ -47,7 +47,6 @@ export default function DarkBabeSectionClouds() {
                     src={babeImg}
                     width={660}
                     height={660}
-                    layout="intrinsic"
                     priority
                     alt=""
                   />

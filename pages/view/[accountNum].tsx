@@ -9,7 +9,6 @@ import { Contract, ContractInterface } from "@ethersproject/contracts";
 import NFTDetailView from "../../components/NFTDetailView";
 import NFTCard from "../../components/NFTCard";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import { removeUndefinedForNextJsSerializing } from "../../lib/utils";
 import { getMyTokenIds } from "../../lib/helpers";
 import HeadMeta from "../../components/HeadMeta";
 
@@ -18,9 +17,9 @@ const { useProvider } = hooks;
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { accountNum } = context.query;
   return {
-    props: removeUndefinedForNextJsSerializing({
-      accountNum,
-    }),
+    props: {
+      accountNum: accountNum as string,
+    },
   };
 };
 

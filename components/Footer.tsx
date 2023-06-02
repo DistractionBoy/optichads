@@ -36,7 +36,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-500">
+    <footer className="bg-gray-800">
       <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
         <nav
           className="-mx-5 -my-2 flex flex-wrap justify-center"
@@ -71,13 +71,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              <Image
-                alt="opensea logo"
-                src={osLogo}
-                layout="intrinsic"
-                height={20}
-                width={20}
-              />
+              <Image alt="opensea logo" src={osLogo} height={20} width={20} />
             </a>
           </div>
           <div className="flex h-6 w-6 items-center">
@@ -90,7 +84,6 @@ export default function Footer() {
               <Image
                 alt="coingecko logo"
                 src={coinGeckoLogo}
-                layout="intrinsic"
                 height={20}
                 width={20}
               />

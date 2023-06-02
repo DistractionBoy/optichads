@@ -13,7 +13,7 @@ import Account from "./Account";
 import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import { iNavLink } from "../lib/types";
-import { useAccount } from 'wagmi'
+import { useAccount } from "wagmi";
 
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
@@ -23,9 +23,9 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const colorWallet = "bg-pink-500"
-const collection  = "arbibabes"
-const collectionName = "Babes"
+const colorWallet = "bg-pink-500";
+const collection = "arbibabes";
+const collectionName = "Babes";
 
 export default function DarkBabeNavbar() {
   const router = useRouter();
@@ -47,7 +47,7 @@ export default function DarkBabeNavbar() {
     }
   }, [router]);
 
-  const { address, isConnected } = useAccount()
+  const { address, isConnected } = useAccount();
 
   return (
     <Disclosure as="nav" className="z-10 bg-blue-500">
@@ -63,8 +63,6 @@ export default function DarkBabeNavbar() {
                       src={heroImg}
                       alt="Workflow"
                       width={38}
-                      height={38}
-                      layout="intrinsic"
                       priority
                     />
                   </div>
@@ -102,7 +100,6 @@ export default function DarkBabeNavbar() {
                       <Image
                         alt="opensea logo"
                         src={osLogo}
-                        layout="intrinsic"
                         height={24}
                         width={24}
                       />
@@ -118,14 +115,17 @@ export default function DarkBabeNavbar() {
                       <Image
                         alt="coinGecko logo"
                         src={coinGeckoLogo}
-                        layout="intrinsic"
                         height={24}
                         width={24}
                       />
                     </a>
                   </div>
                   <div className="ml-4 flex items-center">
-                    <UserMenu color={colorWallet} collection={collection} collectionName={collectionName}/>
+                    <UserMenu
+                      color={colorWallet}
+                      collection={collection}
+                      collectionName={collectionName}
+                    />
                   </div>
                 </div>
                 <div className="-mr-2 flex md:hidden">
@@ -164,9 +164,14 @@ export default function DarkBabeNavbar() {
             </div>
             <div className="border-t border-red-300 pt-5 pb-3">
               <div className="pl-5">
-                <Account color={colorWallet}/>
+                <Account color={colorWallet} />
               </div>
-              {address && <UserMenuMobile collection={collection} collectionName={collectionName}/>}
+              {address && (
+                <UserMenuMobile
+                  collection={collection}
+                  collectionName={collectionName}
+                />
+              )}
             </div>
           </Disclosure.Panel>
         </>

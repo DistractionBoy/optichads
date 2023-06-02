@@ -3,9 +3,9 @@ import React from "react";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 
-import babeMiddle from "../public/images/cherries-babe.png";
+import babeLeft from "../public/images/cherries-babe.png";
 import babeRight from "../public/images/flowers-babe.png";
-import babeLeft from "/public/images/strapped.png";
+import babeMiddle from "/public/images/strapped.png";
 import Image from "next/image";
 
 const wellnessFeatures = ["Max accessories and traits"];
@@ -18,7 +18,7 @@ const mainFeatures = [
 
 export default function PricingPlan() {
   return (
-    <div className="rounded-lg bg-pink-500">
+    <div className="rounded-lg bg-red-700">
       <div className="px-4 pt-12 sm:px-6 lg:px-8 lg:pt-20">
         <div className="text-center">
           <h2 className="text-lg font-semibold uppercase leading-6 tracking-wider text-white">
@@ -35,7 +35,7 @@ export default function PricingPlan() {
 
       <div className="mt-16 bg-gradient-to-b from-white via-white to-red-100 pb-12 lg:mt-20 lg:pb-20">
         <div className="relative z-0">
-          <div className="absolute inset-0 h-5/6 bg-pink-500 lg:h-2/3" />
+          <div className="absolute inset-0 h-5/6 bg-red-700 lg:h-2/3" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="relative lg:grid lg:grid-cols-7">
               <div className="mx-auto max-w-md lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3 lg:mx-0 lg:max-w-none">
@@ -52,12 +52,10 @@ export default function PricingPlan() {
                       </div>
                     </div>
                     <Image
-                      src={babeMiddle}
+                      src={babeLeft}
                       alt=""
-                      width={400}
-                      height={400}
                       priority
-                      layout="responsive"
+                      className="object-cover"
                     />
                     <div className="flex flex-1 flex-col justify-between border-t-2 border-gray-100 bg-gray-50 p-6 sm:p-10 lg:p-6 xl:p-10">
                       <ul role="list" className="space-y-4">
@@ -82,13 +80,13 @@ export default function PricingPlan() {
               <div className="mx-auto mt-10 max-w-lg lg:col-start-3 lg:col-end-6 lg:row-start-1 lg:row-end-4 lg:mx-0 lg:mt-0 lg:max-w-none">
                 <div className="relative z-10 rounded-lg shadow-xl">
                   <div
-                    className="pointer-events-none absolute inset-0 rounded-lg border-2 border-pink-300"
+                    className="pointer-events-none absolute inset-0 rounded-lg border-2 border-red-600"
                     aria-hidden="true"
                   />
                   <div className="absolute inset-x-0 top-0 z-20 translate-y-px transform">
                     <div className="flex -translate-y-1/2 transform justify-center">
-                      <span className="inline-flex rounded-full bg-blue-500 px-4 py-1 text-sm font-semibold uppercase tracking-wider text-white">
-                        MAXIMUM CHAD
+                      <span className="inline-flex rounded-full bg-red-600 px-4 py-1 text-sm font-semibold uppercase tracking-wider text-white">
+                        MAXIMUM BABE
                       </span>
                     </div>
                   </div>
@@ -103,14 +101,7 @@ export default function PricingPlan() {
                     </div>
                   </div>
                   <div className="mx-[2px] rounded-t-lg">
-                    <Image
-                      src={babeLeft}
-                      alt=""
-                      width={400}
-                      height={400}
-                      priority
-                      layout="responsive"
-                    />
+                    <Image src={babeMiddle} alt="" priority />
                   </div>
                   <div className="rounded-b-lg border-t-2 border-gray-100 bg-gray-50 px-6 pt-10 pb-8 sm:px-10 sm:py-10">
                     <ul role="list" className="space-y-4">
@@ -135,7 +126,7 @@ export default function PricingPlan() {
                           passHref
                           aria-describedby="tier-growth"
                         >
-                          <div className="block w-full cursor-pointer rounded-lg border border-transparent bg-blue-500 px-6 py-4 text-center text-xl font-medium leading-6 text-white hover:bg-pink-500">
+                          <div className="block w-full cursor-pointer rounded-lg border border-transparent bg-red-600 px-6 py-4 text-center text-xl font-medium leading-6 text-white hover:bg-red-500">
                             Become a Babe!
                           </div>
                         </Link>
@@ -163,7 +154,6 @@ export default function PricingPlan() {
                       width={400}
                       height={400}
                       priority
-                      layout="responsive"
                     />
                     <div className="flex flex-1 flex-col justify-between border-t-2 border-gray-100 bg-gray-50 p-6 sm:p-10 lg:p-6 xl:p-10">
                       <ul role="list" className="space-y-4">

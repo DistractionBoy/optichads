@@ -67,8 +67,8 @@ const people: Person[] = [
     role: "Developer",
     imageUrl: THREEt,
     bio: `Frontend developer helping with updates and creative direction`,
-    twitterUrl: "https://twitter.com/Prod3t"
-  }
+    twitterUrl: "https://twitter.com/Prod3t",
+  },
 ];
 
 export default function Team() {
@@ -94,21 +94,18 @@ export default function Team() {
             <li key={person.name}>
               <div className="space-y-4">
                 {person.imageUrl && (
-                  <div className="aspect-w-3">
-                    <Image
-                      className="rounded-lg object-cover shadow-lg"
-                      src={person.imageUrl}
-                      alt=""
-                      layout="intrinsic"
-                      priority
-                    />
-                  </div>
+                  <Image
+                    className="rounded-lg shadow-lg"
+                    src={person.imageUrl}
+                    alt=""
+                    priority
+                  />
                 )}
 
                 <div className="space-y-2">
                   <div className="space-y-1 text-lg font-medium leading-6">
                     <h3>{person.name}</h3>
-                    <p className="text-pink-500">{person.role}</p>
+                    <p className="text-red-500">{person.role}</p>
                     <p className="text-gray-500">{person.bio}</p>
                   </div>
                   <ul role="list" className="flex space-x-5">

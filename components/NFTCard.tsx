@@ -41,10 +41,9 @@ export default function NFTCard({
         >
           <Image
             src={image}
-            alt={metadata?.description}
+            alt={metadata?.description as string}
             width={width || 400}
             height={height || 400}
-            layout="responsive"
           />
         </div>
         {metadata ? (

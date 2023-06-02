@@ -133,7 +133,6 @@ export default function Proposal() {
               alt=""
               width={873}
               height={873}
-              layout="responsive"
             />
             <figcaption className="flex justify-center">
               <Link href="https://gov.optimism.io/t/draft-gf-phase-1-proposal-optichads-nft-project/3430">

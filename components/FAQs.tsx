@@ -47,7 +47,7 @@ export default function FAQs() {
               Can’t find the answer you’re looking for? Reach out to us on our{" "}
               <a
                 href="/discord"
-                className="font-medium text-pink-500 hover:text-pink-700"
+                className="font-medium text-red-500 hover:text-red-700"
               >
                 Discord
               </a>{" "}
