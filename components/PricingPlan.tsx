@@ -57,7 +57,6 @@ export default function PricingPlan() {
                       width={400}
                       height={400}
                       priority
-                      layout="responsive"
                     />
                     <div className="flex flex-1 flex-col justify-between border-t-2 border-gray-100 bg-gray-50 p-6 sm:p-10 lg:p-6 xl:p-10">
                       <ul role="list" className="space-y-4">
@@ -109,7 +108,6 @@ export default function PricingPlan() {
                       width={400}
                       height={400}
                       priority
-                      layout="responsive"
                     />
                   </div>
                   <div className="rounded-b-lg border-t-2 border-gray-100 bg-gray-50 px-6 pt-10 pb-8 sm:px-10 sm:py-10">
@@ -163,7 +161,6 @@ export default function PricingPlan() {
                       width={400}
                       height={400}
                       priority
-                      layout="responsive"
                     />
                     <div className="flex flex-1 flex-col justify-between border-t-2 border-gray-100 bg-gray-50 p-6 sm:p-10 lg:p-6 xl:p-10">
                       <ul role="list" className="space-y-4">

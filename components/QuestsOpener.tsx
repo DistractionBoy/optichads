@@ -13,7 +13,6 @@ export default function QuestsOpener() {
               className="h-56 w-full rounded-tl-lg rounded-br-xl object-cover lg:absolute lg:block lg:h-full"
               src={ChadRope}
               alt=""
-              layout="fill"
             />
           </div>
         </div>
@@ -24,7 +23,6 @@ export default function QuestsOpener() {
             alt=""
             width={1920}
             height={1283}
-            layout="responsive"
           />
         </div>
       </div>

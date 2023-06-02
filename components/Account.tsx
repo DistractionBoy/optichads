@@ -1,11 +1,4 @@
-import { CreditCardIcon } from "@heroicons/react/outline";
-import { metaMask } from "../lib/connectors/metaMask";
-import { UserRejectedRequestError } from "@web3-react/injected-connector";
-import { useEffect, useState } from "react";
-import useMetaMaskOnboarding from "../lib/hooks/useMetaMaskOnboarding";
-import ETHBalance from "./ETHBalance";
-import { useAccount } from 'wagmi'
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 type Props = {
   color?: string;
@@ -23,55 +16,63 @@ const Account = ({ color }: Props) => {
         authenticationStatus,
         mounted,
       }) => {
-        const ready = mounted && authenticationStatus !== 'loading';
+        const ready = mounted && authenticationStatus !== "loading";
         const connected =
           ready &&
           account &&
           chain &&
-          (!authenticationStatus ||
-            authenticationStatus === 'authenticated');
+          (!authenticationStatus || authenticationStatus === "authenticated");
         return (
-          <div
+          <span
             {...(!ready && {
-              'aria-hidden': true,
-              'style': {
+              "aria-hidden": true,
+              style: {
                 opacity: 0,
-                pointerEvents: 'none',
-                userSelect: 'none',
+                pointerEvents: "none",
+                userSelect: "none",
               },
             })}
           >
-            {(() => {              
+            {(() => {
               if (!connected) {
                 return (
-                  <button onClick={openConnectModal} type="button" className={`${color} text-white font-bold py-2 px-4 rounded-full`}>
+                  <span
+                    onClick={openConnectModal}
+                    className={`${color} rounded-full py-2 px-4 font-bold text-white`}
+                  >
                     Connect Wallet
-                  </button>
+                  </span>
                 );
               }
               if (chain.unsupported) {
                 return (
-                  <button onClick={openChainModal} type="button" className={`bg-red-500 text-white font-bold py-2 px-4 rounded-full`}>
+                  <span
+                    onClick={openChainModal}
+                    className={`rounded-full bg-red-500 py-2 px-4 font-bold text-white`}
+                  >
                     Wrong network
-                  </button>
+                  </span>
                 );
               }
               return (
-                <div style={{ display: 'flex', gap: 12 }}>
-                  <button type="button" className={`${color} text-white font-bold py-2 px-4 rounded-full`}>
+                <span style={{ display: "flex", gap: 12 }}>
+                  <span
+                    className={`${color} rounded-full py-2 px-4 font-bold text-white`}
+                  >
                     {account.displayName}
+                    {""}
                     {account.displayBalance
                       ? ` - ${account.displayBalance}`
-                      : ''}
-                  </button>
-                </div>
+                      : ""}
+                  </span>
+                </span>
               );
             })()}
-          </div>
+          </span>
         );
       }}
     </ConnectButton.Custom>
-  )
+  );
 };
 
 export default Account;

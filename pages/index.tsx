@@ -30,7 +30,6 @@ const Home: NextPage = () => {
             src={vitalikApproves}
             height={900}
             width={1255}
-            layout="responsive"
           />
           <Team />
         </div>

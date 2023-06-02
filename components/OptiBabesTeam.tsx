@@ -65,7 +65,6 @@ export default function OptiBabesTeam() {
                     height={500}
                     alt=""
                     priority
-                    layout="responsive"
                   />
                   <div className="space-y-2">
                     <div className="space-y-1 text-lg font-medium leading-6">

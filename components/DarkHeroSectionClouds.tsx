@@ -56,7 +56,6 @@ export default function DarkHeroSectionClouds() {
                     src={superheroImg}
                     width={660}
                     height={660}
-                    layout="intrinsic"
                     priority
                     alt=""
                   />

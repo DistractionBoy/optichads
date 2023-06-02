@@ -54,7 +54,6 @@ export default function NFTDetailView({
           src={QuixoticCircle}
           height={24}
           width={24}
-          layout="intrinsic"
         />
       </div>
     ),
@@ -69,7 +68,6 @@ export default function NFTDetailView({
           src={OPlogo}
           height={24}
           width={24}
-          layout="intrinsic"
         />
       </div>
     ),
@@ -122,10 +120,9 @@ export default function NFTDetailView({
           <div className="aspect-square h-full w-full overflow-hidden rounded-t-md">
             <Image
               src={image}
-              alt={metadata && metadata.description}
+              alt={metadata?.description as string}
               width={680}
               height={680}
-              layout="responsive"
               priority
             />
           </div>

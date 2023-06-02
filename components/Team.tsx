@@ -67,8 +67,8 @@ const people: Person[] = [
     role: "Developer",
     imageUrl: THREEt,
     bio: `Frontend developer helping with updates and creative direction`,
-    twitterUrl: "https://twitter.com/Prod3t"
-  }
+    twitterUrl: "https://twitter.com/Prod3t",
+  },
 ];
 
 export default function Team() {
@@ -99,7 +99,6 @@ export default function Team() {
                       className="rounded-lg object-cover shadow-lg"
                       src={person.imageUrl}
                       alt=""
-                      layout="intrinsic"
                       priority
                     />
                   </div>

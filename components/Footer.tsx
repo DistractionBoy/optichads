@@ -71,13 +71,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              <Image
-                alt="opensea logo"
-                src={osLogo}
-                layout="intrinsic"
-                height={20}
-                width={20}
-              />
+              <Image alt="opensea logo" src={osLogo} height={20} width={20} />
             </a>
           </div>
           <div className="flex h-6 w-6 items-center">
@@ -90,7 +84,6 @@ export default function Footer() {
               <Image
                 alt="coingecko logo"
                 src={coinGeckoLogo}
-                layout="intrinsic"
                 height={20}
                 width={20}
               />

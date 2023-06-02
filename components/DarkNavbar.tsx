@@ -13,7 +13,7 @@ import Account from "./Account";
 import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import { iNavLink } from "../lib/types";
-import { useAccount } from 'wagmi'
+import { useAccount } from "wagmi";
 
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
@@ -23,14 +23,14 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const colorWallet = "bg-red-500"
-const collection  = "optichads"
-const collectionName = "Chads"
+const colorWallet = "bg-red-500";
+const collection = "optichads";
+const collectionName = "Chads";
 
 export default function Navbar() {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
-  const { address } = useAccount()
+  const { address } = useAccount();
 
   useEffect(() => {
     if (router.isReady) {
@@ -63,7 +63,6 @@ export default function Navbar() {
                       alt="Workflow"
                       width={38}
                       height={38}
-                      layout="intrinsic"
                       priority
                     />
                   </div>
@@ -101,7 +100,6 @@ export default function Navbar() {
                       <Image
                         alt="opensea logo"
                         src={osLogo}
-                        layout="intrinsic"
                         height={24}
                         width={24}
                       />
@@ -117,14 +115,17 @@ export default function Navbar() {
                       <Image
                         alt="coinGecko logo"
                         src={coinGeckoLogo}
-                        layout="intrinsic"
                         height={24}
                         width={24}
                       />
                     </a>
                   </div>
                   <div className="ml-4 flex items-center">
-                    <UserMenu color={colorWallet} collection={collection} collectionName={collectionName}/>
+                    <UserMenu
+                      color={colorWallet}
+                      collection={collection}
+                      collectionName={collectionName}
+                    />
                   </div>
                 </div>
                 <div className="-mr-2 flex md:hidden">
@@ -163,9 +164,14 @@ export default function Navbar() {
             </div>
             <div className="border-t border-red-300 pt-5 pb-3">
               <div className="pl-5">
-                <Account color={colorWallet}/>
+                <Account color={colorWallet} />
               </div>
-              {address && <UserMenuMobile collection={collection} collectionName={collectionName}/>}
+              {address && (
+                <UserMenuMobile
+                  collection={collection}
+                  collectionName={collectionName}
+                />
+              )}
             </div>
           </Disclosure.Panel>
         </>

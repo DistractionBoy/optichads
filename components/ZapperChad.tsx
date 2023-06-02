@@ -141,7 +141,6 @@ export default function Proposal() {
                 alt=""
                 width={873}
                 height={404}
-                layout="responsive"
               />
             </div>
             <figcaption className="flex justify-center">
@@ -177,7 +176,6 @@ export default function Proposal() {
                 alt=""
                 width={873}
                 height={404}
-                layout="responsive"
               />
             </div>
             <figcaption className="flex justify-center">
@@ -201,7 +199,6 @@ export default function Proposal() {
                 alt=""
                 width={873}
                 height={404}
-                layout="responsive"
               />
             </div>
           </figure>
@@ -218,7 +215,6 @@ export default function Proposal() {
                 alt=""
                 width={873}
                 height={404}
-                layout="responsive"
               />
             </div>
             <figcaption className="flex justify-center">
@@ -237,7 +233,6 @@ export default function Proposal() {
                 alt=""
                 width={873}
                 height={404}
-                layout="responsive"
               />
             </div>
           </figure>
@@ -276,7 +271,6 @@ export default function Proposal() {
                 alt=""
                 width={873}
                 height={550}
-                layout="responsive"
               />
             </div>
             <figcaption className="flex justify-center">
