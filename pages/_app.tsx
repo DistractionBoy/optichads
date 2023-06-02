@@ -6,7 +6,6 @@ import { StepperProvider } from "../lib/state/stepper";
 import { MintFormProvider } from "../lib/state/mintForm";
 import DarkNavbar from "../components/DarkNavbar";
 import { DarkBabeNavbar } from "../components";
-import { hooks as metaMaskHooks, metaMask } from "../lib/connectors/metaMask";
 import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 import { useRouter } from 'next/router';
@@ -28,8 +27,7 @@ const { chains, publicClient } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'My RainbowKit App',
-  projectId: 'YOUR_PROJECT_ID',
+  appName: 'Optichads & Arbibabes',
   chains
 });
 
@@ -43,9 +41,6 @@ const arbitrumColor: string =  "#3360d49e";
 const optimismColor: string = "#da10109e";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    void metaMask.connectEagerly();
-  }, []);
   const router = useRouter();
   const colorLayout = router.asPath === "/babes" ? arbitrumColor : optimismColor
   

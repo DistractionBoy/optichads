@@ -161,11 +161,11 @@ export default function Navbar() {
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="border-t border-red-300 pt-4 pb-3">
-              <span className="pl-5 text-gray-50">
+            <div className="border-t border-red-300 pt-5 pb-3">
+              <div className="pl-5">
                 <Account color={colorWallet}/>
-              </span>
-              {address && <UserMenuMobile />}
+              </div>
+              {address && <UserMenuMobile collection={collection} collectionName={collectionName}/>}
             </div>
           </Disclosure.Panel>
         </>
