@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { NavLink } from "../lib";
+import { useAccount, useDisconnect } from 'wagmi'
 
-export default function UserMenuMobile() {
+type Props = {
+  collection?:string;
+  collectionName?: string;
+};
+
+export default function UserMenuMobile({ collection, collectionName }: Props)  {
+  const { address, isConnected } = useAccount()
+  const { disconnect } = useDisconnect()
   const userNavInitialState: NavLink[] = [
-    { name: "Your Chads", href: "/view" },
+    { name: `Your ${collectionName}`, href: `https://opensea.io/${address}/${collection}` },
   ];
   const [userNavigation] = useState<NavLink[]>(userNavInitialState);
   return (
@@ -31,6 +39,12 @@ export default function UserMenuMobile() {
             </Disclosure.Button>
           )
         )}
+        <Disclosure.Button
+              onClick={() => disconnect()}
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-red-600"
+            >
+              Disconnect
+          </Disclosure.Button>
       </div>
     </>
   );
