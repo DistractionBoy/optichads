@@ -69,7 +69,7 @@ export default function OptiBabesTeam() {
                   <div className="space-y-2">
                     <div className="space-y-1 text-lg font-medium leading-6">
                       <h3>{babe.title}</h3>
-                      <p className="text-pink-500">{babe.subtitle}</p>
+                      <p className="text-red-500">{babe.subtitle}</p>
                     </div>
                   </div>
                 </div>
