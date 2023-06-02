@@ -94,14 +94,12 @@ export default function Team() {
             <li key={person.name}>
               <div className="space-y-4">
                 {person.imageUrl && (
-                  <div className="aspect-w-3">
-                    <Image
-                      className="rounded-lg object-cover shadow-lg"
-                      src={person.imageUrl}
-                      alt=""
-                      priority
-                    />
-                  </div>
+                  <Image
+                    className="rounded-lg shadow-lg"
+                    src={person.imageUrl}
+                    alt=""
+                    priority
+                  />
                 )}
 
                 <div className="space-y-2">

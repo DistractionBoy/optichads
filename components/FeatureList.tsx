@@ -23,9 +23,9 @@ export default function FeatureList() {
         <div className="pb-16 xl:flex xl:items-center xl:justify-between">
           <div>
             <h1 className="text-4xl font-extrabold sm:text-5xl sm:tracking-tight">
-              <span className="text-red-500">#Bulk-Central </span>
+              <span className="text-red-600">#Bulk-Central </span>
               <span className="text-gray-900">wants to hear from </span>
-              <span className="text-red-500">you! </span>
+              <span className="text-red-600">you! </span>
             </h1>
             <p className="mt-5 text-xl text-gray-500">
               Stop by our Discord server and post your healthy habits for
@@ -34,14 +34,14 @@ export default function FeatureList() {
           </div>
           <a
             href="https://discord.gg/optichads"
-            className="mt-8 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-500 py-3 px-5 text-base font-medium text-white hover:bg-red-500 sm:mt-10 sm:w-auto xl:mt-0"
+            className="mt-8 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-5 text-base font-medium text-white hover:bg-red-500 sm:mt-10 sm:w-auto xl:mt-0"
           >
             OptiChads Discord
           </a>
         </div>
         <div className="border-t border-gray-200 pt-16 xl:grid xl:grid-cols-5 xl:gap-x-8">
           <div className="md:grid-cols-1 xl:col-span-3">
-            <h2 className="text-base font-semibold uppercase tracking-wide text-red-500">
+            <h2 className="text-base font-semibold uppercase tracking-wide text-red-600">
               All Muscles Accepted
             </h2>
             <p className="mt-2 text-3xl font-extrabold text-gray-900">

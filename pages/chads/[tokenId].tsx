@@ -6,16 +6,15 @@ import {
 import React from "react";
 import useSWR from "swr";
 import { NFTDetailView } from "../../components";
-import { removeUndefinedForNextJsSerializing } from "../../lib/utils";
 import { NftMetadataResponse } from "../api/nftMetadata";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { tokenId } = context.query;
 
   return {
-    props: removeUndefinedForNextJsSerializing({
-      tokenId,
-    }),
+    props: {
+      tokenId: tokenId as string,
+    },
   };
 };
 
