@@ -23,9 +23,8 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const colorWallet = "bg-blue-500"
+const colorWallet = "bg-pink-500"
 const collection  = "arbibabes"
-const collectionName = "Babes"
 
 export default function DarkBabeNavbar() {
   const router = useRouter();
@@ -50,11 +49,11 @@ export default function DarkBabeNavbar() {
   const { address, isConnected } = useAccount()
 
   return (
-    <Disclosure as="nav" className="z-10 bg-blue-700">
+    <Disclosure as="nav" className="z-10 bg-blue-500">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="border-b border-gray-50">
+            <div className="border-b border-blue-500">
               <div className="flex h-16 items-center justify-between px-4 sm:px-0">
                 <div className="flex items-center">
                   <div className="-mb-1 flex-shrink-0">
@@ -79,8 +78,8 @@ export default function DarkBabeNavbar() {
                           href={item.href as string}
                           className={classNames(
                             item.current
-                              ? "bg-blue-800 text-white"
-                              : "text-gray-300 hover:bg-blue-700 hover:text-white",
+                              ? "bg-pink-500 text-white"
+                              : "text-gray-300 hover:bg-blue-800 hover:text-white",
                             "rounded-md px-3 py-2 text-sm font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
@@ -111,7 +110,7 @@ export default function DarkBabeNavbar() {
                   <div className="flex items-center md:ml-6">
                     <a
                       href="https://www.coingecko.com/en/nft/optichads"
-                      className="flex items-center"
+                      className="flex items-center "
                       target="_blank"
                       rel="noreferrer"
                     >
