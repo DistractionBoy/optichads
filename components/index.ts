@@ -19,18 +19,13 @@ import Footer from "./Footer";
 import GymFloor from "./GymFloor";
 import HeadMeta from "./HeadMeta";
 import Layout from "./Layout";
-import MintStepOne from "./MintStepOne";
-import MintStepTwo from "./MintStepTwo";
-import MintStepThree from "./MintStepThree";
 import Modal from "./Modal";
 import MoreInfoModal from "./MoreInfoModal";
 import NumOwners from "./NumOwners";
-import Proposal from "./Proposal";
 import NFTDetailView from "./NFTDetailView";
 import OptiBabesTeam from "./OptiBabesTeam";
 import QuestsOpener from "./QuestsOpener";
 import RepsToday from "./RepsToday";
-import Stepper from "./Stepper";
 import SuggestionChadForm from "./SuggestionChadForm";
 import Team from "./Team";
 import Tokenomics from "./Tokenomics";
@@ -65,19 +60,14 @@ export {
   GymFloor,
   HeadMeta,
   Layout,
-  MintStepOne,
-  MintStepTwo,
-  MintStepThree,
   Modal,
   MoreInfoModal,
   NFTDetailView,
   OptiBabesTeam,
   NumOwners,
-  Proposal,
   QuestsOpener,
   PricingPlan,
   RepsToday,
-  Stepper,
   SuggestionChadForm,
   Team,
   Tokenomics,

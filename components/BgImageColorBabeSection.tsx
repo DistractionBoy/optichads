@@ -28,7 +28,7 @@ export default function BgImageColorBabeSection() {
   const { data } = useSWR(url);
 
   return data ? (
-    <div className="relative -mx-5 -mt-6 mb-12 rounded-lg bg-gray-300 bg-gradient-to-bl from-[#fef08a] via-transparent to-[#ec4899] sm:-mx-6">
+    <div className="relative -mx-5 -mt-6 mb-12 rounded-lg bg-primary bg-gradient-to-bl from-hotpink-50 via-transparent to-primary sm:-mx-6">
       <div className="mx-auto max-w-7xl">
         <div className="relative shadow-xl sm:overflow-hidden sm:rounded-lg">
           <div className="absolute inset-0 bg-gray-900">

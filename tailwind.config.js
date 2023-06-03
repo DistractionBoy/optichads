@@ -8,17 +8,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-      },
-      screens: {
-        "3xl": "1815px",
-        tall: { raw: "(min-height: 1200px)" },
-      },
-    },
-  },
-  variants: {
-    extend: {
       colors: {
         primary: "#ec4099",
         hotpink: {
@@ -70,8 +59,16 @@ module.exports = {
           900: "#bd2529",
         },
       },
+      fontFamily: {
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      },
+      screens: {
+        "3xl": "1815px",
+        tall: { raw: "(min-height: 1200px)" },
+      },
     },
   },
+  variants: {},
   plugins: [
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/forms"),
