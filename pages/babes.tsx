@@ -23,7 +23,7 @@ const BabesPage: NextPage = () => (
         <FAQs />
       </div>
     </DarkBabeOverlapShell>
-    {/* <BabesLicensing /> */}
+    <BabesLicensing />
   </>
 );
 
