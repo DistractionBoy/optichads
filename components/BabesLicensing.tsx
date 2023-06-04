@@ -32,13 +32,13 @@ const gymPics = [
 ];
 const bg = gymPics[Math.floor(Math.random() * gymPics.length)];
 
-export default function BgImageColorBabeSection() {
+export default function BabesLicensing() {
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/api/quotes/health/`;
   const { data } = useSWR(url);
 
   return data ? (
-    <div className="from-primary-transparent to-primary-transparent relative -mx-5 -mt-6 mb-12 rounded-lg bg-hotpink-50 bg-gradient-to-tr via-transparent sm:-mx-6">
+    <div className="relative -mx-5 mt-12 mb-20 rounded-lg bg-hotpink-50 bg-gradient-to-r from-primary sm:-mx-6">
       <div className="mx-auto max-w-7xl">
         <div className="relative shadow-xl sm:overflow-hidden sm:rounded-lg">
           <div className="absolute inset-0 bg-gray-900">

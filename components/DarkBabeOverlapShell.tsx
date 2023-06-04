@@ -12,11 +12,11 @@ export default function DarkBabeOverlapShell({
 }: DarkOverlapProps) {
   return (
     <>
-      <div className=" from-[#ec4899] via-transparent to-[#f9a8d4] pb-32">
+      <div className=" from-primary via-transparent to-hotpink-50 pb-32">
         {title && (
           <header className="py-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h1 className="text-3xl font-bold text-white">{title}</h1>
+              <h1 className="text-3xl font-bold text-gray-900">{title}</h1>
             </div>
           </header>
         )}
