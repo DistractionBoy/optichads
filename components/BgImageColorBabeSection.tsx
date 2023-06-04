@@ -12,6 +12,7 @@ import babeGymEight from "../public/images/babe-gym-8.jpeg";
 import babeGymNine from "../public/images/babe-gym-9.jpeg";
 import babeGymTen from "../public/images/babe-gym-10.jpeg";
 import babeGymEleven from "../public/images/babe-gym-11.jpeg";
+import babeGymTwelve from "../public/images/babe-gym-12.jpeg";
 
 import Link from "next/link";
 import { getBaseUrl } from "../lib/helpers";
@@ -29,10 +30,11 @@ const gymPics = [
   babeGymNine,
   babeGymTen,
   babeGymEleven,
+  babeGymTwelve,
 ];
-const bg = gymPics[Math.floor(Math.random() * gymPics.length)];
 
 export default function BgImageColorBabeSection() {
+  const bg = gymPics[Math.floor(Math.random() * gymPics.length)];
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/api/quotes/health/`;
   const { data } = useSWR(url);
