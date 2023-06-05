@@ -50,7 +50,7 @@ export default function BabesLicensing() {
               <span className="block text-white">Rights</span>
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-2xl">
-            Optichads holders are granted the same commercial rights as Yuga Labs provided for CryptoPunks. The Optichads license is <Link href="/babes" className="hover:text-hotpink-200 text-hotpink-300 transition-all">here.</Link>
+            Optichads holders are granted the same commercial rights as Yuga Labs provided for CryptoPunks. The Optichads license is <Link href="/licenseterms" className="hover:text-hotpink-200 text-hotpink-300 transition-all">here.</Link>
             </p>
             <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
               <div className="space-y-4 sm:mx-auto sm:space-y-0">
