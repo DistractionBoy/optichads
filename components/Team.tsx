@@ -9,6 +9,7 @@ import beeps from "/public/images/beeps.png";
 import millynish from "/public/images/millynish.png";
 import livici3 from "/public/images/livixi3.png";
 import THREEt from "/public/images/3t.jpg";
+import jasonfactor from "/public/images/jasonfactor.webp";
 
 import { Person } from "../lib";
 
@@ -69,6 +70,13 @@ const people: Person[] = [
     bio: `Frontend developer helping with updates and creative direction`,
     twitterUrl: "https://twitter.com/Prod3t",
   },
+  {
+    name: "JasonFactor",
+    role: "Developer",
+    imageUrl: jasonfactor,
+    bio: `He's working in the cloud and now he learns and becomes a web3 builder.`,
+    twitterUrl: "https://twitter.com/anh_jasonfactor",
+  }
 ];
 
 export default function Team() {
