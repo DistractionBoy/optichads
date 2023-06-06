@@ -21,21 +21,21 @@ const BabeTotalSupply = () => {
 
   if (isError) {
     return (
-      <div className="flex flex-col  p-2 text-center">
+      <div className="flex flex-col p-6">
         <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-700">
           Reps
         </dt>
-        <dd className="order-1 text-5xl font-extrabold text-red-600">10,000</dd>
+        <dd className="order-1 text-6xl font-extrabold text-red-600 ml-2">10,000</dd>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col p-2 text-center">
+    <div className="flex flex-col pt-6">
       <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-700">
         Minted
       </dt>
-      <dd className="order-1 text-5xl font-extrabold text-red-600">
+      <dd className="order-1 text-6xl font-extrabold text-red-600 ml-2">
         {Number(data)}
       </dd>
     </div>
