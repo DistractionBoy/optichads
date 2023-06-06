@@ -4,8 +4,11 @@ import Image from "next/image";
 import babeImg from "../public/images/babe-t.png";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/outline";
+import BabeTotalSupply from "./BabeTotalSupply";
 
 export default function BabeHeroSectionClouds() {
+  // Count total supply minted
+
   return (
     <div className="relative overflow-hidden">
       <main>
@@ -40,6 +43,7 @@ export default function BabeHeroSectionClouds() {
                     could use some help. I need you to spot me while I do
                     squats. Think you can handle that? Good. I need you.
                   </p>
+                  <BabeTotalSupply/>
                 </div>
               </div>
               <div className="mt-12 -mb-16 sm:-mb-28 lg:relative lg:m-0">
