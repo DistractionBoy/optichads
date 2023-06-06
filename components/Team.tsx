@@ -74,7 +74,7 @@ const people: Person[] = [
     name: "JasonFactor",
     role: "Developer",
     imageUrl: jasonfactor,
-    bio: `He's working in the cloud and now he learns and becomes a web3 builder.`,
+    bio: `A geek guy that loves waifus, memes, and bodybuilding`,
     twitterUrl: "https://twitter.com/anh_jasonfactor",
   }
 ];
