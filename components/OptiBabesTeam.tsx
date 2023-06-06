@@ -7,19 +7,19 @@ import Image from "next/image";
 
 const faqs = [
   {
-    question: "Wen OptiBabes?",
+    question: "When ArbiBabes?",
     answer:
       "The much anticipated launch is coming soon! Be ready for it mid-June.",
   },
   {
     question: "How to get on the Whitelist (Allow List)?",
-    answer: `Easy bro, you just gotta hold 1 Chad to mint each OptiBabe. Keep checking 
+    answer: `Easy bro, you just gotta hold 1 Chad to mint each ArbiBabe. Keep checking 
              in because our exact Tokenomics will not be finalized until just a little before 
              launch. We may end up having a public mint phase`,
   },
   {
     question: "How many babes will there be?",
-    answer: `We are now set on a 1:1 claim for OptiChads to OptiBabes, so the full collection will have 10,000 $BABES`,
+    answer: `We are now set on a 1:1 claim for OptiChads to ArbiBabes, so the full collection will have 10,000 $BABES`,
   },
 ];
 
@@ -48,7 +48,7 @@ export default function OptiBabesTeam() {
         <div className="space-y-12">
           <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              OptiBabes
+              ArbiBabes
             </h2>
           </div>
           <ul
@@ -81,7 +81,7 @@ export default function OptiBabesTeam() {
       <div className="mx-auto max-w-7xl px-4 pb-12 text-center sm:px-6 lg:px-8 lg:pb-24">
         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
           <div className="text-left">
-            <h2 className="text-3xl font-extrabold text-gray-900">OptiBabes</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900">ArbiBabes</h2>
             <p className="mt-4 text-lg text-gray-500">
               Another epic collection to add to the ranks
             </p>
