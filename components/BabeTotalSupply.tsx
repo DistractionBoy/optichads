@@ -6,6 +6,7 @@ import ARBIBABES_CONTRACT_ABI from "../lib/contracts/arbibabes.json";
 
 const BabeTotalSupply = () => {
   const address : any = process.env.NEXT_PUBLIC_ARBIBABE_CONTRACT
+  
   // return data BigInt need to convert to int
   const { data, isError, isLoading } = useContractRead({
     address: address,

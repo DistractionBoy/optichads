@@ -7,8 +7,6 @@ import { ChevronRightIcon } from "@heroicons/react/outline";
 import BabeTotalSupply from "./BabeTotalSupply";
 
 export default function BabeHeroSectionClouds() {
-  // Count total supply minted
-
   return (
     <div className="relative overflow-hidden">
       <main>
