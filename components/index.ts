@@ -39,6 +39,7 @@ import UserMenuMobile from "./UserMenuMobile";
 import FeatureList from "./FeatureList";
 import PricingPlan from "./PricingPlan";
 import ZapperChad from "./ZapperChad";
+import SwitchLanguage from "./SwitchLanguage"
 
 export {
   Account,
@@ -82,4 +83,5 @@ export {
   UserMenu,
   UserMenuMobile,
   ZapperChad,
+  SwitchLanguage
 };

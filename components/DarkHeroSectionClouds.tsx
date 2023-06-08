@@ -4,8 +4,11 @@ import Image from "next/image";
 import superheroImg from "../public/images/chad-t.png";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/outline";
+import { useTranslation } from 'next-i18next'
 
 export default function DarkHeroSectionClouds() {
+  const { t } = useTranslation()
+
   return (
     <div className="relative overflow-hidden">
       <main>
@@ -21,7 +24,7 @@ export default function DarkHeroSectionClouds() {
                     >
                       <span className="flex items-center">
                         <span className="rounded-full bg-red-600 px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
-                          Minting Closed
+                          {t("chads:hero_section.0.mint_status")}
                         </span>
                         <span className="ml-4 text-sm">View Cheap Chads</span>
                         <ChevronRightIcon

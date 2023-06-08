@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import vitalikApproves from "../public/images/vitalik_approves.png";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import {
   BgImageColorHeroSection,
@@ -13,6 +14,14 @@ import {
   PricingPlan,
   Team,
 } from "../components";
+
+export async function getStaticProps({locale}:any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['chads']))
+    }
+  }
+}
 
 const Home: NextPage = () => {
   return (

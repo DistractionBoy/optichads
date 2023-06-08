@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import {
   BabeArtSection,
@@ -11,6 +12,14 @@ import {
   Team,
   BabesLicensing,
 } from "../components";
+
+export async function getStaticProps({locale}:any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['babes', 'common']))
+    }
+  }
+}
 
 const BabesPage: NextPage = () => (
   <>

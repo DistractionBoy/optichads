@@ -14,6 +14,7 @@ import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import { iNavLink } from "../lib/types";
 import { useAccount } from "wagmi";
+import SwitchLanguage from "./SwitchLanguage";
 
 const navDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
@@ -47,7 +48,7 @@ export default function DarkBabeNavbar() {
     }
   }, [router]);
 
-  const { address, isConnected } = useAccount();
+  const { address } = useAccount();
 
   return (
     <Disclosure as="nav" className="z-10 bg-blue-500">
@@ -67,7 +68,7 @@ export default function DarkBabeNavbar() {
                     />
                   </div>
                   <span className="ml-4 -mr-2 text-base font-semibold text-white">
-                    OptiChads
+                    Arbibabes
                   </span>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
@@ -119,6 +120,9 @@ export default function DarkBabeNavbar() {
                         width={24}
                       />
                     </a>
+                  </div>
+                  <div className="flex items-center md:ml-6">
+                    <SwitchLanguage/>
                   </div>
                   <div className="ml-4 flex items-center">
                     <UserMenu
