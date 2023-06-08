@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 
 import {
+  BabeArtSection,
   BgImageColorBabeSection,
   BabeHeroSectionClouds,
   DarkBabeOverlapShell,
@@ -16,7 +17,8 @@ const BabesPage: NextPage = () => (
     <HeadMeta />
     <BabeHeroSectionClouds />
     <BgImageColorBabeSection />
-    <DarkBabeOverlapShell title="A Safe Place to do Squats">
+    <DarkBabeOverlapShell title="Meet our Babes art">
+      <BabeArtSection/>
       <div className="rounded-lg bg-white pb-6 shadow">
         <OptiBabesTeam />
         <Team />

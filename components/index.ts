@@ -1,8 +1,10 @@
 import Account from "./Account";
 import AttributeBox from "./AttributeBox";
 import Attributes from "./Attributes";
+import BabeArtSection from "./BabeArtSection";
 import BgImageColorHeroSection from "./BgImageColorHeroSection";
 import BgImageColorBabeSection from "./BgImageColorBabeSection";
+import BabeTotalSupply from "./BabeTotalSupply";
 import Button from "./Button";
 import Breadcrumbs from "./Breadcrumbs";
 import BabesLicensing from "./BabesLicensing";
@@ -42,9 +44,11 @@ export {
   Account,
   AttributeBox,
   Attributes,
+  BabeArtSection,
   BgImageColorBabeSection,
   BgImageColorHeroSection,
   Button,
+  BabeTotalSupply,
   Breadcrumbs,
   BabesLicensing,
   Collection,
