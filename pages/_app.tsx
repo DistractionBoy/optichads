@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <RainbowKitProvider chains={chains}>
           <Layout>
             <div>
-              {asPath === "/babes" ? <DarkBabeNavbar /> : asPath === "/licenseterms" ? <DarkBabeNavbar /> : <DarkNavbar />}
+              {asPath === "/" ? <DarkNavbar /> :  <DarkBabeNavbar /> }
               
               <Component {...pageProps} />
             </div>

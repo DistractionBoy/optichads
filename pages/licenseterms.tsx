@@ -5,11 +5,11 @@ import { HeadMeta } from "../components";
 const LicenseTerms: NextPage = () => (
   <>
     <HeadMeta />
-    <div className=" relative overflow-hidden text-white">
-      <div className="bg-hotpink-300 pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
+    <div className="relative text-black">
+      <div className="bg-hotpink-300 pt-10 sm:pt-16 lg:pt-8 lg:pb-14">
         <div className="mx-auto max-w-7xl lg:px-8">
           <h1 className="pb-6 lg:text-2xl lg:font-bold lg:italic">
-            TERMS & CONDITIONS
+            TERMS &amp; CONDITIONS
           </h1>
           <p>
             Arbibabes is a collection of digital artworks (NFTs) running on the
