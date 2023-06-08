@@ -25,6 +25,7 @@
     "ramda": "^0.28.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-multi-carousel": "^2.8.4",
     "swr": "^1.3.0",
     "viem": "^0.3.37",
     "wagmi": "^1.0.8"
