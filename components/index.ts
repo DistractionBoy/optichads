@@ -1,6 +1,7 @@
 import Account from "./Account";
 import AttributeBox from "./AttributeBox";
 import Attributes from "./Attributes";
+import BabeArtSection from "./BabeArtSection";
 import BgImageColorHeroSection from "./BgImageColorHeroSection";
 import BgImageColorBabeSection from "./BgImageColorBabeSection";
 import BabeTotalSupply from "./BabeTotalSupply";
@@ -43,6 +44,7 @@ export {
   Account,
   AttributeBox,
   Attributes,
+  BabeArtSection,
   BgImageColorBabeSection,
   BgImageColorHeroSection,
   Button,
