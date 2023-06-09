@@ -17,7 +17,13 @@ import { useAccount } from "wagmi";
 import SwitchLanguage from "./SwitchLanguage";
 
 const navDefaultState: NavLink[] = [
+  { name: "The Pad", href: "/", current: false }
+];
+
+const navMobileDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
+  { name: "English", href: "/", current: false },
+  { name: "Vietnamese", href: "/vi", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -31,11 +37,23 @@ const collectionName = "Chads";
 export default function Navbar() {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
+  const [navigationMobile, setNavigationMobile] = useState<iNavLink[]>(navMobileDefaultState);
   const { address } = useAccount();
 
   useEffect(() => {
     if (router.isReady) {
       setNavigation((prevState) => {
+        return prevState.map((navLink) => {
+          let link = navLink;
+          const pathPartToMatch = router.pathname.split("/")[1];
+          const linkPartToMatch = link.href?.split("/")[1];
+          if (pathPartToMatch === linkPartToMatch) {
+            link.current = true;
+          }
+          return link;
+        });
+      });
+      setNavigationMobile((prevState) => {
         return prevState.map((navLink) => {
           let link = navLink;
           const pathPartToMatch = router.pathname.split("/")[1];
@@ -149,7 +167,7 @@ export default function Navbar() {
 
           <Disclosure.Panel className="border-b border-gray-50 md:hidden">
             <div className="space-y-1 px-2 py-3 sm:px-3">
-              {navigation.map((item) => (
+              {navigationMobile.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"

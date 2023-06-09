@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 
 import {
   BabeArtSection,
@@ -8,7 +9,7 @@ import {
   DarkBabeOverlapShell,
   FAQs,
   HeadMeta,
-  OptiBabesTeam,
+  ArbiBabesTeam,
   Team,
   BabesLicensing,
 } from "../components";
@@ -21,21 +22,26 @@ export async function getStaticProps({locale}:any) {
   }
 }
 
-const BabesPage: NextPage = () => (
-  <>
-    <HeadMeta />
-    <BabeHeroSectionClouds />
-    <BgImageColorBabeSection />
-    <DarkBabeOverlapShell title="Meet our Babes art">
-      <BabeArtSection/>
-      <div className="rounded-lg bg-white pb-6 shadow">
-        <OptiBabesTeam />
-        <Team />
-        <FAQs />
-      </div>
-    </DarkBabeOverlapShell>
-    {/* <BabesLicensing /> */}
-  </>
-);
+const BabesPage: NextPage = () => {
+  const { t } = useTranslation()
+  const promoting: any = t("babes:promoting")
+  
+  return(
+    <>
+      <HeadMeta />
+      <BabeHeroSectionClouds />
+      <BgImageColorBabeSection />
+      <DarkBabeOverlapShell title={promoting}>
+        <BabeArtSection/>
+        <div className="rounded-lg bg-white pb-6 shadow">
+          <ArbiBabesTeam />
+          <Team />
+          <FAQs />
+        </div>
+      </DarkBabeOverlapShell>
+      {/* <BabesLicensing /> */}
+    </>
+  )
+};
 
 export default BabesPage;

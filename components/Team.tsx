@@ -16,69 +16,78 @@ import { Person } from "../lib";
 
 export default function Team() {
   const { t } = useTranslation()
+  const bio1: any = t("chads:team_section.0.bio1")
+  const bio2: any = t("chads:team_section.0.bio2")
+  const bio3: any = t("chads:team_section.0.bio3")
+  const bio4: any = t("chads:team_section.0.bio4")
+  const bio5: any = t("chads:team_section.0.bio5")
+  const bio6: any = t("chads:team_section.0.bio6")
+  const bio7: any = t("chads:team_section.0.bio7")
+  const bio8: any = t("chads:team_section.0.bio8")
+  const bio9: any = t("chads:team_section.0.bio9")
 
   const people: Person[] = [
     {
       name: "Dicaso",
       role: "Artist / Project Lead",
       imageUrl: dicaso,
-      bio: `Dicaso used to draw dicks on L1, but now he draws Chads and Babes on Optimism.`,
+      bio: bio1,
       twitterUrl: "https://twitter.com/Dicaso5",
     },
     {
       name: "DistractionBoy",
       role: "Developer",
       imageUrl: distraction,
-      bio: `DistractionBoy has no life so he chills with Dicaso because he's funny for free.`,
+      bio: bio2,
       twitterUrl: "https://twitter.com/DistractionBoy_",
     },
     {
       name: "LiViCi3",
       role: "Advisor",
       imageUrl: livici3,
-      bio: "Livix, THE artist of Pudgy Penguins, came out the igloo to get swole on L2.",
+      bio: bio3,
       twitterUrl: "https://twitter.com/LiViXi3",
     },
     {
       name: "Lifestrike",
       role: "Marketing Lead",
       imageUrl: lifestrike,
-      bio: `Lifestrike started minting Optipunks and became an Optimistic NFT collector 4Lyfe`,
+      bio: bio4,
       twitterUrl: "https://twitter.com/lifesadream63",
     },
     {
       name: "Dope",
       role: "Team Advisor",
       imageUrl: dope,
-      bio: `Dope only needs simple things - chicken, chorizo risotto, cidre, & being max Chad.`,
+      bio: bio5,
       twitterUrl: "https://twitter.com/dopesdope2021",
     },
     {
       name: "Youngbeeps",
       role: "Operations Lead",
       imageUrl: beeps,
-      bio: "Beeps came, Beeps lifted, Beeps conquered his inner OptiChad.",
+      bio: bio6,
       twitterUrl: "https://twitter.com/cryptonftbeeps",
     },
     {
       name: "Millynish",
       role: "Discord Expert",
       imageUrl: millynish,
-      bio: `Chillin like a villain on the Opti Island makin a killin`,
+      bio: bio7,
       twitterUrl: "https://twitter.com/anish_katwal",
     },
     {
       name: "3t",
       role: "Developer",
       imageUrl: THREEt,
-      bio: `Frontend developer helping with updates and creative direction`,
+      bio: bio8,
       twitterUrl: "https://twitter.com/Prod3t",
     },
     {
       name: "JasonFactor",
       role: "Developer",
       imageUrl: jasonfactor,
-      bio: `A geek guy that loves waifus, memes, and bodybuilding`,
+      bio: bio9,
       twitterUrl: "https://twitter.com/anh_jasonfactor",
     }
   ];
@@ -88,13 +97,11 @@ export default function Team() {
       <div className="space-y-12">
         <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Our Team
+            {t("chads:team_section.0.our_team")}
           </h2>
           <p className="text-xl text-gray-500">
-            Banished from Layer 1 these Chads have crossed the bridge seeking a
-            more Optimistic lifestyle. <br />
-            They workout, flex, and eat high amounts of protein with their gas
-            savings.
+            {t("chads:team_section.0.description1")}<br />
+            {t("chads:team_section.0.description2")}
           </p>
         </div>
         <ul

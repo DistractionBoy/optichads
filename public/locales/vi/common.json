@@ -13,5 +13,16 @@
         "description": "Trang bạn đang kiếm không tồn tại.",
         "back": "Trở về trang chủ ?"
       }
+    ],
+    "faq_section": [
+      {
+        "question1": "Khi nào Arbibabes?",
+        "question2": "OptiChads là gì?",
+        "question3": "Tôi nên đăng gì trong Discord?",
+        "answer1": "Bộ sưu tập thứ hai của chúng tôi, Arbibabes, hiện đang được xây dựng và Livic, nghệ sĩ Pudgy Penguins nổi tiếng đã tham gia cùng chúng tôi với tư cách là nhà tư vấn để giúp chúng tôi khắc họa hình ảnh cân đối và mạnh mẽ cho các bé yêu của mình. Chúng tôi đang rất cẩn thận trong các thiết kế của mình và sẽ không vội vàng trong quá trình này. Tuy nhiên, đây sẽ là một bộ sưu tập nhỏ hơn và mọi thứ sẽ diễn ra suôn sẻ nên chúng tôi hy vọng sẽ sớm ra mắt.",
+        "answer2": "OptiChads là một bộ sưu tập NFT, không, một phong trào thúc đẩy sức khỏe và từ thiện thông qua việc mint công cộng giá rẻ và tới 50% doanh số bán hàng thứ cấp sẽ dành cho cộng đồng. Bạn muốn phát triển cùng Chad? Liên hệ qua Discord, chúng tôi rất muốn nghe ý tưởng của bạn",
+        "answer3": "Hình ảnh về bữa ăn lành mạnh của bạn, phòng tập thể dục, những người tập thể dục và năng động, nụ cười tươi tắn, đôi giày bóng mượt chưa được mang nhiều, thiết bị tập luyện, máy chạy bộ, cằm của tôi, nước và những người khỏe mạnh vừa tập thể dục vừa ăn uống đúng cách.",
+        "description": "Không thể tìm thấy câu trả lời mà bạn đang tìm kiếm? Liên hệ với chúng tôi trên"
+      }
     ]
 }

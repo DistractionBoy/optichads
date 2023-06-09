@@ -17,7 +17,13 @@ import { useAccount } from "wagmi";
 import SwitchLanguage from "./SwitchLanguage";
 
 const navDefaultState: NavLink[] = [
+  { name: "The Pad", href: "/", current: false }
+];
+
+const navMobileDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
+  { name: "English", href: "/babes", current: false },
+  { name: "Vietnamese", href: "/vi/babes", current: false }
 ];
 
 function classNames(...classes: string[]) {
@@ -31,6 +37,7 @@ const collectionName = "Babes";
 export default function DarkBabeNavbar() {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
+  const [navigationMobile, setNavigationMobile] = useState<iNavLink[]>(navMobileDefaultState);
 
   useEffect(() => {
     if (router.isReady) {
@@ -149,7 +156,7 @@ export default function DarkBabeNavbar() {
 
           <Disclosure.Panel className="border-b border-gray-50 md:hidden">
             <div className="space-y-1 px-2 py-3 sm:px-3">
-              {navigation.map((item) => (
+              {navigationMobile.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
