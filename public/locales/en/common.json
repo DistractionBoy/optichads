@@ -6,5 +6,12 @@
       {
         "name": "Vietnamese"
       }
+    ],
+    "404": [
+      {
+        "title": "Page Not Found",
+        "description": "The page you're looking for doesn't exist.",
+        "back": "Go back home?"
+      }
     ]
 }

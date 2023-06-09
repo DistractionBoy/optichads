@@ -26,7 +26,7 @@ export default function DarkHeroSectionClouds() {
                         <span className="rounded-full bg-red-600 px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
                           {t("chads:hero_section.0.mint_status")}
                         </span>
-                        <span className="ml-4 text-sm">View Cheap Chads</span>
+                        <span className="ml-4 text-sm">{t("chads:hero_section.0.view")}</span>
                         <ChevronRightIcon
                           className="ml-2 h-5 w-5 text-gray-500"
                           aria-hidden="true"
@@ -40,15 +40,13 @@ export default function DarkHeroSectionClouds() {
                     <span className="block text-red-600">&amp; Arbibabes</span>
                   </h1>
                   <p className="mt-3 text-base text-gray-200 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                    Our first collection (OptiChads) was such a huge success
-                    that we are launching another collection, this time on
-                    Arbitrum. For more, go to the{" "}
+                    {t("chads:hero_section.0.description")}{" "}
                     <Link href="/babes">
                       <span className="underline hover:cursor-pointer">
                         Babes
                       </span>
                     </Link>{" "}
-                    page.
+                    {t("chads:hero_section.0.page")}.
                   </p>
                 </div>
               </div>

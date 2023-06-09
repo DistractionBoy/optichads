@@ -16,7 +16,7 @@ import {
 export async function getStaticProps({locale}:any) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['babes', 'common']))
+      ...(await serverSideTranslations(locale, ['chads', 'babes', 'common']))
     }
   }
 }

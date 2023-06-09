@@ -6,5 +6,12 @@
       {
         "name": "Tiếng Việt"
       }
+    ],
+    "404": [
+      {
+        "title": "Không tìm thấy trang",
+        "description": "Trang bạn đang kiếm không tồn tại.",
+        "back": "Trở về trang chủ ?"
+      }
     ]
 }

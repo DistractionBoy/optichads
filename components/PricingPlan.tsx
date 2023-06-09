@@ -7,16 +7,19 @@ import babeLeft from "../public/images/cherries-babe.png";
 import babeRight from "../public/images/flowers-babe.png";
 import babeMiddle from "/public/images/strapped.png";
 import Image from "next/image";
-
-const wellnessFeatures = ["Max accessories and traits"];
-const decentralizedFeatures = ["ArbiBabes coming soon!"];
-const mainFeatures = [
-  "Realistic shading and contour",
-  "Chadtastic level of detail",
-  "Millions of combinations",
-];
+import { useTranslation } from 'next-i18next'
 
 export default function PricingPlan() {
+  const { t } = useTranslation()
+
+  const wellnessFeatures = [t("chads:pricing_section.0.wellnessFeatures1")];
+  const decentralizedFeatures = [t("chads:pricing_section.0.decentralizedFeatures1")];
+  const mainFeatures = [
+    t("chads:pricing_section.0.mainFeatures1"),
+    t("chads:pricing_section.0.mainFeatures2"),
+    t("chads:pricing_section.0.mainFeatures3"),
+  ];
+
   return (
     <div className="rounded-lg bg-red-700">
       <div className="px-4 pt-12 sm:px-6 lg:px-8 lg:pt-20">
@@ -25,10 +28,10 @@ export default function PricingPlan() {
             OptiChads
           </h2>
           <p className="mt-2 text-3xl font-extrabold text-gray-50 sm:text-4xl lg:text-5xl">
-            ArbiBabes coming soon
+            ArbiBabes {t("chads:pricing_section.0.comming_soon")}
           </p>
           <p className="mx-auto mt-3 max-w-4xl text-xl text-white sm:mt-5 sm:text-xl">
-            One Babe for every Chad
+            {t("chads:pricing_section.0.description")}
           </p>
         </div>
       </div>
@@ -47,7 +50,7 @@ export default function PricingPlan() {
                           className="text-center text-2xl font-medium text-gray-900"
                           id="tier-hobby"
                         >
-                          Decentralized
+                          {t("chads:pricing_section.0.decentralize")}
                         </h3>
                       </div>
                     </div>
@@ -86,7 +89,7 @@ export default function PricingPlan() {
                   <div className="absolute inset-x-0 top-0 z-20 translate-y-px transform">
                     <div className="flex -translate-y-1/2 transform justify-center">
                       <span className="inline-flex rounded-full bg-red-600 px-4 py-1 text-sm font-semibold uppercase tracking-wider text-white">
-                        MAXIMUM BABE
+                        {t("chads:pricing_section.0.maximum")}
                       </span>
                     </div>
                   </div>
@@ -96,7 +99,7 @@ export default function PricingPlan() {
                         className="text-center text-3xl font-semibold text-gray-900 sm:-mx-6"
                         id="tier-growth"
                       >
-                        Health
+                        {t("chads:pricing_section.0.health")}
                       </h3>
                     </div>
                   </div>
@@ -127,7 +130,7 @@ export default function PricingPlan() {
                           aria-describedby="tier-growth"
                         >
                           <div className="block w-full cursor-pointer rounded-lg border border-transparent bg-red-600 px-6 py-4 text-center text-xl font-medium leading-6 text-white hover:bg-red-500">
-                            Become a Babe!
+                            {t("chads:pricing_section.0.become")}
                           </div>
                         </Link>
                       </div>
@@ -144,7 +147,7 @@ export default function PricingPlan() {
                           className="text-center text-2xl font-medium text-gray-900"
                           id="tier-scale"
                         >
-                          Wellness
+                          {t("chads:pricing_section.0.wellness")}
                         </h3>
                       </div>
                     </div>

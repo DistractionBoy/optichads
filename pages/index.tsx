@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import vitalikApproves from "../public/images/vitalik_approves.png";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 
 import {
   BgImageColorHeroSection,
@@ -18,18 +19,20 @@ import {
 export async function getStaticProps({locale}:any) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['chads']))
+      ...(await serverSideTranslations(locale, ['chads', 'babes', 'common']))
     }
   }
 }
 
 const Home: NextPage = () => {
+  const { t } = useTranslation()
+  const promoting: any = t("chads:promoting")
   return (
     <>
       <HeadMeta />
       <DarkHeroSectionClouds />
       <BgImageColorHeroSection />
-      <DarkOverlapShell title="Promoting Health in Web3">
+      <DarkOverlapShell title={promoting}>
         <div className="rounded-lg bg-white pb-6 shadow">
           <PricingPlan />
           <FeatureList />

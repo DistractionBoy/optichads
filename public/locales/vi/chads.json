@@ -1,7 +1,35 @@
 {
     "hero_section": [
         {
-            "mint_status" : "Đã mint hết"
+            "mint_status" : "Đã mint hết",
+            "view": "Xem Chads giá tốt",
+            "description": "Bộ sưu tập đầu tiên của chúng tôi (OptiChads) là một thành công lớn đến mức chúng tôi sẽ ra mắt một bộ sưu tập mới, trên nền tảng Arbitrum. Để biết thêm, hãy truy cập",
+            "page": "tại đây"
+        }
+    ],
+    "health_section": [
+        {
+            "quote": "Trích dẫn sức khoẻ hàng ngày",
+            "become": "Hãy trở thành Chad!",
+            "inspired": "được truyền cảm hứng.",
+            "author": "Tác giả"
+        }
+    ],
+    "promoting": "Thúc đẩy sức khoẻ từ Web3",
+    "pricing_section": [
+        {
+            "comming_soon": "sắp ra mắt",
+            "description": "Một Babe từ một Chad",
+            "decentralize": "Phi tập trung",
+            "maximum": "BABE VÔ HẠN",
+            "health": "Thể chất",
+            "become": "Hãy trở thành Babe!",
+            "wellness": "Sức khoẻ",
+            "wellnessFeatures1": "Phụ kiện và tính cách",
+            "decentralizedFeatures1": "ArbiBabes sắp ra mắt!",
+            "mainFeatures1": "Hình ảnh chất lượng rõ nét",
+            "mainFeatures2": "Mức độ chi tiết cao",
+            "mainFeatures3": "Hàng triệu cách kết hợp"
         }
     ]
 }

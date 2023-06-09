@@ -1,7 +1,42 @@
 {
     "hero_section": [
         {
-            "mint_status" : "Minting Closed"
+            "mint_status" : "Minting Closed",
+            "view": "View Cheap Chads",
+            "description": "Our first collection (OptiChads) was such a huge success that we are launching another collection, this time on Arbitrum. For more, go to the",
+            "page": "page"
+        }
+    ],
+    "health_section": [
+        {
+            "quote": "Daily Health Quote",
+            "become": "Become a Chad!",
+            "inspired": "be inspired.",
+            "author": "The Author"
+
+        }
+    ],
+    "promoting": "Promoting Health in Web3",
+    "pricing_section": [
+        {
+            "comming_soon": "coming soon",
+            "description": "One Babe for every Chad",
+            "decentralize": "Decentralized",
+            "maximum": "MAXIMUM BABE",
+            "health": "Health",
+            "become": "Become a Babe!",
+            "wellness": "Wellness",
+            "wellnessFeatures1": "Max accessories and traits",
+            "decentralizedFeatures1": "ArbiBabes coming soon!",
+            "mainFeatures1": "Realistic shading and contour",
+            "mainFeatures2": "Chadtastic level of detail",
+            "mainFeatures3": "Millions of combinations"
+        }
+    ],
+    "feature_section": [
+        {
+            "bulk_central": "#Bulk-Central",
+            
         }
     ]
 }
