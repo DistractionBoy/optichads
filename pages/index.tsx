@@ -11,7 +11,7 @@ import {
   FAQs,
   FeatureList,
   HeadMeta,
-  OptiBabesTeam,
+  ArbiBabesTeam,
   PricingPlan,
   Team,
 } from "../components";
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         <div className="rounded-lg bg-white pb-6 shadow">
           <PricingPlan />
           <FeatureList />
-          <OptiBabesTeam />
+          <ArbiBabesTeam />
           <Image
             alt="a sick tweet bro"
             src={vitalikApproves}

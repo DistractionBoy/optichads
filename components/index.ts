@@ -26,7 +26,7 @@ import Modal from "./Modal";
 import MoreInfoModal from "./MoreInfoModal";
 import NumOwners from "./NumOwners";
 import NFTDetailView from "./NFTDetailView";
-import OptiBabesTeam from "./OptiBabesTeam";
+import ArbiBabesTeam from "./ArbiBabesTeam";
 import QuestsOpener from "./QuestsOpener";
 import RepsToday from "./RepsToday";
 import SuggestionChadForm from "./SuggestionChadForm";
@@ -70,7 +70,7 @@ export {
   Modal,
   MoreInfoModal,
   NFTDetailView,
-  OptiBabesTeam,
+  ArbiBabesTeam,
   NumOwners,
   QuestsOpener,
   PricingPlan,

@@ -31,5 +31,33 @@
             "mainFeatures2": "Mức độ chi tiết cao",
             "mainFeatures3": "Hàng triệu cách kết hợp"
         }
+    ],
+    "feature_section": [
+        {
+            "bulk_central": "#Mong muốn ",
+            "want": "nhận phản hồi từ ",
+            "you": "bạn! ",
+            "description": "Ghé qua máy chủ Discord của chúng tôi và chia sẻ các thói quen lành mạnh của bạn để nhập gia nhập vào whitelist",
+            "title": "Tất cả các cơ bắp đều được chấp nhận",
+            "sub_desc1": "Bạn còn chờ gì nữa ?",
+            "sub_desc2": "Chúng tôi biết rằng chia sẻ những câu chuyện thành công và những bức ảnh tiến bộ là một cách để truyền cảm hứng cho những người khác có thể cần một cú hích nhỏ nhưng nhanh chóng để bắt đầu tập gym như một người bình thường."
+        }
+    ],
+    "babes_team": [
+        {
+            "main_title": "Một bộ sưu tập hoành tráng được đưa vào bảng xếp hạng",
+            "question1": "Khi nào ArbiBabes?",
+            "question2": "Làm sao để vào Whitelist (Allow List)?",
+            "question3": "Sẽ có bao nhiêu babes?",
+            "answer1": "Sẽ sớm ra mắt, dự kiến vào giữa tháng sáu.",
+            "answer2": "Dễ thôi anh bạn, bạn chỉ cần giữ 1 Chad để đúc mỗi ArbiBabe. Hãy tiếp tục theo dõi vì Tokenomics chính xác của chúng tôi đang dần hoàn thiện. Chúng tôi có thể sẽ có một giai đoạn mint công khai",
+            "answer3": "Chúng tôi hiện đang cho quy đổi 1:1 cho OptiChads cho ArbiBabes, vì vậy bộ sưu tập sẽ có 10.000 $BABES",
+            "subtitle1": "Vui vẻ và tận hưởng",
+            "subtitle2": "Nóng bỏng khiêu gợi",
+            "subtitle3": "Bạn muốn nó"
+        }
+    ],
+    "team_section": [
+        
     ]
 }

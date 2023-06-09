@@ -10,76 +10,79 @@ import millynish from "/public/images/millynish.png";
 import livici3 from "/public/images/livixi3.png";
 import THREEt from "/public/images/3t.jpg";
 import jasonfactor from "/public/images/jasonfactor.webp";
+import { useTranslation } from 'next-i18next'
 
 import { Person } from "../lib";
 
-const people: Person[] = [
-  {
-    name: "Dicaso",
-    role: "Artist / Project Lead",
-    imageUrl: dicaso,
-    bio: `Dicaso used to draw dicks on L1, but now he draws Chads and Babes on Optimism.`,
-    twitterUrl: "https://twitter.com/Dicaso5",
-  },
-  {
-    name: "DistractionBoy",
-    role: "Developer",
-    imageUrl: distraction,
-    bio: `DistractionBoy has no life so he chills with Dicaso because he's funny for free.`,
-    twitterUrl: "https://twitter.com/DistractionBoy_",
-  },
-  {
-    name: "LiViCi3",
-    role: "Advisor",
-    imageUrl: livici3,
-    bio: "Livix, THE artist of Pudgy Penguins, came out the igloo to get swole on L2.",
-    twitterUrl: "https://twitter.com/LiViXi3",
-  },
-  {
-    name: "Lifestrike",
-    role: "Marketing Lead",
-    imageUrl: lifestrike,
-    bio: `Lifestrike started minting Optipunks and became an Optimistic NFT collector 4Lyfe`,
-    twitterUrl: "https://twitter.com/lifesadream63",
-  },
-  {
-    name: "Dope",
-    role: "Team Advisor",
-    imageUrl: dope,
-    bio: `Dope only needs simple things - chicken, chorizo risotto, cidre, & being max Chad.`,
-    twitterUrl: "https://twitter.com/dopesdope2021",
-  },
-  {
-    name: "Youngbeeps",
-    role: "Operations Lead",
-    imageUrl: beeps,
-    bio: "Beeps came, Beeps lifted, Beeps conquered his inner OptiChad.",
-    twitterUrl: "https://twitter.com/cryptonftbeeps",
-  },
-  {
-    name: "Millynish",
-    role: "Discord Expert",
-    imageUrl: millynish,
-    bio: `Chillin like a villain on the Opti Island makin a killin`,
-    twitterUrl: "https://twitter.com/anish_katwal",
-  },
-  {
-    name: "3t",
-    role: "Developer",
-    imageUrl: THREEt,
-    bio: `Frontend developer helping with updates and creative direction`,
-    twitterUrl: "https://twitter.com/Prod3t",
-  },
-  {
-    name: "JasonFactor",
-    role: "Developer",
-    imageUrl: jasonfactor,
-    bio: `A geek guy that loves waifus, memes, and bodybuilding`,
-    twitterUrl: "https://twitter.com/anh_jasonfactor",
-  }
-];
-
 export default function Team() {
+  const { t } = useTranslation()
+
+  const people: Person[] = [
+    {
+      name: "Dicaso",
+      role: "Artist / Project Lead",
+      imageUrl: dicaso,
+      bio: `Dicaso used to draw dicks on L1, but now he draws Chads and Babes on Optimism.`,
+      twitterUrl: "https://twitter.com/Dicaso5",
+    },
+    {
+      name: "DistractionBoy",
+      role: "Developer",
+      imageUrl: distraction,
+      bio: `DistractionBoy has no life so he chills with Dicaso because he's funny for free.`,
+      twitterUrl: "https://twitter.com/DistractionBoy_",
+    },
+    {
+      name: "LiViCi3",
+      role: "Advisor",
+      imageUrl: livici3,
+      bio: "Livix, THE artist of Pudgy Penguins, came out the igloo to get swole on L2.",
+      twitterUrl: "https://twitter.com/LiViXi3",
+    },
+    {
+      name: "Lifestrike",
+      role: "Marketing Lead",
+      imageUrl: lifestrike,
+      bio: `Lifestrike started minting Optipunks and became an Optimistic NFT collector 4Lyfe`,
+      twitterUrl: "https://twitter.com/lifesadream63",
+    },
+    {
+      name: "Dope",
+      role: "Team Advisor",
+      imageUrl: dope,
+      bio: `Dope only needs simple things - chicken, chorizo risotto, cidre, & being max Chad.`,
+      twitterUrl: "https://twitter.com/dopesdope2021",
+    },
+    {
+      name: "Youngbeeps",
+      role: "Operations Lead",
+      imageUrl: beeps,
+      bio: "Beeps came, Beeps lifted, Beeps conquered his inner OptiChad.",
+      twitterUrl: "https://twitter.com/cryptonftbeeps",
+    },
+    {
+      name: "Millynish",
+      role: "Discord Expert",
+      imageUrl: millynish,
+      bio: `Chillin like a villain on the Opti Island makin a killin`,
+      twitterUrl: "https://twitter.com/anish_katwal",
+    },
+    {
+      name: "3t",
+      role: "Developer",
+      imageUrl: THREEt,
+      bio: `Frontend developer helping with updates and creative direction`,
+      twitterUrl: "https://twitter.com/Prod3t",
+    },
+    {
+      name: "JasonFactor",
+      role: "Developer",
+      imageUrl: jasonfactor,
+      bio: `A geek guy that loves waifus, memes, and bodybuilding`,
+      twitterUrl: "https://twitter.com/anh_jasonfactor",
+    }
+  ];
+
   return (
     <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
       <div className="space-y-12">
