@@ -5,7 +5,7 @@ import { Disclosure } from "@headlessui/react";
 
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
-import heroImg from "../public/images/hero-img.png";
+import heroImg from "../public/images/babe-img.png";
 import coinGeckoLogo from "../public/images/coingecko_logo.png";
 import osLogo from "../public/images/os-logo-trans.png";
 import { NavLink } from "../lib";
@@ -52,6 +52,17 @@ export default function DarkBabeNavbar() {
           return link;
         });
       });
+      setNavigationMobile((prevState) => {
+        return prevState.map((navLink) => {
+          let link = navLink;
+          const pathPartToMatch = router.pathname.split("/")[1];
+          const linkPartToMatch = link.href?.split("/")[1];
+          if (pathPartToMatch === linkPartToMatch) {
+            link.current = true;
+          }
+          return link;
+        });
+      });
     }
   }, [router]);
 
@@ -67,18 +78,15 @@ export default function DarkBabeNavbar() {
                 <div className="flex items-center">
                   <div className="-mb-1 flex-shrink-0">
                     <Image
-                      className="rounded-full bg-blue-600"
+                      className="rounded-full"
                       src={heroImg}
                       alt="Workflow"
-                      width={38}
+                      width={120}
                       priority
                     />
                   </div>
-                  <span className="ml-4 -mr-2 text-base font-semibold text-white">
-                    Arbibabes
-                  </span>
                   <div className="hidden md:block">
-                    <div className="ml-10 flex items-baseline space-x-4">
+                    <div className="mt-3 flex items-baseline space-x-4">
                       {navigation.map((item) => (
                         <a
                           key={item.name}

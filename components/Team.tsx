@@ -3,10 +3,10 @@ import React from "react";
 
 import distraction from "/public/images/distraction.png";
 import dicaso from "/public/images/dicaso.png";
-import lifestrike from "/public/images/lifestrike.png";
-import dope from "/public/images/dope.png";
+import lifestrike from "/public/images/lifestrike.jpg";
+import dope from "/public/images/dope.jpg";
 import beeps from "/public/images/beeps.png";
-import millynish from "/public/images/millynish.png";
+import millynish from "/public/images/millynish.jpg";
 import livici3 from "/public/images/livixi3.png";
 import THREEt from "/public/images/3t.jpg";
 import jasonfactor from "/public/images/jasonfactor.webp";
