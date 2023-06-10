@@ -1,0 +1,77 @@
+{
+    "hero_section": [
+        {
+            "mint_status" : "Minting Closed",
+            "view": "View Cheap Chads",
+            "description": "Our first collection (OptiChads) was such a huge success that we are launching another collection, this time on Arbitrum. For more, go to the",
+            "page": "page"
+        }
+    ],
+    "health_section": [
+        {
+            "quote": "Daily Health Quote",
+            "become": "Become a Chad!",
+            "inspired": "be inspired.",
+            "author": "The Author"
+
+        }
+    ],
+    "promoting": "Promoting Health in Web3",
+    "pricing_section": [
+        {
+            "comming_soon": "coming soon",
+            "description": "One Babe for every Chad",
+            "decentralize": "Decentralized",
+            "maximum": "MAXIMUM BABE",
+            "health": "Health",
+            "become": "Become a Babe!",
+            "wellness": "Wellness",
+            "wellnessFeatures1": "Max accessories and traits",
+            "decentralizedFeatures1": "ArbiBabes coming soon!",
+            "mainFeatures1": "Realistic shading and contour",
+            "mainFeatures2": "Chadtastic level of detail",
+            "mainFeatures3": "Millions of combinations"
+        }
+    ],
+    "feature_section": [
+        {
+            "bulk_central": "#Bulk-Central ",
+            "want": "wants to hear from ",
+            "you": "you! ",
+            "description": "Stop by our Discord server and post your healthy habits for Whitelist entry",
+            "title": "All Muscles Accepted",
+            "sub_desc1": "What are you waiting for?",
+            "sub_desc2": "We know that sharing success stories and progress pics is one surefire way to inspire others that may need a small but swift kick in the glutes to start not sucking, and instead hit the gym like a normal person."
+        }
+    ],
+    "babes_team": [
+        {
+            "main_title": "Another epic collection to add to the ranks",
+            "question1": "Wen ArbiBabes?",
+            "question2": "How to get on the Whitelist (Allow List)?",
+            "question3": "How many babes will there be?",
+            "answer1": "The much anticipated launch is coming soon! Be ready for it mid-June.",
+            "answer2": "Easy bro, you just gotta hold 1 Chad to mint each ArbiBabe. Keep checking in because our exact Tokenomics will not be finalized until just a little before launch. We may end up having a public mint phase",
+            "answer3": "We are now set on a 1:1 claim for OptiChads to ArbiBabes, so the full collection will have 10,000 $BABES",
+            "subtitle1": "Fun and Giggly",
+            "subtitle2": "Volumptuous Traits",
+            "subtitle3": "You want it"
+        }
+    ],
+    "team_section": [
+        {
+            "our_team": "Our Team",
+            "description1": "Banished from Layer 1 these Chads have crossed the bridge seeking a more Optimistic lifestyle.",
+            "description2": "They workout, flex, and eat high amounts of protein with their gas savings.",
+            "bio1": "Dicaso used to draw dicks on L1, but now he draws Chads and Babes on Optimism.",
+            "bio2": "DistractionBoy has no life so he chills with Dicaso because he's funny for free.",
+            "bio3": "Livix, THE artist of Pudgy Penguins, came out the igloo to get swole on L2.",
+            "bio4": "Lifestrike started minting Optipunks and became an Optimistic NFT collector 4Lyfe",
+            "bio5": "Dope only needs simple things - chicken, chorizo risotto, cidre, & being max Chad.",
+            "bio6": "Beeps came, Beeps lifted, Beeps conquered his inner OptiChad.",
+            "bio7": "Chillin like a villain on the Opti Island makin a killin.",
+            "bio8": "Frontend developer helping with updates and creative direction.",
+            "bio9": "A geek guy that loves waifus, memes, and bodybuilding."
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "hero_section": [
+        {
+            "mint_status" : "Đã mint hết",
+            "view": "Xem Chads giá tốt",
+            "description": "Bộ sưu tập đầu tiên của chúng tôi (OptiChads) là một thành công lớn đến mức chúng tôi sẽ ra mắt một bộ sưu tập mới, trên nền tảng Arbitrum. Để biết thêm, hãy truy cập",
+            "page": "tại đây"
+        }
+    ],
+    "health_section": [
+        {
+            "quote": "Trích dẫn sức khoẻ hàng ngày",
+            "become": "Hãy trở thành Chad!",
+            "inspired": "được truyền cảm hứng.",
+            "author": "Tác giả"
+        }
+    ],
+    "promoting": "Thúc đẩy sức khoẻ từ Web3",
+    "pricing_section": [
+        {
+            "comming_soon": "sắp ra mắt",
+            "description": "Một Babe từ một Chad",
+            "decentralize": "Phi tập trung",
+            "maximum": "BABE VÔ HẠN",
+            "health": "Thể chất",
+            "become": "Hãy trở thành Babe!",
+            "wellness": "Sức khoẻ",
+            "wellnessFeatures1": "Phụ kiện và tính cách",
+            "decentralizedFeatures1": "ArbiBabes sắp ra mắt!",
+            "mainFeatures1": "Hình ảnh chất lượng rõ nét",
+            "mainFeatures2": "Mức độ chi tiết cao",
+            "mainFeatures3": "Hàng triệu cách kết hợp"
+        }
+    ],
+    "feature_section": [
+        {
+            "bulk_central": "#Mong muốn ",
+            "want": "nhận phản hồi từ ",
+            "you": "bạn! ",
+            "description": "Ghé qua máy chủ Discord của chúng tôi và chia sẻ các thói quen lành mạnh của bạn để nhập gia nhập vào whitelist",
+            "title": "Tất cả các cơ bắp đều được chấp nhận",
+            "sub_desc1": "Bạn còn chờ gì nữa ?",
+            "sub_desc2": "Chúng tôi biết rằng chia sẻ những câu chuyện thành công và những bức ảnh tiến bộ là một cách để truyền cảm hứng cho những người khác có thể cần một cú hích nhỏ nhưng nhanh chóng để bắt đầu tập gym như một người bình thường."
+        }
+    ],
+    "babes_team": [
+        {
+            "main_title": "Một bộ sưu tập hoành tráng được đưa vào bảng xếp hạng",
+            "question1": "Khi nào ArbiBabes?",
+            "question2": "Làm sao để vào Whitelist (Allow List)?",
+            "question3": "Sẽ có bao nhiêu babes?",
+            "answer1": "Sẽ sớm ra mắt, dự kiến vào giữa tháng sáu.",
+            "answer2": "Dễ thôi anh bạn, bạn chỉ cần giữ 1 Chad để đúc mỗi ArbiBabe. Hãy tiếp tục theo dõi vì Tokenomics chính xác của chúng tôi đang dần hoàn thiện. Chúng tôi có thể sẽ có một giai đoạn mint công khai",
+            "answer3": "Chúng tôi hiện đang cho quy đổi 1:1 cho OptiChads cho ArbiBabes, vì vậy bộ sưu tập sẽ có 10.000 $BABES",
+            "subtitle1": "Vui vẻ và tận hưởng",
+            "subtitle2": "Nóng bỏng khiêu gợi",
+            "subtitle3": "Bạn muốn nó"
+        }
+    ],
+    "team_section": [
+        {
+            "our_team": "Nhóm chúng tôi",
+            "description1": "Rời khỏi Layer1, các Chad đã tìm kiếm một lối sống lạc quan (Optimistic) hơn.",
+            "description2": "Họ tập luyện, linh hoạt và ăn nhiều protein để phí gas.",
+            "bio1": "Dicaso đã từng vẽ những 'dicks' trên Layer1, nhưng bây giờ anh ấy vẽ Chads và Babes trên mạng Optimism.",
+            "bio2": "DistractionBoy anh ấy dành thời gian sáng tạo cùng với Dicaso vì anh ta yêu thích sự hài hước.",
+            "bio3": "Livix, nghệ sĩ của bộ sưu tập Pudgy Penguins, bước ra khỏi lều tuyết để sáng tạo trên Layer2.",
+            "bio4": "Lifestrike bắt đầu mint Optipunks và trở thành nhà sưu tập NFT 4Lyfe.",
+            "bio5": "Dope chỉ cần những thứ đơn giản - thịt gà, cơm risotto chorizo, rượu cidre, và Chad.",
+            "bio6": "Beeps tới, Beeps xây dựng, Beeps chinh phục Chad bên trong anh ta.",
+            "bio7": "Chillin giống như một nhân vật phản diện trên mạng lưới Opti.",
+            "bio8": "Nhà phát triển giao diện giúp cập nhật và định hướng sáng tạo.",
+            "bio9": "Một anh chàng lập trình có niềm đam mê waifus, meme và thể hình."
+        }
+    ]
+}

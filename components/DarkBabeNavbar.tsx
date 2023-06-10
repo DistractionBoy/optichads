@@ -5,7 +5,7 @@ import { Disclosure } from "@headlessui/react";
 
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
-import heroImg from "../public/images/hero-img.png";
+import heroImg from "../public/images/babe-img.png";
 import coinGeckoLogo from "../public/images/coingecko_logo.png";
 import osLogo from "../public/images/os-logo-trans.png";
 import { NavLink } from "../lib";
@@ -14,9 +14,16 @@ import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import { iNavLink } from "../lib/types";
 import { useAccount } from "wagmi";
+import SwitchLanguage from "./SwitchLanguage";
 
 const navDefaultState: NavLink[] = [
+  { name: "The Pad", href: "/", current: false }
+];
+
+const navMobileDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
+  { name: "English", href: "/babes", current: false },
+  { name: "Vietnamese", href: "/vi/babes", current: false }
 ];
 
 function classNames(...classes: string[]) {
@@ -30,6 +37,7 @@ const collectionName = "Babes";
 export default function DarkBabeNavbar() {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
+  const [navigationMobile, setNavigationMobile] = useState<iNavLink[]>(navMobileDefaultState);
 
   useEffect(() => {
     if (router.isReady) {
@@ -44,10 +52,21 @@ export default function DarkBabeNavbar() {
           return link;
         });
       });
+      setNavigationMobile((prevState) => {
+        return prevState.map((navLink) => {
+          let link = navLink;
+          const pathPartToMatch = router.pathname.split("/")[1];
+          const linkPartToMatch = link.href?.split("/")[1];
+          if (pathPartToMatch === linkPartToMatch) {
+            link.current = true;
+          }
+          return link;
+        });
+      });
     }
   }, [router]);
 
-  const { address, isConnected } = useAccount();
+  const { address } = useAccount();
 
   return (
     <Disclosure as="nav" className="z-10 bg-blue-500">
@@ -59,18 +78,15 @@ export default function DarkBabeNavbar() {
                 <div className="flex items-center">
                   <div className="-mb-1 flex-shrink-0">
                     <Image
-                      className="rounded-full bg-blue-600"
+                      className="rounded-full"
                       src={heroImg}
                       alt="Workflow"
-                      width={38}
+                      width={120}
                       priority
                     />
                   </div>
-                  <span className="ml-4 -mr-2 text-base font-semibold text-white">
-                    OptiChads
-                  </span>
                   <div className="hidden md:block">
-                    <div className="ml-10 flex items-baseline space-x-4">
+                    <div className="mt-3 flex items-baseline space-x-4">
                       {navigation.map((item) => (
                         <a
                           key={item.name}
@@ -120,6 +136,9 @@ export default function DarkBabeNavbar() {
                       />
                     </a>
                   </div>
+                  <div className="flex items-center md:ml-6">
+                    <SwitchLanguage/>
+                  </div>
                   <div className="ml-4 flex items-center">
                     <UserMenu
                       color={colorWallet}
@@ -145,7 +164,7 @@ export default function DarkBabeNavbar() {
 
           <Disclosure.Panel className="border-b border-gray-50 md:hidden">
             <div className="space-y-1 px-2 py-3 sm:px-3">
-              {navigation.map((item) => (
+              {navigationMobile.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"

@@ -1,40 +1,32 @@
 import React from "react";
-
-const faqs = [
-  // {
-  //   question: "I've completed this week's quest. Wen rewards?",
-  //   answer: `We have to manually verify each submitted video, so please be patient
-  //           with us, but we usually are able to check submissions every couple of
-  //           hours. We lock in the rewards using Quest3's system and at the end of
-  //           each quest's period, the funds are dispersed. We then contact Quest3 to
-  //           get any remaining funds that haven't been dispersed and figure out what
-  //           to do with any refunded tokens.`,
-  // },
-  {
-    question: "Wen OptiBabes?",
-    answer: `Our second collection, OptiBabes, is currently under construction and 
-            Livic, the famous Pudgy Penguins artist has joined us as a consultant to help
-            us portray a balanced and strong image for our beloved babes. We are taking 
-            great care in our designs and will not rush the process. It will be a smaller 
-            collection however, and things will run smoothly so we are hoping to launch soon.`,
-  },
-  {
-    question: "What are OptiChads?",
-    answer: `OptiChads is an NFT collection, nah, a movement that promotes health and
-            charity through a cheap public mint and up to 50% of secondary sales going
-            to retroactive public goods. Wanna Chad it up with us? Our Discord server
-            would love to hear your Chaddest ideas`,
-  },
-  {
-    question: "What should I post in Discord?",
-    answer: `Pictures of your healthy meals, gyms, people working out and being active,
-            wide attractive smiles, slick shoes that have not been worn much, workout
-            equipment, runners, my chin, water, and healthy people working out while
-            eating right.`,
-  },
-];
+import { useTranslation } from 'next-i18next'
 
 export default function FAQs() {
+  const { t } = useTranslation()
+
+  const faqs = [
+    // {
+    //   question: "I've completed this week's quest. Wen rewards?",
+    //   answer: `We have to manually verify each submitted video, so please be patient
+    //           with us, but we usually are able to check submissions every couple of
+    //           hours. We lock in the rewards using Quest3's system and at the end of
+    //           each quest's period, the funds are dispersed. We then contact Quest3 to
+    //           get any remaining funds that haven't been dispersed and figure out what
+    //           to do with any refunded tokens.`,
+    // },
+    {
+      question: t("common:faq_section.0.question1"),
+      answer: t("common:faq_section.0.answer1"),
+    },
+    {
+      question: t("common:faq_section.0.question2"),
+      answer: t("common:faq_section.0.answer2"),
+    },
+    {
+      question: t("common:faq_section.0.question3"),
+      answer: t("common:faq_section.0.answer3"),
+    },
+  ];
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
@@ -44,7 +36,7 @@ export default function FAQs() {
               FAQ&apos;s
             </h2>
             <p className="mt-4 text-lg text-gray-500">
-              Can’t find the answer you’re looking for? Reach out to us on our{" "}
+              {t("common:faq_section.0.description")}{" "}
               <a
                 href="/discord"
                 className="font-medium text-red-500 hover:text-red-700"

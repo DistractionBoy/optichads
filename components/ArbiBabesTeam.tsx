@@ -4,51 +4,50 @@ import babeOne from "/public/images/athena.png";
 import babeTwo from "/public/images/hands.png";
 import babeThree from "/public/images/ready.png";
 import Image from "next/image";
+import { useTranslation } from 'next-i18next'
 
-const faqs = [
-  {
-    question: "Wen OptiBabes?",
-    answer:
-      "The much anticipated launch is coming soon! Be ready for it mid-June.",
-  },
-  {
-    question: "How to get on the Whitelist (Allow List)?",
-    answer: `Easy bro, you just gotta hold 1 Chad to mint each OptiBabe. Keep checking 
-             in because our exact Tokenomics will not be finalized until just a little before 
-             launch. We may end up having a public mint phase`,
-  },
-  {
-    question: "How many babes will there be?",
-    answer: `We are now set on a 1:1 claim for OptiChads to OptiBabes, so the full collection will have 10,000 $BABES`,
-  },
-];
+export default function ArbiBabesTeam() {
+  const { t } = useTranslation()
 
-const babes = [
-  {
-    title: "Shawty",
-    subtitle: "Fun and Giggly",
-    imageSrc: babeOne,
-  },
-  {
-    title: "Maximum Babe",
-    subtitle: "Volumptuous Traits",
-    imageSrc: babeTwo,
-  },
-  {
-    title: "Too Hot",
-    subtitle: "You want it",
-    imageSrc: babeThree,
-  },
-];
-
-export default function OptiBabesTeam() {
+  const faqs = [
+    {
+      question: t("chads:babes_team.0.question1"),
+      answer: t("chads:babes_team.0.answer1"),
+    },
+    {
+      question: t("chads:babes_team.0.question2"),
+      answer: t("chads:babes_team.0.answer2"),
+    },
+    {
+      question: t("chads:babes_team.0.question3"),
+      answer: t("chads:babes_team.0.answer3"),
+    },
+  ];
+  
+  const babes = [
+    {
+      title: "Shawty",
+      subtitle: t("chads:babes_team.0.subtitle1"),
+      imageSrc: babeOne,
+    },
+    {
+      title: "Maximum Babe",
+      subtitle: t("chads:babes_team.0.subtitle2"),
+      imageSrc: babeTwo,
+    },
+    {
+      title: "Too Hot",
+      subtitle: t("chads:babes_team.0.subtitle3"),
+      imageSrc: babeThree,
+    },
+  ];
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
         <div className="space-y-12">
           <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              OptiBabes
+              ArbiBabes
             </h2>
           </div>
           <ul
@@ -81,9 +80,9 @@ export default function OptiBabesTeam() {
       <div className="mx-auto max-w-7xl px-4 pb-12 text-center sm:px-6 lg:px-8 lg:pb-24">
         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
           <div className="text-left">
-            <h2 className="text-3xl font-extrabold text-gray-900">OptiBabes</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900">ArbiBabes</h2>
             <p className="mt-4 text-lg text-gray-500">
-              Another epic collection to add to the ranks
+              {t("chads:babes_team.0.main_title")}
             </p>
           </div>
           <div className="mt-12 lg:col-span-2 lg:mt-0">
