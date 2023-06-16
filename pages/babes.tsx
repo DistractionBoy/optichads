@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 import {
   BabeArtSection,
@@ -14,25 +14,28 @@ import {
   BabesLicensing,
 } from "../components";
 
-export async function getStaticProps({locale}:any) {
+export async function getStaticProps({ locale }: any) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['chads', 'babes', 'common']))
-    }
-  }
+      ...(await serverSideTranslations(locale, ["chads", "babes", "common"])),
+    },
+  };
 }
 
 const BabesPage: NextPage = () => {
-  const { t } = useTranslation()
-  const promoting: any = t("babes:promoting")
-  
-  return(
+  const { t } = useTranslation();
+  const promoting: any = t("babes:promoting");
+
+  return (
     <>
-      <HeadMeta />
+      <HeadMeta
+        title="ArbiBabes"
+        description="The hottest new NFT on the Arbitrum network. Available on all major exchanges"
+      />
       <BabeHeroSectionClouds />
       <BgImageColorBabeSection />
       <DarkBabeOverlapShell title={promoting}>
-        <BabeArtSection/>
+        <BabeArtSection />
         <div className="rounded-lg bg-white pb-6 shadow">
           <ArbiBabesTeam />
           <Team />
@@ -41,7 +44,7 @@ const BabesPage: NextPage = () => {
       </DarkBabeOverlapShell>
       {/* <BabesLicensing /> */}
     </>
-  )
+  );
 };
 
 export default BabesPage;
