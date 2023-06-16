@@ -17,27 +17,29 @@ import { useAccount } from "wagmi";
 import SwitchLanguage from "./SwitchLanguage";
 
 const navDefaultState: NavLink[] = [
-  { name: "The Pad", href: "/", current: false }
+  // { name: "OptiChads", href: "/", current: false },
 ];
 
 const navMobileDefaultState: NavLink[] = [
-  { name: "The Pad", href: "/", current: false },
+  { name: "OptiChads", href: "/", current: false },
   { name: "English", href: "/babes", current: false },
-  { name: "Vietnamese", href: "/vi/babes", current: false }
+  { name: "Vietnamese", href: "/vi/babes", current: false },
 ];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const colorWallet = "bg-pink-500";
+const colorWallet = "bg-hotpink-500";
 const collection = "arbibabes";
 const collectionName = "Babes";
 
 export default function DarkBabeNavbar() {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
-  const [navigationMobile, setNavigationMobile] = useState<iNavLink[]>(navMobileDefaultState);
+  const [navigationMobile, setNavigationMobile] = useState<iNavLink[]>(
+    navMobileDefaultState
+  );
 
   useEffect(() => {
     if (router.isReady) {
@@ -69,11 +71,11 @@ export default function DarkBabeNavbar() {
   const { address } = useAccount();
 
   return (
-    <Disclosure as="nav" className="z-10 bg-blue-500">
+    <Disclosure as="nav" className="sticky top-0 bg-white">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="border-b border-blue-500">
+            <div className="border-b border-gray-50">
               <div className="flex h-16 items-center justify-between px-4 sm:px-0">
                 <div className="flex items-center">
                   <div className="-mb-1 flex-shrink-0">
@@ -81,20 +83,20 @@ export default function DarkBabeNavbar() {
                       className="rounded-full"
                       src={heroImg}
                       alt="Workflow"
-                      width={120}
+                      width={160}
                       priority
                     />
                   </div>
                   <div className="hidden md:block">
-                    <div className="mt-3 flex items-baseline space-x-4">
+                    <div className="mt-2 flex items-baseline space-x-4">
                       {navigation.map((item) => (
                         <a
                           key={item.name}
                           href={item.href as string}
                           className={classNames(
                             item.current
-                              ? "bg-pink-500 text-white"
-                              : "text-gray-300 hover:bg-blue-800 hover:text-white",
+                              ? "bg-white text-hotpink-600"
+                              : "text-gray-800 hover:bg-hotpink-700 hover:text-white",
                             "rounded-md px-3 py-2 text-sm font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
@@ -118,6 +120,7 @@ export default function DarkBabeNavbar() {
                         src={osLogo}
                         height={24}
                         width={24}
+                        className="rounded-sm bg-hotpink-500 p-1 outline outline-1 outline-hotpink-700"
                       />
                     </a>
                   </div>
@@ -133,11 +136,12 @@ export default function DarkBabeNavbar() {
                         src={coinGeckoLogo}
                         height={24}
                         width={24}
+                        className="rounded-sm bg-hotpink-500 p-1 outline outline-1 outline-hotpink-700"
                       />
                     </a>
                   </div>
                   <div className="flex items-center md:ml-6">
-                    <SwitchLanguage/>
+                    <SwitchLanguage />
                   </div>
                   <div className="ml-4 flex items-center">
                     <UserMenu
@@ -149,7 +153,7 @@ export default function DarkBabeNavbar() {
                 </div>
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-blue-700 p-2 text-gray-300 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-hotpink-500 p-2 text-gray-300 hover:bg-hotpink-600 hover:text-white focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-hotpink-800">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -171,8 +175,8 @@ export default function DarkBabeNavbar() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-blue-700 text-white"
-                      : "text-gray-300 hover:bg-blue-600 hover:text-white",
+                      ? "bg-white text-hotpink-600"
+                      : "text-gray-800 hover:bg-hotpink-700 hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
@@ -181,7 +185,7 @@ export default function DarkBabeNavbar() {
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="border-t border-red-300 pt-5 pb-3">
+            <div className="border-t border-hotpink-600 pt-5 pb-3">
               <div className="pl-5">
                 <Account color={colorWallet} />
               </div>
