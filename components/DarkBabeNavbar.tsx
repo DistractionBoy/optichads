@@ -108,7 +108,7 @@ export default function DarkBabeNavbar() {
                 <div className="hidden items-center md:flex">
                   <div className="flex items-center md:ml-6">
                     <a
-                      href="https://opensea.io/collection/optichads"
+                      href="https://opensea.io/collection/arbibabes"
                       className="flex items-center"
                       target="_blank"
                       rel="noreferrer"
@@ -123,7 +123,7 @@ export default function DarkBabeNavbar() {
                   </div>
                   <div className="flex items-center md:ml-6">
                     <a
-                      href="https://www.coingecko.com/en/nft/optichads"
+                      href="https://www.coingecko.com/en/nft/arbibabes"
                       className="flex items-center "
                       target="_blank"
                       rel="noreferrer"
