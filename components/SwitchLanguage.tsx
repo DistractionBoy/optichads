@@ -2,9 +2,9 @@ import { GlobeAltIcon, CheckIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { useTranslation } from 'next-i18next'
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 export default function SwitchLanguage() {
   const { locale, locales, asPath } = useRouter();
@@ -12,14 +12,17 @@ export default function SwitchLanguage() {
 
   return (
     <Menu as="div">
-        <Menu.Item>
+      <Menu.Item>
         {({ active }) => (
-        <div className="text-white cursor-pointer ">
-            <Menu as="div">
-                <Menu.Button >
-                    <GlobeAltIcon className="h-6 w-6 mt-1" aria-hidden="true" />
-                </Menu.Button>
-                <Transition
+          <div className="flex h-[35px] w-[35px] flex-1 cursor-pointer items-center justify-center rounded-full bg-hotpink-500 text-white outline outline-1 outline-hotpink-700">
+            <Menu>
+              <Menu.Button>
+                <GlobeAltIcon
+                  className="flex h-6 w-6 self-center"
+                  aria-hidden="true"
+                />
+              </Menu.Button>
+              <Transition
                 as={Fragment}
                 enter="transition ease-out duration-100"
                 enterFrom="transform opacity-0 scale-95"
@@ -27,31 +30,44 @@ export default function SwitchLanguage() {
                 leave="transition ease-in duration-75"
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
-                >
+              >
                 <Menu.Items className="absolute z-10 -ml-28 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    {locales?.map((l, i) => {
-                    return (<Menu.Item key={l}>
+                  {locales?.map((l, i) => {
+                    return (
+                      <Menu.Item key={l}>
                         {({ active }) => (
-                        <div
+                          <div
                             className={clsx(
-                            active ? "cursor-pointer" : "",
-                            "px-4 py-2 text-sm  text-gray-700" 
+                              active ? "cursor-pointer" : "",
+                              "px-4 py-2 text-sm  text-gray-700"
                             )}
-                        >
-                            <Link href={asPath} locale={l} className="inline-flex w-full">
-                            {t("common:language."+i+".name")}
-                            {l === locale ? <CheckIcon className="h-5 w-5 absolute right-0 mr-4" aria-hidden="true" /> : ''}
+                          >
+                            <Link
+                              href={asPath}
+                              locale={l}
+                              className="inline-flex w-full"
+                            >
+                              {t("common:language." + i + ".name")}
+                              {l === locale ? (
+                                <CheckIcon
+                                  className="absolute right-0 mr-4 h-5 w-5"
+                                  aria-hidden="true"
+                                />
+                              ) : (
+                                ""
+                              )}
                             </Link>
-                        </div>
+                          </div>
                         )}
-                    </Menu.Item>)
-                    })}
+                      </Menu.Item>
+                    );
+                  })}
                 </Menu.Items>
-                </Transition>
+              </Transition>
             </Menu>
-        </div>
+          </div>
         )}
-        </Menu.Item>
+      </Menu.Item>
     </Menu>
   );
 }

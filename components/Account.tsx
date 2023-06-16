@@ -38,7 +38,7 @@ const Account = ({ color }: Props) => {
                 return (
                   <span
                     onClick={openConnectModal}
-                    className={`${color} rounded-full py-2 px-4 font-bold text-white`}
+                    className={`${color} rounded-full py-2 px-4 font-bold text-white outline outline-1 outline-hotpink-700`}
                   >
                     Connect Wallet
                   </span>
@@ -48,7 +48,7 @@ const Account = ({ color }: Props) => {
                 return (
                   <span
                     onClick={openChainModal}
-                    className={`rounded-full bg-red-500 py-2 px-4 font-bold text-white`}
+                    className={`rounded-full bg-primary py-2 px-4 font-bold text-white`}
                   >
                     Wrong network
                   </span>
