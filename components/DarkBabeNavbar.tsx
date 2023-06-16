@@ -118,9 +118,9 @@ export default function DarkBabeNavbar() {
                       <Image
                         alt="opensea logo"
                         src={osLogo}
-                        height={24}
-                        width={24}
-                        className="rounded-sm bg-hotpink-500 p-1 outline outline-1 outline-hotpink-700"
+                        height={35}
+                        width={35}
+                        className="rounded-full bg-hotpink-500 p-2 outline outline-1 outline-hotpink-700"
                       />
                     </a>
                   </div>
@@ -134,9 +134,9 @@ export default function DarkBabeNavbar() {
                       <Image
                         alt="coinGecko logo"
                         src={coinGeckoLogo}
-                        height={24}
-                        width={24}
-                        className="rounded-sm bg-hotpink-500 p-1 outline outline-1 outline-hotpink-700"
+                        height={35}
+                        width={35}
+                        className="rounded-full bg-hotpink-500 p-2 outline outline-1 outline-hotpink-700"
                       />
                     </a>
                   </div>

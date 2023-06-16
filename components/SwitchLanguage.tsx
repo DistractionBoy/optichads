@@ -14,10 +14,13 @@ export default function SwitchLanguage() {
     <Menu as="div">
       <Menu.Item>
         {({ active }) => (
-          <div className="h-6 w-6 cursor-pointer rounded-sm bg-hotpink-500 text-white outline outline-1 outline-hotpink-700">
+          <div className="flex h-[35px] w-[35px] flex-1 cursor-pointer items-center justify-center rounded-full bg-hotpink-500 text-white outline outline-1 outline-hotpink-700">
             <Menu>
               <Menu.Button>
-                <GlobeAltIcon className="h-6 w-6" aria-hidden="true" />
+                <GlobeAltIcon
+                  className="flex h-6 w-6 self-center"
+                  aria-hidden="true"
+                />
               </Menu.Button>
               <Transition
                 as={Fragment}
