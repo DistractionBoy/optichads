@@ -63,7 +63,7 @@ export default function BgImageColorBabeSection() {
             </p>
             <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
               <div className="space-y-4 sm:mx-auto sm:space-y-0">
-                <Link href="https://opensea.io/collection/optichads" passHref>
+                <Link href="https://opensea.io/collection/arbibabes" passHref>
                   <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-primary bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-hotpink-300 hover:text-black hover:opacity-75 sm:px-8">
                     {t("babes:health_section.0.become")}
                   </div>
@@ -96,7 +96,7 @@ export default function BgImageColorBabeSection() {
             </p>
             <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
               <div className="space-y-4 sm:mx-auto sm:space-y-0">
-                <Link href="https://opensea.io/collection/optichads" passHref>
+                <Link href="https://opensea.io/collection/arbibabes" passHref>
                   <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-primary bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-hotpink-300 hover:text-black hover:opacity-75 sm:px-8">
                     {t("babes:health_section.0.become")}
                   </div>

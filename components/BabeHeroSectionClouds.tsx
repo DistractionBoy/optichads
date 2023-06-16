@@ -20,7 +20,7 @@ export default function BabeHeroSectionClouds() {
                 <div className="lg:py-24">
                   <div className="inline-flex cursor-pointer items-center rounded-full bg-gray-900 p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base">
                     <Link
-                      href="https://opensea.io/collection/optichads"
+                      href="https://apetimism.com/launchpad/arbibabes"
                       passHref
                     >
                       <span className="flex items-center">
