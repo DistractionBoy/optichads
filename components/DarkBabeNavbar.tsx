@@ -33,6 +33,7 @@ function classNames(...classes: string[]) {
 const colorWallet = "bg-hotpink-500";
 const collection = "arbibabes";
 const collectionName = "Babes";
+const globeStyle = "bg-hotpink-500 outline-hotpink-700 outline outline-1"
 
 export default function DarkBabeNavbar() {
   const router = useRouter();
@@ -71,7 +72,7 @@ export default function DarkBabeNavbar() {
   const { address } = useAccount();
 
   return (
-    <Disclosure as="nav" className="sticky top-0 bg-white">
+    <Disclosure as="nav" className="top-0 bg-white">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -141,7 +142,7 @@ export default function DarkBabeNavbar() {
                     </a>
                   </div>
                   <div className="flex items-center md:ml-6">
-                    <SwitchLanguage />
+                    <SwitchLanguage globeStyle={globeStyle}/>
                   </div>
                   <div className="ml-4 flex items-center">
                     <UserMenu
