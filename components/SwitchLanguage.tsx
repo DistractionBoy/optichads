@@ -6,7 +6,11 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
-export default function SwitchLanguage() {
+type Props = {
+  globeStyle?: string
+};
+
+export default function SwitchLanguage({globeStyle}: Props) {
   const { locale, locales, asPath } = useRouter();
   const { t } = useTranslation();
 
@@ -14,7 +18,7 @@ export default function SwitchLanguage() {
     <Menu as="div">
       <Menu.Item>
         {({ active }) => (
-          <div className="flex h-[35px] w-[35px] flex-1 cursor-pointer items-center justify-center rounded-full bg-hotpink-500 text-white outline outline-1 outline-hotpink-700">
+          <div className={`${globeStyle} flex h-[35px] w-[35px] flex-1 cursor-pointer items-center justify-center rounded-full text-white`}>
             <Menu>
               <Menu.Button>
                 <GlobeAltIcon
@@ -31,7 +35,7 @@ export default function SwitchLanguage() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute z-10 -ml-28 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="absolute top-14 z-10 -ml-28 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                   {locales?.map((l, i) => {
                     return (
                       <Menu.Item key={l}>

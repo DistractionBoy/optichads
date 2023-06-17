@@ -68,7 +68,7 @@ export default function Navbar() {
   }, [router]);
 
   return (
-    <Disclosure as="nav" className="z-10 bg-red-700">
+    <Disclosure as="nav" className="top-0 bg-red-700">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
