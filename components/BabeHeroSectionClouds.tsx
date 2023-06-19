@@ -5,10 +5,10 @@ import babeImg from "../public/images/babe-t.png";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import BabeTotalSupply from "./BabeTotalSupply";
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from "next-i18next";
 
 export default function BabeHeroSectionClouds() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <div className="relative overflow-hidden">
@@ -27,7 +27,9 @@ export default function BabeHeroSectionClouds() {
                         <span className="rounded-full bg-primary px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
                           {t("babes:hero_section.0.minting")}
                         </span>
-                        <span className="ml-4 text-sm">{t("babes:hero_section.0.go_to")}</span>
+                        <span className="ml-4 text-sm">
+                          {t("babes:hero_section.0.go_to")}
+                        </span>
                         <ChevronRightIcon
                           className="ml-2 h-5 w-5 text-hotpink-100"
                           aria-hidden="true"
@@ -42,7 +44,7 @@ export default function BabeHeroSectionClouds() {
                   <p className="prose mt-3 text-base font-light text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                     {t("babes:hero_section.0.description")}
                   </p>
-                  <BabeTotalSupply/>
+                  <BabeTotalSupply />
                 </div>
               </div>
               <div className="mt-12 -mb-16 sm:-mb-28 lg:relative lg:m-0">

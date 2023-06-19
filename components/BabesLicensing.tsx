@@ -32,7 +32,7 @@ const bg = gymPics[Math.floor(Math.random() * gymPics.length)];
 
 export default function BabesLicensing() {
   return (
-    <div className="from-primary-transparent to-primary-transparent relative -mx-5 -mt-6 rounded-lg bg-hotpink-50 bg-gradient-to-br via-transparent sm:-mx-6 lg:pt-8 lg:pb-14">
+    <div className="relative -mx-5 -mt-6 rounded-lg bg-gradient-to-t from-hotpink-400 via-transparent to-hotpink-50 sm:-mx-6 lg:pt-8 lg:pb-14">
       <div className="mx-auto max-w-7xl">
         <div className="relative shadow-xl sm:overflow-hidden sm:rounded-lg">
           <div className="absolute inset-0 bg-gray-900">
