@@ -17,6 +17,7 @@ import babeGymTwelve from "../public/images/babe-gym-12.jpeg";
 import Link from "next/link";
 import { getBaseUrl } from "../lib/helpers";
 import useSWR from "swr";
+import { useTranslation } from 'next-i18next'
 
 const gymPics = [
   babeGymOne,
@@ -38,6 +39,7 @@ export default function BgImageColorBabeSection() {
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/api/quotes/health/`;
   const { data } = useSWR(url);
+  const { t } = useTranslation()
 
   return data ? (
     <div className="from-primary-transparent to-primary-transparent relative -mx-5 -mt-6 mb-12 rounded-lg bg-hotpink-50 bg-gradient-to-tr via-transparent sm:-mx-6">
@@ -53,7 +55,7 @@ export default function BgImageColorBabeSection() {
           </div>
           <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
             <h1 className="space-y-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
-              <span className="block text-white">Daily Health Quote</span>
+              <span className="block text-white">{t("babes:health_section.0.quote")}</span>
               <span className="block text-hotpink-100">{data.name}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-lg px-3 text-center text-2xl text-white sm:max-w-xl">
@@ -61,9 +63,9 @@ export default function BgImageColorBabeSection() {
             </p>
             <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
               <div className="space-y-4 sm:mx-auto sm:space-y-0">
-                <Link href="https://opensea.io/collection/optichads" passHref>
+                <Link href="https://opensea.io/collection/arbibabes" passHref>
                   <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-primary bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-hotpink-300 hover:text-black hover:opacity-75 sm:px-8">
-                    Become a Babe!
+                    {t("babes:health_section.0.become")}
                   </div>
                 </Link>
               </div>
@@ -86,17 +88,17 @@ export default function BgImageColorBabeSection() {
           </div>
           <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
             <h1 className="text-center text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
-              <span className="block text-white">Daily Health Quote</span>
-              <span className="block text-pink-500">be inspired.</span>
+              <span className="block text-white">{t("babes:health_section.0.quote")}</span>
+              <span className="block text-pink-500">{t("babes:health_section.0.inspired")}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-center text-2xl text-pink-300 sm:max-w-2xl">
-              The Author
+              {t("babes:health_section.0.author")}
             </p>
             <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
               <div className="space-y-4 sm:mx-auto sm:space-y-0">
-                <Link href="https://opensea.io/collection/optichads" passHref>
+                <Link href="https://opensea.io/collection/arbibabes" passHref>
                   <div className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-primary bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-hotpink-300 hover:text-black hover:opacity-75 sm:px-8">
-                    Become a Babe!
+                    {t("babes:health_section.0.become")}
                   </div>
                 </Link>
               </div>

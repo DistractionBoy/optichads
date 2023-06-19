@@ -1,0 +1,19 @@
+{
+    "promoting": "Meet our Babes art",
+    "hero_section": [
+        {
+            "minting": "Minting Live",
+            "go_to": "Go to Mint",
+            "description": "Oh hi there! We are so glad you stopped by the gym today. I could use some help. I need you to spot me while I do squats. Think you can handle that? Good. I need you."
+        }
+    ],
+    "health_section": [
+        {
+            "quote": "Daily Health Quote",
+            "become": "Become a Babe!",
+            "inspired": "be inspired.",
+            "author": "The Author"
+
+        }
+    ]
+}

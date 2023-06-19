@@ -14,9 +14,16 @@ import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import { iNavLink } from "../lib/types";
 import { useAccount } from "wagmi";
+import SwitchLanguage from "./SwitchLanguage";
 
 const navDefaultState: NavLink[] = [
+  { name: "The Pad", href: "/", current: false }
+];
+
+const navMobileDefaultState: NavLink[] = [
   { name: "The Pad", href: "/", current: false },
+  { name: "English", href: "/", current: false },
+  { name: "Vietnamese", href: "/vi", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -30,6 +37,7 @@ const collectionName = "Chads";
 export default function Navbar() {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
+  const [navigationMobile, setNavigationMobile] = useState<iNavLink[]>(navMobileDefaultState);
   const { address } = useAccount();
 
   useEffect(() => {
@@ -45,11 +53,22 @@ export default function Navbar() {
           return link;
         });
       });
+      setNavigationMobile((prevState) => {
+        return prevState.map((navLink) => {
+          let link = navLink;
+          const pathPartToMatch = router.pathname.split("/")[1];
+          const linkPartToMatch = link.href?.split("/")[1];
+          if (pathPartToMatch === linkPartToMatch) {
+            link.current = true;
+          }
+          return link;
+        });
+      });
     }
   }, [router]);
 
   return (
-    <Disclosure as="nav" className="z-10 bg-red-700">
+    <Disclosure as="nav" className="top-0 bg-red-700">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -120,6 +139,9 @@ export default function Navbar() {
                       />
                     </a>
                   </div>
+                  <div className="flex items-center md:ml-6">
+                    <SwitchLanguage/>
+                  </div>
                   <div className="ml-4 flex items-center">
                     <UserMenu
                       color={colorWallet}
@@ -145,7 +167,7 @@ export default function Navbar() {
 
           <Disclosure.Panel className="border-b border-gray-50 md:hidden">
             <div className="space-y-1 px-2 py-3 sm:px-3">
-              {navigation.map((item) => (
+              {navigationMobile.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"

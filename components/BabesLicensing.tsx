@@ -31,9 +31,8 @@ const gymPics = [
 const bg = gymPics[Math.floor(Math.random() * gymPics.length)];
 
 export default function BabesLicensing() {
-
   return (
-    <div className="from-primary-transparent to-primary-transparent relative -mx-5 -mt-6 rounded-lg bg-hotpink-50 bg-gradient-to-br via-transparent lg:pt-8 lg:pb-14 sm:-mx-6">
+    <div className="from-primary-transparent to-primary-transparent relative -mx-5 -mt-6 rounded-lg bg-hotpink-50 bg-gradient-to-br via-transparent sm:-mx-6 lg:pt-8 lg:pb-14">
       <div className="mx-auto max-w-7xl">
         <div className="relative shadow-xl sm:overflow-hidden sm:rounded-lg">
           <div className="absolute inset-0 bg-gray-900">
@@ -50,11 +49,17 @@ export default function BabesLicensing() {
               <span className="block text-white">Rights</span>
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-2xl">
-            Arbibabe holders are granted the same commercial rights as Yuga Labs provided for Bored Ape Yacht Club. The Arbibabe license is <Link href="/licenseterms" className="hover:text-hotpink-200 text-hotpink-300 transition-all">here.</Link>
+              Arbibabe holders are granted the same commercial rights as Yuga
+              Labs provided for Bored Ape Yacht Club. The Arbibabe license is{" "}
+              <Link
+                href="/licenseterms"
+                className="text-hotpink-300 transition-all hover:text-hotpink-200"
+              >
+                here.
+              </Link>
             </p>
             <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
-              <div className="space-y-4 sm:mx-auto sm:space-y-0">
-              </div>
+              <div className="space-y-4 sm:mx-auto sm:space-y-0"></div>
             </div>
           </div>
         </div>

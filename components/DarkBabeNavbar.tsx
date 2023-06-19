@@ -5,7 +5,7 @@ import { Disclosure } from "@headlessui/react";
 
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
-import heroImg from "../public/images/hero-img.png";
+import heroImg from "../public/images/babe-img.png";
 import coinGeckoLogo from "../public/images/coingecko_logo.png";
 import osLogo from "../public/images/os-logo-trans.png";
 import { NavLink } from "../lib";
@@ -14,22 +14,33 @@ import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import { iNavLink } from "../lib/types";
 import { useAccount } from "wagmi";
+import SwitchLanguage from "./SwitchLanguage";
 
 const navDefaultState: NavLink[] = [
-  { name: "The Pad", href: "/", current: false },
+  // { name: "OptiChads", href: "/", current: false },
+];
+
+const navMobileDefaultState: NavLink[] = [
+  { name: "OptiChads", href: "/", current: false },
+  { name: "English", href: "/babes", current: false },
+  { name: "Vietnamese", href: "/vi/babes", current: false },
 ];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const colorWallet = "bg-pink-500";
+const colorWallet = "bg-hotpink-500";
 const collection = "arbibabes";
 const collectionName = "Babes";
+const globeStyle = "bg-hotpink-500 outline-hotpink-700 outline outline-1"
 
 export default function DarkBabeNavbar() {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
+  const [navigationMobile, setNavigationMobile] = useState<iNavLink[]>(
+    navMobileDefaultState
+  );
 
   useEffect(() => {
     if (router.isReady) {
@@ -44,41 +55,49 @@ export default function DarkBabeNavbar() {
           return link;
         });
       });
+      setNavigationMobile((prevState) => {
+        return prevState.map((navLink) => {
+          let link = navLink;
+          const pathPartToMatch = router.pathname.split("/")[1];
+          const linkPartToMatch = link.href?.split("/")[1];
+          if (pathPartToMatch === linkPartToMatch) {
+            link.current = true;
+          }
+          return link;
+        });
+      });
     }
   }, [router]);
 
-  const { address, isConnected } = useAccount();
+  const { address } = useAccount();
 
   return (
-    <Disclosure as="nav" className="z-10 bg-blue-500">
+    <Disclosure as="nav" className="top-0 bg-white">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="border-b border-blue-500">
+            <div className="border-b border-gray-50">
               <div className="flex h-16 items-center justify-between px-4 sm:px-0">
                 <div className="flex items-center">
                   <div className="-mb-1 flex-shrink-0">
                     <Image
-                      className="rounded-full bg-blue-600"
+                      className="rounded-full"
                       src={heroImg}
                       alt="Workflow"
-                      width={38}
+                      width={160}
                       priority
                     />
                   </div>
-                  <span className="ml-4 -mr-2 text-base font-semibold text-white">
-                    OptiChads
-                  </span>
                   <div className="hidden md:block">
-                    <div className="ml-10 flex items-baseline space-x-4">
+                    <div className="mt-2 flex items-baseline space-x-4">
                       {navigation.map((item) => (
                         <a
                           key={item.name}
                           href={item.href as string}
                           className={classNames(
                             item.current
-                              ? "bg-pink-500 text-white"
-                              : "text-gray-300 hover:bg-blue-800 hover:text-white",
+                              ? "bg-white text-hotpink-600"
+                              : "text-gray-800 hover:bg-hotpink-700 hover:text-white",
                             "rounded-md px-3 py-2 text-sm font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
@@ -92,7 +111,7 @@ export default function DarkBabeNavbar() {
                 <div className="hidden items-center md:flex">
                   <div className="flex items-center md:ml-6">
                     <a
-                      href="https://opensea.io/collection/optichads"
+                      href="https://opensea.io/collection/arbibabes"
                       className="flex items-center"
                       target="_blank"
                       rel="noreferrer"
@@ -100,14 +119,15 @@ export default function DarkBabeNavbar() {
                       <Image
                         alt="opensea logo"
                         src={osLogo}
-                        height={24}
-                        width={24}
+                        height={35}
+                        width={35}
+                        className="rounded-full bg-hotpink-500 p-2 outline outline-1 outline-hotpink-700"
                       />
                     </a>
                   </div>
                   <div className="flex items-center md:ml-6">
                     <a
-                      href="https://www.coingecko.com/en/nft/optichads"
+                      href="https://www.coingecko.com/en/nft/arbibabes"
                       className="flex items-center "
                       target="_blank"
                       rel="noreferrer"
@@ -115,10 +135,14 @@ export default function DarkBabeNavbar() {
                       <Image
                         alt="coinGecko logo"
                         src={coinGeckoLogo}
-                        height={24}
-                        width={24}
+                        height={35}
+                        width={35}
+                        className="rounded-full bg-hotpink-500 p-2 outline outline-1 outline-hotpink-700"
                       />
                     </a>
+                  </div>
+                  <div className="flex items-center md:ml-6">
+                    <SwitchLanguage globeStyle={globeStyle}/>
                   </div>
                   <div className="ml-4 flex items-center">
                     <UserMenu
@@ -130,7 +154,7 @@ export default function DarkBabeNavbar() {
                 </div>
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-blue-700 p-2 text-gray-300 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-hotpink-500 p-2 text-gray-300 hover:bg-hotpink-600 hover:text-white focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-hotpink-800">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -145,15 +169,15 @@ export default function DarkBabeNavbar() {
 
           <Disclosure.Panel className="border-b border-gray-50 md:hidden">
             <div className="space-y-1 px-2 py-3 sm:px-3">
-              {navigation.map((item) => (
+              {navigationMobile.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-blue-700 text-white"
-                      : "text-gray-300 hover:bg-blue-600 hover:text-white",
+                      ? "bg-white text-hotpink-600"
+                      : "text-gray-800 hover:bg-hotpink-700 hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
@@ -162,7 +186,7 @@ export default function DarkBabeNavbar() {
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="border-t border-red-300 pt-5 pb-3">
+            <div className="border-t border-hotpink-600 pt-5 pb-3">
               <div className="pl-5">
                 <Account color={colorWallet} />
               </div>

@@ -13,6 +13,7 @@ import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { optimism, arbitrum } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
+import { appWithTranslation } from 'next-i18next'
 
 const { chains, publicClient } = configureChains(
   [optimism, arbitrum],
@@ -56,4 +57,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp)

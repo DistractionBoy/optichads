@@ -1,30 +1,50 @@
 import type { NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 import {
+  BabeArtSection,
   BgImageColorBabeSection,
   BabeHeroSectionClouds,
   DarkBabeOverlapShell,
   FAQs,
   HeadMeta,
-  OptiBabesTeam,
+  ArbiBabesTeam,
   Team,
   BabesLicensing,
 } from "../components";
 
-const BabesPage: NextPage = () => (
-  <>
-    <HeadMeta />
-    <BabeHeroSectionClouds />
-    <BgImageColorBabeSection />
-    <DarkBabeOverlapShell title="A Safe Place to do Squats">
-      <div className="rounded-lg bg-white pb-6 shadow">
-        <OptiBabesTeam />
-        <Team />
-        <FAQs />
-      </div>
-    </DarkBabeOverlapShell>
-    <BabesLicensing />
-  </>
-);
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["chads", "babes", "common"])),
+    },
+  };
+}
+
+const BabesPage: NextPage = () => {
+  const { t } = useTranslation();
+  const promoting: any = t("babes:promoting");
+
+  return (
+    <>
+      <HeadMeta
+        title="ArbiBabes"
+        description="The hottest new NFT on the Arbitrum network. Available on all major exchanges"
+      />
+      <BabeHeroSectionClouds />
+      {/* <BgImageColorBabeSection /> */}
+      <DarkBabeOverlapShell title={promoting}>
+        <BabeArtSection />
+        <div className="rounded-lg bg-white pb-6 shadow">
+          <ArbiBabesTeam />
+          <Team />
+          <FAQs />
+        </div>
+      </DarkBabeOverlapShell>
+      <BabesLicensing />
+    </>
+  );
+};
 
 export default BabesPage;

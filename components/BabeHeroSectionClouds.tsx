@@ -4,8 +4,12 @@ import Image from "next/image";
 import babeImg from "../public/images/babe-t.png";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/outline";
+import BabeTotalSupply from "./BabeTotalSupply";
+import { useTranslation } from 'next-i18next'
 
 export default function BabeHeroSectionClouds() {
+  const { t } = useTranslation()
+
   return (
     <div className="relative overflow-hidden">
       <main>
@@ -16,14 +20,14 @@ export default function BabeHeroSectionClouds() {
                 <div className="lg:py-24">
                   <div className="inline-flex cursor-pointer items-center rounded-full bg-gray-900 p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base">
                     <Link
-                      href="https://opensea.io/collection/optichads"
+                      href="https://apetimism.com/launchpad/arbibabes"
                       passHref
                     >
                       <span className="flex items-center">
                         <span className="rounded-full bg-primary px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
-                          Minting Soon
+                          {t("babes:hero_section.0.minting")}
                         </span>
-                        <span className="ml-4 text-sm">Go to Mint</span>
+                        <span className="ml-4 text-sm">{t("babes:hero_section.0.go_to")}</span>
                         <ChevronRightIcon
                           className="ml-2 h-5 w-5 text-hotpink-100"
                           aria-hidden="true"
@@ -36,10 +40,9 @@ export default function BabeHeroSectionClouds() {
                     <span className="block">ArbiBabes</span>
                   </h1>
                   <p className="prose mt-3 text-base font-light text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                    Oh hi there! We are so glad you stopped by the gym today. I
-                    could use some help. I need you to spot me while I do
-                    squats. Think you can handle that? Good. I need you.
+                    {t("babes:hero_section.0.description")}
                   </p>
+                  <BabeTotalSupply/>
                 </div>
               </div>
               <div className="mt-12 -mb-16 sm:-mb-28 lg:relative lg:m-0">

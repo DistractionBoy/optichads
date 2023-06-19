@@ -1,8 +1,10 @@
 import Account from "./Account";
 import AttributeBox from "./AttributeBox";
 import Attributes from "./Attributes";
+import BabeArtSection from "./BabeArtSection";
 import BgImageColorHeroSection from "./BgImageColorHeroSection";
 import BgImageColorBabeSection from "./BgImageColorBabeSection";
+import BabeTotalSupply from "./BabeTotalSupply";
 import Button from "./Button";
 import Breadcrumbs from "./Breadcrumbs";
 import BabesLicensing from "./BabesLicensing";
@@ -24,7 +26,7 @@ import Modal from "./Modal";
 import MoreInfoModal from "./MoreInfoModal";
 import NumOwners from "./NumOwners";
 import NFTDetailView from "./NFTDetailView";
-import OptiBabesTeam from "./OptiBabesTeam";
+import ArbiBabesTeam from "./ArbiBabesTeam";
 import QuestsOpener from "./QuestsOpener";
 import RepsToday from "./RepsToday";
 import SuggestionChadForm from "./SuggestionChadForm";
@@ -37,14 +39,17 @@ import UserMenuMobile from "./UserMenuMobile";
 import FeatureList from "./FeatureList";
 import PricingPlan from "./PricingPlan";
 import ZapperChad from "./ZapperChad";
+import SwitchLanguage from "./SwitchLanguage"
 
 export {
   Account,
   AttributeBox,
   Attributes,
+  BabeArtSection,
   BgImageColorBabeSection,
   BgImageColorHeroSection,
   Button,
+  BabeTotalSupply,
   Breadcrumbs,
   BabesLicensing,
   Collection,
@@ -65,7 +70,7 @@ export {
   Modal,
   MoreInfoModal,
   NFTDetailView,
-  OptiBabesTeam,
+  ArbiBabesTeam,
   NumOwners,
   QuestsOpener,
   PricingPlan,
@@ -78,4 +83,5 @@ export {
   UserMenu,
   UserMenuMobile,
   ZapperChad,
+  SwitchLanguage
 };
