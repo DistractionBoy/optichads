@@ -33,7 +33,7 @@ const BabesPage: NextPage = () => {
         description="The hottest new NFT on the Arbitrum network. Available on all major exchanges"
       />
       <BabeHeroSectionClouds />
-      <BgImageColorBabeSection />
+      {/* <BgImageColorBabeSection /> */}
       <DarkBabeOverlapShell title={promoting}>
         <BabeArtSection />
         <div className="rounded-lg bg-white pb-6 shadow">
@@ -42,7 +42,7 @@ const BabesPage: NextPage = () => {
           <FAQs />
         </div>
       </DarkBabeOverlapShell>
-      {/* <BabesLicensing /> */}
+      <BabesLicensing />
     </>
   );
 };

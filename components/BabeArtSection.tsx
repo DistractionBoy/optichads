@@ -14,7 +14,7 @@ import babeArtTen from "../public/images/babe-art-10.webp";
 
 import Link from "next/link";
 
-import healthQuotes from "../pages/api/quotes/health/health-quotes.json"
+import healthQuotes from "../pages/api/quotes/health/health-quotes.json";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -28,63 +28,56 @@ const babeArtsPic = [
   babeArtSeven,
   babeArtEight,
   babeArtNine,
-  babeArtTen
+  babeArtTen,
 ];
 
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 3,
-    slidesToSlide: 3
+    slidesToSlide: 3,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 2,
-    slidesToSlide: 2 // optional, default to 1.
+    slidesToSlide: 2, // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
-    slidesToSlide: 1 // optional, default to 1.
-  }
+    slidesToSlide: 1, // optional, default to 1.
+  },
 };
 
 export default function BabeArtSection() {
   return (
-    <div className="">
-      <div className="mx-auto max-w-7xl mb-20 -mx-5">
-        <div className="relative">
-          <Carousel
-            swipeable={true}
-            draggable={false}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            autoPlaySpeed={1000}
-            keyBoardControl={true}
-            customTransition="transform 500ms ease-in-out"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
-            renderButtonGroupOutside={true}
-            rewindWithAnimation={true}
-          >
-            {babeArtsPic.map((babePic, index) => (
-              <div key={index} >
-                  <div className="flex col-start-1 col-end-3 p-5">
-                      <Image
-                        className="rounded-lg"
-                        src={babePic}
-                        alt=""
-                        priority
-                      />
-                    </div>
-                </div>
-            ))}
-          </Carousel>
-        </div>
+    <div className="-mx-5 mb-20 max-w-7xl">
+      <div className="relative">
+        <Carousel
+          swipeable={true}
+          draggable={false}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          infinite={true}
+          autoPlaySpeed={1000}
+          keyBoardControl={true}
+          customTransition="transform 500ms ease-in-out"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+          renderButtonGroupOutside={true}
+          rewindWithAnimation={true}
+        >
+          {babeArtsPic.map((babePic, index) => (
+            <div key={index}>
+              <div className="col-start-1 col-end-3 flex p-5">
+                <Image className="rounded-lg" src={babePic} alt="" priority />
+              </div>
+            </div>
+          ))}
+        </Carousel>
       </div>
     </div>
-  )
+  );
 }

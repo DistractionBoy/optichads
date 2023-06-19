@@ -13,9 +13,9 @@ export default function Layout({ children }: Props) {
     <div
       className={classNames(
         pathname === "/babes"
-          ? "bg-hotpink-50 from-hotpink-400"
-          : "bg-gray-900 from-[#DA10109E]",
-        `m-0 flex flex-1 flex-col items-stretch justify-between overflow-x-hidden bg-gradient-to-r`
+          ? "bg-hotpink-50 bg-gradient-to-b from-hotpink-400 via-transparent"
+          : "bg-gray-900 bg-gradient-to-r from-[#DA10109E]",
+        `m-0 flex flex-1 flex-col items-stretch justify-between overflow-x-hidden`
       )}
     >
       {children}

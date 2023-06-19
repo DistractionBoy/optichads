@@ -4,10 +4,10 @@ import babeOne from "/public/images/athena.png";
 import babeTwo from "/public/images/hands.png";
 import babeThree from "/public/images/ready.png";
 import Image from "next/image";
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from "next-i18next";
 
 export default function ArbiBabesTeam() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const faqs = [
     {
@@ -23,7 +23,7 @@ export default function ArbiBabesTeam() {
       answer: t("chads:babes_team.0.answer3"),
     },
   ];
-  
+
   const babes = [
     {
       title: "Shawty",
