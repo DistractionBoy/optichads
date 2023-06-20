@@ -14,6 +14,7 @@ import babeGymTen from "../public/images/babe-gym-10.jpeg";
 import babeGymEleven from "../public/images/babe-gym-11.jpeg";
 
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 const gymPics = [
   babeGymOne,
@@ -31,6 +32,8 @@ const gymPics = [
 const bg = gymPics[Math.floor(Math.random() * gymPics.length)];
 
 export default function BabesLicensing() {
+  const { t } = useTranslation();
+
   return (
     <div className="relative -mx-5 -mt-6 rounded-lg bg-gradient-to-t from-hotpink-400 via-transparent to-hotpink-50 sm:-mx-6 lg:pt-8 lg:pb-14">
       <div className="mx-auto max-w-7xl">
@@ -45,17 +48,16 @@ export default function BabesLicensing() {
           </div>
           <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
             <h1 className="text-center text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-6xl">
-              <span className="block text-white">Commercial</span>
-              <span className="block text-white">Rights</span>
+              <span className="block text-white">{t("babes:license.0.commercial")}</span>
+              <span className="block text-white">{t("babes:license.0.rights")}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-2xl">
-              Arbibabe holders are granted the same commercial rights as Yuga
-              Labs provided for Bored Ape Yacht Club. The Arbibabe license is{" "}
+              {t("babes:license.0.sub")}{" "}
               <Link
                 href="/licenseterms"
                 className="text-hotpink-300 transition-all hover:text-hotpink-200"
               >
-                here.
+                {t("babes:license.0.here")}.
               </Link>
             </p>
             <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
