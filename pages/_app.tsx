@@ -21,6 +21,7 @@ const { chains, publicClient } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
+  projectId: "OptiChads",
   appName: "Optichads & Arbibabes",
   chains,
 });
