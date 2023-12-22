@@ -7,18 +7,20 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 type Props = {
-  globeStyle?: string
+  globeStyle?: string;
 };
 
-export default function SwitchLanguage({globeStyle}: Props) {
+export default function SwitchLanguage({ globeStyle }: Props) {
   const { locale, locales, asPath } = useRouter();
   const { t } = useTranslation();
 
   return (
     <Menu as="div">
       <Menu.Item>
-        {({ active }) => (
-          <div className={`${globeStyle} flex h-[35px] w-[35px] flex-1 cursor-pointer items-center justify-center rounded-full text-white`}>
+        {() => (
+          <div
+            className={`${globeStyle} flex h-[35px] w-[35px] flex-1 cursor-pointer items-center justify-center rounded-full text-white`}
+          >
             <Menu>
               <Menu.Button>
                 <GlobeAltIcon

@@ -4,7 +4,6 @@ import { useTranslation } from "next-i18next";
 
 import {
   BabeArtSection,
-  BgImageColorBabeSection,
   BabeHeroSectionClouds,
   DarkBabeOverlapShell,
   FAQs,

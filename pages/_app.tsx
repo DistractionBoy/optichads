@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SWRConfig } from "swr";
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
@@ -13,7 +13,7 @@ import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { optimism, arbitrum } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
-import { appWithTranslation } from 'next-i18next'
+import { appWithTranslation } from "next-i18next";
 
 const { chains, publicClient } = configureChains(
   [optimism, arbitrum],
@@ -46,8 +46,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <RainbowKitProvider chains={chains}>
           <Layout>
             <div>
-              {asPath === "/" ? <DarkNavbar /> : <DarkBabeNavbar /> }
-              
+              {asPath === "/" ? <DarkNavbar /> : <DarkBabeNavbar />}
+
               <Component {...pageProps} />
             </div>
             <Footer />
@@ -58,4 +58,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default appWithTranslation(MyApp)
+export default appWithTranslation(MyApp);

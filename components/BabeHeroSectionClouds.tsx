@@ -4,7 +4,6 @@ import Image from "next/image";
 import babeImg from "../public/images/babe-t.png";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/outline";
-import BabeTotalSupply from "./BabeTotalSupply";
 import { useTranslation } from "next-i18next";
 
 export default function BabeHeroSectionClouds() {
@@ -44,7 +43,6 @@ export default function BabeHeroSectionClouds() {
                   <p className="prose mt-3 text-base font-light text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                     {t("babes:hero_section.0.description")}
                   </p>
-                  <BabeTotalSupply />
                 </div>
               </div>
               <div className="mt-12 -mb-16 sm:-mb-28 lg:relative lg:m-0">
