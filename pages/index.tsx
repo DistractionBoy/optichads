@@ -1,14 +1,13 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import vitalikApproves from "../public/images/vitalik_approves.png";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 import {
   BgImageColorHeroSection,
   DarkHeroSectionClouds,
   DarkOverlapShell,
-  FAQs,
   FeatureList,
   HeadMeta,
   ArbiBabesTeam,
@@ -16,17 +15,17 @@ import {
   Team,
 } from "../components";
 
-export async function getStaticProps({locale}:any) {
+export async function getStaticProps({ locale }: any) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['chads', 'babes', 'common']))
-    }
-  }
+      ...(await serverSideTranslations(locale, ["chads", "babes", "common"])),
+    },
+  };
 }
 
 const Home: NextPage = () => {
-  const { t } = useTranslation()
-  const promoting: any = t("chads:promoting")
+  const { t } = useTranslation();
+  const promoting: any = t("chads:promoting");
   return (
     <>
       <HeadMeta />
