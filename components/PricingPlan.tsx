@@ -1,6 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React from "react";
-import { CheckIcon } from "@heroicons/react/outline";
+import { CheckIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 import babeLeft from "../public/images/cherries-babe.png";

@@ -1,4 +1,4 @@
-import { GlobeAltIcon, CheckIcon } from "@heroicons/react/outline";
+import { GlobeAltIcon, CheckIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";

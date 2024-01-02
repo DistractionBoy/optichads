@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { SwitchHorizontalIcon } from "@heroicons/react/outline";
+import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 
 export interface ModalProps {
   title?: string;
@@ -49,7 +49,7 @@ export default function Modal({ title, message, open, setOpen }: ModalProps) {
             <div className="relative inline-block transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6 sm:align-middle">
               <div>
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                  <SwitchHorizontalIcon
+                  <AdjustmentsHorizontalIcon
                     className="h-6 w-6 text-green-600"
                     aria-hidden="true"
                   />

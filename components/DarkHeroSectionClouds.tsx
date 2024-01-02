@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import superheroImg from "../public/images/chad-t.png";
 import Link from "next/link";
-import { ChevronRightIcon } from "@heroicons/react/outline";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { useTranslation } from 'next-i18next'
 
 export default function DarkHeroSectionClouds() {

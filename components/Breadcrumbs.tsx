@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { HomeIcon } from "@heroicons/react/solid";
+import { HomeIcon } from "@heroicons/react/24/outline";
 
 export interface BreadcrumbProps {
   pages: Page[];

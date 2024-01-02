@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Disclosure } from "@headlessui/react";
 
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import heroImg from "../public/images/babe-img.png";
 import coinGeckoLogo from "../public/images/coingecko_logo.png";
@@ -157,9 +157,9 @@ export default function DarkBabeNavbar() {
                   <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-hotpink-500 p-2 text-gray-300 hover:bg-hotpink-600 hover:text-white focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-hotpink-800">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
-                      <XIcon className="block h-6 w-6" aria-hidden="true" />
+                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                     ) : (
-                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                     )}
                   </Disclosure.Button>
                 </div>
