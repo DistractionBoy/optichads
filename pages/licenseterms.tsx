@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import { HeadMeta } from "../components";
+import HeadMeta from "@/components/HeadMeta";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 

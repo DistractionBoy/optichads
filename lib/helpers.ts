@@ -2,15 +2,6 @@ import { Contract } from "@ethersproject/contracts";
 import { ChadMetadata } from ".";
 import { WindowInstanceWithEthereum } from "./types";
 
-export const getImgUrl = (id: string, collection?: string) =>
-  `https://optichads.s3.amazonaws.com/${
-    collection + "/images-all/" || ""
-  }${id}.webp`;
-
-export function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export function calcRange(size: number, startAt = 0) {
   return [...Array(size).keys()].map((i) => i + startAt);
 }

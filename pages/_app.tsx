@@ -2,9 +2,7 @@ import React from "react";
 import { SWRConfig } from "swr";
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
-import DarkNavbar from "../components/DarkNavbar";
-import { DarkBabeNavbar } from "../components";
-import Footer from "../components/Footer";
+
 import Layout from "../components/Layout";
 import { useRouter } from "next/router";
 
@@ -45,12 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider chains={chains}>
           <Layout>
-            <div>
-              {asPath === "/" ? <DarkNavbar /> : <DarkBabeNavbar />}
-
-              <Component {...pageProps} />
-            </div>
-            <Footer />
+            <Component {...pageProps} />
           </Layout>
         </RainbowKitProvider>
       </WagmiConfig>

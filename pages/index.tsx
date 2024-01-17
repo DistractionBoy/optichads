@@ -1,19 +1,10 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import vitalikApproves from "../public/images/vitalik_approves.png";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
+// import { useTranslation } from "next-i18next";
 
-import {
-  BgImageColorHeroSection,
-  DarkHeroSectionClouds,
-  DarkOverlapShell,
-  FeatureList,
-  HeadMeta,
-  ArbiBabesTeam,
-  PricingPlan,
-  Team,
-} from "../components";
+import HeadMeta from "@/components/HeadMeta";
+import DarkNavbar from "@/components/Navbar";
+import Team from "@/components/Team";
 
 export async function getStaticProps({ locale }: any) {
   return {
@@ -24,27 +15,15 @@ export async function getStaticProps({ locale }: any) {
 }
 
 const Home: NextPage = () => {
-  const { t } = useTranslation();
-  const promoting: any = t("chads:promoting");
+  // const { t } = useTranslation();
   return (
     <>
       <HeadMeta />
-      <DarkHeroSectionClouds />
-      <BgImageColorHeroSection />
-      <DarkOverlapShell title={promoting}>
-        <div className="rounded-lg bg-white pb-6 shadow">
-          <PricingPlan />
-          <FeatureList />
-          <ArbiBabesTeam />
-          <Image
-            alt="a sick tweet bro"
-            src={vitalikApproves}
-            height={900}
-            width={1255}
-          />
-          <Team />
-        </div>
-      </DarkOverlapShell>
+      <DarkNavbar />
+      {/* <Team /> */}
+      <div className="flex flex-col h-screen items-center justify-center">
+        <h1 className="text-3xl">UNDER CONSTRUCTION BRO</h1>
+      </div>
     </>
   );
 };
