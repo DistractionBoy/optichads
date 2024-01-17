@@ -1,83 +1,77 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: "jit",
+  darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
-        primary: "#ec4099",
-        hotpink: {
-          50: "#fae5f1",
-          100: "#f4bddc",
-          200: "#f091c5",
-          300: "#ed64ad",
-          400: "#ec4099", // main
-          500: "#ed1084",
-          600: "#db127f",
-          700: "#c41377",
-          800: "#ae1371",
-          900: "#861366",
-          transparent: "#ec40999e",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
-        green: {
-          50: "#e3fced",
-          100: "#bcf7d2",
-          200: "#8af1b4",
-          300: "#40ec93", // main
-          400: "#00e578",
-          500: "#00dd62",
-          600: "#00cc57",
-          700: "#00b849",
-          800: "#00a63d",
-          900: "#008428",
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
-        purple: {
-          50: "#fce3fb",
-          100: "#f6b8f6",
-          200: "#f184f1",
-          300: "#e940ec", // main
-          400: "#e200e7",
-          500: "#d300db",
-          600: "#c200d7",
-          700: "#aa00d2",
-          800: "#9500cc",
-          900: "#6a00c3",
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
-        red: {
-          50: "#ffecf0",
-          100: "#ffcfd6",
-          200: "#f19ea1",
-          300: "#e9787d",
-          400: "#f5595c",
-          500: "#fa4844",
-          600: "#ec4043", // main
-          700: "#da363c",
-          800: "#cc3035",
-          900: "#bd2529",
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
       },
-      fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
-      screens: {
-        "3xl": "1815px",
-        tall: { raw: "(min-height: 1200px)" },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  variants: {},
-  plugins: [
-    require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/typography"),
-  ],
-};
-
-/**
- * colors were generated here: https://m2.material.io/inline-tools/color/
- * with the starting hex value #EC409A
- */
+  plugins: [require("tailwindcss-animate")],
+}

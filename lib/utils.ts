@@ -1,3 +1,5 @@
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 import type { BigNumberish } from "@ethersproject/bignumber";
 import { formatUnits } from "@ethersproject/units";
 
@@ -31,3 +33,8 @@ export const parseBalance = (
 
 export const getQuixoticTradeHref = (tokenId: string) =>
   `https://quixotic.io/asset/opt/${process.env.NEXT_PUBLIC_CV_ADDRESS}/${tokenId}`;
+
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
