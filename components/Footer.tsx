@@ -9,7 +9,6 @@ import Image from "next/image";
 const navigation = {
   main: [
     { name: "The Pad", href: "/", current: false },
-    { name: "Zapper Bros", href: "/zapper-chads", current: false },
     {
       name: "Top Chads",
       href: "https://opensea.io/collection/optichads?search[sortAscending]=true&search[sortBy]=RARITY_RANK",
@@ -91,7 +90,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-8 text-center text-base text-gray-200">
-          &copy; 2023 OptiChads. All rights reserved.
+          &copy; 2024 OptiChads. All rights reserved.
         </p>
       </div>
     </footer>

@@ -2,15 +2,6 @@ import { Contract } from "@ethersproject/contracts";
 import { ChadMetadata } from ".";
 import { WindowInstanceWithEthereum } from "./types";
 
-export const getImgUrl = (id: string, collection?: string) =>
-  `https://optichads.s3.amazonaws.com/${
-    collection + "/images-all/" || ""
-  }${id}.webp`;
-
-export function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export function calcRange(size: number, startAt = 0) {
   return [...Array(size).keys()].map((i) => i + startAt);
 }
@@ -96,9 +87,6 @@ export const networkReqObj: RequestArguments = {
 export const connectToOptimism = () => {
   (window as WindowInstanceWithEthereum).ethereum?.request(networkReqObj);
 };
-
-export const getQuixoticTradeHref = (tokenId: string) =>
-  `https://quixotic.io/asset/opt/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS?.toUpperCase()}/${tokenId}`;
 
 export const getEtherscanTokenHref = (tokenId: string) =>
   `${process.env.NEXT_PUBLIC_ETHERSCAN_BASE_URL}/token/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}?a=${tokenId}`;

@@ -5,11 +5,7 @@ module.exports = {
   reactStrictMode: true,
   i18n,
   images: {
-    domains: [
-      "ipfs.io",
-      "optichads.s3.amazonaws.com",
-      "global.discourse-cdn.com",
-    ],
+    domains: ["ipfs.io", "global.discourse-cdn.com"],
   },
   webpack(config) {
     config.module.rules.push({

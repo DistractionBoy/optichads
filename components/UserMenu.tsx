@@ -2,10 +2,10 @@ import React, { useState, Fragment, useEffect } from "react";
 import { Menu, Transition } from "@headlessui/react";
 
 import { NavLink } from "../lib";
-import { classNames } from "../lib/helpers";
 import Account from "./Account";
 import { useAccount, useDisconnect } from "wagmi";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type Props = {
   color?: string;
@@ -52,7 +52,7 @@ export default function UserMenu({ color, collection, collectionName }: Props) {
                   onClick ? (
                     <button
                       onClick={onClick}
-                      className={classNames(
+                      className={cn(
                         active ? "bg-gray-100" : "",
                         "block px-4 py-2 text-sm text-gray-700"
                       )}
@@ -62,7 +62,7 @@ export default function UserMenu({ color, collection, collectionName }: Props) {
                   ) : (
                     <Link
                       href={href as string}
-                      className={classNames(
+                      className={cn(
                         active ? "bg-gray-100" : "",
                         "block px-4 py-2 text-sm text-gray-700"
                       )}

@@ -1,4 +1,4 @@
-import { GlobeAltIcon, CheckIcon } from "@heroicons/react/outline";
+import { GlobeAltIcon, CheckIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
@@ -7,18 +7,20 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 type Props = {
-  globeStyle?: string
+  globeStyle?: string;
 };
 
-export default function SwitchLanguage({globeStyle}: Props) {
+export default function SwitchLanguage({ globeStyle }: Props) {
   const { locale, locales, asPath } = useRouter();
   const { t } = useTranslation();
 
   return (
     <Menu as="div">
       <Menu.Item>
-        {({ active }) => (
-          <div className={`${globeStyle} flex h-[35px] w-[35px] flex-1 cursor-pointer items-center justify-center rounded-full text-white`}>
+        {() => (
+          <div
+            className={`${globeStyle} flex h-[35px] w-[35px] flex-1 cursor-pointer items-center justify-center rounded-full text-white`}
+          >
             <Menu>
               <Menu.Button>
                 <GlobeAltIcon
