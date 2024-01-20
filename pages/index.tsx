@@ -13,6 +13,7 @@ import desktop from "@/public/images/splash/1728_x_117.webp";
 import ultrawide from "@/public/images/splash/3440_x_1440.webp";
 import veryLarge from "@/public/images/splash/3840_x_2160.webp";
 import superUltrawide from "@/public/images/splash/5120_x_1440.webp";
+import RotatingTitle from "@/components/design-elements/RotatingTitle";
 
 // export async function getStaticProps({ locale }: any) {
 //   return {
@@ -22,8 +23,6 @@ import superUltrawide from "@/public/images/splash/5120_x_1440.webp";
 //   };
 // }
 
-const getImageBasedOnScreenSize = () => {};
-
 const Home: NextPage = () => {
   // const { t } = useTranslation();
   return (
@@ -32,9 +31,7 @@ const Home: NextPage = () => {
         <HeadMeta />
       </Head>
       <main>
-        <h1 className="fixed w-full text-center text-black mt-32 text-xl z-10">
-          OptiChads
-        </h1>
+        <RotatingTitle />
         <div className="inset-0">
           <Image
             alt=""
@@ -76,7 +73,7 @@ const Home: NextPage = () => {
             alt=""
             src={veryLarge}
             fill
-            className="hidden verylarge:block object-cover"
+            className="hidden verylarge:block superUltrawide:hidden object-cover"
           />
           <Image
             alt=""
