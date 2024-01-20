@@ -5,14 +5,14 @@ import Image from "next/image";
 // import { useTranslation } from "next-i18next";
 
 import HeadMeta from "@/components/HeadMeta";
-import mobile360 from "@/public/images/splash/360_x_800.webp";
-import mobile375 from "@/public/images/splash/375_x_667.webp";
-import mobile430 from "@/public/images/splash/430_x_932.webp";
-import tablet from "@/public/images/splash/1024_x_1366.webp";
-import desktop from "@/public/images/splash/1728_x_117.webp";
-import ultrawide from "@/public/images/splash/3440_x_1440.webp";
-import veryLarge from "@/public/images/splash/3840_x_2160.webp";
-import superUltrawide from "@/public/images/splash/5120_x_1440.webp";
+import mobile360 from "@/public/images/splash/360x800.png";
+import mobile375 from "@/public/images/splash/375x667.png";
+import mobile430 from "@/public/images/splash/430x932.png";
+import tablet from "@/public/images/splash/1024x1366.png";
+import desktop from "@/public/images/splash/1728x1170.png";
+import ultrawide from "@/public/images/splash/3440x1440.png";
+import veryLarge from "@/public/images/splash/3840x2160.png";
+import superUltrawide from "@/public/images/splash/5120x1440.png";
 import RotatingTitle from "@/components/design-elements/RotatingTitle";
 
 // export async function getStaticProps({ locale }: any) {
