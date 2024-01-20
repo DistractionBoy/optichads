@@ -5,15 +5,16 @@ module.exports = {
   reactStrictMode: true,
   i18n,
   images: {
-    domains: ["ipfs.io", "global.discourse-cdn.com"],
-  },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
-    });
-
-    return config;
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.ipfs.io",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "global.discourse-cdn.com",
+      },
+    ],
   },
 };

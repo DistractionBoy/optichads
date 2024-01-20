@@ -3,15 +3,14 @@ import { SWRConfig } from "swr";
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
 
-import Layout from "../components/Layout";
-import { useRouter } from "next/router";
-
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { optimism, arbitrum } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import { appWithTranslation } from "next-i18next";
+
+import Layout from "../components/Layout";
 
 const { chains, publicClient } = configureChains(
   [optimism, arbitrum],
@@ -30,25 +29,21 @@ const wagmiConfig = createConfig({
   publicClient,
 });
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const { asPath } = useRouter();
+const App = ({ Component, pageProps }: AppProps) => (
+  <SWRConfig
+    value={{
+      fetcher: (resource, init) =>
+        fetch(resource, init).then((res) => res.json()),
+    }}
+  >
+    <WagmiConfig config={wagmiConfig}>
+      <RainbowKitProvider chains={chains}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </RainbowKitProvider>
+    </WagmiConfig>
+  </SWRConfig>
+);
 
-  return (
-    <SWRConfig
-      value={{
-        fetcher: (resource, init) =>
-          fetch(resource, init).then((res) => res.json()),
-      }}
-    >
-      <WagmiConfig config={wagmiConfig}>
-        <RainbowKitProvider chains={chains}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </RainbowKitProvider>
-      </WagmiConfig>
-    </SWRConfig>
-  );
-}
-
-export default appWithTranslation(MyApp);
+export default appWithTranslation(App);
