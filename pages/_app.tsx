@@ -6,14 +6,14 @@ import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { optimism, arbitrum } from "wagmi/chains";
+import { optimism, arbitrum, base } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import { appWithTranslation } from "next-i18next";
 
 import Layout from "../components/Layout";
 
 const { chains, publicClient } = configureChains(
-  [optimism, arbitrum],
+  [optimism, arbitrum, base],
   [publicProvider()]
 );
 
