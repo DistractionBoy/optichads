@@ -1,15 +1,19 @@
-import banner from "@/public/images/banner.jpeg";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
 const wrapperClass =
   "w-full inline-flex flex-nowrap overflow-hidden" +
   "[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]";
 
-const ScrollingBanner = () => (
+export type ScrollingBannerProps = {
+  src: string | StaticImport;
+};
+
+const ScrollingBanner = ({ src }: ScrollingBannerProps) => (
   <div className={wrapperClass}>
     <ul className="flex items-center justify-center md:justify-start [&_img]:max-w-none animate-infinite-scroll">
       <li>
-        <Image priority src={banner} alt="" />
+        <Image priority src={src} alt="" />
       </li>
     </ul>
     <ul
@@ -17,7 +21,7 @@ const ScrollingBanner = () => (
       className="flex items-center justify-center md:justify-start [&_img]:max-w-none animate-infinite-scroll"
     >
       <li>
-        <Image src={banner} alt="" />
+        <Image src={src} alt="" />
       </li>
     </ul>
     <ul
@@ -25,7 +29,7 @@ const ScrollingBanner = () => (
       className="flex items-center justify-center md:justify-start [&_img]:max-w-none animate-infinite-scroll"
     >
       <li>
-        <Image src={banner} alt="" />
+        <Image src={src} alt="" />
       </li>
     </ul>
   </div>

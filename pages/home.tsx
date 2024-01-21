@@ -7,6 +7,10 @@ import DarkNavbar from "@/components/Navbar";
 import Team from "@/components/Team";
 import ScrollingBanner from "@/components/home/ScrollingBanner";
 
+import chadBanner from "@/public/images/banners/chad-banner.jpeg";
+import babeBanner from "@/public/images/banners/babe-banner.jpeg";
+import brigadeBanner from "@/public/images/banners/brigade-banner.jpeg";
+
 export async function getStaticProps({ locale }: any) {
   return {
     props: {
@@ -21,12 +25,11 @@ const Home: NextPage = () => {
     <>
       <HeadMeta />
       <DarkNavbar />
-      <ScrollingBanner />
+      <ScrollingBanner src={chadBanner} />
+      <ScrollingBanner src={babeBanner} />
+      <ScrollingBanner src={brigadeBanner} />
 
       {/* <Team /> */}
-      <div className="flex flex-col h-screen items-center justify-center">
-        <h1 className="text-3xl">UNDER CONSTRUCTION BRO</h1>
-      </div>
     </>
   );
 };
