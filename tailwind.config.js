@@ -77,6 +77,7 @@ module.exports = {
         },
       },
       animation: {
+        "infinite-scroll": "infinite-scroll 50s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "text-slide-2":
@@ -95,6 +96,10 @@ module.exports = {
           "text-slide-8 20s cubic-bezier(0.83, 0, 0.17, 1) infinite",
       },
       keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
         "text-slide-2": {
           "0%, 40%": {
             transform: "translateY(0%)",
