@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import mobile360 from "@/public/images/splash/360x800.png";
+import mobile360 from "@/public/images/splash/360x800.webp";
 import mobile375 from "@/public/images/splash/375x667.png";
-import mobile430 from "@/public/images/splash/430x932.png";
+import mobile430 from "@/public/images/splash/430x932.webp";
 import tablet from "@/public/images/splash/1024x1366.png";
 import desktop from "@/public/images/splash/1728x1170.png";
 import ultrawide from "@/public/images/splash/3440x1440.png";
