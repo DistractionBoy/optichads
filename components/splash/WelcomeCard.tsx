@@ -13,9 +13,6 @@ const WelcomeCard = () => (
     <Card>
       <CardHeader>
         <CardTitle>Degens Welcome</CardTitle>
-        <CardDescription>
-          We are a group of chads banished from L1.
-        </CardDescription>
       </CardHeader>
       <CardContent>
         <Link href="/home">
