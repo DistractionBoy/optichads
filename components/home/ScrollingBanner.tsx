@@ -20,6 +20,14 @@ const ScrollingBanner = () => (
         <Image src={banner} alt="" />
       </li>
     </ul>
+    <ul
+      aria-hidden
+      className="flex items-center justify-center md:justify-start [&_img]:max-w-none animate-infinite-scroll"
+    >
+      <li>
+        <Image src={banner} alt="" />
+      </li>
+    </ul>
   </div>
 );
 
