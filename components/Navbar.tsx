@@ -72,83 +72,46 @@ export default function Navbar() {
         <>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="border-b border-gray-50">
-              <div className="flex h-16 items-center justify-between px-4 sm:px-0">
-                <div className="flex items-center">
-                  <div className="-mb-1 flex-shrink-0">
-                    <Image
-                      className="rounded-full bg-red-600"
-                      src={heroImg}
-                      alt="Workflow"
-                      width={38}
-                      height={38}
-                      priority
-                    />
-                  </div>
-                  <span className="ml-4 -mr-2 text-base font-semibold text-white">
-                    OptiChads
-                  </span>
+
+              <div className="flex h-16 items-center flex-nowrap px-4 sm:px-0">
+                
+                <div className="flex items-center grow">
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
-                      {navigation.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href as string}
-                          className={cn(
-                            item.current
-                              ? "bg-red-800 text-white"
-                              : "text-gray-300 hover:bg-red-700 hover:text-white",
-                            "rounded-md px-3 py-2 text-sm font-medium"
-                          )}
-                          aria-current={item.current ? "page" : undefined}
-                        >
-                          {item.name}
-                        </a>
-                      ))}
+                      <button className="btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)]
+                       text-white bg-red ease-out hover:translate-y-1 transition-all rounded
+                        py-2 px-4 font-bold outline outline-1 outline-hotpink-700 font
+                       ">
+                        Menu
+                       </button>
                     </div>
                   </div>
                 </div>
-                <div className="hidden items-center md:flex">
-                  <div className="flex items-center md:ml-6">
-                    <a
-                      href="https://opensea.io/collection/optichads"
-                      className="flex items-center"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+
+                <div className="flex items-center grow">
+                  <div className="-mb-1 flex-shrink-0">
                       <Image
-                        alt="opensea logo"
-                        src={osLogo}
-                        height={24}
-                        width={24}
+                        className="rounded-full bg-red-600"
+                        src={heroImg}
+                        alt="Workflow"
+                        width={38}
+                        height={38}
+                        priority
                       />
-                    </a>
-                  </div>
-                  <div className="flex items-center md:ml-6">
-                    <a
-                      href="https://www.coingecko.com/en/nft/optichads"
-                      className="flex items-center"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        alt="coinGecko logo"
-                        src={coinGeckoLogo}
-                        height={24}
-                        width={24}
-                      />
-                    </a>
-                  </div>
-                  <div className="flex items-center md:ml-6">
-                    <SwitchLanguage />
-                  </div>
-                  <div className="ml-4 flex items-center">
+                    </div>
+                    <span className="ml-4 -mr-2 text-base font-semibold text-white">
+                      OptiChads
+                    </span>
+                </div>
+
+                <div className="ml-4 flex items-center">
                     <UserMenu
                       color={colorWallet}
                       collection={collection}
                       collectionName={collectionName}
                     />
                   </div>
-                </div>
+                
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
                   <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-red-700 p-2 text-gray-300 hover:bg-red-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800">
