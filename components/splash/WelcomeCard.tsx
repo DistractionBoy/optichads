@@ -2,6 +2,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -13,15 +14,19 @@ const WelcomeCard = () => (
     <Card>
       <CardHeader>
         <CardTitle>Degens Welcome</CardTitle>
+        <CardDescription>
+          Step inside and work those glutes, bro.
+        </CardDescription>
       </CardHeader>
-      <CardDescription>
-        Bansihed from L1, we chads reign supreme
-      </CardDescription>
-      <CardContent>
+      <CardFooter className="flex space-x-4">
+        <Button variant="secondary" className="w-full">
+          MINT THIS
+        </Button>
+
         <Link href="/home">
           <Button className="w-full">ENTER GYM</Button>
         </Link>
-      </CardContent>
+      </CardFooter>
     </Card>
   </div>
 );
