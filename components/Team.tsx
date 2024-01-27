@@ -10,21 +10,21 @@ import millynish from "/public/images/millynish.jpg";
 import livici3 from "/public/images/livixi3.png";
 import THREEt from "/public/images/3t.jpg";
 import jasonfactor from "/public/images/jasonfactor.webp";
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from "next-i18next";
 
 import { Person } from "../lib";
 
 export default function Team() {
-  const { t } = useTranslation()
-  const bio1: any = t("chads:team_section.0.bio1")
-  const bio2: any = t("chads:team_section.0.bio2")
-  const bio3: any = t("chads:team_section.0.bio3")
-  const bio4: any = t("chads:team_section.0.bio4")
-  const bio5: any = t("chads:team_section.0.bio5")
-  const bio6: any = t("chads:team_section.0.bio6")
-  const bio7: any = t("chads:team_section.0.bio7")
-  const bio8: any = t("chads:team_section.0.bio8")
-  const bio9: any = t("chads:team_section.0.bio9")
+  const { t } = useTranslation();
+  const bio1: any = t("chads:team_section.0.bio1");
+  const bio2: any = t("chads:team_section.0.bio2");
+  const bio3: any = t("chads:team_section.0.bio3");
+  const bio4: any = t("chads:team_section.0.bio4");
+  const bio5: any = t("chads:team_section.0.bio5");
+  const bio6: any = t("chads:team_section.0.bio6");
+  const bio7: any = t("chads:team_section.0.bio7");
+  const bio8: any = t("chads:team_section.0.bio8");
+  const bio9: any = t("chads:team_section.0.bio9");
 
   const people: Person[] = [
     {
@@ -89,18 +89,17 @@ export default function Team() {
       imageUrl: jasonfactor,
       bio: bio9,
       twitterUrl: "https://twitter.com/anh_jasonfactor",
-    }
+    },
   ];
 
   return (
-    <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
+    <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24 prose">
       <div className="space-y-12">
         <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-            {t("chads:team_section.0.our_team")}
-          </h2>
-          <p className="text-xl text-gray-500">
-            {t("chads:team_section.0.description1")}<br />
+          <h2>{t("chads:team_section.0.our_team")}</h2>
+          <p className="text-xl">
+            {t("chads:team_section.0.description1")}
+            <br />
             {t("chads:team_section.0.description2")}
           </p>
         </div>
@@ -121,10 +120,10 @@ export default function Team() {
                 )}
 
                 <div className="space-y-2">
-                  <div className="space-y-1 text-lg font-medium leading-6">
+                  <div>
                     <h3>{person.name}</h3>
-                    <p className="text-red-500">{person.role}</p>
-                    <p className="text-gray-500">{person.bio}</p>
+                    <p className="text-primary">{person.role}</p>
+                    <p>{person.bio}</p>
                   </div>
                   <ul role="list" className="flex space-x-5">
                     <li>
@@ -132,7 +131,6 @@ export default function Team() {
                         href={person.twitterUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-gray-400 hover:text-gray-500"
                       >
                         <span className="sr-only">Twitter</span>
                         <svg
@@ -145,28 +143,6 @@ export default function Team() {
                         </svg>
                       </a>
                     </li>
-                    {person.linkedinUrl && (
-                      <li>
-                        <a
-                          href={person.linkedinUrl}
-                          className="text-gray-400 hover:text-gray-500"
-                        >
-                          <span className="sr-only">LinkedIn</span>
-                          <svg
-                            className="h-5 w-5"
-                            aria-hidden="true"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </a>
-                      </li>
-                    )}
                   </ul>
                 </div>
               </div>
