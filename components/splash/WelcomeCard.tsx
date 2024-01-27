@@ -14,6 +14,9 @@ const WelcomeCard = () => (
       <CardHeader>
         <CardTitle>Degens Welcome</CardTitle>
       </CardHeader>
+      <CardDescription>
+        Bansihed from L1, we chads reign supreme
+      </CardDescription>
       <CardContent>
         <Link href="/home">
           <Button className="w-full">ENTER GYM</Button>
