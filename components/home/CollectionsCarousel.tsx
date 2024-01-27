@@ -17,7 +17,7 @@ const mobileCarouselItemCSS = cn(
 
 const CollectionsCarousel = () => (
   <>
-    <div className="hidden lg:block">
+    <div className="hidden xl:block">
       <Carousel className="border-black border-2">
         <CarouselContent className="flex -ml-4 max-h-[600px] xl:max-h-[768px] desktop:max-h-[1080px] overflow-hidden -mt-20 -mb-8">
           <CarouselItem className="overflow-hidden pl-4 basis-1/3 rotate-3  [&_img]:-rotate-3">
@@ -33,7 +33,7 @@ const CollectionsCarousel = () => (
       </Carousel>
     </div>
 
-    <div className="block lg:hidden">
+    <div className="block xl:hidden">
       <Carousel className="border-black border-2" orientation="vertical">
         <CarouselContent className="flex flex-col -ml-4 overflow-hidden -mt-8 -mb-4">
           <CarouselItem className={mobileCarouselItemCSS}>
