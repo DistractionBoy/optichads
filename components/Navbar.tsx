@@ -31,7 +31,7 @@ const colorWallet = "bg-red-500";
 const collection = "optichads";
 const collectionName = "Chads";
 
-export default function Navbar() {
+export default function Navbar({setIsOpen} : bool) {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
   const [navigationMobile, setNavigationMobile] = useState<iNavLink[]>(
@@ -80,8 +80,9 @@ export default function Navbar() {
                     <div className="ml-10 flex items-baseline space-x-4">
                       <button className="btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)]
                        text-white bg-red ease-out hover:translate-y-1 transition-all rounded
-                        py-2 px-4 font-bold outline outline-1 outline-hotpink-700 font
-                       ">
+                        py-2 px-4 font-bold outline outline-1 outline-hotpink-700 font"
+                        onClick={() => setIsOpen(true)}
+                       >
                         Menu
                        </button>
                     </div>
