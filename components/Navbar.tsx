@@ -31,7 +31,7 @@ const colorWallet = "bg-red-500";
 const collection = "optichads";
 const collectionName = "Chads";
 
-export default function Navbar({setIsOpen} : bool) {
+export default function Navbar({setIsOpen} : boolean) {
   const router = useRouter();
   const [navigation, setNavigation] = useState<iNavLink[]>(navDefaultState);
   const [navigationMobile, setNavigationMobile] = useState<iNavLink[]>(

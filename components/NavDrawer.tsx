@@ -1,6 +1,14 @@
 import React from "react";
 import { NavLink } from "@/lib/";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+
+import closeButton from "/public/images/close-button.png";
+import twitter from "/public/images/twitter.png";
+import discord from "/public/images/discord.png";
+import coingecko from "/public/images/coingecko.png";
+import opensea from "/public/images/os-logo-blue.png";
+
 
 const firstDefaultState: NavLink[] = [
   { name: "Home", href: "/", current: true },
@@ -27,12 +35,12 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
     >
       <section
         className={
-          " w-screen absolute bg-gray-900 shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
+          " w-screen absolute bg-gray-900 shadow-xl delay-400 duration-500 ease-in-out transition-all transform border-solid border-red-900 rounded-b-3xl rounded-br-3xl" +
           (isOpen ? " translate-y-0 " : " -translate-y-full ")
         }
       >
         <article className="relative w-screen space-y-6 overflow-y-scroll h-full">
-          <div className="flex p-24">
+          <div className="flex p-16 px-48">
             <div className="flex-1 w-64">
               {firstDefaultState.map((item) => (
                 <a
@@ -67,12 +75,79 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                   </a>
                 ))}
             </div>
-            <div className="flex-1 w-32">
-
+            <div className="flex-1 w-48">
+                <header className="text-2xl font-bold text-blue-400">Connect with us</header>
+                <div className="flex mt-1 space-x-8">
+                  <a
+                      href="https://twitter.com/OptiChads"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                    <Image
+                      className="rounded-lg shadow-lg"
+                      src={twitter}
+                      alt=""
+                      priority
+                    />
+                  </a>
+                  <a
+                      href="https://discord.gg/optichads"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                    <Image
+                      className="rounded-lg shadow-lg"
+                      src={discord}
+                      alt=""
+                      priority
+                    />
+                  </a>
+                  </div>
+                  <div className="flex mt-2 space-x-14">
+                    <a
+                      href="https://www.coingecko.com/en/nft/optichads"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-3/12 h-3/12"
+                    >
+                      <Image
+                        className="rounded-lg shadow-lg"
+                        src={coingecko}
+                        alt=""
+                        priority
+                      />
+                    </a>
+                    <a
+                      href="https://opensea.io/collection/optichads"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-3/12 h-3/12"
+                    >
+                      <Image
+                        className="rounded-lg shadow-lg"
+                        src={opensea}
+                        alt=""
+                        priority
+                      />
+                    </a>
+                  </div>
+            </div>
+            {/* Close button */}
+            <div className="flex-1 w-32 absolute right-0 top-0 py-4 mx-12">
+                <Image
+                  className="rounded-lg shadow-lg hover:rotate-180 duration-700 cursor-pointer"
+                  src={closeButton}
+                  alt=""
+                  priority
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
+                />
             </div>
           </div>
         </article>
       </section>
+
       <section
         className=" w-screen h-full cursor-pointer "
         onClick={() => {
