@@ -3,16 +3,12 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 import chadBanner from "@/public/images/banners/chad-banner.jpeg";
 import babeBanner from "@/public/images/banners/babe-banner.jpeg";
 import brigadeBanner from "@/public/images/banners/brigade-banner.jpeg";
 import { cn } from "@/lib/utils";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBackward, faForward } from "@fortawesome/free-solid-svg-icons";
 
 const mobileCarouselItemCSS = cn(
   "overflow-hidden pl-4 basis-1/3 rotate-3 [&>div]:h-[180px] [&_img]:mt-32 [&_img]:-rotate-3",

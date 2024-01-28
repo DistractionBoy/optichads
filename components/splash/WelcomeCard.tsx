@@ -14,16 +14,14 @@ const WelcomeCard = () => (
     <Card>
       <CardHeader>
         <CardTitle>Degens Welcome</CardTitle>
+      </CardHeader>
+      <CardContent>
         <CardDescription>
           Step inside and work those glutes, bro.
         </CardDescription>
-      </CardHeader>
-      <CardFooter className="flex space-x-4">
-        {/* <Button variant="secondary" className="w-full">
-          MINT THIS
-        </Button> */}
-
-        <Link href="/home">
+      </CardContent>
+      <CardFooter className="flex flex-1 space-x-4">
+        <Link href="/home" className="w-full">
           <Button className="w-full">ENTER GYM</Button>
         </Link>
       </CardFooter>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import mobile360 from "@/public/images/splash/360x800.webp";
 import mobile375 from "@/public/images/splash/375x667.png";
-import mobile430 from "@/public/images/splash/430x932.webp";
+// import mobile430 from "@/public/images/splash/430x932.webp";
 import tablet from "@/public/images/splash/1024x1366.png";
 import desktop from "@/public/images/splash/1728x1170.png";
 import ultrawide from "@/public/images/splash/3440x1440.png";
@@ -23,15 +23,15 @@ const SplashBG = () => (
       alt=""
       src={mobile375}
       fill
-      className="hidden xxs:block xs:hidden object-cover"
+      className="hidden xxs:block sm:hidden object-cover"
     />
-    <Image
+    {/* <Image
       priority
       alt=""
       src={mobile430}
       fill
       className="hidden xs:block sm:hidden object-cover"
-    />
+    /> */}
     <Image
       priority
       alt=""
