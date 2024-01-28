@@ -5,7 +5,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import HeadMeta from "@/components/HeadMeta";
 import DarkNavbar from "@/components/Navbar";
 import Team from "@/components/Team";
-import NavDrawer from "@/components/ui/NavDrawer";
+import NavDrawer from "@/components/NavDrawer";
 import React, { useState } from "react";
 
 export async function getStaticProps({ locale }: any) {
