@@ -27,7 +27,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
   return (
     <main
       className={
-        " fixed overflow-hidden z-10 bg-gray-900 bg-opacity-25 inset-0 transform ease-in-out " +
+        " fixed overflow-hidden z-10 bg- bg-opacity-25 inset-0 transform ease-in-out " +
         (isOpen
           ? " transition-opacity opacity-100 duration-500 translate-x-0  "
           : " transition-all delay-500 opacity-0 translate-x-full  ")
@@ -35,11 +35,11 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
     >
       <section
         className={
-          " w-screen absolute bg-gray-900 shadow-xl delay-400 duration-500 ease-in-out transition-all transform border-solid border-red-900 rounded-b-3xl rounded-br-3xl" +
+          "  w-screen max-w-full absolute bg-gray-900 shadow-xl delay-400 duration-500 ease-in-out transition-all transform border-solid border-b-8 border-red-600 rounded-b-3xl " +
           (isOpen ? " translate-y-0 " : " -translate-y-full ")
         }
       >
-        <article className="relative w-screen space-y-6 overflow-y-scroll h-full">
+        <article className="relative space-y-6  h-full">
           <div className="flex p-16 px-48">
             <div className="flex-1 w-64">
               {firstDefaultState.map((item) => (
@@ -49,7 +49,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                     className={cn(
                       item.current
                         ? "text-red-500"
-                        : "text-gray-300",
+                        : "text-white",
                       "block rounded-md px-3 py-2 text-5xl font-bold hover:text-red-600"
                     )}
                     aria-current={item.current ? "page" : undefined}
@@ -66,7 +66,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                       className={cn(
                         item.current
                           ? "text-red-500"
-                          : "text-gray-300",
+                          : "text-white",
                         "block rounded-md px-3 py-2 text-5xl font-bold hover:text-red-600"
                       )}
                       aria-current={item.current ? "page" : undefined}
