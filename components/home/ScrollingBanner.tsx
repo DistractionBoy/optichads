@@ -9,8 +9,7 @@ const wrapperClass = cn(
 
 const listWrapperClass = cn(
   "flex items-center justify-center md:justify-start [&_img]:max-w-none",
-  "animate-none hover:animate-infinite-scroll backdrop-blur-sm hover:backdrop-blur-none",
-  "grayscale hover:grayscale-0 hover:cursor-pointer",
+  "animate-none hover:animate-infinite-scroll",
   "transition-all ease-in-out duration-150"
 );
 

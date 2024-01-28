@@ -19,9 +19,9 @@ const WelcomeCard = () => (
         </CardDescription>
       </CardHeader>
       <CardFooter className="flex space-x-4">
-        <Button variant="secondary" className="w-full">
+        {/* <Button variant="secondary" className="w-full">
           MINT THIS
-        </Button>
+        </Button> */}
 
         <Link href="/home">
           <Button className="w-full">ENTER GYM</Button>
