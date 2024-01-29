@@ -26,7 +26,7 @@ export default function SwitchLanguage({ globeStyle }: Props) {
                   <button type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-full bg-red-600 px-4 py-2 2xl:text-md text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-red-800" id="menu-button" aria-expanded="true" aria-haspopup="true">
                     {t("common:current_lang")}
                     <svg className="-mr-1 h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" />
+                      <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" />
                     </svg>
                   </button>
                 </div>

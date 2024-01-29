@@ -108,12 +108,11 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                     />
                   </a>
                   </div>
-                  <div className="flex mt-2 xl:space-x-14 lg:space-x-20">
+                  <div className="flex mt-2 space-x-14 px-3">
                     <a
                       href="https://www.coingecko.com/en/nft/optichads"
                       target="_blank"
                       rel="noreferrer"
-                      className="lg:w-3/12 lg:h-3/12 2xl:w-2/12 2xl:h-2/12"
                     >
                       <Image
                         className="rounded-lg shadow-lg"
@@ -126,7 +125,6 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                       href="https://opensea.io/collection/optichads"
                       target="_blank"
                       rel="noreferrer"
-                      className="lg:w-3/12 lg:h-3/12 2xl:w-2/12 2xl:h-2/12"
                     >
                       <Image
                         className="rounded-lg shadow-lg"

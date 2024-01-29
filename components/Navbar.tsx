@@ -3,18 +3,13 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Disclosure } from "@headlessui/react";
 
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
 import heroImg from "../public/images/hero-img.png";
-import coinGeckoLogo from "../public/images/coingecko_logo.png";
-import osLogo from "../public/images/os-logo-trans.png";
 import { NavLink } from "../lib";
 import Account from "./Account";
 import UserMenu from "./UserMenu";
 import UserMenuMobile from "./UserMenuMobile";
 import { iNavLink } from "../lib/types";
 import { useAccount } from "wagmi";
-import SwitchLanguage from "./SwitchLanguage";
 import { cn } from "@/lib/utils";
 
 const navDefaultState: NavLink[] = [
@@ -115,14 +110,14 @@ export default function Navbar({setIsOpen} : any) {
                 
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-red-700 p-2 text-gray-300 hover:bg-red-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800">
+                  {/* <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-red-700 p-2 text-gray-300 hover:bg-red-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                     ) : (
                       <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                     )}
-                  </Disclosure.Button>
+                  </Disclosure.Button> */}
                 </div>
               </div>
             </div>
