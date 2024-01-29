@@ -24,9 +24,16 @@ const carouselItemCSS = cn(
 );
 
 const CollectionsCarousel = () => (
-  <>
+  <div className="bg-black">
+    <div className="flex flex-col w-screen h-16" />
+    <div className="ml-12 mt-16 pb-3 rounded-b-xl bg-gradient-to-r from-blue-400 from-5% to-transparent to-30%">
+      <h2 className="text-3xl xl:text-7xl font-extrabold leading-8 p-2 pl-6 bg-black">
+        Collections
+      </h2>
+    </div>
+
     <div className="hidden xl:block">
-      <Carousel className="border-black border-2">
+      <Carousel className="border-black border-b-2">
         <CarouselContent className="flex h-[857px] desktop:h-[900px] overflow-hidden -mt-20 -mb-8">
           <CarouselItem className={carouselItemCSS}>
             <ScrollingBanner src={brigadeBanner} />
@@ -56,7 +63,7 @@ const CollectionsCarousel = () => (
         </CarouselContent>
       </Carousel>
     </div>
-  </>
+  </div>
 );
 
 export default CollectionsCarousel;
