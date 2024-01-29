@@ -40,8 +40,8 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
           (isOpen ? " translate-y-0 " : " -translate-y-full ")
         }
       >
-        <article className="relative space-y-6  h-full">
-          <div className="flex p-16 px-48">
+        <article className="relative space-y-6 h-full">
+          <div className="flex xl:p-16 xl:px-48 lg:px-24 lg:p-20">
             <div className="flex-1 w-64">
               {firstDefaultState.map((item) => (
                 <a
@@ -51,7 +51,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                       item.current
                         ? "text-red-500"
                         : "text-white",
-                      "block rounded-md px-3 py-2 text-5xl font-bold hover:text-red-600"
+                      "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl font-bold hover:text-red-600"
                     )}
                     aria-current={item.current ? "page" : undefined}
                   >
@@ -68,7 +68,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                         item.current
                           ? "text-red-500"
                           : "text-white",
-                        "block rounded-md px-3 py-2 text-5xl font-bold hover:text-red-600"
+                        "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl font-bold hover:text-red-600"
                       )}
                       aria-current={item.current ? "page" : undefined}
                     >
@@ -77,7 +77,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                 ))}
             </div>
             <div className="flex-1 w-48">
-                <header className="text-2xl font-bold text-blue-400">Connect with us</header>
+                <header className="2xl:text-4xl xl:text-2xl lg:text-xl font-bold text-blue-400">Connect with us</header>
                 <div className="flex mt-1 space-x-8">
                     <a
                       href="https://twitter.com/OptiChads"
@@ -104,12 +104,12 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                     />
                   </a>
                   </div>
-                  <div className="flex mt-2 space-x-14">
+                  <div className="flex mt-2 xl:space-x-14 lg:space-x-20">
                     <a
                       href="https://www.coingecko.com/en/nft/optichads"
                       target="_blank"
                       rel="noreferrer"
-                      className="w-3/12 h-3/12"
+                      className="lg:w-3/12 lg:h-3/12 2xl:w-2/12 2xl:h-2/12"
                     >
                       <Image
                         className="rounded-lg shadow-lg"
@@ -122,7 +122,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                       href="https://opensea.io/collection/optichads"
                       target="_blank"
                       rel="noreferrer"
-                      className="w-3/12 h-3/12"
+                      className="lg:w-3/12 lg:h-3/12 2xl:w-2/12 2xl:h-2/12"
                     >
                       <Image
                         className="rounded-lg shadow-lg"
