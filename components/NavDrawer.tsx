@@ -9,6 +9,7 @@ import discord from "/public/images/discord.png";
 import coingecko from "/public/images/coingecko.png";
 import opensea from "/public/images/os-logo-blue.png";
 
+import SwitchLanguage from "./SwitchLanguage";
 
 const firstDefaultState: NavLink[] = [
   { name: "Home", href: "/", current: true },
@@ -78,7 +79,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
             <div className="flex-1 w-48">
                 <header className="text-2xl font-bold text-blue-400">Connect with us</header>
                 <div className="flex mt-1 space-x-8">
-                  <a
+                    <a
                       href="https://twitter.com/OptiChads"
                       target="_blank"
                       rel="noreferrer"
@@ -133,9 +134,10 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                   </div>
             </div>
             {/* Close button */}
-            <div className="flex-1 w-32 absolute right-0 top-0 py-4 mx-12">
+            <div className="flex w-48 absolute right-0 top-0 py-4 mx-12">
+                <SwitchLanguage />
                 <Image
-                  className="rounded-lg shadow-lg hover:rotate-180 duration-700 cursor-pointer"
+                  className="ml-14 rounded-lg shadow-lg hover:rotate-180 duration-700 cursor-pointer"
                   src={closeButton}
                   alt=""
                   priority
