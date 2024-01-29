@@ -41,7 +41,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
         }
       >
         <article className="relative space-y-6 h-full">
-          <div className="flex xl:p-16 xl:px-48 lg:px-24 lg:p-20">
+          <div className="flex xl:p-16 xl:px-48 lg:px-24 lg:p-20 p-4 pt-20">
             <div className="flex-1 w-64">
               {firstDefaultState.map((item) => (
                 <a
@@ -51,7 +51,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                       item.current
                         ? "text-red-500"
                         : "text-white",
-                      "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl font-bold hover:text-red-600 " 
+                      "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl font-bold hover:text-red-600 " 
                     )}
                     aria-current={item.current ? "page" : undefined}
                   >
@@ -68,7 +68,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                         item.current
                           ? "text-red-500"
                           : "text-white",
-                        "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl font-bold hover:text-red-600"
+                        "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl font-bold hover:text-red-600"
                       )}
                       aria-current={item.current ? "page" : undefined}
                     >
@@ -76,67 +76,68 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                   </a>
                 ))}
             </div>
-            <div className={"flex-1 w-48 " +
+            {/* Social media desktop & tablet */}
+            <div className={"hidden lg:block flex-1 w-48 " +
               (isOpen
                 ? " animate-[spin_1s] duration-1000 delay-400 "
                 : "   ")
                 }>
                 <header className="2xl:text-4xl xl:text-2xl lg:text-xl font-bold text-blue-400">Connect with us</header>
                 <div className="flex mt-1 space-x-8">
-                    <a
-                      href="https://twitter.com/OptiChads"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                  <a
+                    href="https://twitter.com/OptiChads"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                  <Image
+                    className="rounded-lg shadow-lg"
+                    src={twitter}
+                    alt=""
+                    priority
+                  />
+                </a>
+                <a
+                    href="https://discord.gg/optichads"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                  <Image
+                    className="rounded-lg shadow-lg"
+                    src={discord}
+                    alt=""
+                    priority
+                  />
+                </a>
+                </div>
+                <div className="flex mt-2 space-x-14 px-3">
+                  <a
+                    href="https://www.coingecko.com/en/nft/optichads"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <Image
                       className="rounded-lg shadow-lg"
-                      src={twitter}
+                      src={coingecko}
                       alt=""
                       priority
                     />
                   </a>
                   <a
-                      href="https://discord.gg/optichads"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                    href="https://opensea.io/collection/optichads"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <Image
                       className="rounded-lg shadow-lg"
-                      src={discord}
+                      src={opensea}
                       alt=""
                       priority
                     />
                   </a>
-                  </div>
-                  <div className="flex mt-2 space-x-14 px-3">
-                    <a
-                      href="https://www.coingecko.com/en/nft/optichads"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        className="rounded-lg shadow-lg"
-                        src={coingecko}
-                        alt=""
-                        priority
-                      />
-                    </a>
-                    <a
-                      href="https://opensea.io/collection/optichads"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        className="rounded-lg shadow-lg"
-                        src={opensea}
-                        alt=""
-                        priority
-                      />
-                    </a>
-                  </div>
+                </div>
             </div>
             {/* Close button */}
-            <div className="flex w-48 absolute right-0 top-0 py-4 mx-12">
+            <div className="flex w-48 absolute right-0 top-0 py-4 lg:mx-12">
                 <SwitchLanguage />
                 <Image
                   className="ml-14 rounded-lg shadow-lg hover:rotate-180 duration-700 cursor-pointer"
@@ -149,9 +150,69 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                 />
             </div>
           </div>
+          {/* Social media mobile */}
+          <div className={"lg:hidden px-8 pb-10 w-full " +
+              (isOpen
+                ? " animate-[spin_1s] duration-1000 delay-400 "
+                : "   ")
+                }>
+                <header className="text-3xl font-bold text-blue-400">Connect with us</header>
+                <div className="flex mt-1 space-x-8">
+                  <a
+                    href="https://twitter.com/OptiChads"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                  <Image
+                    className="rounded-lg shadow-lg"
+                    src={twitter}
+                    alt=""
+                    priority
+                  />
+                </a>
+                <a
+                    href="https://discord.gg/optichads"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                  <Image
+                    className="rounded-lg shadow-lg"
+                    src={discord}
+                    alt=""
+                    priority
+                  />
+                </a>
+                </div>
+                <div className="flex mt-2 space-x-14 px-3">
+                  <a
+                    href="https://www.coingecko.com/en/nft/optichads"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image
+                      className="rounded-lg shadow-lg"
+                      src={coingecko}
+                      alt=""
+                      priority
+                    />
+                  </a>
+                  <a
+                    href="https://opensea.io/collection/optichads"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image
+                      className="rounded-lg shadow-lg"
+                      src={opensea}
+                      alt=""
+                      priority
+                    />
+                  </a>
+                </div>
+            </div>
+
         </article>
       </section>
-
       <section
         className=" w-screen h-full cursor-pointer "
         onClick={() => {

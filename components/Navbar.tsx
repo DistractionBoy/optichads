@@ -64,14 +64,11 @@ export default function Navbar({setIsOpen} : any) {
   return (
     <Disclosure as="nav" className="top-0 bg-red-700">
       {({ open }) => (
-        <>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="border-b border-gray-50">
-
               <div className="flex h-16 items-center flex-nowrap px-4 sm:px-0">
                 
-                <div className="flex items-center grow">
-                  <div className="hidden md:block">
+                <div className="lg:flex items-center grow hidden">
                     <div className="ml-10 flex items-baseline space-x-4">
                       <button className="btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)]
                        text-white bg-red ease-out hover:translate-y-1 transition-all rounded
@@ -81,7 +78,6 @@ export default function Navbar({setIsOpen} : any) {
                         Menu
                        </button>
                     </div>
-                  </div>
                 </div>
 
                 <div className="flex items-center grow">
@@ -99,7 +95,6 @@ export default function Navbar({setIsOpen} : any) {
                       OptiChads
                     </span>
                 </div>
-
                 <div className="ml-4 flex items-center">
                     <UserMenu
                       color={colorWallet}
@@ -107,54 +102,9 @@ export default function Navbar({setIsOpen} : any) {
                       collectionName={collectionName}
                     />
                   </div>
-                
-                <div className="-mr-2 flex md:hidden">
-                  {/* Mobile menu button */}
-                  {/* <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-red-700 p-2 text-gray-300 hover:bg-red-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800">
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                    ) : (
-                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                    )}
-                  </Disclosure.Button> */}
-                </div>
               </div>
             </div>
           </div>
-
-          <Disclosure.Panel className="border-b border-gray-50 md:hidden">
-            <div className="space-y-1 px-2 py-3 sm:px-3">
-              {navigationMobile.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={cn(
-                    item.current
-                      ? "bg-red-700 text-white"
-                      : "text-gray-300 hover:bg-red-600 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-            <div className="border-t border-red-300 pt-5 pb-3">
-              <div className="pl-5">
-                <Account color={colorWallet} />
-              </div>
-              {address && (
-                <UserMenuMobile
-                  collection={collection}
-                  collectionName={collectionName}
-                />
-              )}
-            </div>
-          </Disclosure.Panel>
-        </>
       )}
     </Disclosure>
   );

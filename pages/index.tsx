@@ -7,6 +7,8 @@ import DarkNavbar from "@/components/Navbar";
 import Team from "@/components/Team";
 import NavDrawer from "@/components/NavDrawer";
 import React, { useState } from "react";
+import heroImg from "../public/images/hero-img.png";
+import Image from "next/image";
 
 export async function getStaticProps({ locale }: any) {
   return {
@@ -18,8 +20,6 @@ export async function getStaticProps({ locale }: any) {
 
 const Home: NextPage = () => {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-
-  // const { t } = useTranslation();
   return (
     <>
       <HeadMeta />
@@ -30,6 +30,23 @@ const Home: NextPage = () => {
       </div>
       <NavDrawer isOpen={isOpenDrawer} setIsOpen={setIsOpenDrawer}>
       </NavDrawer>
+      <button type="button" className="lg:hidden bg-red-700 absolute bottom-6 left-1/2 -translate-x-1/2 items-center hover:bg-red-900
+      -translate-y-1/2 p-4 rounded flex py-2 px-8 text-xl font-bold outline outline-2 font space-x-4"
+      onClick={() => {
+        setIsOpenDrawer(true);
+      }}>
+        <Image
+          className="rounded-full bg-red-600"
+          src={heroImg}
+          alt="Workflow"
+          width={38}
+          height={38}
+          priority
+        />
+        <div>
+          MENU
+        </div>
+      </button>
     </>
   );
 };
