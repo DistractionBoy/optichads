@@ -51,7 +51,7 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                       item.current
                         ? "text-red-500"
                         : "text-white",
-                      "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl font-bold hover:text-red-600"
+                      "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl font-bold hover:text-red-600 " 
                     )}
                     aria-current={item.current ? "page" : undefined}
                   >
@@ -76,7 +76,11 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                   </a>
                 ))}
             </div>
-            <div className="flex-1 w-48">
+            <div className={"flex-1 w-48 " +
+              (isOpen
+                ? " animate-[spin_1s] duration-1000 delay-400 "
+                : "   ")
+                }>
                 <header className="2xl:text-4xl xl:text-2xl lg:text-xl font-bold text-blue-400">Connect with us</header>
                 <div className="flex mt-1 space-x-8">
                     <a
