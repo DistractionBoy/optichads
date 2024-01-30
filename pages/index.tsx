@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
+import React from "react";
 import Head from "next/head";
-import Image from "next/image";
 // import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 // import { useTranslation } from "next-i18next";
 
@@ -18,7 +18,6 @@ import WelcomeCard from "@/components/splash/WelcomeCard";
 // }
 
 const Home: NextPage = () => {
-  // const { t } = useTranslation();
   return (
     <>
       <Head>
