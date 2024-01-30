@@ -26,7 +26,7 @@ const carouselItemCSS = cn(
 const CollectionsCarousel = () => (
   <div className="bg-black">
     <div className="flex flex-col w-screen h-4 xl:h-16" />
-    <div className="ml-12 mt-16 pb-3 rounded-b-lg bg-gradient-to-r from-yellow-400 from-10% to-transparent to-40%">
+    <div className="ml-12 mt-16 pb-3 rounded-b-lg bg-gradient-to-r from-yellow-400 from-10% to-transparent to-70%">
       <h2 className="text-3xl xl:text-7xl font-extrabold leading-8 p-2 pl-6 bg-black">
         Collections
       </h2>
