@@ -3,7 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 // import { useTranslation } from "next-i18next";
 
 import HeadMeta from "@/components/HeadMeta";
-import DarkNavbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Team from "@/components/Team";
 import CollectionsCarousel from "@/components/home/CollectionsCarousel";
 import Head from "next/head";
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       <Head>
         <HeadMeta />
       </Head>
-      <DarkNavbar />
+      <Navbar />
 
       <WelcomeChad />
       <BaseBrigadeIntro />
