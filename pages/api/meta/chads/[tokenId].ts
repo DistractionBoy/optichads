@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { promises as fs } from "fs";
 import path from "path";
-import { ChadMetadata } from "../../../../lib";
+import { ChadMetadata } from "@/lib";
 
 export default async function handler(
   req: NextApiRequest,

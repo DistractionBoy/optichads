@@ -5,18 +5,18 @@ module.exports = {
   reactStrictMode: true,
   i18n,
   images: {
-    remotePatterns : [
+    remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'ipfs.io',
-        pathname: '**',
+        protocol: "https",
+        hostname: "ipfs.io",
+        pathname: "**",
       },
       {
-        protocol: 'https',
-        hostname: 'global.discourse-cdn.com',
-        pathname: '**',
+        protocol: "https",
+        hostname: "global.discourse-cdn.com",
+        pathname: "**",
       },
-    ]
+    ],
   },
   webpack(config) {
     config.module.rules.push({

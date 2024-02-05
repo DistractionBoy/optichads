@@ -8,12 +8,17 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 type Props = {
-  color?: string;
   collection?: string;
   collectionName?: string;
 };
 
-export default function UserMenu({ color, collection, collectionName }: Props) {
+const MenuBtnCss = cn(
+  "btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)]",
+  "text-white bg-[#FF0420] ease-out hover:translate-y-1 transition-all rounded",
+  "py-2 px-4 font-bold outline outline-1 outline-hotpink-700"
+);
+
+export default function UserMenu() {
   const [userNavigation, setUserNavigation] = useState<NavLink[]>();
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
@@ -22,18 +27,18 @@ export default function UserMenu({ color, collection, collectionName }: Props) {
     if (address) {
       setUserNavigation([
         {
-          name: `Your ${collectionName}`,
-          href: `https://opensea.io/${address}/${collection}`,
+          name: `OptiChads`,
+          href: `https://opensea.io/collection/optichads`,
         },
       ]);
     }
   }, [address]);
 
   return (
-    <Menu as="div" className="relative ml-3">
-      <Menu.Button className="flex">
+    <Menu as="div" className={MenuBtnCss}>
+      <Menu.Button>
         <span className="sr-only">open account menu</span>
-        <Account color={color} />
+        <Account />
       </Menu.Button>
       {isConnected ? (
         <Transition
