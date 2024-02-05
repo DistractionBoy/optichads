@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 
@@ -14,8 +14,32 @@ const MenuBtnCss = cn(
   "py-2 px-4 font-extrabold outline outline-1 outline-hotpink-700"
 );
 
+const MenuBtnMobileCss = cn(
+  "lg:hidden bg-[#FF0420] absolute bottom-12 left-1/2 -translate-x-1/2 items-center",
+  "-translate-y-1/2 py-6 rounded flex px-8 space-x-4 outline outline-2"
+)
+
 export default function Navbar() {
   const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
+  const [visibleMobile, setVisibleMobile] = useState(true) 
+
+  useEffect(() => {
+    const toggleVisible = () => { 
+      const scrolled = document.documentElement.scrollTop; 
+      if (scrolled > 100){ 
+        setVisibleMobile(false) 
+      }  
+      else if (scrolled <= 100){ 
+        setVisibleMobile(true) 
+      } 
+    };
+    // mobile device
+    if (window.innerWidth < 640) {
+      window.addEventListener('scroll', toggleVisible);
+    }
+  }, []);
+  
+
   return (
     <>
       <Disclosure
@@ -35,30 +59,33 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="flex mr-12">
+            <div className="flex md:mr-12">
               <UserMenu />
             </div>
           </div>
         )}
       </Disclosure>
       <NavDrawer isOpen={isOpenDrawer} setIsOpen={setIsOpenDrawer} />
-      <Button
-        className="lg:hidden bg-[#FF0420] absolute bottom-12 left-1/2 -translate-x-1/2 items-center
-      -translate-y-1/2 py-6 rounded flex px-8 space-x-4 outline outline-2"
-        onClick={() => {
-          setIsOpenDrawer(true);
-        }}
-      >
-        <Image
-          className="rounded-full bg-red-600"
-          src={heroImg}
-          alt="Workflow"
-          width={38}
-          height={38}
-          priority
-        />
-        <div className="text-xl font-bold">MENU</div>
-      </Button>
+      <div className="block md:hidden">
+        <Button
+          id="mobileMenu"
+          className={MenuBtnMobileCss}
+          style={{display: visibleMobile ? 'flex' : 'none'}}
+          onClick={() => {
+            setIsOpenDrawer(true);
+          }}
+        >
+          <Image
+            className="rounded-full bg-red-600"
+            src={heroImg}
+            alt="Workflow"
+            width={38}
+            height={38}
+            priority
+          />
+          <div className="text-xl font-bold">MENU</div>
+        </Button>
+      </div>
     </>
   );
 }
