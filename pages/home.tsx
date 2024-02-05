@@ -31,14 +31,15 @@ const Home: NextPage = () => {
       <BaseBrigadeIntro />
       <CollectionsCarousel />
 
-      <div className="container bg-slate-100 rounded-sm shadow-xl prose">
-        <h2>Please bear with us</h2>
-        <p>
-          We are working around the clock to bring this site back up, but better
-          than before, with more ways to engage.
-        </p>
-      </div>
-      <div className="container bg-slate-100 shadow-xl prose">
+      <div className="container bg-slate-100 rounded-sm shadow-xl">
+        <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24 prose">
+          <h2>Please bear with us</h2>
+          <p>
+            We are working around the clock to bring this site back up, but
+            better than before, with more ways to engage.
+          </p>
+        </div>
+
         <Team />
       </div>
     </>
