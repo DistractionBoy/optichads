@@ -7,6 +7,7 @@ const WelcomeChad = () => (
     <div className="flex justify-end lg:justify-start items-stretch inset-0 bg-[#FF0420] border border-b-8 border-b-white">
       <div className="flex justify-center lg:hidden flex-1">
         <Image
+          priority
           alt="chad flexing his bicep and smiling"
           src={chadimation}
           width={700}
@@ -16,6 +17,7 @@ const WelcomeChad = () => (
 
       <div className="hidden lg:flex desktop:hidden flex-1">
         <Image
+          priority
           alt="chad flexing his bicep and smiling"
           src={chadimation}
           width={900}
@@ -25,6 +27,7 @@ const WelcomeChad = () => (
 
       <div className="hidden desktop:flex flex-1">
         <Image
+          priority
           alt="chad flexing his bicep and smiling"
           src={chadimation}
           width={1024}
