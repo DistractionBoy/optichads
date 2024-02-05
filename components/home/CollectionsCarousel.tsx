@@ -9,11 +9,8 @@ import chadBanner from "@/public/images/banners/chad-banner.jpeg";
 import babeBanner from "@/public/images/banners/babe-banner.jpeg";
 import brigadeBanner from "@/public/images/banners/brigade-banner.jpeg";
 import { cn } from "@/lib/utils";
-import useSWR from "swr";
-import { NftContract } from "alchemy-sdk";
-import Image from "next/image";
-
-import chadimation from "@/public/images/chadimation.gif";
+// import useSWR from "swr";
+// import { NftContract } from "alchemy-sdk";
 
 const mobileCarouselItemCSS = cn(
   "overflow-hidden pl-4 basis-1/3 [&>div]:h-[380px]",
@@ -29,20 +26,12 @@ const carouselItemCSS = cn(
 );
 
 const CollectionsCarousel = () => {
-  const { data, isLoading, error } = useSWR<NftContract>(
-    `/api/getContractMetadata?contractAddress=${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`
-  );
+  // const { data, isLoading, error } = useSWR<NftContract>(
+  //   `/api/getContractMetadata?contractAddress=${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`
+  // );
 
   return (
     <>
-      <div className="ml-12 pb-3">
-        <h2 className="text-3xl xl:text-7xl font-black leading-8 p-2 pl-6">
-          Collections
-        </h2>
-      </div>
-      <div className="text-xl">Supply: {data?.totalSupply}</div>
-      <div className="text-xl">Symbol: ${data?.symbol}</div>
-      <div className="text-xl">Type: {`${data?.tokenType}`}</div>
       <div className="bg-black">
         <div className="hidden xl:block">
           <Carousel className="border-black border-b-2">

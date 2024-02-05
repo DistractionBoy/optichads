@@ -14,12 +14,21 @@ const WelcomeChad = () => (
         />
       </div>
 
-      <div className="hidden lg:flex flex-1">
+      <div className="hidden lg:flex desktop:hidden flex-1">
         <Image
           alt="chad flexing his bicep and smiling"
           src={chadimation}
           width={900}
           height={900}
+        />
+      </div>
+
+      <div className="hidden desktop:flex flex-1">
+        <Image
+          alt="chad flexing his bicep and smiling"
+          src={chadimation}
+          width={1024}
+          height={1024}
         />
       </div>
 

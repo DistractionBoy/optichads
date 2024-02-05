@@ -8,6 +8,7 @@ import Team from "@/components/Team";
 import CollectionsCarousel from "@/components/home/CollectionsCarousel";
 import Head from "next/head";
 import WelcomeChad from "@/components/home/WelcomeChad";
+import BaseBrigadeIntro from "@/components/home/BaseBrigadeIntro";
 
 export async function getStaticProps({ locale }: any) {
   return {
@@ -27,7 +28,7 @@ const Home: NextPage = () => {
       <DarkNavbar />
 
       <WelcomeChad />
-
+      <BaseBrigadeIntro />
       <CollectionsCarousel />
 
       <div className="container bg-slate-100 rounded-sm shadow-xl">
