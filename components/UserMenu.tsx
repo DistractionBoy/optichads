@@ -7,14 +7,9 @@ import { useAccount, useDisconnect } from "wagmi";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type Props = {
-  collection?: string;
-  collectionName?: string;
-};
-
 const MenuBtnCss = cn(
   "btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)]",
-  "text-white bg-[#FF0420] ease-out hover:translate-y-1 transition-all rounded",
+  "text-white bg-[#FB0420] ease-out hover:translate-y-1 transition-all rounded",
   "py-2 px-4 font-bold outline outline-1 outline-hotpink-700"
 );
 
