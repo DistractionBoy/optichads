@@ -17,28 +17,26 @@ const MenuBtnCss = cn(
 const MenuBtnMobileCss = cn(
   "lg:hidden bg-[#FF0420] absolute bottom-12 left-1/2 -translate-x-1/2 items-center",
   "-translate-y-1/2 py-6 rounded flex px-8 space-x-4 outline outline-2"
-)
+);
 
 export default function Navbar() {
   const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
-  const [visibleMobile, setVisibleMobile] = useState(true) 
+  const [visibleMobile, setVisibleMobile] = useState(true);
 
   useEffect(() => {
-    const toggleVisible = () => { 
-      const scrolled = document.documentElement.scrollTop; 
-      if (scrolled > 100){ 
-        setVisibleMobile(false) 
-      }  
-      else if (scrolled <= 100){ 
-        setVisibleMobile(true) 
-      } 
+    const toggleVisible = () => {
+      const scrolled = document.documentElement.scrollTop;
+      if (scrolled > 100) {
+        setVisibleMobile(false);
+      } else if (scrolled <= 100) {
+        setVisibleMobile(true);
+      }
     };
     // mobile device
     if (window.innerWidth < 640) {
-      window.addEventListener('scroll', toggleVisible);
+      window.addEventListener("scroll", toggleVisible);
     }
   }, []);
-  
 
   return (
     <>
@@ -47,9 +45,9 @@ export default function Navbar() {
         className="flex flex-col flex-1 w-full items-around bg-transparent z-10 absolute"
       >
         {({ open }) => (
-          <div className="flex h-16 mt-2 justify-end lg:justify-center items-center flex-nowrap px-4 sm:px-0">
+          <div className="flex justify-center items-center h-16 mt-2 mx-12">
             <div className="hidden lg:flex items-center grow">
-              <div className="ml-10 flex items-baseline space-x-4">
+              <div className="flex items-baseline">
                 <Button
                   className={MenuBtnCss}
                   onClick={() => setIsOpenDrawer(true)}
@@ -59,18 +57,17 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="flex md:mr-12">
-              <UserMenu />
-            </div>
+            <UserMenu />
           </div>
         )}
       </Disclosure>
       <NavDrawer isOpen={isOpenDrawer} setIsOpen={setIsOpenDrawer} />
+
       <div className="block md:hidden">
         <Button
           id="mobileMenu"
           className={MenuBtnMobileCss}
-          style={{display: visibleMobile ? 'flex' : 'none'}}
+          style={{ display: visibleMobile ? "flex" : "none" }}
           onClick={() => {
             setIsOpenDrawer(true);
           }}
