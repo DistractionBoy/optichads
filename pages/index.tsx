@@ -8,6 +8,9 @@ import HeadMeta from "@/components/HeadMeta";
 import RotatingTitle from "@/components/splash/RotatingTitle";
 import SplashBG from "@/components/splash/SplashBG";
 import WelcomeCard from "@/components/splash/WelcomeCard";
+import chadimationFrame from "@/public/images/chadimation-first-frame.png";
+import brigadiFrame from "@/public/images/brigader-first-frame.png";
+import Image from "next/image";
 
 // export async function getStaticProps({ locale }: any) {
 //   return {
@@ -27,6 +30,8 @@ const Home: NextPage = () => {
         <SplashBG />
         <RotatingTitle />
         <WelcomeCard />
+        <Image src={chadimationFrame} alt="" width={1} height={1} />
+        <Image src={chadimationFrame} alt="" width={1} height={1} />
       </main>
     </>
   );
