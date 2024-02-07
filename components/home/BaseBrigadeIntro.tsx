@@ -51,10 +51,10 @@ const BaseBrigadeIntro = () => {
           />
         </div>
         <div className="flex lg:hidden flex-col items-center justify-center space-y-12 md:space-y-28 my-20 mb-32">
-          <h2 className="text-3xl sm:text-5xl md:text-7xl xl:text-[120px] font-bold xl:font-black leading-8 font-outline-none md:font-outline-2 xl:font-outline-4">
+          <h2 className="md:text-5xl md:text-7xl xl:text-[120px] font-bold xl:font-black leading-8 font-outline-none md:font-outline-2 xl:font-outline-4">
             LIKE OUR
           </h2>
-          <h2 className="text-3xl sm:text-5xl md:text-7xl xl:text-[120px] font-bold xl:font-black leading-8 font-outline-none md:font-outline-2 xl:font-outline-4">
+          <h2 className="md:text-5xl md:text-7xl xl:text-[120px] font-bold xl:font-black leading-8 font-outline-none md:font-outline-2 xl:font-outline-4">
             BRIGADE
           </h2>
         </div>
