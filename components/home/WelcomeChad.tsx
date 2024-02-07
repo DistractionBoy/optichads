@@ -28,7 +28,7 @@ const WelcomeChad = () => {
         <div className="hidden desktop:flex justify-end flex-1">
           <Image
             alt="chad flexing his bicep and smiling"
-            src={chadimation}
+            src={imageSrc}
             width={1024}
             height={1024}
             onLoad={onLoadingComplete}
