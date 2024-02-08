@@ -62,3 +62,24 @@ export type NFTsBy = {
   nfts: NFTbase[];
   next: string;
 };
+
+export type CollectionMetadata = {
+  total: {
+    volume: number | null;
+    sales: number | null;
+    average_price: number | null;
+    num_owners: number | null;
+    market_cap: number | null;
+    floor_price: number | null;
+    floor_price_symbol: string;
+  };
+  intervals: {
+    interval: "one_day" | "seven_day" | "thirty_day";
+    volume: number | null;
+    volume_diff: number | null;
+    volume_change: number | null;
+    sales: number | null;
+    sales_diff: number | null;
+    average_price: number | null;
+  }[];
+};

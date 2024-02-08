@@ -9,7 +9,7 @@ import CollectionsCarousel from "@/components/home/CollectionsCarousel";
 import Head from "next/head";
 import WelcomeChad from "@/components/home/WelcomeChad";
 import BaseBrigadeIntro from "@/components/home/BaseBrigadeIntro";
-import useSWR from "swr";
+// import useSWR from "swr";
 
 export async function getStaticProps({ locale }: any) {
   return {
