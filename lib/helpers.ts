@@ -1,10 +1,19 @@
 import { Contract } from "@ethersproject/contracts";
 import { ChadMetadata } from ".";
 import { WindowInstanceWithEthereum } from "./types";
+import * as R from "ramda";
 
 export function calcRange(size: number, startAt = 0) {
   return [...Array(size).keys()].map((i) => i + startAt);
 }
+
+export const serialize = R.compose(
+  (s) => `?${s}`, // Prepend a ?
+  R.join("&"), // Join each segment of the query with '&'
+  R.map(R.join("=")), // Join the key-value pairs with '='
+  R.map(R.map(encodeURIComponent)), // encode keys and values
+  R.toPairs // convert the object to pairs like `['limit', 5]`
+);
 
 export const getLocalMetadata = async (token: string, tokenId: number) => {
   try {
@@ -95,8 +104,8 @@ export const getBaseUrl = () => {
   return process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
     ? `https://www.optichads.art/`
     : process.env.NEXT_PUBLIC_VERCEL_URL
-    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-    : process.env.NEXT_PUBLIC_BASEURL;
+      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+      : process.env.NEXT_PUBLIC_BASEURL;
 };
 
 export const DEFAULT_PAGE = 1;
