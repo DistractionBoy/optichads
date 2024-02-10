@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-// import { useTranslation } from "next-i18next";
 
 import HeadMeta from "@/components/HeadMeta";
 import Navbar from "@/components/Navbar";
@@ -9,7 +8,6 @@ import CollectionsCarousel from "@/components/home/CollectionsCarousel";
 import Head from "next/head";
 import WelcomeChad from "@/components/home/WelcomeChad";
 import BaseBrigadeIntro from "@/components/home/BaseBrigadeIntro";
-// import useSWR from "swr";
 
 export async function getStaticProps({ locale }: any) {
   return {
@@ -21,9 +19,6 @@ export async function getStaticProps({ locale }: any) {
 
 const Home: NextPage = () => {
   // const { t } = useTranslation();
-  // const { data, error } = useSWR(
-  //   `/api/alchemy/getContractMetadata?contractAddress=${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}&chain=opt`
-  // );
   return (
     <>
       <Head>
