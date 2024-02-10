@@ -83,3 +83,68 @@ export type CollectionMetadata = {
     average_price: number | null;
   }[];
 };
+
+export type Consideration =             {
+  itemType: number;
+  token: string;
+  identifierOrCriteria: string;
+  startAmount: string;
+  endAmount: string;
+  recipient: string;
+},
+
+export type BestListingsResponse = {
+listings: [
+  {
+    order_hash: string;
+    chain?: string,
+    type: {} | string;
+    price: {
+      current: {
+        currency: string;
+        decimals: number;
+        value: string;
+      };
+    };
+    protocol_data: {
+      parameters: {
+        offerer: string;
+        offer: [
+          {
+            itemType: number;
+            token: string;
+            identifierOrCriteria: string;
+            startAmount: string;
+            endAmount: string;
+          },
+        ];
+        consideration: Consideration[
+        ];
+        startTime: string;
+        endTime: string;
+        orderType: number;
+        zone: string;
+        zoneHash: string;
+        salt: string;
+        conduitKey: string;
+        totalOriginalConsiderationItems: number;
+        counter: number;
+      };
+      signature: string | null;
+    };
+    protocol_address: string;
+  },
+];
+next: string;
+};
+
+
+export type Listing = {
+  hash: string;
+  chain: "base" | "optimism" | "arbitrum";
+  protocol_address: string;
+};
+
+export type Fulfiller = {
+  address: string;
+};
