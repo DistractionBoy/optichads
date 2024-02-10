@@ -5,7 +5,7 @@ const options: RequestInit = {
   method: "GET",
   headers: {
     accept: "application/json",
-    "x-api-key": `${process.env.NEXT_PUBLIC_OPENSEA_ANALYTICS_APIKEY}`,
+    "x-api-key": `${process.env.OPENSEA_ANALYTICS_APIKEY}`,
   },
 };
 

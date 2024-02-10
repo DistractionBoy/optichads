@@ -15,7 +15,7 @@ export default async function handler(
     headers: {
       accept: "application/json",
       "content-type": "application/json",
-      "x-api-key": `${process.env.NEXT_PUBLIC_OPENSEA_SALES_APIKEY}`,
+      "x-api-key": `${process.env.OPENSEA_SALES_APIKEY}`,
     },
     body: JSON.stringify(req.body),
   };

@@ -1,49 +1,98 @@
 import React from "react";
 import { SWRConfig } from "swr";
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
 import "../styles/globals.css";
 
 import "@rainbow-me/rainbowkit/styles.css";
-import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import {
+  RainbowKitProvider,
+  getDefaultWallets,
+  connectorsForWallets,
+  Locale,
+} from "@rainbow-me/rainbowkit";
+import {
+  argentWallet,
+  trustWallet,
+  ledgerWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { optimism, arbitrum, base } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
-import { appWithTranslation } from "next-i18next";
+import {
+  arbitrum,
+  base,
+  mainnet,
+  optimism,
+  polygon,
+  sepolia,
+  zora,
+} from "wagmi/chains";
 
+import { appWithTranslation } from "next-i18next";
 import Layout from "../components/Layout";
 
-const { chains, publicClient } = configureChains(
-  [optimism, arbitrum, base],
+const { chains, publicClient, webSocketPublicClient } = configureChains(
+  [
+    mainnet,
+    polygon,
+    optimism,
+    arbitrum,
+    base,
+    zora,
+    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true" ? [sepolia] : []),
+  ],
   [publicProvider()]
 );
 
-const { connectors } = getDefaultWallets({
-  projectId: "OptiChads",
-  appName: "Optichads & Arbibabes",
+const projectId = `${process.env.RAINBOWKIT_PROJECTID}`;
+
+const { wallets } = getDefaultWallets({
+  appName: "OptiChads",
+  projectId,
   chains,
 });
+
+const connectors = connectorsForWallets([
+  ...wallets,
+  {
+    groupName: "Other",
+    wallets: [
+      argentWallet({ projectId, chains }),
+      trustWallet({ projectId, chains }),
+      ledgerWallet({ projectId, chains }),
+    ],
+  },
+]);
 
 const wagmiConfig = createConfig({
   autoConnect: true,
   connectors,
   publicClient,
+  webSocketPublicClient,
 });
 
-const App = ({ Component, pageProps }: AppProps) => (
-  <SWRConfig
-    value={{
-      fetcher: (resource, init) =>
-        fetch(resource, init).then((res) => res.json()),
-    }}
-  >
-    <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </RainbowKitProvider>
-    </WagmiConfig>
-  </SWRConfig>
-);
+const App = ({ Component, pageProps }: AppProps) => {
+  const { locale } = useRouter() as { locale: Locale };
+  return (
+    <SWRConfig
+      value={{
+        fetcher: (resource, init) =>
+          fetch(resource, init).then((res) => res.json()),
+      }}
+    >
+      <WagmiConfig config={wagmiConfig}>
+        <RainbowKitProvider
+          appInfo={{ appName: "OptiChads" }}
+          chains={chains}
+          locale={locale}
+        >
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </SWRConfig>
+  );
+};
 
 export default appWithTranslation(App);

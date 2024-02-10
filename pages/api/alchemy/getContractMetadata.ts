@@ -14,7 +14,7 @@ export default async function handler(
     throw new Error("undefined params");
   }
   try {
-    const url = `https://${chain}-mainnet.g.alchemy.com/nft/v3/${process.env.NEXT_PUBLIC_ALCHEMY_APIKEY}/getContractMetadata?contractAddress=${contractAddress}`;
+    const url = `https://${chain}-mainnet.g.alchemy.com/nft/v3/${process.env.ALCHEMY_APIKEY}/getContractMetadata?contractAddress=${contractAddress}`;
 
     const response = await fetch(url, options);
     const data: NftContract = await response.json();

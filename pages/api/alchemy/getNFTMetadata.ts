@@ -24,7 +24,7 @@ export default async function handler(
   const params = serialize({ contractAddress, refreshCache: false });
   try {
     const url = `https://${chain}-mainnet.g.alchemy.com/nft/v3/${
-      process.env.NEXT_PUBLIC_ALCHEMY_APIKEY
+      process.env.ALCHEMY_APIKEY
     }/getNFTMetadata${params && params}`;
 
     const response = await fetch(url, options);
