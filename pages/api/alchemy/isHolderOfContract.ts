@@ -1,10 +1,13 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { NftMetadata } from "alchemy-sdk";
 import { serialize } from "@/lib/helpers";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const options: RequestInit = {
   method: "GET",
   headers: { Accept: "application/json" },
+};
+
+export type isHolderOfContractResponse = {
+  isHolderOfContract: true;
 };
 
 /**
@@ -15,24 +18,24 @@ const options: RequestInit = {
  */
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<NftMetadata | Error>
+  res: NextApiResponse<isHolderOfContractResponse | Error>
 ) {
-  const { chain, contractAddress, tokenId } = req.query;
-  if (!chain || !contractAddress || !tokenId) {
+  const { address, chain } = req.query;
+  if (!address || !chain) {
     throw new Error("undefined params");
   }
-  const params = serialize({ contractAddress, refreshCache: false });
+  const params = serialize({ address, chain, withMetadata: true });
   try {
     const url = `https://${chain}-mainnet.g.alchemy.com/nft/v3/${
       process.env.ALCHEMY_APIKEY
-    }/getNFTMetadata${params && params}`;
+    }/isHolderOfContract${params && params}`;
 
     const response = await fetch(url, options);
-    const data: NftMetadata = await response.json();
+    const data = await response.json();
     res.status(200).json(data);
   } catch (e: any) {
     if (e.message === "undefined params") {
-      res.status(400).json(e);
+      res.status(500).json(e);
     }
     res.status(e.status).json(e);
   }

@@ -1,37 +1,31 @@
-import { serialize } from "@/lib/helpers";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { NFTsBy } from "../types";
+import { BestListingsResponse } from "../types";
+import { serialize } from "@/lib/helpers";
 
 const options: RequestInit = {
   method: "GET",
   headers: {
     accept: "application/json",
-    "x-api-key": `${process.env.OPENSEA_ANALYTICS_APIKEY}`,
+    "x-api-key": `${process.env.OPENSEA_SALES_APIKEY}`,
   },
 };
 
-/**
- *
- * @param req
- * @chain = 'opt', 'eth', 'base', 'arbi'
- * @param res an array of addresses that are current owners of passed-in collection contract address
- */
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<NFTsBy>
+  res: NextApiResponse<BestListingsResponse | Error>
 ) {
   const { collection_slug, limit, next } = req.query;
   if (!collection_slug) {
     throw new Error("undefined params");
   }
   const params = serialize({ limit, next });
-
   try {
-    const url = `https://api.opensea.io/api/v2/collection/${collection_slug}/nfts${
+    const url = `https://api.opensea.io/api/v2//listings/collection/${collection_slug}/best${
       params && params
     }`;
+
     const response = await fetch(url, options);
-    const data: NFTsBy = await response.json();
+    const data: BestListingsResponse = await response.json();
     res.status(200).json(data);
   } catch (e: any) {
     if (e.message === "undefined params") {

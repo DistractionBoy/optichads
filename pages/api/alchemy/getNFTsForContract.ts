@@ -24,8 +24,8 @@ export default async function handler(
   const params = serialize({ contractAddress, limit, withMetadata: true });
   try {
     const url = `https://${chain}-mainnet.g.alchemy.com/nft/v3/${
-      process.env.NEXT_PUBLIC_ALCHEMY_APIKEY
-    }/getNFTsForContract?${params && params}`;
+      process.env.ALCHEMY_APIKEY
+    }/getNFTsForContract${params && params}`;
 
     const response = await fetch(url, options);
     const data: NftContractBaseNftsResponse = await response.json();
