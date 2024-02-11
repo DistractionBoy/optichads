@@ -13,7 +13,7 @@ const BaseBrigadeIntro = () => {
   return (
     <>
       <div className="block relative w-full h-0 lg:h-44 desktop:h-64 bg-[#0052FE]" />
-      <div className="flex flex-col lg:flex-row justify-end lg:justify-center items-stretch bg-[#0052FE] border-b-8 border-b-white">
+      <div className="flex flex-col lg:flex-row justify-end lg:justify-center bg-[#0052FE]">
         <div className="flex flex-col items-center justify-center space-y-12 md:space-y-28 my-20 px-20 xl:px-8">
           <h2 className="text-5xl md:text-7xl desktop:text-[96px] ultrawide:text-[120px] font-bold xl:font-black leading-8 font-outline-none md:font-outline-2 xl:font-outline-4">
             GLAD <span className="inline-block lg:hidden">UR</span>
@@ -25,9 +25,9 @@ const BaseBrigadeIntro = () => {
             BASED
           </h2>
         </div>
-        <div className="flex justify-center xl:hidden min-w-[390px]">
+        <div className="flex justify-center xl:hidden [&_img]:min-w-[390px]">
           <Image
-            className="object-cover"
+            className="max-w-[500px]"
             alt="a cute soldier with a bag on his head, blinking every so often"
             src={imageSrc}
             width={500}

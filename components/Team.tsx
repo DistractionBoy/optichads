@@ -94,9 +94,9 @@ export default function Team() {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
+    <div className="mx-auto container py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
       <div className="space-y-12">
-        <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none prose">
+        <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none prose dark:prose-invert">
           <h2>{t("chads:team_section.0.our_team")}</h2>
           <p className="text-xl">
             {t("chads:team_section.0.description1")}
@@ -110,7 +110,7 @@ export default function Team() {
         >
           {people.map((person: Person) => (
             <li key={person.name}>
-              <div className="space-y-4 prose">
+              <div className="space-y-4 prose dark:prose-invert">
                 {person.imageUrl && (
                   <Image
                     className="rounded-lg shadow-lg"

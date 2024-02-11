@@ -30,8 +30,8 @@ const Home: NextPage = () => {
         <SplashBG />
         <RotatingTitle />
         <WelcomeCard />
-        <Image src={chadimationFrame} alt="" width={1} height={1} />
-        <Image src={chadimationFrame} alt="" width={1} height={1} />
+        <Image src={chadimationFrame} alt="" width={30} height={30} />
+        <Image src={brigadiFrame} alt="" width={30} height={30} />
       </main>
     </>
   );
