@@ -8,6 +8,7 @@ import CollectionsCarousel from "@/components/home/CollectionsCarousel";
 import Head from "next/head";
 import WelcomeChad from "@/components/home/WelcomeChad";
 import BaseBrigadeIntro from "@/components/home/BaseBrigadeIntro";
+import HotDeals from "@/components/home/HotDeals";
 
 export async function getStaticProps({ locale }: any) {
   return {
@@ -29,6 +30,8 @@ const Home: NextPage = () => {
       <WelcomeChad />
       <BaseBrigadeIntro />
       <CollectionsCarousel />
+
+      <HotDeals />
 
       <div className="container bg-slate-100 rounded-sm shadow-xl">
         <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24 prose">
