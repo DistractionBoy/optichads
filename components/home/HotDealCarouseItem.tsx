@@ -5,10 +5,14 @@ import { serialize } from "@/lib/helpers";
 import useSWR from "swr";
 import { NFTExpanded } from "@/pages/api/types";
 import { Skeleton } from "../ui/skeleton";
+import Link from "next/link";
+import { Button } from "../ui/button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 
 const carouselItemCSS = (chain: string) =>
   cn(
-    "flex flex-col basis-1/2 rounded-sm my-12 xl:my-16 text-slate-800 px-6",
+    "flex flex-col basis-full md:basis-1/2 rounded-sm my-12 xl:my-16 text-slate-800 px-6",
     "drop-shadow-xl max-w-[700px] bg-gradient-to-b bg-clip-text",
     chain === "optimism"
       ? "from-[#FB0420] to-white"
@@ -49,7 +53,7 @@ const HotDealCarouselItem = ({
     data.nft && (
       <CarouselItem className={carouselItemCSS(chain)}>
         {data.nft?.name && (
-          <h4 className="my-4 text-lg lg:text-3xl desktop:text-5xl uppercase px-8 font-extrabold truncate">
+          <h4 className="my-2 md:my-4 text-base md:text-lg lg:text-3xl desktop:text-5xl uppercase px-0 lg:px-8 font-semibold md:font-extrabold truncate">
             <span
               className={cn(
                 "bg-clip-text text-transparent font-semibold bg-gradient-to-l",
@@ -73,11 +77,11 @@ const HotDealCarouselItem = ({
           width={700}
           height={700}
         />
-        <div className="flex justify-end my-2 px-8">
-          <h5 className="text-lg lg:text-3xl desktop:text-4xl">
+        <div className="flex flex-col items-end my-3 px-1 lg:px-8 space-y-2">
+          <h5 className="text-base md:text-lg lg:text-3xl desktop:text-4xl">
             <span
               className={cn(
-                "bg-clip-text text-transparent font-semibold bg-gradient-to-r",
+                "flex items-center bg-clip-text text-transparent font-semibold bg-gradient-to-r",
                 chain === "optimism"
                   ? "from-red-500 to-red-800 dark:from-red-600 dark:to-red-300"
                   : chain === "base"
@@ -85,9 +89,19 @@ const HotDealCarouselItem = ({
                     : "from-indigo-500 to-indigo-800 dark:from-indigo-600 dark:to-indigo-300"
               )}
             >
+              <FontAwesomeIcon icon={faEthereum} />
               {price.slice(0, 7)}
             </span>
           </h5>
+
+          <Link
+            href={`https://opensea.io/assets/${chain}/${address}/${identifier}`}
+            className="flex items-center"
+          >
+            <Button variant="secondary" className="-mr-2">
+              Buy Now
+            </Button>
+          </Link>
         </div>
       </CarouselItem>
     )

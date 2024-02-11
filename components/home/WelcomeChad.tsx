@@ -13,7 +13,7 @@ const WelcomeChad = () => {
 
   return (
     <>
-      <div className="block relative w-full h-0 lg:h-44 desktop:h-64 bg-[#FB0420]" />
+      <div className="block relative w-full h-0 md:h-44 desktop:h-64 bg-[#FB0420]" />
       <div className="flex flex-col-reverse lg:flex-row justify-end lg:justify-center items-center lg:items-end bg-[#FB0420]">
         <div className="flex justify-end desktop:hidden flex-1">
           <Image
