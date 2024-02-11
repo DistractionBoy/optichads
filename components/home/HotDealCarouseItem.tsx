@@ -99,7 +99,7 @@ const HotDealCarouselItem = ({
             className="flex items-center"
           >
             <Button variant="secondary" className="-mr-2">
-              Buy Now{" "}
+              Buy Now
             </Button>
           </Link>
         </div>
