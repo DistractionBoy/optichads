@@ -15,7 +15,7 @@ const MenuBtnCss = cn(
 );
 
 const MenuBtnMobileCss = cn(
-  "lg:hidden bg-[#FF0420] absolute bottom-12 left-1/2 -translate-x-1/2 items-center",
+  "lg:hidden bg-[#FF0420] absolute bottom-[264px] md:bottom-32 left-1/2 -translate-x-1/2 items-center",
   "-translate-y-1/2 py-6 rounded flex px-8 space-x-4 outline outline-2"
 );
 
@@ -46,7 +46,7 @@ export default function Navbar() {
       >
         {({ open }) => (
           <div className="flex justify-center items-center h-16 mt-2 mx-12">
-            <div className="hidden lg:flex items-center grow">
+            <div className="hidden md:flex items-center grow">
               <div className="flex items-baseline">
                 <Button
                   className={MenuBtnCss}

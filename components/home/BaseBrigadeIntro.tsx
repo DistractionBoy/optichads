@@ -57,7 +57,7 @@ const BaseBrigadeIntro = () => {
           </h2>
         </div>
       </div>
-      <div className="bg-white flex w-screen h-12" />
+      <div className="bg-white flex w-screen h-20" />
     </>
   );
 };
