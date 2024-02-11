@@ -15,7 +15,7 @@ const HotDeals = () => {
           Hot Deals
         </h2>
         <p className="text-lg md:text-3xl">
-          From Opensea's floor, these are the cheapest NFTs
+          From Opensea&apos;s floor, these are the cheapest NFTs
         </p>
       </div>
       <Carousel className="mx-6">
