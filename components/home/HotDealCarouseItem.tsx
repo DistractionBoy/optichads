@@ -65,7 +65,9 @@ const HotDealCarouselItem = ({
           </h4>
         )}
         <Image
-          className={cn("flex p-8 rounded-sm object-fill bg-white")}
+          className={cn(
+            "flex p-1 md:p-3 lg:p-8 rounded-sm object-fill bg-white"
+          )}
           src={data.nft.image_url}
           alt={data.nft.description || ""}
           width={700}

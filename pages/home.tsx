@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       <BaseBrigadeIntro />
       <CollectionsCarousel />
 
-      <div className="bg-white dark:bg-black dark:prose-invert">
+      <div className="bg-white dark:bg-[#090909]">
         <div className="container">
           <HotDeals />
         </div>
