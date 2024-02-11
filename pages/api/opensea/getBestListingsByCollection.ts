@@ -14,11 +14,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<BestListingsResponse | Error>
 ) {
-  const { collection_slug, limit, next } = req.query;
+  const { collection_slug, limit } = req.query;
   if (!collection_slug) {
     throw new Error("undefined params");
   }
-  const params = serialize({ limit, next });
+  const params = serialize({ limit });
   try {
     const url = `https://api.opensea.io/api/v2//listings/collection/${collection_slug}/best${
       params && params

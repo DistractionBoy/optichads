@@ -14,7 +14,7 @@ const WelcomeChad = () => {
   return (
     <>
       <div className="block relative w-full h-0 lg:h-44 desktop:h-64 bg-[#FB0420]" />
-      <div className="flex flex-col-reverse lg:flex-row justify-end lg:justify-center items-center lg:items-end bg-[#FB0420] border-b-8 border-b-white">
+      <div className="flex flex-col-reverse lg:flex-row justify-end lg:justify-center items-center lg:items-end bg-[#FB0420]">
         <div className="flex justify-end desktop:hidden flex-1">
           <Image
             alt="chad flexing his bicep and smiling"
@@ -44,7 +44,7 @@ const WelcomeChad = () => {
           </h2>
         </div>
       </div>
-      <div className="bg-white flex w-screen h-12" />
+      <div className="bg-white flex w-screen h-20" />
     </>
   );
 };

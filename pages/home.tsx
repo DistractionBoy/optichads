@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-// import { useTranslation } from "next-i18next";
 
 import HeadMeta from "@/components/HeadMeta";
 import Navbar from "@/components/Navbar";
@@ -9,7 +8,7 @@ import CollectionsCarousel from "@/components/home/CollectionsCarousel";
 import Head from "next/head";
 import WelcomeChad from "@/components/home/WelcomeChad";
 import BaseBrigadeIntro from "@/components/home/BaseBrigadeIntro";
-// import useSWR from "swr";
+import HotDeals from "@/components/home/HotDeals";
 
 export async function getStaticProps({ locale }: any) {
   return {
@@ -21,9 +20,6 @@ export async function getStaticProps({ locale }: any) {
 
 const Home: NextPage = () => {
   // const { t } = useTranslation();
-  // const { data, error } = useSWR(
-  //   `/api/alchemy/getContractMetadata?contractAddress=${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}&chain=opt`
-  // );
   return (
     <>
       <Head>
@@ -35,17 +31,13 @@ const Home: NextPage = () => {
       <BaseBrigadeIntro />
       <CollectionsCarousel />
 
-      <div className="container bg-slate-100 rounded-sm shadow-xl">
-        <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24 prose">
-          <h2>Please bear with us</h2>
-          <p>
-            We are working around the clock to bring this site back up, but
-            better than before, with more ways to engage.
-          </p>
+      <div className="bg-white dark:bg-black dark:prose-invert">
+        <div className="container">
+          <HotDeals />
         </div>
-
-        <Team />
       </div>
+
+      <Team />
     </>
   );
 };
