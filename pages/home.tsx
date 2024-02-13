@@ -14,6 +14,7 @@ import ScrollingBanner from "@/components/home/ScrollingBanner";
 import chadBanner from "@/public/images/banners/chad-banner.jpeg";
 import babeBanner from "@/public/images/banners/babe-banner.jpeg";
 import brigadeBanner from "@/public/images/banners/brigade-banner.jpeg";
+import Footer from "@/components/Footer";
 
 export async function getStaticProps({ locale }: any) {
   return {
@@ -54,6 +55,7 @@ const Home: NextPage = () => {
       <div className="flex flex-col desktop:hidden">
         <ScrollingBanner src={babeBanner} />
       </div>
+      <Footer />
     </>
   );
 };
