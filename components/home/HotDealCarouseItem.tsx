@@ -12,13 +12,18 @@ import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 
 const carouselItemCSS = (chain: string) =>
   cn(
-    "flex flex-col basis-full md:basis-1/2 rounded-sm my-12 xl:my-16 text-slate-800 px-6",
-    "drop-shadow-xl max-w-[700px] bg-gradient-to-b bg-clip-text",
+    "flex flex-col basis-full md:basis-1/2 rounded-sm my-16 xl:my-20 text-slate-800 px-6",
+    "drop-shadow-2xl max-w-[700px]"
+  );
+
+const gradientFonts = (chain: string) =>
+  cn(
+    "flex items-center bg-clip-text text-transparent font-semibold bg-gradient-to-r dark:bg-gradient-to-l",
     chain === "optimism"
-      ? "from-[#FB0420] to-white"
+      ? "from-red-200 to-red-50"
       : chain === "base"
-        ? "from-[#0052FE] to-white"
-        : "from-indigo-300/30 to-white"
+        ? "from-blue-200 to-blue-50"
+        : "from-indigo-200 to-indigo-50"
   );
 
 const HotDealCarouselItem = ({
@@ -54,18 +59,7 @@ const HotDealCarouselItem = ({
       <CarouselItem className={carouselItemCSS(chain)}>
         {data.nft?.name && (
           <h4 className="my-2 md:my-4 text-base md:text-lg lg:text-3xl desktop:text-5xl uppercase px-0 lg:px-8 font-semibold md:font-extrabold truncate">
-            <span
-              className={cn(
-                "bg-clip-text text-transparent font-semibold bg-gradient-to-l",
-                chain === "optimism"
-                  ? "from-red-500 to-red-800 dark:from-red-600 dark:to-red-300"
-                  : chain === "base"
-                    ? "from-blue-500 to-blue-800 dark:from-blue-600 dark:to-blue-300"
-                    : "from-indigo-500 to-indigo-800 dark:from-indigo-600 dark:to-indigo-300"
-              )}
-            >
-              {data.nft.name}
-            </span>
+            <span className={gradientFonts(chain)}>{data.nft.name}</span>
           </h4>
         )}
         <Image
@@ -79,16 +73,7 @@ const HotDealCarouselItem = ({
         />
         <div className="flex flex-col items-end my-3 px-1 lg:px-8 space-y-2">
           <h5 className="text-base md:text-lg lg:text-3xl desktop:text-4xl">
-            <span
-              className={cn(
-                "flex items-center bg-clip-text text-transparent font-semibold bg-gradient-to-r",
-                chain === "optimism"
-                  ? "from-red-500 to-red-800 dark:from-red-600 dark:to-red-300"
-                  : chain === "base"
-                    ? "from-blue-500 to-blue-800 dark:from-blue-600 dark:to-blue-300"
-                    : "from-indigo-500 to-indigo-800 dark:from-indigo-600 dark:to-indigo-300"
-              )}
-            >
+            <span className={gradientFonts(chain)}>
               <FontAwesomeIcon icon={faEthereum} />
               {price.slice(0, 7)}
             </span>

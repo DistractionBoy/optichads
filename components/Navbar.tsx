@@ -15,7 +15,7 @@ const MenuBtnCss = cn(
 );
 
 const MenuBtnMobileCss = cn(
-  "lg:hidden bg-[#FF0420] absolute bottom-[264px] md:bottom-32 left-1/2 -translate-x-1/2 items-center",
+  "lg:hidden bg-[#FF0420] absolute bottom-12 md:bottom-32 left-1/2 -translate-x-1/2 items-center",
   "-translate-y-1/2 py-6 rounded flex px-8 space-x-4 outline outline-2"
 );
 

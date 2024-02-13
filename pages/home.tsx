@@ -38,19 +38,22 @@ const Home: NextPage = () => {
       </div>
       <div className="bg-white flex w-screen h-20" />
       <BaseBrigadeIntro />
-      <div className="flex flex-col desktop:hidden">
-        <ScrollingBanner src={brigadeBanner} />
-      </div>
-      <CollectionsCarousel />
-      <div className="bg-white flex w-screen h-20" />
-      <div className="bg-white dark:bg-[#090909]">
+      <div className="bg-[#FB0420] dark:bg-zinc-900 pb-20">
         <div className="container">
           <HotDeals />
         </div>
       </div>
       <div className="bg-white flex w-screen h-20" />
-
+      <div className="flex flex-col desktop:hidden">
+        <ScrollingBanner src={brigadeBanner} />
+      </div>
+      <CollectionsCarousel />
+      <div className="bg-white flex w-screen h-20" />
       <Team />
+      <div className="bg-white flex w-screen h-20" />
+      <div className="flex flex-col desktop:hidden">
+        <ScrollingBanner src={babeBanner} />
+      </div>
     </>
   );
 };
