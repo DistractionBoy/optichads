@@ -39,10 +39,10 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-gray-800">
-      <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8 ">
+      <div className="mx-auto w-full py-6 px-4 sm:px-6 lg:px-8 ">
         <div className="flex flex-row h-auto mt-2 md:mx-12 mx-2">
           <nav
-            className="-mx-5 basis-1/2 md:basis-1/5"
+            className="-mx-5 md:basis-1/5 basis-1/2"
             aria-label="Footer"
           >
             {navigation.main.map((item) => (
@@ -79,6 +79,7 @@ export default function Footer() {
                   key={item.name}
                   href={item.href}
                   className="text-white hover:text-gray-200"
+                  target="_blank"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
