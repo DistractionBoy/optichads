@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import { PT_Sans, Rubik } from "next/font/google";
 
 import { cn } from "@/lib/utils";
+import { Toaster } from "./ui/sonner";
 
 type Props = {
   children: ReactNode;
@@ -23,13 +24,16 @@ const rubik = Rubik({
 
 export default function Layout({ children }: Props) {
   return (
-    <div
-      className={cn(
-        `m-0 flex flex-1 flex-col items-stretch justify-between overflow-x-hidden`,
-        rubik.className
-      )}
-    >
-      {children}
-    </div>
+    <>
+      <main
+        className={cn(
+          `m-0 flex flex-1 flex-col items-stretch justify-between overflow-x-hidden`,
+          rubik.className
+        )}
+      >
+        {children}
+      </main>
+      <Toaster />
+    </>
   );
 }

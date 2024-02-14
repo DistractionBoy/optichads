@@ -44,9 +44,13 @@ const HotDealCarouselItemController = ({
           Number(listing.price.current.value) *
           Math.pow(10, -listing.price.current.decimals)
         }`}
+        hash={listing.order_hash}
+        protocol_address={listing.protocol_address}
       />
     ))
   );
 };
 
 export default HotDealCarouselItemController;
+
+// { listing: { hash, chain, protocol_address }, fulfiller }
