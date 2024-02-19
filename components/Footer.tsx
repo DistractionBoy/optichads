@@ -8,12 +8,15 @@ import Image from "next/image";
 
 const navigation = {
   main: [
-    { name: "The Pad", href: "/", current: false },
-    {
-      name: "Top Chads",
-      href: "https://opensea.io/collection/optichads?search[sortAscending]=true&search[sortBy]=RARITY_RANK",
-      current: false,
-    },
+    { name: "Home", href: "/", current: true },
+    { name: "Collections", href: "/", current: false },
+    { name: "Music", href: "/", current: false },
+    { name: "Affiliates", href: "/", current: false }
+  ],
+  second: [
+    { name: "Mint", href: "/", current: false },
+    { name: "Token", href: "/", current: false },
+    { name: "Staking", href: "/", current: false }
   ],
   social: [
     {
@@ -36,60 +39,82 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-gray-800">
-      <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-        <nav
-          className="-mx-5 -my-2 flex flex-wrap justify-center"
-          aria-label="Footer"
-        >
-          {navigation.main.map((item) => (
-            <div key={item.name} className="px-5 py-2">
-              <a
-                href={item.href}
-                className="text-base text-white hover:text-gray-200"
-              >
-                {item.name}
-              </a>
+      <div className="mx-auto w-full py-6 px-4 sm:px-6 lg:px-8 ">
+        <div className="flex flex-row h-auto mt-2 md:mx-12 mx-2">
+          <nav
+            className="-mx-5 md:basis-1/5 basis-1/2"
+            aria-label="Footer"
+          >
+            {navigation.main.map((item) => (
+              <div key={item.name} className="px-5 py-2">
+                <a
+                  href={item.href}
+                  className="text-md text-white hover:text-gray-200 hover:underline underline-offset-4"
+                >
+                  {item.name}
+                </a>
+              </div>
+            ))}
+          </nav>
+          <nav
+            className="-mx-5 flex-1"
+            aria-label="Footer"
+          >
+            {navigation.second.map((item) => (
+              <div key={item.name} className="px-5 py-2">
+                <a
+                  href={item.href}
+                  className="text-md text-white hover:text-gray-200 hover:underline underline-offset-4"
+                >
+                  {item.name}
+                </a>
+              </div>
+            ))}
+          </nav>
+          <div className="right-0">
+            <p className="text-xl font-bold text-blue-400">Connect with us</p>
+            <div className="right-0 flex space-x-2 mt-1">
+              {navigation.social.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-white hover:text-gray-200"
+                  target="_blank"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                </a>
+              ))}
+              <div className="flex h-6 w-6 items-center">
+                <a
+                  href="https://opensea.io/collection/optichads"
+                  className="flex items-center"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image alt="opensea logo" src={osLogo} height={20} width={20} />
+                </a>
+              </div>
+              <div className="flex h-6 w-6 items-center">
+                <a
+                  href="https://www.coingecko.com/en/nft/optichads"
+                  className="flex items-center"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    alt="coingecko logo"
+                    src={coinGeckoLogo}
+                    height={20}
+                    width={20}
+                  />
+                </a>
+              </div>
             </div>
-          ))}
-        </nav>
-        <div className="mt-8 flex justify-center space-x-6">
-          {navigation.social.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-white hover:text-gray-200"
-            >
-              <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
-            </a>
-          ))}
-          <div className="flex h-6 w-6 items-center">
-            <a
-              href="https://opensea.io/collection/optichads"
-              className="flex items-center"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image alt="opensea logo" src={osLogo} height={20} width={20} />
-            </a>
-          </div>
-          <div className="flex h-6 w-6 items-center">
-            <a
-              href="https://www.coingecko.com/en/nft/optichads"
-              className="flex items-center"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                alt="coingecko logo"
-                src={coinGeckoLogo}
-                height={20}
-                width={20}
-              />
-            </a>
           </div>
         </div>
-        <p className="mt-8 text-center text-base text-gray-200">
+        <hr className="h-px my-4 border-0 bg-gray-600"/>
+        <p className="text-center text-base text-gray-400">
           &copy; 2024 OptiChads. All rights reserved.
         </p>
       </div>
