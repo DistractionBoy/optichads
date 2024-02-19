@@ -40,8 +40,8 @@ const BaseBrigadeIntro = () => {
           <Image
             alt="a cute soldier with a bag on his head, blinking every so often"
             src={imageSrc}
-            width={1024}
-            height={1024}
+            width={768}
+            height={768}
             onLoad={onLoadingComplete}
           />
         </div>

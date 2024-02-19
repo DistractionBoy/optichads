@@ -6,12 +6,7 @@ import Account from "./Account";
 import { useAccount, useDisconnect } from "wagmi";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-
-const MenuBtnCss = cn(
-  "btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)]",
-  "text-white bg-[#FB0420] ease-out hover:translate-y-1 transition-all rounded",
-  "py-2 px-4 font-bold outline outline-1 outline-hotpink-700"
-);
+import { divergentLinkButtonCSS } from "./ui/button";
 
 export default function UserMenu() {
   const [userNavigation, setUserNavigation] = useState<NavLink[]>();
@@ -30,7 +25,7 @@ export default function UserMenu() {
   }, [address]);
 
   return (
-    <Menu as="div" className={MenuBtnCss}>
+    <Menu as="div" className={divergentLinkButtonCSS}>
       <Menu.Button>
         <span className="sr-only">open account menu</span>
         <Account />
