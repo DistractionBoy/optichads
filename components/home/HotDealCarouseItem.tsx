@@ -310,7 +310,10 @@ const HotDealCarouselItem = ({
 
                   <div className="hidden sm:flex flex-1 flex-row flex-wrap lg:flex-col justify-start items-center mx-3">
                     {data.nft.traits.map((trait) => (
-                      <div className={traitContainer(chain)}>
+                      <div
+                        className={traitContainer(chain)}
+                        key={trait.trait_type}
+                      >
                         <div className="text-xs lg:text-sm">
                           {trait.trait_type}
                         </div>
