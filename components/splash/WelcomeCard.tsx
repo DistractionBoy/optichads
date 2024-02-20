@@ -1,12 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button, divergentLinkButtonCSS } from "@/components/ui/button";
+import { divergentLinkButtonCSS } from "@/components/ui/button";
 import Link from "next/link";
 
 const WelcomeCard = () => (

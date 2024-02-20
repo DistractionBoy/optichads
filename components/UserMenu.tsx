@@ -9,20 +9,31 @@ import { cn } from "@/lib/utils";
 import { divergentLinkButtonCSS } from "./ui/button";
 
 export default function UserMenu() {
-  const [userNavigation, setUserNavigation] = useState<NavLink[]>();
+  const [userNavigation, setUserNavigation] = useState<NavLink[]>([
+    {
+      name: `OptiChads on Opensea`,
+      href: `https://opensea.io/collection/optichads`,
+    },
+  ]);
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
 
-  useEffect(() => {
-    if (address) {
-      setUserNavigation([
-        {
-          name: `OptiChads`,
-          href: `https://opensea.io/collection/optichads`,
-        },
-      ]);
-    }
-  }, [address]);
+  /**
+   * the following useEffect should only be used when we want to add links that require
+   * a current connection to the user's wallet, for instance when there is a page that
+   * shows the user their own holdings
+   */
+  // useEffect(() => {
+  //   if (address && isConnected) {
+  //     setUserNavigation((prevState) => [
+  //       ...prevState,
+  //       {
+  //         name: `My Chads, Babes, and Brigaders`,
+  //         href: `/collections/user-bags/${address}`,
+  //       },
+  //     ]);
+  //   }
+  // }, [address]);
 
   return (
     <Menu as="div" className={divergentLinkButtonCSS}>
@@ -46,6 +57,7 @@ export default function UserMenu() {
                 {({ active }) =>
                   onClick ? (
                     <button
+                      key={index}
                       onClick={onClick}
                       className={cn(
                         active ? "bg-gray-100" : "",
@@ -56,6 +68,7 @@ export default function UserMenu() {
                     </button>
                   ) : (
                     <Link
+                      key={index}
                       href={href as string}
                       className={cn(
                         active ? "bg-gray-100" : "",

@@ -46,6 +46,7 @@ const HotDealCarouselItemController = ({
         }`}
         hash={listing.order_hash}
         protocol_address={listing.protocol_address}
+        date={Number(listing.protocol_data.parameters.endTime) * 1000}
       />
     ))
   );
