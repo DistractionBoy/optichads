@@ -57,11 +57,11 @@ export default function Team() {
       twitterUrl: "https://twitter.com/lifesadream63",
     },
     {
-      name: "Dope",
-      role: "Team Advisor",
-      imageUrl: dope,
-      bio: bio5,
-      twitterUrl: "https://twitter.com/dopesdope2021",
+      name: "JasonFactor",
+      role: "Developer",
+      imageUrl: jasonfactor,
+      bio: bio9,
+      twitterUrl: "https://twitter.com/anh_jasonfactor",
     },
     {
       name: "Youngbeeps",
@@ -71,25 +71,25 @@ export default function Team() {
       twitterUrl: "https://twitter.com/cryptonftbeeps",
     },
     {
-      name: "3t",
-      role: "Developer",
-      imageUrl: THREEt,
-      bio: bio8,
-      twitterUrl: "https://twitter.com/Prod3t",
-    },
-    {
-      name: "JasonFactor",
-      role: "Developer",
-      imageUrl: jasonfactor,
-      bio: bio9,
-      twitterUrl: "https://twitter.com/anh_jasonfactor",
-    },
-    {
       name: "LiViCi3",
       role: "Advisor",
       imageUrl: livici3,
       bio: bio3,
       twitterUrl: "https://twitter.com/LiViXi3",
+    },
+    {
+      name: "Dope",
+      role: "Team Advisor",
+      imageUrl: dope,
+      bio: bio5,
+      twitterUrl: "https://twitter.com/dopesdope2021",
+    },
+    {
+      name: "3t",
+      role: "Developer",
+      imageUrl: THREEt,
+      bio: bio8,
+      twitterUrl: "https://twitter.com/Prod3t",
     },
   ];
 

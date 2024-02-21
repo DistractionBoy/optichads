@@ -15,9 +15,7 @@ import chadBanner from "@/public/images/banners/chad-banner.jpeg";
 import babeBanner from "@/public/images/banners/babe-banner.jpeg";
 import brigadeBanner from "@/public/images/banners/brigade-banner.jpeg";
 import Footer from "@/components/Footer";
-import gradientBG from "@/public/images/hot-deals-img-bg.jpeg";
-
-import Image from "next/image";
+import IntroText from "@/components/home/IntroText";
 
 export async function getStaticProps({ locale }: any) {
   return {
@@ -40,21 +38,23 @@ const Home: NextPage = () => {
       <div className="flex flex-col desktop:hidden">
         <ScrollingBanner src={chadBanner} />
       </div>
-      <div className="bg-white flex w-screen h-20" />
-      <div className="bg-[#FB0420] dark:bg-zinc-600 pb-20 w-full h-full">
-        <Image src={gradientBG} alt="bg" className="absolute top bg-contain" />
+      <div className="bg-white flex desktop:hidden w-screen h-20" />
+
+      <IntroText />
+      <div className="bg-white flex w-screen h-20 desktop:h-full" />
+      <BaseBrigadeIntro />
+      <div className="flex flex-col desktop:hidden">
+        <ScrollingBanner src={brigadeBanner} />
+      </div>
+      <div className="bg-white desktop:hidden flex w-screen h-20" />
+
+      <div className="flex flex-col pb-20 w-full h-full bg-grainy bg-opacity-50 bg-cover">
         <div className="container">
           <HotDeals />
         </div>
       </div>
-      <div className="bg-white flex w-screen h-20" />
-      <BaseBrigadeIntro />
-      <div className="bg-white flex w-screen h-20" />
-      <div className="flex flex-col desktop:hidden">
-        <ScrollingBanner src={brigadeBanner} />
-      </div>
+      <div className="bg-white flex w-screen desktop:hidden h-20" />
       <CollectionsCarousel />
-      <div className="bg-white flex w-screen h-20" />
       <Team />
       <div className="bg-white flex w-screen h-20" />
       <div className="flex flex-col desktop:hidden">
