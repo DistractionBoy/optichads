@@ -26,8 +26,8 @@ const IntroText = () => (
           choice for NFT enthusiasts worldwide.
         </p>
         <p className="block ultrawide:hidden text-white text-lg sm:text-xl md:text-2xl font-regular md:font-medium desktop:text-3xl">
-          Excitingly, we're transitioning into a DAO and are thrilled about the
-          possibilities with the introduction of our native token, OPC!
+          Excitingly, we&apos;re transitioning into a DAO and are thrilled about
+          the possibilities with the introduction of our native token, OPC!
         </p>
       </article>
       <div className="hidden lg:flex h-900 desktop:h-[1200px] bg-white w-24" />
@@ -58,8 +58,9 @@ const IntroText = () => (
             preferred choice for NFT enthusiasts worldwide.
           </p>
           <p className="text-white text-base sm:text-xl md:text-2xl font-medium desktop:text-3xl">
-            Excitingly, we're transitioning into a DAO and are thrilled about
-            the possibilities with the introduction of our native token, OPC!
+            Excitingly, we&apos;re transitioning into a DAO and are thrilled
+            about the possibilities with the introduction of our native token,
+            OPC!
           </p>
         </article>
       </div>
