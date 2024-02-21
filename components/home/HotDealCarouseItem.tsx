@@ -221,9 +221,7 @@ const HotDealCarouselItem = ({
           </h4>
         )}
         <Image
-          className={cn(
-            "flex p-2 md:p-3 lg:p-8 rounded-sm object-fill bg-white"
-          )}
+          className={cn("flex p-3 lg:p-8 rounded-md object-fill bg-white")}
           src={data.nft.image_url}
           alt={data.nft.description || ""}
           width={700}
@@ -253,7 +251,9 @@ const HotDealCarouselItem = ({
               href={`https://opensea.io/assets/${chain}/${address}/${identifier}`}
               className="flex items-center"
             >
-              <Button variant="secondary">View on Opensea</Button>
+              <Button variant="ghost" className="text-white">
+                View on Opensea
+              </Button>
             </Link>
             <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
               <DialogTrigger asChild>

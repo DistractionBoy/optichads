@@ -15,6 +15,9 @@ import chadBanner from "@/public/images/banners/chad-banner.jpeg";
 import babeBanner from "@/public/images/banners/babe-banner.jpeg";
 import brigadeBanner from "@/public/images/banners/brigade-banner.jpeg";
 import Footer from "@/components/Footer";
+import gradientBG from "@/public/images/hot-deals-img-bg.jpeg";
+
+import Image from "next/image";
 
 export async function getStaticProps({ locale }: any) {
   return {
@@ -38,12 +41,14 @@ const Home: NextPage = () => {
         <ScrollingBanner src={chadBanner} />
       </div>
       <div className="bg-white flex w-screen h-20" />
-      <BaseBrigadeIntro />
-      <div className="bg-[#FB0420] dark:bg-zinc-900 pb-20">
+      <div className="bg-[#FB0420] dark:bg-zinc-600 pb-20 w-full h-full">
+        <Image src={gradientBG} alt="bg" className="absolute top bg-contain" />
         <div className="container">
           <HotDeals />
         </div>
       </div>
+      <div className="bg-white flex w-screen h-20" />
+      <BaseBrigadeIntro />
       <div className="bg-white flex w-screen h-20" />
       <div className="flex flex-col desktop:hidden">
         <ScrollingBanner src={brigadeBanner} />

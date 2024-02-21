@@ -43,11 +43,11 @@ export default function Team() {
       twitterUrl: "https://twitter.com/DistractionBoy_",
     },
     {
-      name: "LiViCi3",
-      role: "Advisor",
-      imageUrl: livici3,
-      bio: bio3,
-      twitterUrl: "https://twitter.com/LiViXi3",
+      name: "Millynish",
+      role: "Discord Expert",
+      imageUrl: millynish,
+      bio: bio7,
+      twitterUrl: "https://twitter.com/anish_katwal",
     },
     {
       name: "Lifestrike",
@@ -71,13 +71,6 @@ export default function Team() {
       twitterUrl: "https://twitter.com/cryptonftbeeps",
     },
     {
-      name: "Millynish",
-      role: "Discord Expert",
-      imageUrl: millynish,
-      bio: bio7,
-      twitterUrl: "https://twitter.com/anish_katwal",
-    },
-    {
       name: "3t",
       role: "Developer",
       imageUrl: THREEt,
@@ -90,6 +83,13 @@ export default function Team() {
       imageUrl: jasonfactor,
       bio: bio9,
       twitterUrl: "https://twitter.com/anh_jasonfactor",
+    },
+    {
+      name: "LiViCi3",
+      role: "Advisor",
+      imageUrl: livici3,
+      bio: bio3,
+      twitterUrl: "https://twitter.com/LiViXi3",
     },
   ];
 
