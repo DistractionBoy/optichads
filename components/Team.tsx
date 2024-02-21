@@ -50,13 +50,6 @@ export default function Team() {
       twitterUrl: "https://twitter.com/anish_katwal",
     },
     {
-      name: "Lifestrike",
-      role: "Marketing Lead",
-      imageUrl: lifestrike,
-      bio: bio4,
-      twitterUrl: "https://twitter.com/lifesadream63",
-    },
-    {
       name: "JasonFactor",
       role: "Developer",
       imageUrl: jasonfactor,
@@ -64,18 +57,18 @@ export default function Team() {
       twitterUrl: "https://twitter.com/anh_jasonfactor",
     },
     {
+      name: "Lifestrike",
+      role: "Marketing Lead",
+      imageUrl: lifestrike,
+      bio: bio4,
+      twitterUrl: "https://twitter.com/lifesadream63",
+    },
+    {
       name: "Youngbeeps",
       role: "Operations Lead",
       imageUrl: beeps,
       bio: bio6,
       twitterUrl: "https://twitter.com/cryptonftbeeps",
-    },
-    {
-      name: "LiViCi3",
-      role: "Advisor",
-      imageUrl: livici3,
-      bio: bio3,
-      twitterUrl: "https://twitter.com/LiViXi3",
     },
     {
       name: "Dope",
@@ -91,14 +84,23 @@ export default function Team() {
       bio: bio8,
       twitterUrl: "https://twitter.com/Prod3t",
     },
+    {
+      name: "LiViCi3",
+      role: "Advisor",
+      imageUrl: livici3,
+      bio: bio3,
+      twitterUrl: "https://twitter.com/LiViXi3",
+    },
   ];
 
   return (
-    <div className="mx-auto container py-12 px-4 sm:px-6 lg:px-8 lg:py-24 mt-24 lg:mt-32 mb-12 lg:mb-24">
+    <div className="mx-auto container py-12 px-4 sm:px-6 lg:px-8 lg:py-24 mt-24 lg:mt-32 mb-12 lg:mb-24 max-w-[2488px]">
       <div className="space-y-12">
         <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none prose dark:prose-invert">
-          <h2>{t("chads:team_section.0.our_team")}</h2>
-          <p className="text-xl">
+          <h2 className="xl:text-4xl desktop:text-7xl">
+            {t("chads:team_section.0.our_team")}
+          </h2>
+          <p className="text-xl desktop:text-3xl">
             {t("chads:team_section.0.description1")}
             <br />
             {t("chads:team_section.0.description2")}

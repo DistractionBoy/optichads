@@ -5,9 +5,8 @@ import { TransactionRequest, ethers, verifyMessage } from "ethers";
 import { useAccount } from "wagmi";
 
 import seaportAbi from "@/lib/contracts/seaport_1_5_abi.json";
-import { Button, divergentLinkButtonCSS } from "../ui/button";
-import Account from "../Account";
-import { serialize, sign } from "@/lib/helpers";
+import { Button } from "../ui/button";
+import { sign } from "@/lib/helpers";
 
 import {
   Dialog,
@@ -24,6 +23,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 import { KeyedMutator } from "swr";
 import { getNetwork } from "@ethersproject/providers";
+import { useRouter } from "next/router";
 
 const traitContainer = (chain: string) =>
   cn(
@@ -88,8 +88,8 @@ const buyBroBtnClickHandler = async (
     const signer: ethers.Signer =
       await browserProvider.getSigner(userWalletAddress);
 
-    sign(signer, "OptiChads Floor Buy")
-      .then(async (signature) => {
+    const response = await sign(signer, "OptiChads Floor Buy").then(
+      async (signature) => {
         const result = verifyMessage(
           "OptiChads Floor Buy",
           signature as string
@@ -108,13 +108,30 @@ const buyBroBtnClickHandler = async (
         setDialogOpen(false);
         mutate();
         return receipt;
-      })
-      .catch((e) => toast(e.message));
+      }
+    );
+
+    return response;
   } catch (e: any) {
-    if (e.message.find("Rejected"))
+    if (e.message.includes(`user rejected action`)) {
+      toast.warning("Signature refused.", {
+        action: {
+          label: "Try again",
+          onClick: () =>
+            buyBroBtnClickHandler(
+              chain,
+              userWalletAddress,
+              tx,
+              setDialogOpen,
+              mutate
+            ),
+        },
+      });
+    } else {
       if (e.message) {
         toast(e.message);
       }
+    }
   }
 };
 
@@ -135,6 +152,7 @@ const ConfirmFloorBuyDialogBtn = ({
   price,
   mutate,
 }: ConfirmFloorBuyDialogBtnProps) => {
+  const router = useRouter();
   const { address: userWalletAddress } = useAccount();
   const [tx, setTx] = useState<TransactionRequest>();
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -245,15 +263,24 @@ const ConfirmFloorBuyDialogBtn = ({
               <Button
                 size="lg"
                 disabled={isMutating}
-                onClick={() => {
+                onClick={async () => {
                   if (userWalletAddress && tx) {
-                    buyBroBtnClickHandler(
+                    const receipt = await buyBroBtnClickHandler(
                       chain,
                       userWalletAddress,
                       tx,
                       setDialogOpen,
                       mutate
-                    );
+                    ).catch((e: any) => {
+                      toast.error("An Error Occurred. You may try again.");
+                    });
+                    if (receipt && receipt.hash) {
+                      toast.success("Purchase Successful!", {
+                        description: `Tx: ${receipt?.hash}
+                                        Chain: ${chain}`,
+                        descriptionClassName: "leading-8",
+                      });
+                    }
                   } else {
                     toast(
                       "You need to connect your wallet using the button at the top of the website"

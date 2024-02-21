@@ -41,7 +41,7 @@ const Home: NextPage = () => {
       <div className="bg-white flex desktop:hidden w-screen h-20" />
 
       <IntroText />
-      <div className="bg-white flex w-screen h-20 desktop:h-full" />
+      <div className="bg-white flex w-screen h-20" />
       <BaseBrigadeIntro />
       <div className="flex flex-col desktop:hidden">
         <ScrollingBanner src={brigadeBanner} />
@@ -53,8 +53,9 @@ const Home: NextPage = () => {
           <HotDeals />
         </div>
       </div>
-      <div className="bg-white flex w-screen desktop:hidden h-20" />
+      <div className="bg-white flex w-screen h-20" />
       <CollectionsCarousel />
+      <div className="bg-white flex w-screen h-20" />
       <Team />
       <div className="bg-white flex w-screen h-20" />
       <div className="flex flex-col desktop:hidden">
