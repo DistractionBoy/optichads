@@ -106,13 +106,13 @@ const HotDealCarouselItem = ({
             Ends: {new Date(date).toLocaleDateString()}
           </div>
 
-          <div className="flex flex-col-reverse lg:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-2">
+          <div className="flex md:flex-col-reverse lg:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-2">
             <Link
               href={`https://opensea.io/assets/${chain}/${address}/${identifier}`}
               className="flex items-center"
               target="_blank"
             >
-              <Button variant="ghost" className="text-white">
+              <Button variant="ghost" className="text-white md:mt-0 mt-2">
                 View on Opensea
               </Button>
             </Link>
