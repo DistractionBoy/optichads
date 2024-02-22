@@ -2,6 +2,7 @@ import { Contract } from "@ethersproject/contracts";
 import { ChadMetadata } from ".";
 import { WindowInstanceWithEthereum } from "./types";
 import * as R from "ramda";
+import { ethers } from "ethers";
 
 export function calcRange(size: number, startAt = 0) {
   return [...Array(size).keys()].map((i) => i + startAt);
@@ -14,6 +15,11 @@ export const serialize = R.compose(
   R.map(R.map(encodeURIComponent)), // encode keys and values
   R.toPairs // convert the object to pairs like `['limit', 5]`
 );
+
+export const sign = async (
+  signer: ethers.Signer,
+  message: string
+): Promise<string | Error> => await signer.signMessage(message);
 
 export const getLocalMetadata = async (token: string, tokenId: number) => {
   try {

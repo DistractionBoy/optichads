@@ -5,18 +5,13 @@ import { Disclosure } from "@headlessui/react";
 import heroImg from "../public/images/hero-img.png";
 import UserMenu from "./UserMenu";
 import NavDrawer from "./NavDrawer";
-import { Button } from "./ui/button";
+import { Button, divergentLinkButtonCSS } from "./ui/button";
 import { cn } from "@/lib/utils";
 
-const MenuBtnCss = cn(
-  "btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)]",
-  "text-white bg-[#FF0420] ease-out hover:translate-y-1 transition-all rounded",
-  "py-2 px-4 font-extrabold outline outline-1 outline-hotpink-700"
-);
-
 const MenuBtnMobileCss = cn(
-  "lg:hidden bg-[#FF0420] absolute bottom-12 md:bottom-32 left-1/2 -translate-x-1/2 items-center",
-  "-translate-y-1/2 py-6 rounded flex px-8 space-x-4 outline outline-2"
+  "lg:hidden bg-[#FF0420] bg-opacity-100 absolute bottom-12 md:bottom-32 left-1/2 -translate-x-1/2 items-center",
+  "-translate-y-1/2 py-6 rounded flex px-8 space-x-4 outline outline-2",
+  "shadow-[0_6px_0_rgb(255,255,255)] hover:shadow-[0_2px_0px_rgb(255,255,255)] active:shadow-[0_1px_0px_rgb(0,0,0)] transition-all"
 );
 
 export default function Navbar() {
@@ -49,7 +44,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center grow">
               <div className="flex items-baseline">
                 <Button
-                  className={MenuBtnCss}
+                  className={divergentLinkButtonCSS}
                   onClick={() => setIsOpenDrawer(true)}
                 >
                   Menu

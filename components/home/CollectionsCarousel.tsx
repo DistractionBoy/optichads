@@ -21,7 +21,7 @@ const CollectionsCarousel = () => {
     <>
       <div className="bg-black hidden desktop:block">
         <Carousel className="border-black border-b-2">
-          <CarouselContent className="flex h-[857px] desktop:h-[900px] overflow-hidden -mt-20 -mb-8">
+          <CarouselContent className="flex h-[857px] desktop:h-[900px] ultrawide:h-[1050px] overflow-hidden -mt-20 -mb-8">
             <CarouselItem className={carouselItemCSS}>
               <ScrollingBanner src={brigadeBanner} />
             </CarouselItem>

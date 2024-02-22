@@ -241,6 +241,11 @@ module.exports = {
           },
         },
       },
+      backgroundImage: {
+        "hot-deals":
+          "conic-gradient(at center top, rgb(17, 24, 39), rgb(243, 244, 246), rgb(17, 24, 39))",
+        grainy: "url('/images/hot-deals-img-bg.jpeg')",
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],

@@ -6,31 +6,37 @@ import Account from "./Account";
 import { useAccount, useDisconnect } from "wagmi";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-
-const MenuBtnCss = cn(
-  "btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)]",
-  "text-white bg-[#FB0420] ease-out hover:translate-y-1 transition-all rounded",
-  "py-2 px-4 font-bold outline outline-1 outline-hotpink-700"
-);
+import { divergentLinkButtonCSS } from "./ui/button";
 
 export default function UserMenu() {
-  const [userNavigation, setUserNavigation] = useState<NavLink[]>();
+  const [userNavigation, setUserNavigation] = useState<NavLink[]>([
+    {
+      name: `OptiChads on Opensea`,
+      href: `https://opensea.io/collection/optichads`,
+    },
+  ]);
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
 
-  useEffect(() => {
-    if (address) {
-      setUserNavigation([
-        {
-          name: `OptiChads`,
-          href: `https://opensea.io/collection/optichads`,
-        },
-      ]);
-    }
-  }, [address]);
+  /**
+   * the following useEffect should only be used when we want to add links that require
+   * a current connection to the user's wallet, for instance when there is a page that
+   * shows the user their own holdings
+   */
+  // useEffect(() => {
+  //   if (address && isConnected) {
+  //     setUserNavigation((prevState) => [
+  //       ...prevState,
+  //       {
+  //         name: `My Chads, Babes, and Brigaders`,
+  //         href: `/collections/user-bags/${address}`,
+  //       },
+  //     ]);
+  //   }
+  // }, [address]);
 
   return (
-    <Menu as="div" className={MenuBtnCss}>
+    <Menu as="div" className={divergentLinkButtonCSS}>
       <Menu.Button>
         <span className="sr-only">open account menu</span>
         <Account />
@@ -51,6 +57,7 @@ export default function UserMenu() {
                 {({ active }) =>
                   onClick ? (
                     <button
+                      key={index}
                       onClick={onClick}
                       className={cn(
                         active ? "bg-gray-100" : "",
@@ -61,6 +68,7 @@ export default function UserMenu() {
                     </button>
                   ) : (
                     <Link
+                      key={index}
                       href={href as string}
                       className={cn(
                         active ? "bg-gray-100" : "",

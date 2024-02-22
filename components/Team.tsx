@@ -43,11 +43,18 @@ export default function Team() {
       twitterUrl: "https://twitter.com/DistractionBoy_",
     },
     {
-      name: "LiViCi3",
-      role: "Advisor",
-      imageUrl: livici3,
-      bio: bio3,
-      twitterUrl: "https://twitter.com/LiViXi3",
+      name: "Millynish",
+      role: "Discord Expert",
+      imageUrl: millynish,
+      bio: bio7,
+      twitterUrl: "https://twitter.com/anish_katwal",
+    },
+    {
+      name: "JasonFactor",
+      role: "Developer",
+      imageUrl: jasonfactor,
+      bio: bio9,
+      twitterUrl: "https://twitter.com/anh_jasonfactor",
     },
     {
       name: "Lifestrike",
@@ -57,13 +64,6 @@ export default function Team() {
       twitterUrl: "https://twitter.com/lifesadream63",
     },
     {
-      name: "Dope",
-      role: "Team Advisor",
-      imageUrl: dope,
-      bio: bio5,
-      twitterUrl: "https://twitter.com/dopesdope2021",
-    },
-    {
       name: "Youngbeeps",
       role: "Operations Lead",
       imageUrl: beeps,
@@ -71,11 +71,11 @@ export default function Team() {
       twitterUrl: "https://twitter.com/cryptonftbeeps",
     },
     {
-      name: "Millynish",
-      role: "Discord Expert",
-      imageUrl: millynish,
-      bio: bio7,
-      twitterUrl: "https://twitter.com/anish_katwal",
+      name: "Dope",
+      role: "Team Advisor",
+      imageUrl: dope,
+      bio: bio5,
+      twitterUrl: "https://twitter.com/dopesdope2021",
     },
     {
       name: "3t",
@@ -85,20 +85,22 @@ export default function Team() {
       twitterUrl: "https://twitter.com/Prod3t",
     },
     {
-      name: "JasonFactor",
-      role: "Developer",
-      imageUrl: jasonfactor,
-      bio: bio9,
-      twitterUrl: "https://twitter.com/anh_jasonfactor",
+      name: "LiViCi3",
+      role: "Advisor",
+      imageUrl: livici3,
+      bio: bio3,
+      twitterUrl: "https://twitter.com/LiViXi3",
     },
   ];
 
   return (
-    <div className="mx-auto container py-12 px-4 sm:px-6 lg:px-8 lg:py-24 mt-24 lg:mt-32 mb-12 lg:mb-24">
+    <div className="mx-auto container py-12 px-4 sm:px-6 lg:px-8 lg:py-24 mt-24 lg:mt-32 mb-12 lg:mb-24 max-w-[2488px]">
       <div className="space-y-12">
         <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none prose dark:prose-invert">
-          <h2>{t("chads:team_section.0.our_team")}</h2>
-          <p className="text-xl">
+          <h2 className="xl:text-4xl desktop:text-7xl">
+            {t("chads:team_section.0.our_team")}
+          </h2>
+          <p className="text-xl desktop:text-3xl">
             {t("chads:team_section.0.description1")}
             <br />
             {t("chads:team_section.0.description2")}

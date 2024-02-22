@@ -1,12 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { FulfillListingResponse } from "../types";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<FulfillListingResponse | Error>
 ) {
-  const { listing, fulfiller } = req.body;
+  const {
+    listing: { hash, chain, protocol_address },
+    fulfiller: { address },
+  } = req.body;
 
-  if (!listing || !fulfiller) {
+  if (!hash || !chain || !protocol_address || !address) {
     throw new Error("undefined params");
   }
 
@@ -24,7 +28,7 @@ export default async function handler(
     const url = `https://api.opensea.io/api/v2/listings/fulfillment_data`;
 
     const response = await fetch(url, options);
-    const data = await response.json();
+    const data: FulfillListingResponse = await response.json();
     res.status(200).json(data);
   } catch (e: any) {
     if (e.message === "undefined params") {
