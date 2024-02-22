@@ -110,6 +110,7 @@ const HotDealCarouselItem = ({
             <Link
               href={`https://opensea.io/assets/${chain}/${address}/${identifier}`}
               className="flex items-center"
+              target="_blank"
             >
               <Button variant="ghost" className="text-white">
                 View on Opensea
