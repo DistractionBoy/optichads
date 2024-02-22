@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { toast } from "sonner";
 import useSWRMutation from "swr/mutation";
 import { TransactionRequest, ethers, verifyMessage } from "ethers";
-import { useAccount } from "wagmi";
+import { useAccount, useNetwork } from "wagmi";
 
 import seaportAbi from "@/lib/contracts/seaport_1_5_abi.json";
 import { Button } from "../ui/button";
@@ -77,14 +77,24 @@ const buyBroBtnClickHandler = async (
   chain: string,
   userWalletAddress: string,
   tx: TransactionRequest,
+  chains: Array<any>,
   setDialogOpen: Dispatch<SetStateAction<boolean>>,
   mutate: KeyedMutator<BestListingsResponse>
-) => {
+) =>  {
   try {
+
     if (window.ethereum === null || window.ethereum === undefined) {
       throw new Error("wallet not connected");
     }
     const browserProvider = new ethers.BrowserProvider(window.ethereum, chain);
+
+    let chainID = await chains.filter(obj=>obj.network == chain);
+
+    await window.ethereum.request({
+      method: 'wallet_switchEthereumChain',
+      params: [{ chainId: '0x'+chainID[0].id.toString(16) }],
+    });
+
     const signer: ethers.Signer =
       await browserProvider.getSigner(userWalletAddress);
 
@@ -122,6 +132,7 @@ const buyBroBtnClickHandler = async (
               chain,
               userWalletAddress,
               tx,
+              chains,
               setDialogOpen,
               mutate
             ),
@@ -156,6 +167,7 @@ const ConfirmFloorBuyDialogBtn = ({
   const { address: userWalletAddress } = useAccount();
   const [tx, setTx] = useState<TransactionRequest>();
   const [dialogOpen, setDialogOpen] = useState(false);
+  const { chains } = useNetwork()
   const { trigger, isMutating, error } = useSWRMutation(
     `/api/opensea/fulfillListing`,
     getFulfillmentTransactionData,
@@ -269,6 +281,7 @@ const ConfirmFloorBuyDialogBtn = ({
                       chain,
                       userWalletAddress,
                       tx,
+                      chains,
                       setDialogOpen,
                       mutate
                     ).catch((e: any) => {

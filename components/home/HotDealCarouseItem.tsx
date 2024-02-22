@@ -12,6 +12,10 @@ import { Skeleton } from "../ui/skeleton";
 import { Button } from "../ui/button";
 
 import ConfirmFloorBuyDialogBtn from "./ConfirmFloorBuyDialogBtn";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useAccount } from "wagmi";
+
+
 
 const carouselItemCSS = (chain: string) =>
   cn(
@@ -52,6 +56,8 @@ const HotDealCarouselItem = ({
   mutate: KeyedMutator<BestListingsResponse>;
 }) => {
   const params = serialize({ address, chain, identifier });
+  const { isConnected } = useAccount();
+
   const { data, isLoading, error } = useSWR<NFTExpanded>(
     `/api/opensea/getNFT${params}`
   );
@@ -116,14 +122,50 @@ const HotDealCarouselItem = ({
                 View on Opensea
               </Button>
             </Link>
-            <ConfirmFloorBuyDialogBtn
-              nft={data.nft}
-              hash={hash}
-              chain={chain}
-              protocol_address={protocol_address}
-              price={price}
-              mutate={mutate}
-            />
+            {isConnected ? 
+              <ConfirmFloorBuyDialogBtn
+                nft={data.nft}
+                hash={hash}
+                chain={chain}
+                protocol_address={protocol_address}
+                price={price}
+                mutate={mutate}
+              /> : 
+              <ConnectButton.Custom>
+                {({
+                  account,
+                  chain,
+                  openConnectModal,
+                  authenticationStatus,
+                  mounted,
+                }) => {
+                  const ready = mounted && authenticationStatus !== "loading";
+                  const connected =
+                    ready &&
+                    account &&
+                    chain &&
+                    (!authenticationStatus || authenticationStatus === "authenticated");
+                  return (
+                    <div
+                      {...(!ready && {
+                        "aria-hidden": true,
+                        style: {
+                          opacity: 0,
+                          pointerEvents: "none",
+                          userSelect: "none",
+                        },
+                      })}
+                    >
+                      {(() => {
+                        if (!connected) {
+                          return <Button onClick={openConnectModal}>Buy Now</Button>;
+                        }
+                      })()}
+                    </div>
+                  );
+                }}
+              </ConnectButton.Custom>
+            }
           </div>
         </div>
       </CarouselItem>
