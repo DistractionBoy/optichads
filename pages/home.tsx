@@ -48,7 +48,7 @@ const Home: NextPage = () => {
       </div>
       <div className="bg-white desktop:hidden flex w-screen h-20" />
 
-      <div className="flex flex-col pb-20 w-full h-full bg-grainy bg-opacity-50 bg-cover">
+      <div className="flex flex-col pb-20 w-full h-full bg-grainy bg-cover bg-opacity-60">
         <div className="container">
           <HotDeals />
         </div>
