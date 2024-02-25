@@ -93,6 +93,7 @@ const CollectionShowcaseCarousel = ({
                     .find((g) => g.name === "Legendary")
                     ?.ids.map((id) => (
                       <ShowcaseCarouselItem
+                        key={`${collection_slug}-${id}`}
                         address={GROUPS[collection_slug].address}
                         chain={GROUPS[collection_slug].chain}
                         identifier={String(id)}
@@ -123,6 +124,7 @@ const CollectionShowcaseCarousel = ({
                   .find((g) => g.name === "1 of 1's")
                   ?.ids.map((id) => (
                     <ShowcaseCarouselItem
+                      key={`${collection_slug}-${id}`}
                       address={GROUPS[collection_slug].address}
                       chain={GROUPS[collection_slug].chain}
                       identifier={String(id)}
@@ -135,7 +137,7 @@ const CollectionShowcaseCarousel = ({
           </div>
           <div className="col-span-12 md:col-span-4">
             <div className="prose prose-xl dark:prose-invert">
-              <h2>1 of 1's</h2>
+              <h2>1 of 1&apos;s</h2>
               <p>
                 These are the rarest of the rare. Great time and attention went
                 into choosing which traits would be a part of this set. They
@@ -152,6 +154,7 @@ const CollectionShowcaseCarousel = ({
                   .find((g) => g.name === "Staff Picks")
                   ?.ids.map((id) => (
                     <ShowcaseCarouselItem
+                      key={`${collection_slug}-${id}`}
                       address={GROUPS[collection_slug].address}
                       chain={GROUPS[collection_slug].chain}
                       identifier={String(id)}
@@ -177,7 +180,7 @@ const CollectionShowcaseCarousel = ({
         <TabsList className="flex flex-col sm:flex-row justify-end space-x-0 sm:space-x-8 h-full bg-slate-50 dark:bg-zinc-900 mt-4 lg:mt-8 mb-16 md:mb-24">
           {/* <TabsTrigger value="legendary">Legendaries</TabsTrigger> */}
           <TabsTrigger value="one-of-ones" className={divergentLinkButtonCSS}>
-            1 of 1's
+            1 of 1&apos;s
           </TabsTrigger>
           <TabsTrigger value="staff-picks" className={divergentLinkButtonCSS}>
             Staff Picks
