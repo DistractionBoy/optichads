@@ -126,7 +126,7 @@ const CollectionShowcaseCarousel = ({
                 To show we mean business we have dressed up pfp&apos;s across
                 each collection to make them ready for any occasion. Whether it
                 be for battle or for pleasure, a sharp-dressed NFT is a staple
-                of any L2 collector's wallet.
+                of any L2 collector&apos;s wallet.
               </p>
             </div>
           </div>
@@ -162,8 +162,8 @@ const CollectionShowcaseCarousel = ({
                 added ape-like traits across every collection because for some
                 reason, it&apos;s the most sought-after animal in web3. Ok I
                 lied. Heart to heart... this is me, DistractionBoy, and apes are
-                so fucking stupid but whatever, we got them so you might as well
-                enjoy them if you are into that sort of thing.
+                so stupid but whatever, we got them so you might as well enjoy
+                them if you are into that sort of thing.
               </p>
             </div>
           </div>
@@ -195,9 +195,9 @@ const CollectionShowcaseCarousel = ({
               <h2>1 of 1&apos;s</h2>
               <p>
                 The rarest of the rare, each image was hand-drawn from a loose
-                starting base model of each collection's character outline and
-                fine-tuned to show a truly unique image. There are only 10 from
-                each collection. Each one has a custom theme in mind, for a
+                starting base model of each collection&apos;s character outline
+                and fine-tuned to show a truly unique image. There are only 10
+                from each collection. Each one has a custom theme in mind, for a
                 certain type of buyer. We hope you enjoy these as much as we did
                 making them.
               </p>
@@ -268,7 +268,8 @@ const CollectionShowcaseCarousel = ({
               <p>
                 A nod to GOOPDOODES, this trait is always a rare one across
                 every collection and even more rarely is combined with matching
-                "head" traits. Do you love color and community as much as we do?
+                &quot;head&quot; traits. Do you love color and community as much
+                as we do?
               </p>
             </div>
           </div>
