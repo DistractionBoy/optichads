@@ -45,18 +45,19 @@ const ShowcaseCarouselItem = ({
 
   if (isLoading) {
     <CarouselItem className={carouselItemCSS}>
-      <Skeleton className="flex flex-1 max-w-[700px] animate-pulse" />
+      <Skeleton className="flex flex-1 max-w-[700px] size-64 animate-pulse" />
     </CarouselItem>;
   }
 
   if (error) {
     <CarouselItem className={carouselItemCSS}>
-      <Skeleton className="flex flex-1 max-w-[700px]" />
+      <Skeleton className="flex flex-1 max-w-[700px] size-64" />
     </CarouselItem>;
   }
 
   return (
-    data && (
+    data &&
+    data.nft && (
       <CarouselItem className={carouselItemCSS}>
         <h3
           className={cn(
@@ -64,7 +65,7 @@ const ShowcaseCarouselItem = ({
             "text-3xl lg:text-2xl desktop:text-4xl mb-4"
           )}
         >
-          {data.nft.name}
+          {data.nft.name && data.nft.name}
         </h3>
         <Link
           href={`https://opensea.io/assets/${chain}/${address}/${identifier}`}
