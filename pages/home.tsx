@@ -9,11 +9,6 @@ import Head from "next/head";
 import WelcomeChad from "@/components/home/WelcomeChad";
 import BaseBrigadeIntro from "@/components/home/BaseBrigadeIntro";
 import HotDeals from "@/components/home/HotDeals";
-import ScrollingBanner from "@/components/home/ScrollingBanner";
-
-import chadBanner from "@/public/images/banners/chad-banner.jpeg";
-import babeBanner from "@/public/images/banners/babe-banner.jpeg";
-import brigadeBanner from "@/public/images/banners/brigade-banner.jpeg";
 import Footer from "@/components/Footer";
 import IntroText from "@/components/home/IntroText";
 
