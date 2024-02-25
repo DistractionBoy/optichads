@@ -160,10 +160,9 @@ const CollectionShowcaseCarousel = ({
               <p>
                 Yeah, ok. We get it. You love apes. Fine, we went ahead and
                 added ape-like traits across every collection because for some
-                reason, it&apos;s the most sought-after animal in web3. Ok I
-                lied. Heart to heart... this is me, DistractionBoy, and apes are
-                so stupid but whatever, we got them so you might as well enjoy
-                them if you are into that sort of thing.
+                reason, it&apos;s the most sought-after animal in web3. As a nod
+                to everyone&apos;s favorite primate (other than us), here are
+                the apes.
               </p>
             </div>
           </div>
