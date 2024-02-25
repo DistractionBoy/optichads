@@ -15,11 +15,9 @@ import ConfirmFloorBuyDialogBtn from "./ConfirmFloorBuyDialogBtn";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
 
-
-
 const carouselItemCSS = (chain: string) =>
   cn(
-    "flex flex-col basis-full md:basis-1/3 desktop:basis-1/2 rounded-sm my-16 xl:my-20 text-slate-800 px-6",
+    "flex flex-col basis-full md:basis-1/2 rounded-sm my-16 xl:my-20 text-slate-800 px-6",
     "max-w-[700px]"
   );
 
@@ -93,26 +91,8 @@ const HotDealCarouselItem = ({
           width={700}
           height={700}
         />
-        <div className="flex flex-col items-end my-3 px-1 lg:px-8 space-y-2">
-          <div className="flex items-center text-base md:text-lg lg:text-3xl desktop:text-4xl space-x-2">
-            <FontAwesomeIcon
-              icon={faEthereum}
-              className="text-gray-100 h-5 leading-none"
-            />
-            <span className={gradientFonts(chain)}>{price.slice(0, 7)}</span>
-          </div>
-
-          {data.nft.rarity && (
-            <div className="text-base md:text-lg lg:text-xl desktop:text-2xl text-white">
-              Rarity# {data.nft.rarity.rank}
-            </div>
-          )}
-
-          <div className="text-base md:text-lg lg:text-xl desktop:text-2xl text-white">
-            Ends: {new Date(date).toLocaleDateString()}
-          </div>
-
-          <div className="flex md:flex-col-reverse lg:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-2">
+        <div className="flex justify-between items-center">
+          <div className="hidden sm:flex justify-around items-start flex-col-reverse lg:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-2 pt-0.5 lg:pt-2">
             <Link
               href={`https://opensea.io/assets/${chain}/${address}/${identifier}`}
               className="flex items-center"
@@ -122,7 +102,7 @@ const HotDealCarouselItem = ({
                 View on Opensea
               </Button>
             </Link>
-            {isConnected ? 
+            {isConnected ? (
               <ConfirmFloorBuyDialogBtn
                 nft={data.nft}
                 hash={hash}
@@ -130,7 +110,8 @@ const HotDealCarouselItem = ({
                 protocol_address={protocol_address}
                 price={price}
                 mutate={mutate}
-              /> : 
+              />
+            ) : (
               <ConnectButton.Custom>
                 {({
                   account,
@@ -144,7 +125,8 @@ const HotDealCarouselItem = ({
                     ready &&
                     account &&
                     chain &&
-                    (!authenticationStatus || authenticationStatus === "authenticated");
+                    (!authenticationStatus ||
+                      authenticationStatus === "authenticated");
                   return (
                     <div
                       {...(!ready && {
@@ -158,14 +140,97 @@ const HotDealCarouselItem = ({
                     >
                       {(() => {
                         if (!connected) {
-                          return <Button onClick={openConnectModal}>Buy Now</Button>;
+                          return (
+                            <Button onClick={openConnectModal}>Buy Now</Button>
+                          );
                         }
                       })()}
                     </div>
                   );
                 }}
               </ConnectButton.Custom>
-            }
+            )}
+          </div>
+          <div className="flex flex-col w-full lg:w-auto items-end my-3 px-1 lg:px-8 space-y-1">
+            <div className="flex items-center text-base md:text-lg lg:text-3xl desktop:text-4xl space-x-2">
+              <FontAwesomeIcon
+                icon={faEthereum}
+                className="text-gray-100 h-5 leading-none"
+              />
+              <span className={gradientFonts(chain)}>{price.slice(0, 7)}</span>
+            </div>
+
+            {/* {data.nft.rarity && (
+              <div className="text-base desktop:text-2xl text-white">
+                Rarity# {data.nft.rarity.rank}
+              </div>
+            )} */}
+
+            <div className="text-base desktop:text-2xl text-white">
+              Ends: {new Date(date).toLocaleDateString()}
+            </div>
+
+            <div className="flex sm:hidden justify-around items-start flex-col-reverse lg:flex-row space-y-4 lg:space-y-2 space-x-0 lg:space-x-2 pt-0.5 lg:pt-2">
+              <Link
+                href={`https://opensea.io/assets/${chain}/${address}/${identifier}`}
+                className="flex items-center"
+                target="_blank"
+              >
+                <Button variant="ghost" className="text-white md:mt-0 mt-2">
+                  View on Opensea
+                </Button>
+              </Link>
+              {isConnected ? (
+                <ConfirmFloorBuyDialogBtn
+                  nft={data.nft}
+                  hash={hash}
+                  chain={chain}
+                  protocol_address={protocol_address}
+                  price={price}
+                  mutate={mutate}
+                />
+              ) : (
+                <ConnectButton.Custom>
+                  {({
+                    account,
+                    chain,
+                    openConnectModal,
+                    authenticationStatus,
+                    mounted,
+                  }) => {
+                    const ready = mounted && authenticationStatus !== "loading";
+                    const connected =
+                      ready &&
+                      account &&
+                      chain &&
+                      (!authenticationStatus ||
+                        authenticationStatus === "authenticated");
+                    return (
+                      <div
+                        {...(!ready && {
+                          "aria-hidden": true,
+                          style: {
+                            opacity: 0,
+                            pointerEvents: "none",
+                            userSelect: "none",
+                          },
+                        })}
+                      >
+                        {(() => {
+                          if (!connected) {
+                            return (
+                              <Button onClick={openConnectModal}>
+                                Buy Now
+                              </Button>
+                            );
+                          }
+                        })()}
+                      </div>
+                    );
+                  }}
+                </ConnectButton.Custom>
+              )}
+            </div>
           </div>
         </div>
       </CarouselItem>
