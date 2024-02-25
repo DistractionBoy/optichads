@@ -117,7 +117,7 @@ const CollectionShowcaseCarousel = ({
           </div>
         </TabsContent> */}
         <TabsContent value="one-of-ones" className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 md:col-span-8">
+          <div className="col-span-10 md:col-span-8 lg:col-span-12">
             <Carousel className="mx-6">
               <CarouselContent>
                 {GROUPS[collection_slug].groups
@@ -135,7 +135,7 @@ const CollectionShowcaseCarousel = ({
               <CarouselNext />
             </Carousel>
           </div>
-          <div className="col-span-12 md:col-span-4">
+          <div className="col-span-10 md:col-span-4 lg:col-span-12">
             <div className="prose prose-xl dark:prose-invert">
               <h2>1 of 1&apos;s</h2>
               <p>
@@ -147,7 +147,7 @@ const CollectionShowcaseCarousel = ({
           </div>
         </TabsContent>
         <TabsContent value="staff-picks" className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 md:col-span-8">
+          <div className="col-span-10 md:col-span-8 lg:col-span-12">
             <Carousel className="mx-6">
               <CarouselContent>
                 {GROUPS[collection_slug].groups
@@ -166,7 +166,7 @@ const CollectionShowcaseCarousel = ({
               <CarouselNext />
             </Carousel>
           </div>
-          <div className="col-span-12 md:col-span-4">
+          <div className="col-span-10 md:col-span-4 lg:col-span-12">
             <div className="prose prose-xl dark:prose-invert">
               <h2>Staff Picks</h2>
               <p>
