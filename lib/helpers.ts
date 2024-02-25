@@ -142,15 +142,15 @@ export const postMsgToRaffleBot = async (message: string) => {
   }
 };
 
-const ALL_SLUGS = [
+export const ALL_SLUGS = [
   "arbibabes",
   "basebrigade",
   "optichads",
   "optichads-song",
 ] as const;
-type SlugTuple = typeof ALL_SLUGS;
-type Suit = SlugTuple[number];
+export type SlugTuple = typeof ALL_SLUGS;
+export type Slug = SlugTuple[number];
 
-export function isSlug(value: string): value is Suit {
-  return ALL_SLUGS.includes(value as Suit);
+export function isSlug(value: string): value is Slug {
+  return ALL_SLUGS.includes(value as Slug);
 }

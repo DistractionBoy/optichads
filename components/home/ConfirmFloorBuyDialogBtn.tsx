@@ -22,8 +22,6 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 import { KeyedMutator } from "swr";
-import { getNetwork } from "@ethersproject/providers";
-import { useRouter } from "next/router";
 
 const traitContainer = (chain: string) =>
   cn(
@@ -80,19 +78,18 @@ const buyBroBtnClickHandler = async (
   chains: Array<any>,
   setDialogOpen: Dispatch<SetStateAction<boolean>>,
   mutate: KeyedMutator<BestListingsResponse>
-) =>  {
+) => {
   try {
-
     if (window.ethereum === null || window.ethereum === undefined) {
       throw new Error("wallet not connected");
     }
     const browserProvider = new ethers.BrowserProvider(window.ethereum, chain);
 
-    let chainID = await chains.filter(obj=>obj.network == chain);
+    let chainID = await chains.filter((obj) => obj.network == chain);
 
     await window.ethereum.request({
-      method: 'wallet_switchEthereumChain',
-      params: [{ chainId: '0x'+chainID[0].id.toString(16) }],
+      method: "wallet_switchEthereumChain",
+      params: [{ chainId: "0x" + chainID[0].id.toString(16) }],
     });
 
     const signer: ethers.Signer =
@@ -163,11 +160,10 @@ const ConfirmFloorBuyDialogBtn = ({
   price,
   mutate,
 }: ConfirmFloorBuyDialogBtnProps) => {
-  const router = useRouter();
   const { address: userWalletAddress } = useAccount();
   const [tx, setTx] = useState<TransactionRequest>();
   const [dialogOpen, setDialogOpen] = useState(false);
-  const { chains } = useNetwork()
+  const { chains } = useNetwork();
   const { trigger, isMutating, error } = useSWRMutation(
     `/api/opensea/fulfillListing`,
     getFulfillmentTransactionData,

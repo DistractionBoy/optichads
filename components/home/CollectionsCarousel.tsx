@@ -13,6 +13,8 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import CollectionMetadataSection from "./CollectionMetadataSection";
 import { isSlug } from "@/lib/helpers";
+import CollectionShowcaseCarousel from "./CollectionShowcaseCarousel";
+import { divergentLinkButtonCSS } from "../ui/button";
 
 const carouselItemCSS = cn(
   "overflow-hidden basis-1/3 transition-all duration-150 rotate-3 mx-auto blur-sm hover:blur-none [&_img]:-rotate-3",
@@ -56,29 +58,37 @@ const CollectionsCarousel = () => {
           </CarouselContent>
         </Carousel>
       </div>
-      <div className="bg-white w-full">
-        <Tabs
-          defaultValue="optichads"
-          className="container"
-          value={collection_slug}
-          onValueChange={(value) => isSlug(value) && setCollection_slug(value)}
-        >
-          <TabsList className="flex xl:hidden">
-            <TabsTrigger value="optichads">OptiChads</TabsTrigger>
-            <TabsTrigger value="arbibabes">ArbiBabes</TabsTrigger>
-            <TabsTrigger value="basebrigade">Base Brigade</TabsTrigger>
-          </TabsList>
-          <TabsContent value="optichads">
-            <CollectionMetadataSection collection_slug="optichads" />
-          </TabsContent>
-          <TabsContent value="basebrigade">
-            <CollectionMetadataSection collection_slug="basebrigade" />
-          </TabsContent>
-          <TabsContent value="arbibabes">
-            <CollectionMetadataSection collection_slug="arbibabes" />
-          </TabsContent>
-        </Tabs>
-      </div>
+
+      <Tabs
+        className="bg-slate-50 dark:bg-zinc-900"
+        defaultValue="optichads"
+        value={collection_slug}
+        onValueChange={(value) => isSlug(value) && setCollection_slug(value)}
+      >
+        <TabsList className="flex flex-col sm:flex-row space-x-0 sm:space-x-8 h-full bg-slate-50 dark:bg-zinc-900 mt-16 md:mt-24">
+          <TabsTrigger value="basebrigade" className={divergentLinkButtonCSS}>
+            Base Brigade
+          </TabsTrigger>
+          <TabsTrigger value="optichads" className={divergentLinkButtonCSS}>
+            OptiChads
+          </TabsTrigger>
+          <TabsTrigger value="arbibabes" className={divergentLinkButtonCSS}>
+            ArbiBabes
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="optichads">
+          <CollectionMetadataSection collection_slug="optichads" />
+          <CollectionShowcaseCarousel collection_slug="optichads" />
+        </TabsContent>
+        <TabsContent value="basebrigade">
+          <CollectionMetadataSection collection_slug="basebrigade" />
+          <CollectionShowcaseCarousel collection_slug="basebrigade" />
+        </TabsContent>
+        <TabsContent value="arbibabes">
+          <CollectionMetadataSection collection_slug="arbibabes" />
+          <CollectionShowcaseCarousel collection_slug="arbibabes" />
+        </TabsContent>
+      </Tabs>
     </>
   );
 };

@@ -6,7 +6,6 @@ import {
 } from "@/components/ui/carousel";
 
 import HotDealCarouselItemController from "./HotDealCaouselItemController";
-import Image from "next/image";
 
 const HotDeals = () => {
   return (
