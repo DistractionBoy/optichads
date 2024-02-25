@@ -149,10 +149,10 @@ const CollectionMetadataSection = ({
   return (
     data &&
     contractMetadata && (
-      <div className="bg-slate-50 dark:bg-zinc-900 pt-16 sm:pt-24 pb-4 sm:pb-6 rounded-lg">
+      <div className="pt-16 sm:pt-24 pb-4 sm:pb-6 rounded-lg">
         <div className="mx-auto max-w-screen-desktop px-6 lg:px-8">
           <div className="text-center">
-            <h2 className=" text-xl md:text-3xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
+            <h2 className=" text-xl md:text-3xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl font-outline-0 lg:font-outline-2">
               {contractMetadata.name}
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">

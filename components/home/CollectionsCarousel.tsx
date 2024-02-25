@@ -60,12 +60,12 @@ const CollectionsCarousel = () => {
       </div>
 
       <Tabs
-        className="bg-slate-50 dark:bg-zinc-900"
+        className="bg-gradient-to-br from-slate-50 dark:from-zinc-900 to-slate-200 dark:via-stone-700/80 dark:to-slate-800"
         defaultValue="optichads"
         value={collection_slug}
         onValueChange={(value) => isSlug(value) && setCollection_slug(value)}
       >
-        <TabsList className="flex flex-col sm:flex-row space-x-0 sm:space-x-8 h-full bg-slate-50 dark:bg-zinc-900 mt-12 md:mt-20">
+        <TabsList className="flex flex-col sm:flex-row space-x-0 sm:space-x-8 h-full bg-transparent mt-12 md:mt-20">
           <TabsTrigger value="basebrigade" className={divergentLinkButtonCSS}>
             Base Brigade
           </TabsTrigger>

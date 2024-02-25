@@ -274,7 +274,7 @@ const CollectionShowcaseCarousel = ({
             </div>
           </div>
         </TabsContent>
-        <TabsList className="flex flex-col sm:flex-row justify-center space-x-0 sm:space-x-8 h-full bg-slate-50 dark:bg-zinc-900 mt-4 lg:mt-8 mb-16 md:mb-24">
+        <TabsList className="flex flex-col sm:flex-row justify-center space-x-0 sm:space-x-8 h-full bg-transparent mt-4 lg:mt-8 mb-16 md:mb-24">
           <TabsTrigger value="staff-picks" className={divergentLinkButtonCSS}>
             Staff Picks
           </TabsTrigger>

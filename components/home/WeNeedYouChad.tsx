@@ -47,7 +47,7 @@ const WeNeedYouChad = () => (
         </p>
         <p className="mt-6 text-base leading-7 text-gray-700">
           As curators of quality collections ourselves, we can often tell which
-          collections are fly-by&apos;s and which ones are quality. And we have
+          collections are fly-by&apos;s and which ones are legit. And we have
           been in the L2 space for a very long time (for the crypto world). We
           know the history of the OP NFT scene through and through, and now we
           are getting involved. Delegate your tokens to us. Let us be your voice

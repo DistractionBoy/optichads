@@ -38,13 +38,13 @@ const Home: NextPage = () => {
         <WeNeedYouChad />
       </div>
       <div className="bg-white flex w-screen h-20" />
+      <CollectionsCarousel />
+      <div className="bg-black flex w-screen h-px" />
       <div className="flex flex-col pb-20 w-full h-full bg-grainy bg-cover bg-opacity-60">
         <div className="container">
           <HotDeals />
         </div>
       </div>
-      <div className="bg-white flex w-screen h-20" />
-      <CollectionsCarousel />
       <div className="bg-white flex w-screen h-20" />
       <Team />
       <div className="bg-white flex w-screen h-20" />

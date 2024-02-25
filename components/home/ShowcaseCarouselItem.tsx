@@ -21,8 +21,9 @@ const gradientFonts = (chain: string) =>
 
 const carouselItemCSS = cn(
   "flex flex-col basis-full lg:basis-1/2 desktop:basis-1/4 rounded-sm my-3 px-5",
-  "[&_img]:hover:shadow [&_img]:dark:hover:shadow [&_img]:dark:hover:shadow-white",
-  "hover:-translate-y-1 transition-all"
+  "[&_img]:dark:shadow-md [&_img]:dark:shadow-black/40 [&_img]:hover:shadow [&_img]:dark:hover:shadow  [&_img]:dark:hover:shadow-white",
+  "hover:-translate-y-1 transition-all",
+  "group"
 );
 
 export type ShowcaseCarouselItemProps = {
@@ -62,7 +63,7 @@ const ShowcaseCarouselItem = ({
         <h3
           className={cn(
             gradientFonts(chain),
-            "text-3xl lg:text-2xl desktop:text-4xl mb-4"
+            "text-3xl lg:text-2xl desktop:text-4xl mb-2 lg:mb-2 group-hover:lg:translate-y-1 transition-all"
           )}
         >
           {data.nft.name && data.nft.name}
