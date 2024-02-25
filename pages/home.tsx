@@ -25,11 +25,8 @@ const Home: NextPage = () => {
   // const { t } = useTranslation();
   return (
     <>
-      <Head>
-        <HeadMeta />
-      </Head>
+      <HeadMeta />
       <Navbar />
-
       <WelcomeChad />
       <IntroText />
       <div className="bg-white flex w-screen h-20" />

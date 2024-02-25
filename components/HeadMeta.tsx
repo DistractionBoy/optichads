@@ -13,10 +13,7 @@ export default function HeadMeta({
       <meta name="keywords" content={keywords} />
       <meta charSet="utf-8" />
       <meta name="author" content="Jason Pierce 'distractionboy.eth'" />
-      <meta
-        property="og:image"
-        content="https://optichads.s3.amazonaws.com/library/perfect-logo.png"
-      />
+      <meta property="og:image" content="/images/hero-img.png" />
       <meta
         name="twitter:image:alt"
         content="a strong black and white man facing right with a white outline aroung him and a red background"

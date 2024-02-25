@@ -60,7 +60,7 @@ const CollectionsCarousel = () => {
       </div>
 
       <Tabs
-        className="bg-gradient-to-br from-slate-50 dark:from-zinc-900 to-slate-200 dark:via-stone-700/80 dark:to-slate-800"
+        className="bg-gradient-to-br from-zinc-50 dark:from-zinc-900 to-slate-200 via-stone-300/90 dark:via-stone-700/80 dark:to-slate-800"
         defaultValue="optichads"
         value={collection_slug}
         onValueChange={(value) => isSlug(value) && setCollection_slug(value)}
