@@ -2,6 +2,8 @@ import { CollectionMetadata } from "@/pages/api/types";
 import { NftContract } from "alchemy-sdk";
 import useSWR from "swr";
 import { Skeleton } from "../ui/skeleton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 
 export type CollectionMetadataSectionProps = {
   collection_slug: "optichads" | "arbibabes" | "basebrigade";
@@ -43,7 +45,7 @@ const CollectionMetadataSection = ({
 
   if (isLoading || contractMetadataLoading) {
     return (
-      <div className="bg-white py-24 sm:py-32">
+      <div className="bg-slate-50 dark:bg-zinc-900 pt-16 sm:pt-24 pb-4 sm:pb-6 rounded-lg">
         <div className="container px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <div className="flex justify-center w-full h-16">
@@ -55,7 +57,7 @@ const CollectionMetadataSection = ({
             </div>
             <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">
+                <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                   Total Volume
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 flex flex-col w-full justify-center items-center">
@@ -63,7 +65,7 @@ const CollectionMetadataSection = ({
                 </dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">
+                <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                   Floor Price
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 flex flex-col w-full justify-center items-center">
@@ -71,7 +73,7 @@ const CollectionMetadataSection = ({
                 </dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">
+                <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                   Market Cap
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 flex flex-col w-full justify-center items-center">
@@ -79,7 +81,7 @@ const CollectionMetadataSection = ({
                 </dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">
+                <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                   Unique Owners
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 flex flex-col w-full justify-center items-center">
@@ -95,18 +97,18 @@ const CollectionMetadataSection = ({
 
   if (error || contractMetadataError) {
     return (
-      <div className="bg-white py-24 sm:py-32">
+      <div className="bg-slate-50 dark:bg-zinc-900 pt-16 sm:pt-24 pb-4 sm:pb-6 rounded-lg">
         <div className="container px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <div className="flex w-full">
-              <Skeleton className="w-42 h-16" />
+              <Skeleton className="w-42 h-16 bg-gray-900 dark:bg-gray-100" />
             </div>
-            <div className="mt-4 text-lg leading-8 text-gray-600 flex w-full justify-center text-center items-center">
+            <div className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400 flex w-full justify-center text-center items-center">
               Symbol: $<Skeleton className="w-12 h-4" />
             </div>
             <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">
+                <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                   Total Volume
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 flex flex-col w-full justify-center items-center">
@@ -114,7 +116,7 @@ const CollectionMetadataSection = ({
                 </dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">
+                <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                   Floor Price
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 flex flex-col w-full justify-center items-center">
@@ -122,7 +124,7 @@ const CollectionMetadataSection = ({
                 </dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">
+                <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                   Market Cap
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 flex flex-col w-full justify-center items-center">
@@ -130,7 +132,7 @@ const CollectionMetadataSection = ({
                 </dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">
+                <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                   Unique Owners
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 flex flex-col w-full justify-center items-center">
@@ -147,7 +149,7 @@ const CollectionMetadataSection = ({
   return (
     data &&
     contractMetadata && (
-      <div className="bg-slate-50 dark:bg-zinc-900 pt-16 sm:pt-24 pb-6 sm:pb-8 rounded-lg">
+      <div className="bg-slate-50 dark:bg-zinc-900 pt-16 sm:pt-24 pb-4 sm:pb-6 rounded-lg">
         <div className="mx-auto max-w-screen-desktop px-6 lg:px-8">
           <div className="text-center">
             <h2 className=" text-xl md:text-3xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
@@ -162,32 +164,35 @@ const CollectionMetadataSection = ({
               <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                 Total Volume
               </dt>
-              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
-                {Number(data.total.volume).toFixed(3)}
+              <dd className="flex justify-center items-center space-x-1 order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+                <FontAwesomeIcon icon={faEthereum} className="h-5" />
+                <span>{Number(data.total.volume).toFixed(3)}</span>
               </dd>
             </div>
             <div className="flex flex-col bg-gray-400/5 dark:bg-gray-600/30 p-8">
               <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                 Floor Price
               </dt>
-              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
-                {Number(data.total.floor_price).toFixed(4)}
+              <dd className="flex justify-center items-center space-x-1 order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+                <FontAwesomeIcon icon={faEthereum} className="h-5" />
+                <span>{Number(data.total.floor_price).toFixed(4)}</span>
               </dd>
             </div>
             <div className="flex flex-col bg-gray-400/5 dark:bg-gray-600/30 p-8">
               <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                 Market Cap
               </dt>
-              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
-                {Number(data.total.market_cap).toFixed(2)}
+              <dd className="flex justify-center items-center space-x-1 order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+                <FontAwesomeIcon icon={faEthereum} className="h-5" />
+                <span>{Number(data.total.market_cap).toFixed(2)}</span>
               </dd>
             </div>
             <div className="flex flex-col bg-gray-400/5 dark:bg-gray-600/30 p-8">
               <dt className="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-400">
                 Unique Owners
               </dt>
-              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
-                {data.total.num_owners}
+              <dd className="space-x-1 order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+                <span>{data.total.num_owners}</span>
               </dd>
             </div>
           </dl>

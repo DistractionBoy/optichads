@@ -1,15 +1,26 @@
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import useSWR from "swr";
+
 import { serialize } from "@/lib/helpers";
 import { CarouselItem } from "../ui/carousel";
-import useSWR from "swr";
 import { NFTExpanded } from "@/pages/api/types";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "../ui/skeleton";
-import { useRef, useState } from "react";
-import Link from "next/link";
+
+const gradientFonts = (chain: string) =>
+  cn(
+    "flex items-center bg-clip-text text-transparent font-semibold bg-gradient-to-r dark:bg-gradient-to-r",
+    chain === "optimism"
+      ? "from-red-400 to-red-100"
+      : chain === "base"
+        ? "from-blue-400 to-blue-100"
+        : "from-indigo-400 to-indigo-100"
+  );
 
 const carouselItemCSS = cn(
-  "flex flex-col basis-full lg:basis-1/2 desktop:basis-1/4 rounded-sm my-3",
+  "flex flex-col basis-full lg:basis-1/2 desktop:basis-1/4 rounded-sm my-3 px-5",
   "[&_img]:hover:shadow [&_img]:dark:hover:shadow [&_img]:dark:hover:shadow-white",
   "hover:-translate-y-1 transition-all"
 );
@@ -47,6 +58,14 @@ const ShowcaseCarouselItem = ({
   return (
     data && (
       <CarouselItem className={carouselItemCSS}>
+        <h3
+          className={cn(
+            gradientFonts(chain),
+            "text-3xl lg:text-2xl desktop:text-4xl mb-4"
+          )}
+        >
+          {data.nft.name}
+        </h3>
         <Link
           href={`https://opensea.io/assets/${chain}/${address}/${identifier}`}
           target="_blank"

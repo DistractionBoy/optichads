@@ -82,11 +82,11 @@ const CollectionShowcaseCarousel = ({
   collection_slug,
 }: CollectionShowcaseCarouselProps) => {
   return (
-    <div className="container py-16 md:py-24">
+    <div className="lg:container py-16 md:py-24 px-16 md:px-12">
       <Tabs defaultValue="one-of-ones">
         {/* <TabsContent value="legendary" className="grid grid-cols-12 gap-10">
           <div className="col-span-6">
-            <Carousel className="mx-6">
+            <Carousel className="-ml-2">
               {collection_slug === "optichads" && (
                 <CarouselContent>
                   {GROUPS[collection_slug].groups
@@ -105,7 +105,7 @@ const CollectionShowcaseCarousel = ({
               <CarouselNext />
             </Carousel>
           </div>
-          <div className="col-span-6">
+          <div className="col-span-6 md:col-start-7 md:col-span-5">
             <div className="prose prose-xl">
               <h2>Legendary</h2>
               <p>
@@ -116,9 +116,12 @@ const CollectionShowcaseCarousel = ({
             </div>
           </div>
         </TabsContent> */}
-        <TabsContent value="one-of-ones" className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 md:col-span-8">
-            <Carousel className="mx-6">
+        <TabsContent
+          value="one-of-ones"
+          className="grid grid-cols-12 gap-2 lg:gap-4 xl:gap-10"
+        >
+          <div className="col-span-12 md:col-start-2 md:col-span-5 lg:col-start-1 lg:col-span-7 xl:col-span-7">
+            <Carousel>
               <CarouselContent>
                 {GROUPS[collection_slug].groups
                   .find((g) => g.name === "1 of 1's")
@@ -135,7 +138,7 @@ const CollectionShowcaseCarousel = ({
               <CarouselNext />
             </Carousel>
           </div>
-          <div className="col-span-12 md:col-span-4">
+          <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
             <div className="prose prose-xl dark:prose-invert">
               <h2>1 of 1&apos;s</h2>
               <p>
@@ -146,9 +149,12 @@ const CollectionShowcaseCarousel = ({
             </div>
           </div>
         </TabsContent>
-        <TabsContent value="staff-picks" className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 md:col-span-8">
-            <Carousel className="mx-6">
+        <TabsContent
+          value="staff-picks"
+          className="grid grid-cols-12 gap-4 lg:gap-4 xl:gap-10"
+        >
+          <div className="col-span-12 md:col-start-2 md:col-span-5 lg:col-start-1 lg:col-span-7 xl:col-span-7">
+            <Carousel>
               <CarouselContent>
                 {GROUPS[collection_slug].groups
                   .find((g) => g.name === "Staff Picks")
@@ -166,7 +172,7 @@ const CollectionShowcaseCarousel = ({
               <CarouselNext />
             </Carousel>
           </div>
-          <div className="col-span-12 md:col-span-4">
+          <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
             <div className="prose prose-xl dark:prose-invert">
               <h2>Staff Picks</h2>
               <p>
