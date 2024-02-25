@@ -34,9 +34,10 @@ const Home: NextPage = () => {
       <IntroText />
       <div className="bg-white flex w-screen h-20" />
       <BaseBrigadeIntro />
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center bg-[#FB0420]">
         <WeNeedYouChad />
       </div>
+      <div className="bg-white flex w-screen h-20" />
       <div className="flex flex-col pb-20 w-full h-full bg-grainy bg-cover bg-opacity-60">
         <div className="container">
           <HotDeals />

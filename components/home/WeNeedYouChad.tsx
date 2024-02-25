@@ -2,10 +2,11 @@ import Image from "next/image";
 
 import weNeedYouImgSrc from "@/public/images/we-need-you.png";
 import Link from "next/link";
+import { divergentLinkButtonCSS } from "../ui/button";
 
 const WeNeedYouChad = () => (
-  <div className="relative rounded-xl mx-6 my-12 md:mx-8 md:my-16">
-    <div className="relative h-80 overflow-hidden bg-red-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
+  <div className="relative rounded-xl mx-6 my-12 md:mx-8 md:my-16 lg:my-32 md:h-96 lg:h-[450px] bg-white/85 shadow-2xl drop-shadow-lg">
+    <div className="relative h-80 overflow-hidden rounded-l-xl bg-red-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
       <Image
         className="h-full w-full object-cover"
         src={weNeedYouImgSrc}
@@ -36,15 +37,15 @@ const WeNeedYouChad = () => (
         </defs>
       </svg>
     </div>
-    <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
-      <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
-        <h2 className="text-base font-semibold leading-7 text-red-400">
+    <div className="flex flex-col justify-center relative mx-auto max-w-7xl h-96 md:max-h-96 lg:px-8">
+      <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32 lg:mt-12">
+        <h2 className="text-base font-semibold leading-7 text-red-600">
           We Need YOU!
         </h2>
-        <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <p className="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl">
           OptiChads Voting DAO
         </p>
-        <p className="mt-6 text-base leading-7 text-gray-300">
+        <p className="mt-6 text-base leading-7 text-gray-700">
           As curators of quality collections ourselves, we can often tell which
           collections are fly-by&apos;s and which ones are quality. And we have
           been in the L2 space for a very long time (for the crypto world). We
@@ -56,7 +57,7 @@ const WeNeedYouChad = () => (
           <Link
             href="https://vote.optimism.io/delegates/0x10850762bAc0dc6660630c1EfFe188A7cbFDdc88"
             target="_blank"
-            className="inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className={divergentLinkButtonCSS}
           >
             Delegate to OptiChads
           </Link>
