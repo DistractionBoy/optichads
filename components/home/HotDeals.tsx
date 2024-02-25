@@ -5,7 +5,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import HotDealCarouselItemController from "./HotDealCaouselItemController";
+import HotDealCarouselItemController from "./HotDealCarouselItemController";
 
 const HotDeals = () => {
   return (
