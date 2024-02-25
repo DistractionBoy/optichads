@@ -38,7 +38,7 @@ const WeNeedYouChad = () => (
       </svg>
     </div>
     <div className="flex flex-col justify-center relative mx-auto max-w-7xl h-96 md:max-h-96 lg:px-8">
-      <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32 lg:mt-12">
+      <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-12 lg:w-1/2 lg:pl-16 lg:pr-0 xl:pl-20 md:mt-8 lg:mt-20">
         <h2 className="text-base font-semibold leading-7 text-red-600">
           We Need YOU!
         </h2>
@@ -53,7 +53,7 @@ const WeNeedYouChad = () => (
           are getting involved. Delegate your tokens to us. Let us be your voice
           as a collector, and a creator.
         </p>
-        <div className="mt-8">
+        <div className="mt-3 lg:mt-8">
           <Link
             href="https://vote.optimism.io/delegates/0x10850762bAc0dc6660630c1EfFe188A7cbFDdc88"
             target="_blank"
