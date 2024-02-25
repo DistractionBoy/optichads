@@ -5,7 +5,7 @@ import Link from "next/link";
 import { divergentLinkButtonCSS } from "../ui/button";
 
 const WeNeedYouChad = () => (
-  <div className="relative rounded-xl mx-6 my-12 md:mx-8 md:my-16 lg:my-32 md:h-96 lg:h-[450px] bg-white/85 shadow-2xl drop-shadow-lg">
+  <div className="relative rounded-xl mx-6 my-12 md:mx-8 md:my-16 lg:my-32 md:h-96 lg:h-[450px] bg-white/90 shadow-2xl drop-shadow-lg">
     <div className="relative h-80 overflow-hidden rounded-l-xl bg-red-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
       <Image
         className="h-full w-full object-cover"
@@ -31,8 +31,8 @@ const WeNeedYouChad = () => (
             y2="321.024"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#776FFF" />
-            <stop offset={1} stopColor="#FF4694" />
+            <stop stopColor="#FB0420" />
+            <stop offset={1} stopColor="#C11911" />
           </linearGradient>
         </defs>
       </svg>
