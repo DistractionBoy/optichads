@@ -231,9 +231,11 @@ const CollectionShowcaseCarousel = ({
             <div className="prose prose-xl dark:prose-invert">
               <h2>Staff Picks</h2>
               <p>
-                These are the rarest of the rare. Great time and attention went
-                into choosing which traits would be a part of this set. They
-                rarely change hands, and when they do it is a big deal.
+                These are well-hidden rares and ones that the admins think are
+                of note. Sometimes they have matching sets of traits, or are
+                rare for another reason. They might embody someone you know or
+                would like to know. If you are lucky enough to have one you are
+                viewed as a respected collector by us.
               </p>
             </div>
           </div>

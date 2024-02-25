@@ -65,7 +65,7 @@ const CollectionsCarousel = () => {
         value={collection_slug}
         onValueChange={(value) => isSlug(value) && setCollection_slug(value)}
       >
-        <TabsList className="flex flex-col sm:flex-row space-x-0 sm:space-x-8 h-full bg-slate-50 dark:bg-zinc-900 mt-16 md:mt-24">
+        <TabsList className="flex flex-col sm:flex-row space-x-0 sm:space-x-8 h-full bg-slate-50 dark:bg-zinc-900 mt-12 md:mt-20">
           <TabsTrigger value="basebrigade" className={divergentLinkButtonCSS}>
             Base Brigade
           </TabsTrigger>
