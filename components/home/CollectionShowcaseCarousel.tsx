@@ -94,13 +94,20 @@ const CollectionShowcaseCarousel = ({
   collection_slug,
 }: CollectionShowcaseCarouselProps) => {
   return (
-    <div className="lg:container py-12 md:py-16 px-8 md:px-12">
+    <div className="container py-12 md:py-16 mb-24 px-12 lg:px-16">
       <Tabs defaultValue="staff-picks">
+        <TabsList className="flex flex-col sm:flex-row justify-center space-x-0 sm:space-x-8 h-full mb-20 bg-transparent">
+          <TabsTrigger value="staff-picks">Staff Picks</TabsTrigger>
+          <TabsTrigger value="business">Business</TabsTrigger>
+          <TabsTrigger value="one-of-ones">1 of 1&apos;s</TabsTrigger>
+          <TabsTrigger value="apes">Apes</TabsTrigger>
+          <TabsTrigger value="goop">Goop / Trippy</TabsTrigger>
+        </TabsList>
         <TabsContent
           value="business"
-          className="grid grid-cols-12 gap-4 lg:gap-4 xl:gap-10"
+          className="grid grid-cols-12 gap-4 xl:gap-10 mt-0"
         >
-          <div className="col-span-12 md:col-start-2 md:col-span-5 lg:col-start-1 lg:col-span-7 xl:col-span-7">
+          <div className="col-span-10 col-start-2 md:col-start-2 md:col-span-10 lg:col-start-2 lg:col-span-6 xl:col-span-7">
             <Carousel>
               <CarouselContent>
                 {GROUPS[collection_slug].groups
@@ -119,7 +126,7 @@ const CollectionShowcaseCarousel = ({
               <CarouselNext />
             </Carousel>
           </div>
-          <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
+          <div className="col-span-12 sm:col-span-10 sm:col-start-2 lg:col-start-9 lg:col-span-4">
             <div className="prose xl:prose-xl dark:prose-invert">
               <h2>Business</h2>
               <p>
@@ -133,9 +140,9 @@ const CollectionShowcaseCarousel = ({
         </TabsContent>
         <TabsContent
           value="apes"
-          className="grid grid-cols-12 gap-4 lg:gap-4 xl:gap-10"
+          className="grid grid-cols-12 gap-4 lg:gap-4 xl:gap-10 mt-0"
         >
-          <div className="col-span-12 md:col-start-2 md:col-span-5 lg:col-start-1 lg:col-span-7 xl:col-span-7">
+          <div className="col-span-10 col-start-2 md:col-start-2 md:col-span-10 lg:col-start-2 lg:col-span-6 xl:col-span-7">
             <Carousel>
               <CarouselContent>
                 {GROUPS[collection_slug].groups
@@ -154,7 +161,7 @@ const CollectionShowcaseCarousel = ({
               <CarouselNext />
             </Carousel>
           </div>
-          <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
+          <div className="col-span-12 sm:col-span-10 sm:col-start-2 lg:col-start-9 lg:col-span-4">
             <div className="prose xl:prose-xl dark:prose-invert">
               <h2>Apes</h2>
               <p>
@@ -169,9 +176,9 @@ const CollectionShowcaseCarousel = ({
         </TabsContent>
         <TabsContent
           value="one-of-ones"
-          className="grid grid-cols-12 gap-2 lg:gap-4 xl:gap-10"
+          className="grid grid-cols-12 gap-2 lg:gap-4 xl:gap-10 mt-0"
         >
-          <div className="col-span-12 md:col-start-2 md:col-span-5 lg:col-start-1 lg:col-span-7 xl:col-span-7">
+          <div className="col-span-10 col-start-2 md:col-start-2 md:col-span-10 lg:col-start-2 lg:col-span-6 xl:col-span-7">
             <Carousel>
               <CarouselContent>
                 {GROUPS[collection_slug].groups
@@ -189,25 +196,23 @@ const CollectionShowcaseCarousel = ({
               <CarouselNext />
             </Carousel>
           </div>
-          <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
+          <div className="col-span-12 sm:col-span-10 sm:col-start-2 lg:col-start-9 lg:col-span-4">
             <div className="prose xl:prose-xl dark:prose-invert">
               <h2>1 of 1&apos;s</h2>
               <p>
                 The rarest of the rare, each image was hand-drawn from a loose
                 starting base model of each collection&apos;s character outline
                 and fine-tuned to show a truly unique image. There are only 10
-                from each collection. Each one has a custom theme in mind, for a
-                certain type of buyer. We hope you enjoy these as much as we did
-                making them.
+                from each collection.
               </p>
             </div>
           </div>
         </TabsContent>
         <TabsContent
           value="staff-picks"
-          className="grid grid-cols-12 gap-4 lg:gap-4 xl:gap-10"
+          className="grid grid-cols-12 gap-4 lg:gap-4 xl:gap-10 mt-0"
         >
-          <div className="col-span-12 md:col-start-2 md:col-span-5 lg:col-start-1 lg:col-span-7 xl:col-span-7">
+          <div className="col-span-10 col-start-2 md:col-start-2 md:col-span-10 lg:col-start-2 lg:col-span-6 xl:col-span-7">
             <Carousel>
               <CarouselContent>
                 {GROUPS[collection_slug].groups
@@ -226,7 +231,7 @@ const CollectionShowcaseCarousel = ({
               <CarouselNext />
             </Carousel>
           </div>
-          <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
+          <div className="col-span-12 sm:col-span-10 sm:col-start-2 lg:col-start-9 lg:col-span-4">
             <div className="prose xl:prose-xl dark:prose-invert">
               <h2>Staff Picks</h2>
               <p>
@@ -241,9 +246,9 @@ const CollectionShowcaseCarousel = ({
         </TabsContent>
         <TabsContent
           value="goop"
-          className="grid grid-cols-12 gap-4 lg:gap-4 xl:gap-10"
+          className="grid grid-cols-12 gap-4 lg:gap-4 xl:gap-10 mt-0 "
         >
-          <div className="col-span-12 md:col-start-2 md:col-span-5 lg:col-start-1 lg:col-span-7 xl:col-span-7">
+          <div className="col-span-10 col-start-2 md:col-start-2 md:col-span-10 lg:col-start-2 lg:col-span-6 xl:col-span-7">
             <Carousel>
               <CarouselContent>
                 {GROUPS[collection_slug].groups
@@ -261,7 +266,7 @@ const CollectionShowcaseCarousel = ({
               <CarouselNext />
             </Carousel>
           </div>
-          <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
+          <div className="col-span-12 sm:col-span-10 sm:col-start-2 lg:col-start-9 lg:col-span-4">
             <div className="prose xl:prose-xl dark:prose-invert">
               <h2>Goop</h2>
               <p>
@@ -273,23 +278,6 @@ const CollectionShowcaseCarousel = ({
             </div>
           </div>
         </TabsContent>
-        <TabsList className="flex flex-col sm:flex-row justify-center space-x-0 sm:space-x-8 h-full bg-transparent mt-4 lg:mt-8 mb-16 md:mb-24">
-          <TabsTrigger value="staff-picks" className={divergentLinkButtonCSS}>
-            Staff Picks
-          </TabsTrigger>
-          <TabsTrigger value="business" className={divergentLinkButtonCSS}>
-            Business
-          </TabsTrigger>
-          <TabsTrigger value="one-of-ones" className={divergentLinkButtonCSS}>
-            1 of 1&apos;s
-          </TabsTrigger>
-          <TabsTrigger value="apes" className={divergentLinkButtonCSS}>
-            Apes
-          </TabsTrigger>
-          <TabsTrigger value="goop" className={divergentLinkButtonCSS}>
-            Goop / Trippy
-          </TabsTrigger>
-        </TabsList>
       </Tabs>
     </div>
   );

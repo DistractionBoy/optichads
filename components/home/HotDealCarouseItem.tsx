@@ -93,6 +93,15 @@ const HotDealCarouselItem = ({
         />
         <div className="flex justify-between items-center">
           <div className="flex justify-center items-start flex-col lg:flex-row lg:space-y-0 space-x-0 lg:space-x-2 pt-4 lg:pt-2">
+            <Link
+              href={`https://opensea.io/assets/${chain}/${address}/${identifier}`}
+              className="hidden sm:flex items-center"
+              target="_blank"
+            >
+              <Button variant="ghost" className="text-white md:mt-0 mt-2">
+                View on Opensea
+              </Button>
+            </Link>
             {isConnected ? (
               <ConfirmFloorBuyDialogBtn
                 nft={data.nft}
@@ -141,17 +150,8 @@ const HotDealCarouselItem = ({
                 }}
               </ConnectButton.Custom>
             )}
-            <Link
-              href={`https://opensea.io/assets/${chain}/${address}/${identifier}`}
-              className="hidden sm:flex items-center"
-              target="_blank"
-            >
-              <Button variant="ghost" className="text-white md:mt-0 mt-2">
-                View on Opensea
-              </Button>
-            </Link>
           </div>
-          <div className="flex flex-col w-full lg:w-auto items-end my-4 pt-0 md:pt-2 px-1 lg:px-8 space-y-3">
+          <div className="flex flex-col w-full lg:w-auto items-end my-4 pt-0 md:pt-2 px-1 space-y-3">
             <div className="flex justify-center items-center text-lg md:text-2xl lg:text-3xl desktop:text-4xl space-x-1 lg:space-x-2">
               <FontAwesomeIcon
                 icon={faEthereum}
@@ -166,7 +166,7 @@ const HotDealCarouselItem = ({
               </div>
             )} */}
 
-            <div className="hidden sm:inline-flex text-base leading-none desktop:text-2xl text-white">
+            <div className="hidden sm:inline-flex min-w-[130px] text-base leading-none desktop:text-2xl text-white">
               Ends: {new Date(date).toLocaleDateString()}
             </div>
           </div>
