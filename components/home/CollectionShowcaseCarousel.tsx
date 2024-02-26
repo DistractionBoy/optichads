@@ -120,7 +120,7 @@ const CollectionShowcaseCarousel = ({
             </Carousel>
           </div>
           <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
-            <div className="prose prose-xl dark:prose-invert">
+            <div className="prose xl:prose-xl dark:prose-invert">
               <h2>Business</h2>
               <p>
                 To show we mean business we have dressed up pfp&apos;s across
@@ -155,7 +155,7 @@ const CollectionShowcaseCarousel = ({
             </Carousel>
           </div>
           <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
-            <div className="prose prose-xl dark:prose-invert">
+            <div className="prose xl:prose-xl dark:prose-invert">
               <h2>Apes</h2>
               <p>
                 Yeah, ok. We get it. You love apes. Fine, we went ahead and
@@ -190,7 +190,7 @@ const CollectionShowcaseCarousel = ({
             </Carousel>
           </div>
           <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
-            <div className="prose prose-xl dark:prose-invert">
+            <div className="prose xl:prose-xl dark:prose-invert">
               <h2>1 of 1&apos;s</h2>
               <p>
                 The rarest of the rare, each image was hand-drawn from a loose
@@ -227,7 +227,7 @@ const CollectionShowcaseCarousel = ({
             </Carousel>
           </div>
           <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
-            <div className="prose prose-xl dark:prose-invert">
+            <div className="prose xl:prose-xl dark:prose-invert">
               <h2>Staff Picks</h2>
               <p>
                 These are well-hidden rares and ones that the admins think are
@@ -262,7 +262,7 @@ const CollectionShowcaseCarousel = ({
             </Carousel>
           </div>
           <div className="col-span-12 md:col-start-8 md:col-span-4 lg:col-start-9 lg:col-span-4 xl:col-span-4 xl:col-start-9">
-            <div className="prose prose-xl dark:prose-invert">
+            <div className="prose xl:prose-xl dark:prose-invert">
               <h2>Goop</h2>
               <p>
                 A nod to GOOPDOODES, this trait is always a rare one across
