@@ -54,5 +54,3 @@ const HotDealCarouselItemController = ({
 };
 
 export default HotDealCarouselItemController;
-
-// { listing: { hash, chain, protocol_address }, fulfiller }
