@@ -23,9 +23,7 @@ import Image from "next/image";
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <HeadMeta />
-      </Head>
+      <HeadMeta />
       <main>
         <SplashBG />
         <RotatingTitle />
