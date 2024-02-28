@@ -16,6 +16,9 @@ import { Person } from "../lib";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { BackgroundGradient } from "./ui/background-gradient";
+import { Button, divergentLinkButtonCSS } from "./ui/button";
+import { faUserPen } from "@fortawesome/free-solid-svg-icons";
 
 export default function Team() {
   const { t } = useTranslation();
@@ -36,6 +39,7 @@ export default function Team() {
       imageUrl: dicaso,
       bio: bio1,
       twitterUrl: "https://twitter.com/Dicaso5",
+      fullBioUrl: "/bios/dicaso",
     },
     {
       name: "DistractionBoy",
@@ -43,6 +47,7 @@ export default function Team() {
       imageUrl: distraction,
       bio: bio2,
       twitterUrl: "https://twitter.com/DistractionBoy_",
+      fullBioUrl: "/bios/distractionboy",
     },
     {
       name: "Millynish",
@@ -50,6 +55,7 @@ export default function Team() {
       imageUrl: millynish,
       bio: bio7,
       twitterUrl: "https://twitter.com/anish_katwal",
+      fullBioUrl: "/bios/millynish",
     },
     {
       name: "JasonFactor",
@@ -57,6 +63,7 @@ export default function Team() {
       imageUrl: jasonfactor,
       bio: bio9,
       twitterUrl: "https://twitter.com/anh_jasonfactor",
+      fullBioUrl: "/bios/jasonFactor",
     },
     {
       name: "Lifestrike",
@@ -64,6 +71,7 @@ export default function Team() {
       imageUrl: lifestrike,
       bio: bio4,
       twitterUrl: "https://twitter.com/lifesadream63",
+      fullBioUrl: "/bios/lifestrike",
     },
     {
       name: "Youngbeeps",
@@ -71,6 +79,7 @@ export default function Team() {
       imageUrl: beeps,
       bio: bio6,
       twitterUrl: "https://twitter.com/cryptonftbeeps",
+      fullBioUrl: "/bios/youngbeeps",
     },
     {
       name: "Dope",
@@ -78,6 +87,7 @@ export default function Team() {
       imageUrl: dope,
       bio: bio5,
       twitterUrl: "https://twitter.com/dopesdope2021",
+      fullBioUrl: "/bios/dope",
     },
     {
       name: "3t",
@@ -85,6 +95,7 @@ export default function Team() {
       imageUrl: THREEt,
       bio: bio8,
       twitterUrl: "https://twitter.com/Prod3t",
+      fullBioUrl: "/bios/3t",
     },
     {
       name: "LiViCi3",
@@ -92,6 +103,7 @@ export default function Team() {
       imageUrl: livici3,
       bio: bio3,
       twitterUrl: "https://twitter.com/LiViXi3",
+      fullBioUrl: "/bios/livici3",
     },
   ];
 
@@ -111,25 +123,25 @@ export default function Team() {
         >
           {people.map((person: Person) => (
             <li key={person.name}>
-              <div className="space-y-4 prose dark:prose-invert">
-                {person.imageUrl && (
-                  <Image
-                    className="rounded-lg shadow-lg"
-                    src={person.imageUrl}
-                    alt=""
-                    priority
-                  />
-                )}
+              <BackgroundGradient className="rounded-[22px] bg-white dark:bg-zinc-900">
+                <div className="space-y-4">
+                  {person.imageUrl && (
+                    <Image
+                      className="rounded-t-[21px] shadow-lg"
+                      src={person.imageUrl}
+                      alt=""
+                      priority
+                    />
+                  )}
 
-                <div className="space-y-2">
-                  <div>
-                    <h3>{person.name}</h3>
-                    <p className="text-primary">{person.role}</p>
-                    <p className="line-clamp-2">{person.bio}</p>
-                  </div>
-                  {person.twitterUrl && (
-                    <div role="list" className="flex space-x-5">
-                      <div>
+                  <div className="prose dark:prose-invert px-6 pb-8">
+                    <div>
+                      <h3>{person.name}</h3>
+                      <p className="text-primary">{person.role}</p>
+                      <p className="line-clamp-2">{person.bio}</p>
+                    </div>
+                    {person.twitterUrl && (
+                      <div role="list" className="flex items-center space-x-5">
                         <Link
                           href={person.twitterUrl}
                           target="_blank"
@@ -138,14 +150,27 @@ export default function Team() {
                           <span className="sr-only">Twitter</span>
                           <FontAwesomeIcon
                             icon={faXTwitter}
-                            className="w-5 h-5"
+                            className="w-5 h-5 xl:w-8 xl:h-8"
                           />
                         </Link>
+                        {person.fullBioUrl && (
+                          <Link
+                            href={person.fullBioUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <span className="sr-only">Full Bio Page</span>
+                            <FontAwesomeIcon
+                              icon={faUserPen}
+                              className="w-5 h-5 xl:w-8 xl:h-8"
+                            />
+                          </Link>
+                        )}
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
-              </div>
+              </BackgroundGradient>
             </li>
           ))}
         </ul>

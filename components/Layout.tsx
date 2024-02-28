@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { PT_Sans, Rubik } from "next/font/google";
+import { Rubik } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 import { Toaster } from "./ui/sonner";

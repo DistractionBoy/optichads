@@ -8,7 +8,7 @@ export interface iPerson {
   bio?: string;
   twitterUrl?: string;
   linkedinUrl?: string;
-  quixoticUrl?: string;
+  fullBioUrl?: string;
 }
 
 export interface iNavLink {
