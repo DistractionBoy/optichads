@@ -17,7 +17,6 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { BackgroundGradient } from "./ui/background-gradient";
-import { Button, divergentLinkButtonCSS } from "./ui/button";
 import { faUserPen } from "@fortawesome/free-solid-svg-icons";
 
 export default function Team() {
@@ -38,15 +37,15 @@ export default function Team() {
       role: "Artist / Project Lead",
       imageUrl: dicaso,
       bio: bio1,
-      twitterUrl: "https://twitter.com/Dicaso5",
+      twitterUrl: "https://x.com/Dicaso5",
       fullBioUrl: "/bios/dicaso",
     },
     {
       name: "DistractionBoy",
-      role: "Developer",
+      role: "Tech Manager",
       imageUrl: distraction,
       bio: bio2,
-      twitterUrl: "https://twitter.com/DistractionBoy_",
+      twitterUrl: "https://x.com/DistractionBoy_",
       fullBioUrl: "/bios/distractionboy",
     },
     {
@@ -54,7 +53,7 @@ export default function Team() {
       role: "Discord Expert",
       imageUrl: millynish,
       bio: bio7,
-      twitterUrl: "https://twitter.com/anish_katwal",
+      twitterUrl: "https://x.com/anish_katwal",
       fullBioUrl: "/bios/millynish",
     },
     {
@@ -62,7 +61,7 @@ export default function Team() {
       role: "Developer",
       imageUrl: jasonfactor,
       bio: bio9,
-      twitterUrl: "https://twitter.com/anh_jasonfactor",
+      twitterUrl: "https://x.com/anh_jasonfactor",
       fullBioUrl: "/bios/jasonFactor",
     },
     {
@@ -70,7 +69,7 @@ export default function Team() {
       role: "Marketing Lead",
       imageUrl: lifestrike,
       bio: bio4,
-      twitterUrl: "https://twitter.com/lifesadream63",
+      twitterUrl: "https://x.com/lifesadream63",
       fullBioUrl: "/bios/lifestrike",
     },
     {
@@ -78,7 +77,7 @@ export default function Team() {
       role: "Operations Lead",
       imageUrl: beeps,
       bio: bio6,
-      twitterUrl: "https://twitter.com/cryptonftbeeps",
+      twitterUrl: "https://x.com/cryptonftbeeps",
       fullBioUrl: "/bios/youngbeeps",
     },
     {
@@ -86,7 +85,7 @@ export default function Team() {
       role: "Team Advisor",
       imageUrl: dope,
       bio: bio5,
-      twitterUrl: "https://twitter.com/dopesdope2021",
+      twitterUrl: "https://x.com/dopesdope2021",
       fullBioUrl: "/bios/dope",
     },
     {
@@ -94,23 +93,26 @@ export default function Team() {
       role: "Developer",
       imageUrl: THREEt,
       bio: bio8,
-      twitterUrl: "https://twitter.com/Prod3t",
-      fullBioUrl: "/bios/3t",
+      twitterUrl: "https://x.com/Prod3t",
+    },
+    {
+      name: "Shea",
+      role: "Audio Production",
+      twitterUrl: "https://x.com/11SheaX",
     },
     {
       name: "LiViCi3",
       role: "Advisor",
       imageUrl: livici3,
       bio: bio3,
-      twitterUrl: "https://twitter.com/LiViXi3",
-      fullBioUrl: "/bios/livici3",
+      twitterUrl: "https://x.com/LiViXi3",
     },
   ];
 
   return (
     <div className="mx-auto container py-12 px-4 sm:px-6 lg:px-8 lg:py-24 mt-24 lg:mt-32 mb-12 lg:mb-24 xl:max-w-[1920px]">
       <div className="space-y-12">
-        <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none prose prose-2xl dark:prose-invert">
+        <div className="space-y-5 md:max-w-xl lg:max-w-3xl xl:max-w-none prose prose-2xl dark:prose-invert pb-5">
           <h2>{t("chads:team_section.0.our_team")}</h2>
           <p>
             {t("chads:team_section.0.description1")}{" "}
@@ -127,7 +129,7 @@ export default function Team() {
                 <div className="space-y-4">
                   {person.imageUrl && (
                     <Image
-                      className="rounded-t-[21px] shadow-lg"
+                      className="rounded-t-[21px]"
                       src={person.imageUrl}
                       alt=""
                       priority
@@ -138,7 +140,7 @@ export default function Team() {
                     <div>
                       <h3>{person.name}</h3>
                       <p className="text-primary">{person.role}</p>
-                      <p className="line-clamp-2">{person.bio}</p>
+                      <p className="line-clamp-2">{person.bio && person.bio}</p>
                     </div>
                     {person.twitterUrl && (
                       <div role="list" className="flex items-center space-x-5">

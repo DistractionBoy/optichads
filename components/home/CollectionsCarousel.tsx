@@ -73,7 +73,7 @@ const CollectionsCarousel = () => {
           value={collection_slug}
           onValueChange={(value) => isSlug(value) && setCollection_slug(value)}
         >
-          <TabsList className="flex space-x-0 sm:space-x-8 h-full bg-transparent my-12 md:mt-24 sm:mb-32 md:mb-52 lg:mb-32 xl:mt-28">
+          <TabsList className="flex space-x-0 sm:space-x-8 h-full bg-transparent mb-40 mt-32 md:mb-52 lg:mb-52 xl:mt-36">
             <TabsTrigger
               value="basebrigade"
               className="text-lg lg:text-2xl xl:text-3xl hover:text-gray-200"
@@ -95,7 +95,6 @@ const CollectionsCarousel = () => {
           </TabsList>
           <TabsContent value="optichads">
             <CollectionMetadataSection collection_slug="optichads" />
-
             <CollectionShowcaseCarousel collection_slug="optichads" />
           </TabsContent>
           <TabsContent value="basebrigade">

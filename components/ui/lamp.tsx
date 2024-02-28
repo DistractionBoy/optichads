@@ -54,14 +54,14 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        "relative flex flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md z-0 pt-80 xl:pt-[400px]",
+        "relative flex flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md z-0 pt-[400px] xl:pt-[600px]",
         className
       )}
     >
       <div className="relative flex w-full flex-1 items-center justify-center isolate z-0 ">
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
-          whileInView={{ opacity: 1, width: "30rem" }}
+          whileInView={{ opacity: 1, width: "25rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -80,7 +80,7 @@ export const LampContainer = ({
         </motion.div>
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
-          whileInView={{ opacity: 1, width: "30rem" }}
+          whileInView={{ opacity: 1, width: "25rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -120,7 +120,7 @@ export const LampContainer = ({
         ></motion.div>
         <motion.div
           initial={{ width: "15rem" }}
-          whileInView={{ width: "30rem" }}
+          whileInView={{ width: "25rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -135,7 +135,7 @@ export const LampContainer = ({
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-slate-950 "></div>
       </div>
 
-      <div className="relative flex flex-col items-center -translate-y-64 sm:-translate-y-72 lg:-translate-y-[340px] xl:-translate-y-[400px] px-5 w-full">
+      <div className="relative flex flex-col items-center -translate-y-[360px] xl:-translate-y-[400px] px-5 w-full">
         {children}
       </div>
     </div>

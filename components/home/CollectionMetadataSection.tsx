@@ -154,7 +154,7 @@ const CollectionMetadataSection = ({
       <div className="pt-16 pb-4 sm:pb-6 rounded-lg w-full">
         <div className="mx-auto max-w-screen-desktop px-6 lg:px-8">
           <div className="text-center">
-            <h2 className=" text-xl md:text-3xl lg:text-5xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
+            <h2 className="text-5xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
               {contractMetadata.name}
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
