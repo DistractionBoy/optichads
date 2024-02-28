@@ -35,8 +35,8 @@ const Bio = () => (
           />
           <p>
             Dicaso is an L2 NFT visionary, ascending from adversity to spearhead
-            OptiChads' remarkable journey to becoming the #1 NFT project on
-            Optimism. Serving as our benevolent dictator, he bestows upon us
+            OptiChads&apos;s remarkable journey to becoming the #1 NFT project
+            on Optimism. Serving as our benevolent dictator, he bestows upon us
             gifts and a compelling vision of the future.
           </p>
           <p>
