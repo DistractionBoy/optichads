@@ -1,15 +1,16 @@
 import Image from "next/image";
 import React from "react";
 
-import distraction from "/public/images/distraction.png";
-import dicaso from "/public/images/dicaso.png";
-import lifestrike from "/public/images/lifestrike.jpg";
-import dope from "/public/images/dope.jpg";
-import beeps from "/public/images/beeps.png";
-import millynish from "/public/images/millynish.jpg";
-import livici3 from "/public/images/livixi3.png";
-import THREEt from "/public/images/3t.jpg";
-import jasonfactor from "/public/images/jasonfactor.webp";
+import distraction from "@/public/images/distraction.png";
+import dicaso from "@/public/images/dicaso.png";
+import lifestrike from "@/public/images/lifestrike.jpg";
+import dope from "@/public/images/dope.jpg";
+import beeps from "@/public/images/beeps.png";
+import millynish from "@/public/images/millynish.jpg";
+import livici3 from "@/public/images/livixi3.png";
+import THREEt from "@/public/images/3t.jpg";
+import jasonfactor from "@/public/images/jasonfactor.webp";
+import shea from "@/public/images/11shea.jpeg";
 import { useTranslation } from "next-i18next";
 
 import { Person } from "../lib";
@@ -62,7 +63,7 @@ export default function Team() {
       imageUrl: jasonfactor,
       bio: bio9,
       twitterUrl: "https://x.com/anh_jasonfactor",
-      fullBioUrl: "/bios/jasonFactor",
+      fullBioUrl: "/bios/jasonfactor",
     },
     {
       name: "Lifestrike",
@@ -70,7 +71,6 @@ export default function Team() {
       imageUrl: lifestrike,
       bio: bio4,
       twitterUrl: "https://x.com/lifesadream63",
-      fullBioUrl: "/bios/lifestrike",
     },
     {
       name: "Youngbeeps",
@@ -78,7 +78,6 @@ export default function Team() {
       imageUrl: beeps,
       bio: bio6,
       twitterUrl: "https://x.com/cryptonftbeeps",
-      fullBioUrl: "/bios/youngbeeps",
     },
     {
       name: "Dope",
@@ -86,7 +85,6 @@ export default function Team() {
       imageUrl: dope,
       bio: bio5,
       twitterUrl: "https://x.com/dopesdope2021",
-      fullBioUrl: "/bios/dope",
     },
     {
       name: "3t",
@@ -99,6 +97,7 @@ export default function Team() {
       name: "Shea",
       role: "Audio Production",
       twitterUrl: "https://x.com/11SheaX",
+      imageUrl: shea,
     },
     {
       name: "LiViCi3",

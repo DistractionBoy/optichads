@@ -5,6 +5,7 @@ export default function HeadMeta({
   title = "Optichads",
   description = `With a cheap public mint and 50% donated to retroactive public goods, Optichads proves it cares about the community. We aim to inspire charitable giving and improving health and wellness.`,
   keywords = "OptiChads, @OptiChads, Non-Fungible Token, Optimism, Ethereum, Decentralized",
+  img = "/images/hero-img.png",
 }) {
   return (
     <Head>
@@ -13,7 +14,7 @@ export default function HeadMeta({
       <meta name="keywords" content={keywords} />
       <meta charSet="utf-8" />
       <meta name="author" content="Jason Pierce 'distractionboy.eth'" />
-      <meta property="og:image" content="/images/hero-img.png" />
+      <meta property="og:image" content={img} />
       <meta
         name="twitter:image:alt"
         content="a strong black and white man facing right with a white outline aroung him and a red background"

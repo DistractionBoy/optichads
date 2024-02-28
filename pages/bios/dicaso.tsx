@@ -17,10 +17,8 @@ const Bio = () => (
       description="Dicaso is an L2 NFT visionary, ascending from adversity to spearhead
             OptiChads' remarkable journey to becoming the #1 NFT project on
             Optimism."
+      img={`${dicaso.src}`}
     />
-    <Head key={"dicaso-bio"}>
-      <meta property="og:image" content={`${dicaso.src}`} />
-    </Head>
     <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
     <Navbar />
     <SimpleInnerLayout title="Bios">

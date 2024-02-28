@@ -103,10 +103,8 @@ const Bio = () => (
       title="DistractionBoy's Corner"
       description="DistractionBoy came into web3 website development through Optimistic Bunnies, the
       first major pfp deployed on Optimism in its very early days."
+      img={`${distraction.src}`}
     />
-    <Head key={"distractionboy-bio"}>
-      <meta property="og:image" content={`${distraction.src}`} />
-    </Head>
     <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
     <Navbar />
     <SimpleInnerLayout title="Bios">
@@ -164,7 +162,7 @@ const Bio = () => (
           <p>
             In the months that followed, DistractionBoy built the website that
             facilitated the OptiChads genesis mint and served as a reference
-            point for the Fitness Challenges (link).
+            point for the Fitness Challenges.
           </p>
           <p>
             Over time DistractionBoy has gotten to know Dicaso, Millynish, and
@@ -174,6 +172,39 @@ const Bio = () => (
             releases and timely updates to the website, reaches out to L1 maxis
             and invites them to the superchain (and I guess Arbitrum), and
             researches new tech.
+          </p>
+          <blockquote className="twitter-tweet h-[823px]">
+            <p lang="en" dir="ltr">
+              From our team meating yesterday! It was epic to get to meet some
+              of the team members in real life! We have big things planned!{" "}
+              <a href="https://twitter.com/DistractionBoy_?ref_src=twsrc%5Etfw">
+                @DistractionBoy_
+              </a>{" "}
+              <a href="https://twitter.com/anish_katwal?ref_src=twsrc%5Etfw">
+                @anish_katwal
+              </a>{" "}
+              <a href="https://twitter.com/Dicaso5?ref_src=twsrc%5Etfw">
+                @Dicaso5
+              </a>{" "}
+              <a href="https://t.co/fW2k09FhEC">https://t.co/fW2k09FhEC</a>{" "}
+              <a href="https://t.co/sjslSpqYNr">pic.twitter.com/sjslSpqYNr</a>
+            </p>
+            &mdash; OptiChads on Optimism 🔴✨️💪 (@OptiChads){" "}
+            <a href="https://twitter.com/OptiChads/status/1580598260338524160?ref_src=twsrc%5Etfw">
+              October 13, 2022
+            </a>
+          </blockquote>
+          <Script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charSet="utf-8"
+          ></Script>
+          <p>
+            Outside of web3, DistractionBoy has an actual life with a family and
+            a regular job as a Technical Product Manager for a security company
+            that uses DLT to provide MFA for APIs. In his spare time he masters
+            slow-cooking big meats with custom rubs, eating them, and taking
+            pics at the occasional event photography gig.
           </p>
           <blockquote className="twitter-tweet h-[823px]">
             <p lang="en" dir="ltr">
@@ -190,13 +221,6 @@ const Bio = () => (
             src="https://platform.twitter.com/widgets.js"
             charSet="utf-8"
           ></Script>
-          <p>
-            Outside of web3, DistractionBoy has an actual life with a family and
-            a regular job as a Technical Product Manager for a security company
-            that uses DLT to provide MFA for APIs. In his spare time he masters
-            slow-cooking big meats with custom rubs, eating them, and taking
-            pics at the occasional event photography gig.
-          </p>
         </div>
       </TracingBeam>
     </SimpleInnerLayout>
