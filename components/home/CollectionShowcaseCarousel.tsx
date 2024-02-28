@@ -6,7 +6,6 @@ import {
 } from "../ui/carousel";
 import ShowcaseCarouselItem from "./ShowcaseCarouselItem";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { divergentLinkButtonCSS } from "../ui/button";
 
 export type CollectionShowcaseCarouselProps = {
   collection_slug: "optichads" | "arbibabes" | "basebrigade";
@@ -94,7 +93,7 @@ const CollectionShowcaseCarousel = ({
   collection_slug,
 }: CollectionShowcaseCarouselProps) => {
   return (
-    <div className="container py-12 md:py-16 mb-24 px-12 lg:px-16">
+    <div className="container py-12 md:py-16 mb-24 px-12 lg:px-16 desktop:max-w-full">
       <Tabs defaultValue="staff-picks">
         <TabsList className="flex flex-col sm:flex-row justify-center space-x-0 sm:space-x-8 h-full mb-20 bg-transparent">
           <TabsTrigger value="staff-picks">Staff Picks</TabsTrigger>

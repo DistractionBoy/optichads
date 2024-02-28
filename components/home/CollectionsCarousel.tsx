@@ -14,7 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import CollectionMetadataSection from "./CollectionMetadataSection";
 import { isSlug } from "@/lib/helpers";
 import CollectionShowcaseCarousel from "./CollectionShowcaseCarousel";
-import { divergentLinkButtonCSS } from "../ui/button";
+import { LampContainer } from "../ui/lamp";
 
 const carouselItemCSS = cn(
   "overflow-hidden basis-1/3 transition-all duration-150 rotate-3 mx-auto blur-sm hover:blur-none [&_img]:-rotate-3",
@@ -59,36 +59,55 @@ const CollectionsCarousel = () => {
         </Carousel>
       </div>
 
-      <Tabs
-        className="bg-gradient-to-br from-zinc-50 dark:from-zinc-900 to-slate-200 via-stone-300/90 dark:via-stone-700/80 dark:to-slate-800"
-        defaultValue="optichads"
-        value={collection_slug}
-        onValueChange={(value) => isSlug(value) && setCollection_slug(value)}
+      <LampContainer
+        chain={
+          collection_slug === "optichads"
+            ? "optimism"
+            : collection_slug === "basebrigade"
+              ? "base"
+              : "arbitrum"
+        }
       >
-        <TabsList className="flex flex-col sm:flex-row space-x-0 sm:space-x-8 h-full bg-transparent mt-12 md:mt-20">
-          <TabsTrigger value="basebrigade" className={divergentLinkButtonCSS}>
-            Base Brigade
-          </TabsTrigger>
-          <TabsTrigger value="optichads" className={divergentLinkButtonCSS}>
-            OptiChads
-          </TabsTrigger>
-          <TabsTrigger value="arbibabes" className={divergentLinkButtonCSS}>
-            ArbiBabes
-          </TabsTrigger>
-        </TabsList>
-        <TabsContent value="optichads">
-          <CollectionMetadataSection collection_slug="optichads" />
-          <CollectionShowcaseCarousel collection_slug="optichads" />
-        </TabsContent>
-        <TabsContent value="basebrigade">
-          <CollectionMetadataSection collection_slug="basebrigade" />
-          <CollectionShowcaseCarousel collection_slug="basebrigade" />
-        </TabsContent>
-        <TabsContent value="arbibabes">
-          <CollectionMetadataSection collection_slug="arbibabes" />
-          <CollectionShowcaseCarousel collection_slug="arbibabes" />
-        </TabsContent>
-      </Tabs>
+        <Tabs
+          defaultValue="optichads"
+          value={collection_slug}
+          onValueChange={(value) => isSlug(value) && setCollection_slug(value)}
+        >
+          <TabsList className="flex space-x-0 sm:space-x-8 h-full bg-transparent my-12 md:mt-24 sm:mb-32 md:mb-52 lg:mb-32 xl:mt-28">
+            <TabsTrigger
+              value="basebrigade"
+              className="text-lg lg:text-2xl xl:text-3xl hover:text-gray-200"
+            >
+              Base Brigade
+            </TabsTrigger>
+            <TabsTrigger
+              value="optichads"
+              className="text-lg lg:text-2xl xl:text-3xl hover:text-gray-200"
+            >
+              OptiChads
+            </TabsTrigger>
+            <TabsTrigger
+              value="arbibabes"
+              className="text-lg lg:text-2xl xl:text-3xl hover:text-gray-200"
+            >
+              ArbiBabes
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="optichads">
+            <CollectionMetadataSection collection_slug="optichads" />
+
+            <CollectionShowcaseCarousel collection_slug="optichads" />
+          </TabsContent>
+          <TabsContent value="basebrigade">
+            <CollectionMetadataSection collection_slug="basebrigade" />
+            <CollectionShowcaseCarousel collection_slug="basebrigade" />
+          </TabsContent>
+          <TabsContent value="arbibabes">
+            <CollectionMetadataSection collection_slug="arbibabes" />
+            <CollectionShowcaseCarousel collection_slug="arbibabes" />
+          </TabsContent>
+        </Tabs>
+      </LampContainer>
     </>
   );
 };

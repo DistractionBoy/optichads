@@ -10,7 +10,7 @@ import HotDealCarouselItemController from "./HotDealCarouselItemController";
 const HotDeals = () => {
   return (
     <>
-      <div className="flex flex-col z-10 w-full relative text-white mt-16 lg:mt-32 mb-8 lg:mb-8 desktop:mt-32 desktop:mb-12 px-0 lg:px-8 space-y-6">
+      <div className="flex flex-col w-full relative text-white mt-16 lg:mt-32 mb-8 lg:mb-8 desktop:mt-32 desktop:mb-12 px-0 lg:px-8 space-y-6">
         <h2 className="text-xl md:text-5xl lg:text-7xl font-bold font-outline-0 lg:font-outline-2">
           Hot Deals
         </h2>

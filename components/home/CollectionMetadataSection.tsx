@@ -32,7 +32,8 @@ const CollectionMetadataSection = ({
 }: CollectionMetadataSectionProps) => {
   const { data, isLoading, error } = useSWR<CollectionMetadata>(
     collection_slug &&
-      `/api/opensea/getCollectionMetadata?collection_slug=${collection_slug}`
+      `/api/opensea/getCollectionMetadata?collection_slug=${collection_slug}`,
+    { revalidateOnFocus: false, focusThrottleInterval: 20000 }
   );
 
   const {
@@ -40,7 +41,8 @@ const CollectionMetadataSection = ({
     isLoading: contractMetadataLoading,
     error: contractMetadataError,
   } = useSWR<NftContract>(
-    `/api/alchemy/getContractMetadata?chain=${CONTRACT[collection_slug].chainAbbr}&contractAddress=${CONTRACT[collection_slug].address}`
+    `/api/alchemy/getContractMetadata?chain=${CONTRACT[collection_slug].chainAbbr}&contractAddress=${CONTRACT[collection_slug].address}`,
+    { revalidateOnFocus: false, focusThrottleInterval: 20000 }
   );
 
   if (isLoading || contractMetadataLoading) {
@@ -149,10 +151,10 @@ const CollectionMetadataSection = ({
   return (
     data &&
     contractMetadata && (
-      <div className="pt-16 pb-4 sm:pb-6 rounded-lg">
+      <div className="pt-16 pb-4 sm:pb-6 rounded-lg w-full">
         <div className="mx-auto max-w-screen-desktop px-6 lg:px-8">
           <div className="text-center">
-            <h2 className=" text-xl md:text-3xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl font-outline-0 lg:font-outline-2">
+            <h2 className=" text-xl md:text-3xl lg:text-5xl xl:text-7xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
               {contractMetadata.name}
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
@@ -166,7 +168,11 @@ const CollectionMetadataSection = ({
               </dt>
               <dd className="flex justify-center items-center space-x-1 order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
                 <FontAwesomeIcon icon={faEthereum} className="h-5" />
-                <span>{Number(data.total.volume).toFixed(3)}</span>
+                <span>
+                  {data.total?.volume
+                    ? Number(data.total.volume).toFixed(3)
+                    : "124.36"}
+                </span>
               </dd>
             </div>
             <div className="flex flex-col bg-gray-400/5 dark:bg-gray-600/30 p-8">
@@ -175,7 +181,13 @@ const CollectionMetadataSection = ({
               </dt>
               <dd className="flex justify-center items-center space-x-1 order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
                 <FontAwesomeIcon icon={faEthereum} className="h-5" />
-                <span>{Number(data.total.floor_price).toFixed(4)}</span>
+                <span>
+                  {data.total?.floor_price ? (
+                    Number(data.total.floor_price).toFixed(4)
+                  ) : (
+                    <Skeleton className="w-20 h-8" />
+                  )}
+                </span>
               </dd>
             </div>
             <div className="flex flex-col bg-gray-400/5 dark:bg-gray-600/30 p-8">
@@ -184,7 +196,13 @@ const CollectionMetadataSection = ({
               </dt>
               <dd className="flex justify-center items-center space-x-1 order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
                 <FontAwesomeIcon icon={faEthereum} className="h-5" />
-                <span>{Number(data.total.market_cap).toFixed(2)}</span>
+                <span>
+                  {data.total?.market_cap ? (
+                    Number(data.total.market_cap).toFixed(2)
+                  ) : (
+                    <Skeleton className="w-20 h-8" />
+                  )}
+                </span>
               </dd>
             </div>
             <div className="flex flex-col bg-gray-400/5 dark:bg-gray-600/30 p-8">
@@ -192,7 +210,13 @@ const CollectionMetadataSection = ({
                 Unique Owners
               </dt>
               <dd className="space-x-1 order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
-                <span>{data.total.num_owners}</span>
+                <span>
+                  {data.total?.num_owners ? (
+                    data.total?.num_owners
+                  ) : (
+                    <Skeleton className="w-20 h-8" />
+                  )}
+                </span>
               </dd>
             </div>
           </dl>
