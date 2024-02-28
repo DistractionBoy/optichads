@@ -108,7 +108,7 @@ export default function Team() {
   ];
 
   return (
-    <div className="mx-auto container py-12 px-4 sm:px-6 lg:px-8 lg:py-24 mt-24 lg:mt-32 mb-12 lg:mb-24 max-w-[2488px]">
+    <div className="mx-auto container py-12 px-4 sm:px-6 lg:px-8 lg:py-24 mt-24 lg:mt-32 mb-12 lg:mb-24 xl:max-w-[1920px]">
       <div className="space-y-12">
         <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none prose prose-2xl dark:prose-invert">
           <h2>{t("chads:team_section.0.our_team")}</h2>
@@ -119,7 +119,7 @@ export default function Team() {
         </div>
         <ul
           role="list"
-          className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
+          className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8 xl:gap-x-16 xl:gap-y-16"
         >
           {people.map((person: Person) => (
             <li key={person.name}>
