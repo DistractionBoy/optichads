@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { PT_Sans, Rubik } from "next/font/google";
+import { Rubik } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 import { Toaster } from "./ui/sonner";
@@ -27,7 +27,7 @@ export default function Layout({ children }: Props) {
     <>
       <main
         className={cn(
-          `m-0 flex flex-1 flex-col items-stretch justify-between overflow-x-hidden`,
+          `m-0 flex flex-1 flex-col items-stretch justify-start overflow-x-hidden`,
           rubik.className
         )}
       >

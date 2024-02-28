@@ -11,12 +11,12 @@ const navigation = {
     { name: "Home", href: "/", current: true },
     { name: "Collections", href: "/", current: false },
     { name: "Music", href: "/", current: false },
-    { name: "Affiliates", href: "/", current: false }
+    { name: "Affiliates", href: "/", current: false },
   ],
   second: [
     { name: "Mint", href: "/", current: false },
     { name: "Token", href: "/", current: false },
-    { name: "Staking", href: "/", current: false }
+    { name: "Staking", href: "/", current: false },
   ],
   social: [
     {
@@ -38,13 +38,10 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800">
+    <footer className="bg-gray-800 z-10 relative">
       <div className="mx-auto w-full py-6 px-4 sm:px-6 lg:px-8 ">
         <div className="flex flex-row h-auto mt-2 md:mx-12 mx-2">
-          <nav
-            className="-mx-5 md:basis-1/5 basis-1/2"
-            aria-label="Footer"
-          >
+          <nav className="-mx-5 md:basis-1/5 basis-1/2" aria-label="Footer">
             {navigation.main.map((item) => (
               <div key={item.name} className="px-5 py-2">
                 <a
@@ -56,10 +53,7 @@ export default function Footer() {
               </div>
             ))}
           </nav>
-          <nav
-            className="-mx-5 flex-1"
-            aria-label="Footer"
-          >
+          <nav className="-mx-5 flex-1" aria-label="Footer">
             {navigation.second.map((item) => (
               <div key={item.name} className="px-5 py-2">
                 <a
@@ -92,7 +86,12 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image alt="opensea logo" src={osLogo} height={20} width={20} />
+                  <Image
+                    alt="opensea logo"
+                    src={osLogo}
+                    height={20}
+                    width={20}
+                  />
                 </a>
               </div>
               <div className="flex h-6 w-6 items-center">
@@ -113,7 +112,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <hr className="h-px my-4 border-0 bg-gray-600"/>
+        <hr className="h-px my-4 border-0 bg-gray-600" />
         <p className="text-center text-base text-gray-400">
           &copy; 2024 OptiChads. All rights reserved.
         </p>

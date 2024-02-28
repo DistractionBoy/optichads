@@ -30,7 +30,7 @@ const IntroText = () => (
           the possibilities with the introduction of our native token, OPC!
         </p>
       </article>
-      <div className="hidden lg:flex h-900 desktop:h-[1200px] bg-white w-24" />
+      <div className="hidden lg:flex h-[900px] desktop:h-[1220px] bg-white w-24" />
       <div className="hidden ultrawide:flex flex-col justify-end">
         <Image
           className="max-w-[900px]"
@@ -49,7 +49,7 @@ const IntroText = () => (
           height={550}
         />
       </div>
-      <div className="hidden ultrawide:flex desktop:h-[900px] ultrawide:h-[1200px] bg-white w-24" />
+      <div className="hidden ultrawide:flex desktop:h-[900px] ultrawide:h-[1220px] bg-white w-24" />
       <div className="hidden ultrawide:flex flex-1">
         <article className="prose my-12 lg:my-16 xl:m-24 px-12 [&>p]:leading-relaxed flex flex-col justify-start ultrawide:justify-center">
           <p className="text-white text-base sm:text-xl md:text-2xl font-medium desktop:text-3xl">

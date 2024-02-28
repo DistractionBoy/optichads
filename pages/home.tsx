@@ -5,7 +5,6 @@ import HeadMeta from "@/components/HeadMeta";
 import Navbar from "@/components/Navbar";
 import Team from "@/components/Team";
 import CollectionsCarousel from "@/components/home/CollectionsCarousel";
-import Head from "next/head";
 import WelcomeChad from "@/components/home/WelcomeChad";
 import BaseBrigadeIntro from "@/components/home/BaseBrigadeIntro";
 import HotDeals from "@/components/home/HotDeals";

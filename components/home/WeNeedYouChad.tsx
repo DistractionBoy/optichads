@@ -5,7 +5,7 @@ import Link from "next/link";
 import { divergentLinkButtonCSS } from "../ui/button";
 
 const WeNeedYouChad = () => (
-  <div className="relative rounded-xl mx-6 my-12 md:mx-8 md:my-16 lg:my-32 bg-white/90 shadow-2xl drop-shadow-lg">
+  <div className="relative rounded-xl mx-6 my-24 md:mx-8 md:my-28 lg:my-40 bg-white/90 shadow-2xl drop-shadow-lg">
     <div className="relative overflow-hidden rounded-t-xl md:rounded-l-xl md:rounded-r-none bg-red-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
       <Image
         className="h-full w-full object-cover"

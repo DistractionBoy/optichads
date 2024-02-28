@@ -57,7 +57,8 @@ const HotDealCarouselItem = ({
   const { isConnected } = useAccount();
 
   const { data, isLoading, error } = useSWR<NFTExpanded>(
-    `/api/opensea/getNFT${params}`
+    `/api/opensea/getNFT${params}`,
+    { revalidateOnFocus: false, focusThrottleInterval: 20000 }
   );
 
   if (isLoading) {

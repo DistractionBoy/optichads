@@ -24,11 +24,11 @@ const secondDefaultState: NavLink[] = [
   { name: "Staking", href: "/", current: false },
 ];
 
-export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
+export default function NavDrawer({ children, isOpen, setIsOpen }: any) {
   return (
     <main
       className={
-        " fixed overflow-hidden z-10 bg- bg-opacity-25 inset-0 transform ease-in-out " +
+        " fixed overflow-hidden z-20 bg- bg-opacity-25 inset-0 transform ease-in-out " +
         (isOpen
           ? " transition-opacity opacity-100 duration-500 translate-x-0  "
           : " transition-all delay-500 opacity-0 translate-x-full  ")
@@ -45,50 +45,49 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
             <div className="flex-1 w-64">
               {firstDefaultState.map((item) => (
                 <a
-                    key={item.name}
-                    href={item.href}
-                    className={cn(
-                      item.current
-                        ? "text-red-500"
-                        : "text-white",
-                      "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl font-bold hover:text-red-600 " 
-                    )}
-                    aria-current={item.current ? "page" : undefined}
-                  >
-                    {item.name}
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    item.current ? "text-red-500" : "text-white",
+                    "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl font-bold hover:text-red-600 "
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  {item.name}
                 </a>
               ))}
             </div>
             <div className="flex-1 w-32">
               {secondDefaultState.map((item) => (
-                  <a
-                      key={item.name}
-                      href={item.href}
-                      className={cn(
-                        item.current
-                          ? "text-red-500"
-                          : "text-white",
-                        "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl font-bold hover:text-red-600"
-                      )}
-                      aria-current={item.current ? "page" : undefined}
-                    >
-                    {item.name}
-                  </a>
-                ))}
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    item.current ? "text-red-500" : "text-white",
+                    "block rounded-md px-3 py-2 2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl font-bold hover:text-red-600"
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  {item.name}
+                </a>
+              ))}
             </div>
             {/* Social media desktop & tablet */}
-            <div className={"hidden lg:block flex-1 w-48 " +
-              (isOpen
-                ? " animate-[spin_1s] duration-1000 delay-400 "
-                : "   ")
-                }>
-                <header className="2xl:text-4xl xl:text-2xl lg:text-xl font-bold text-blue-400">Connect with us</header>
-                <div className="flex mt-1 space-x-8">
-                  <a
-                    href="https://twitter.com/OptiChads"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+            <div
+              className={
+                "hidden lg:block flex-1 w-48 " +
+                (isOpen ? " animate-[spin_1s] duration-1000 delay-400 " : "   ")
+              }
+            >
+              <header className="2xl:text-4xl xl:text-2xl lg:text-xl font-bold text-blue-400">
+                Connect with us
+              </header>
+              <div className="flex mt-1 space-x-8">
+                <a
+                  href="https://twitter.com/OptiChads"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image
                     className="rounded-lg shadow-lg"
                     src={twitter}
@@ -97,10 +96,10 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                   />
                 </a>
                 <a
-                    href="https://discord.gg/optichads"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  href="https://discord.gg/optichads"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image
                     className="rounded-lg shadow-lg"
                     src={discord}
@@ -108,109 +107,111 @@ export default function NavDrawer({ children, isOpen, setIsOpen } : any) {
                     priority
                   />
                 </a>
-                </div>
-                <div className="flex mt-2 space-x-14 px-3">
-                  <a
-                    href="https://www.coingecko.com/en/nft/optichads"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Image
-                      className="rounded-lg shadow-lg"
-                      src={coingecko}
-                      alt=""
-                      priority
-                    />
-                  </a>
-                  <a
-                    href="https://opensea.io/collection/optichads"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Image
-                      className="rounded-lg shadow-lg"
-                      src={opensea}
-                      alt=""
-                      priority
-                    />
-                  </a>
-                </div>
+              </div>
+              <div className="flex mt-2 space-x-14 px-3">
+                <a
+                  href="https://www.coingecko.com/en/nft/optichads"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    className="rounded-lg shadow-lg"
+                    src={coingecko}
+                    alt=""
+                    priority
+                  />
+                </a>
+                <a
+                  href="https://opensea.io/collection/optichads"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    className="rounded-lg shadow-lg"
+                    src={opensea}
+                    alt=""
+                    priority
+                  />
+                </a>
+              </div>
             </div>
             {/* Close button */}
             <div className="flex w-48 absolute right-0 top-0 py-4 lg:mx-12">
-                <SwitchLanguage />
-                <Image
-                  className="ml-14 rounded-lg shadow-lg hover:rotate-180 duration-700 cursor-pointer"
-                  src={closeButton}
-                  alt=""
-                  priority
-                  onClick={() => {
-                    setIsOpen(false);
-                  }}
-                />
+              <SwitchLanguage />
+              <Image
+                className="ml-14 rounded-lg shadow-lg hover:rotate-180 duration-700 cursor-pointer"
+                src={closeButton}
+                alt=""
+                priority
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              />
             </div>
           </div>
           {/* Social media mobile */}
-          <div className={"lg:hidden px-8 pb-10 w-full " +
-              (isOpen
-                ? " animate-[spin_1s] duration-1000 delay-400 "
-                : "   ")
-                }>
-                <header className="text-3xl font-bold text-blue-400">Connect with us</header>
-                <div className="flex mt-1 space-x-8">
-                  <a
-                    href="https://twitter.com/OptiChads"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                  <Image
-                    className="rounded-lg shadow-lg"
-                    src={twitter}
-                    alt=""
-                    priority
-                  />
-                </a>
-                <a
-                    href="https://discord.gg/optichads"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                  <Image
-                    className="rounded-lg shadow-lg"
-                    src={discord}
-                    alt=""
-                    priority
-                  />
-                </a>
-                </div>
-                <div className="flex mt-2 space-x-14 px-3">
-                  <a
-                    href="https://www.coingecko.com/en/nft/optichads"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Image
-                      className="rounded-lg shadow-lg"
-                      src={coingecko}
-                      alt=""
-                      priority
-                    />
-                  </a>
-                  <a
-                    href="https://opensea.io/collection/optichads"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Image
-                      className="rounded-lg shadow-lg"
-                      src={opensea}
-                      alt=""
-                      priority
-                    />
-                  </a>
-                </div>
+          <div
+            className={
+              "lg:hidden px-8 pb-10 w-full " +
+              (isOpen ? " animate-[spin_1s] duration-1000 delay-400 " : "   ")
+            }
+          >
+            <header className="text-3xl font-bold text-blue-400">
+              Connect with us
+            </header>
+            <div className="flex mt-1 space-x-8">
+              <a
+                href="https://twitter.com/OptiChads"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  className="rounded-lg shadow-lg"
+                  src={twitter}
+                  alt=""
+                  priority
+                />
+              </a>
+              <a
+                href="https://discord.gg/optichads"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  className="rounded-lg shadow-lg"
+                  src={discord}
+                  alt=""
+                  priority
+                />
+              </a>
             </div>
-
+            <div className="flex mt-2 space-x-14 px-3">
+              <a
+                href="https://www.coingecko.com/en/nft/optichads"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  className="rounded-lg shadow-lg"
+                  src={coingecko}
+                  alt=""
+                  priority
+                />
+              </a>
+              <a
+                href="https://opensea.io/collection/optichads"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  className="rounded-lg shadow-lg"
+                  src={opensea}
+                  alt=""
+                  priority
+                />
+              </a>
+            </div>
+          </div>
         </article>
       </section>
       <section

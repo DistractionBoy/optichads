@@ -6,7 +6,6 @@ import {
 } from "../ui/carousel";
 import ShowcaseCarouselItem from "./ShowcaseCarouselItem";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { divergentLinkButtonCSS } from "../ui/button";
 
 export type CollectionShowcaseCarouselProps = {
   collection_slug: "optichads" | "arbibabes" | "basebrigade";
@@ -94,14 +93,39 @@ const CollectionShowcaseCarousel = ({
   collection_slug,
 }: CollectionShowcaseCarouselProps) => {
   return (
-    <div className="container py-12 md:py-16 mb-24 px-12 lg:px-16">
+    <div className="container py-12 md:py-16 mb-24 px-12 lg:px-16 desktop:max-w-full">
       <Tabs defaultValue="staff-picks">
-        <TabsList className="flex flex-col sm:flex-row justify-center space-x-0 sm:space-x-8 h-full mb-20 bg-transparent">
-          <TabsTrigger value="staff-picks">Staff Picks</TabsTrigger>
-          <TabsTrigger value="business">Business</TabsTrigger>
-          <TabsTrigger value="one-of-ones">1 of 1&apos;s</TabsTrigger>
-          <TabsTrigger value="apes">Apes</TabsTrigger>
-          <TabsTrigger value="goop">Goop / Trippy</TabsTrigger>
+        <TabsList className="flex flex-row flex-wrap justify-around space-x-0 sm:space-x-8 not:first:space-y-3 h-full mb-20 bg-transparent">
+          <TabsTrigger
+            value="staff-picks"
+            className="my-2 text-lg lg:text-2xl xl:text-3xl"
+          >
+            Staff Picks
+          </TabsTrigger>
+          <TabsTrigger
+            value="business"
+            className="my-2 text-lg lg:text-2xl xl:text-3xl"
+          >
+            Business
+          </TabsTrigger>
+          <TabsTrigger
+            value="one-of-ones"
+            className="my-2 text-lg lg:text-2xl xl:text-3xl"
+          >
+            1 of 1&apos;s
+          </TabsTrigger>
+          <TabsTrigger
+            value="apes"
+            className="my-2 text-lg lg:text-2xl xl:text-3xl"
+          >
+            Apes
+          </TabsTrigger>
+          <TabsTrigger
+            value="goop"
+            className="my-2 text-lg lg:text-2xl xl:text-3xl"
+          >
+            Goop / Trippy
+          </TabsTrigger>
         </TabsList>
         <TabsContent
           value="business"
