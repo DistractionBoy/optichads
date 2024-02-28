@@ -15,10 +15,19 @@ import {
   CardContainer,
   CardItem,
 } from "@/components/ui/three-d-card";
+import Head from "next/head";
 
 const Bio = () => (
   <>
-    <HeadMeta />
+    <HeadMeta
+      title="Millynish's Corner"
+      description="Meet Millynish, the living embodiment of Web3 innovation! After
+            Dicaso unleashed Layer 2, there was no turning back for this digital
+            dynamo."
+    />
+    <Head key={"millynish-bio"}>
+      <meta property="og:image" content={`${millynish.src}`} />
+    </Head>
     <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
     <Navbar />
     <SimpleInnerLayout title="Bios">
