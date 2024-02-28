@@ -16,7 +16,7 @@ const Bio = () => (
     <Navbar />
     <SimpleInnerLayout title="Bios">
       <TracingBeam className="px-0">
-        <div className="prose xl:prose-xl prose-slate mx-8">
+        <div className="prose xl:prose-xl prose-slate mx-12 lg:mx-8">
           <h2>Millynish</h2>
           <p className="lead">
             Meet Millynish, the living embodiment of Web3 innovation! After
