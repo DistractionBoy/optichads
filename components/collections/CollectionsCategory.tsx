@@ -5,7 +5,7 @@ const OPTIONS: EmblaOptionsType = {}
 const SLIDE_COUNT = 6
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
-const CollectionsCarouselItemController = () => {
+const CollectionsCategory = () => {
 
   return (
     <>
@@ -16,4 +16,4 @@ const CollectionsCarouselItemController = () => {
   );
 };
 
-export default CollectionsCarouselItemController;
+export default CollectionsCategory;
