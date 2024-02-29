@@ -40,7 +40,7 @@ export default function Navbar() {
         className="flex flex-col flex-1 w-full items-around bg-transparent z-10 absolute"
       >
         {({ open }) => (
-          <div className="flex justify-center items-center h-16 mt-2 mx-12">
+          <div className="flex justify-center items-center h-16 mt-2 container px-4 sm:px-6 lg:px-8">
             <div className="hidden md:flex items-center grow">
               <div className="flex items-baseline">
                 <Button

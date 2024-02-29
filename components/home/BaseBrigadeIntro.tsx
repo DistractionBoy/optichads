@@ -14,7 +14,7 @@ const BaseBrigadeIntro = () => {
     <>
       <div className="block relative w-full h-0 lg:h-44 desktop:h-64 bg-[#0052FE]" />
       <div className="flex flex-col lg:flex-row justify-end lg:justify-center bg-[#0052FE]">
-        <div className="flex flex-col items-center justify-center space-y-12 md:space-y-28 my-20 px-20 xl:px-8">
+        <div className="flex flex-col items-center justify-center space-y-12 md:space-y-28 my-20 xl:mb-52 px-20 xl:px-8">
           <h2 className="text-5xl md:text-7xl desktop:text-[96px] ultrawide:text-[120px] font-bold xl:font-black leading-8 font-outline-none md:font-outline-2 xl:font-outline-4">
             GLAD <span className="inline-block lg:hidden">UR</span>
           </h2>
@@ -45,7 +45,7 @@ const BaseBrigadeIntro = () => {
             onLoad={onLoadingComplete}
           />
         </div>
-        <div className="flex lg:hidden desktop:flex flex-col items-center justify-center space-y-12 md:space-y-28 my-20 mb-32 px-20 xl:px-8">
+        <div className="flex lg:hidden desktop:flex flex-col items-center justify-center space-y-12 md:space-y-28 my-20 mb-32 xl:mb-52 px-20 xl:px-8">
           <h2 className="text-5xl md:text-7xl desktop:text-[96px] ultrawide:text-[120px] font-bold xl:font-black leading-8 font-outline-none md:font-outline-2 xl:font-outline-4">
             LIKE <span className="inline-block lg:hidden">OUR</span>
           </h2>
