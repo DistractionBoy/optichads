@@ -9,7 +9,6 @@ import distraction from "@/public/images/distraction.png";
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
-import Head from "next/head";
 import Link from "next/link";
 import Script from "next/script";
 import { LayoutGrid } from "@/components/ui/photo-layout-grid";
@@ -80,7 +79,7 @@ const cards = [
   {
     id: 2,
     content: <SkeletonTwo />,
-    className: "col-span-1",
+    className: "col-span-1 [&_img]:object-bottom",
     thumbnail: proposal.src,
   },
   {
@@ -180,8 +179,8 @@ const Bio = () => (
               <a href="https://twitter.com/DistractionBoy_?ref_src=twsrc%5Etfw">
                 @DistractionBoy_
               </a>{" "}
-              <a href="https://twitter.com/anish_katwal?ref_src=twsrc%5Etfw">
-                @anish_katwal
+              <a href="https://twitter.com/millynish7?ref_src=twsrc%5Etfw">
+                @millynish7
               </a>{" "}
               <a href="https://twitter.com/Dicaso5?ref_src=twsrc%5Etfw">
                 @Dicaso5
@@ -204,7 +203,8 @@ const Bio = () => (
             a regular job as a Technical Product Manager for a security company
             that uses DLT to provide MFA for APIs. In his spare time he masters
             slow-cooking big meats with custom rubs, eating them, and taking
-            pics at the occasional event photography gig.
+            pics at the occasional{" "}
+            <span className="font-bold">event photography</span> gig.
           </p>
           <blockquote className="twitter-tweet h-[823px]">
             <p lang="en" dir="ltr">
@@ -224,7 +224,7 @@ const Bio = () => (
         </div>
       </TracingBeam>
     </SimpleInnerLayout>
-    <div className="h-screen pt-20 pb-40 w-full relative z-10">
+    <div className="h-screen w-screen mt-20 mb-40 relative z-10">
       <LayoutGrid cards={cards} />
     </div>
     <BackgroundBeams />

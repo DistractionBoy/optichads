@@ -15,7 +15,6 @@ import {
   CardContainer,
   CardItem,
 } from "@/components/ui/three-d-card";
-import Head from "next/head";
 
 const Bio = () => (
   <>

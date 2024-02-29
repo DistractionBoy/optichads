@@ -3,7 +3,7 @@ import Head from "next/head";
 
 export default function HeadMeta({
   title = "Optichads",
-  description = `With a cheap public mint and 50% donated to retroactive public goods, Optichads proves it cares about the community. We aim to inspire charitable giving and improving health and wellness.`,
+  description = `OptiChads is the #1 NFT Community on Optimism, and we now have collections on Base and Arbitrum too. Hang out, work out, and discuss all things crypto and protein.`,
   keywords = "OptiChads, @OptiChads, Non-Fungible Token, Optimism, Ethereum, Decentralized",
   img = "/images/hero-img.png",
 }) {
