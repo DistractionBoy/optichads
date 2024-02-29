@@ -10,7 +10,7 @@ const SimpleInnerLayout = ({
 }) => (
   <>
     <header className="bg-white shadow z-10 relative">
-      <div className="container px-8 py-6 sm:px-10 lg:px-16">
+      <div className="container max-w-7xl px-8 py-6">
         <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900">
           {title && title}
         </h1>
