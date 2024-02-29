@@ -9,9 +9,6 @@ import jasonFactor from "@/public/images/jasonfactor.webp";
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
-import Head from "next/head";
-import { LayoutGrid } from "@/components/ui/photo-layout-grid";
-
 const Bio = () => (
   <>
     <HeadMeta

@@ -8,7 +8,6 @@ import dicaso from "@/public/images/dicaso.png";
 
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import Head from "next/head";
 
 const Bio = () => (
   <>
