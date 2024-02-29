@@ -9,8 +9,8 @@ import opcPromo from "@/public/images/opc-claim-promo.png";
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useAccount } from "wagmi";
-import { Button, divergentLinkButtonCSS } from "@/components/ui/button";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import CustomConnectBtn from "@/components/CustomConnectBtn";
+import OpenClaimDialogBtn from "@/components/opc/OpenClaimDialogBtn";
 
 const Bio = () => {
   const { address, isConnected } = useAccount();
@@ -39,50 +39,9 @@ const Bio = () => {
               priority
             />
             {isConnected ? (
-              <Button className={divergentLinkButtonCSS}>I am ready</Button>
+              <OpenClaimDialogBtn chain="optimism" />
             ) : (
-              <ConnectButton.Custom>
-                {({
-                  account,
-                  chain,
-                  openConnectModal,
-                  authenticationStatus,
-                  mounted,
-                }) => {
-                  const ready = mounted && authenticationStatus !== "loading";
-                  const connected =
-                    ready &&
-                    account &&
-                    chain &&
-                    (!authenticationStatus ||
-                      authenticationStatus === "authenticated");
-                  return (
-                    <div
-                      {...(!ready && {
-                        "aria-hidden": true,
-                        style: {
-                          opacity: 0,
-                          pointerEvents: "none",
-                          userSelect: "none",
-                        },
-                      })}
-                    >
-                      {(() => {
-                        if (!connected) {
-                          return (
-                            <Button
-                              className={divergentLinkButtonCSS}
-                              onClick={openConnectModal}
-                            >
-                              Connect
-                            </Button>
-                          );
-                        }
-                      })()}
-                    </div>
-                  );
-                }}
-              </ConnectButton.Custom>
+              <CustomConnectBtn />
             )}
           </div>
         </TracingBeam>
