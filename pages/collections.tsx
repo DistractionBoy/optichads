@@ -8,7 +8,6 @@ import CollectionsCategory from "@/components/collections/CollectionsCategory";
 
 import Footer from "@/components/Footer";
 
-
 const Collections: NextPage = () => {
   return (
     <>

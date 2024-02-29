@@ -3,18 +3,18 @@ import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 
 type PropType = {
-  slides: number[]
+  groups: any
   options?: EmblaOptionsType
 }
 
 type ThumbPropType = {
   selected: boolean
-  index: number
   onClick: () => void
+  collection: any
 }
 
 const Thumb: React.FC<ThumbPropType> = (props) => {
-  const { selected, index, onClick } = props
+  const { selected, onClick, collection } = props
 
   return (
     <div
@@ -27,14 +27,14 @@ const Thumb: React.FC<ThumbPropType> = (props) => {
         type="button"
         className="embla-thumbs__slide__number"
       >
-        {index + 1}
+        {collection.name}
       </button>
     </div>
   )
 }
 
 const CarouselThumbs: React.FC<PropType> = (props) => {
-  const { slides, options } = props
+  const { groups, options } = props
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options)
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
@@ -67,28 +67,28 @@ const CarouselThumbs: React.FC<PropType> = (props) => {
     <div className="m-auto max-full embla">
       <div className="embla__viewport" ref={emblaMainRef}>
         <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index + 1}</div>
+          {groups.map((collection) => (
+            <div className={`embla__slide bg-[${collection.bgColor}]`} key={collection.name}>
+              <div className="embla__slide__number">{collection.name}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="embla-thumbs">
+      {/* <div className="embla-thumbs">
         <div className="embla-thumbs__viewport" ref={emblaThumbsRef}>
           <div className="embla-thumbs__container">
-            {slides.map((index) => (
+            {groups.map((collection) => (
               <Thumb
-                key={index}
-                onClick={() => onThumbClick(index)}
-                selected={index === selectedIndex}
-                index={index}
+                key={collection.name}
+                onClick={() => onThumbClick(collection)}
+                selected={collection.index === selectedIndex}
+                collection={collection}
               />
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
