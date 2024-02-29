@@ -64,9 +64,9 @@ const claimTokensClickHandler = async (
         );
         debugger;
 
-        const response = await connectedContract.claimRewards();
+        // const response = await connectedContract.claimRewards();
         debugger;
-        const receipt: TransactionReceipt = await response.wait();
+        // const receipt: TransactionReceipt = await response.wait();
         setDialogOpen(false);
         // return receipt;
       }
@@ -136,13 +136,13 @@ const OpenClaimDialogBtn = ({ chain }: OpenClaimDialogBtnProps) => {
                     ).catch((e: any) => {
                       toast.error("An Error Occurred. You may try again.");
                     });
-                    if (receipt && receipt.hash) {
-                      toast.success("Claim Successful!", {
-                        description: `Tx: ${receipt?.hash}
-                                        Chain: ${chain}`,
-                        descriptionClassName: "leading-8",
-                      });
-                    }
+                    // if (receipt && receipt.hash) {
+                    //   toast.success("Claim Successful!", {
+                    //     description: `Tx: ${receipt?.hash}
+                    //                     Chain: ${chain}`,
+                    //     descriptionClassName: "leading-8",
+                    //   });
+                    // }
                   } else {
                     toast("You need to connect your wallet");
                   }
