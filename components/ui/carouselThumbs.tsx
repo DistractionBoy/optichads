@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
+import Image from "next/image";
 
 type PropType = {
   groups: Array<any>
@@ -69,7 +70,14 @@ const CarouselThumbs: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {groups.map((collection) => (
             <div className={`embla__slide h-full ${collection.bgColor}`} key={collection.name}>
-              <div className="embla__slide__number">{collection.name}</div>
+              <div className="relative p-32 flex gap-20">
+                  <Image
+                    className="h-1/3 w-1/3 bg-white p-2 rounded-xl col-span-10"
+                    src={collection.img}
+                    alt=""
+                  />
+                  <div className="text-4xl font-bold">{collection.name}</div>
+                </div>
             </div>
           ))}
           

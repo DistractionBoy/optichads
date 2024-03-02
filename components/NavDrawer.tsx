@@ -12,7 +12,7 @@ import opensea from "/public/images/os-logo-blue.png";
 import SwitchLanguage from "./SwitchLanguage";
 
 const firstDefaultState: NavLink[] = [
-  { name: "Home", href: "/", current: true },
+  { name: "Home", href: "/home", current: true },
   { name: "Collections", href: "/collections", current: false },
   { name: "Music", href: "/", current: false },
   { name: "Affiliates", href: "/", current: false },

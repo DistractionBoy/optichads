@@ -1,5 +1,13 @@
 import CarouselThumbs from "../ui/carouselThumbs";
-import { EmblaOptionsType } from 'embla-carousel'
+import { EmblaOptionsType } from 'embla-carousel';
+
+import chad1 from "@/public/images/collections/chad1.webp";
+import chad2 from "@/public/images/collections/chad2.webp";
+import brigader1 from "@/public/images/collections/brigader1.webp";
+import brigader2 from "@/public/images/collections/brigader2.webp";
+import arbibabe1 from "@/public/images/collections/arbibabe1.webp";
+import arbibabe2 from "@/public/images/collections/arbibabe2.webp";
+
 
 const OPTIONS: EmblaOptionsType = {}
 const SLIDE_COUNT = 3
@@ -8,18 +16,24 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 const GROUPS = [
   {
     index: 0,
-    name: "Optichads",
-    bgColor: "bg-[#FB0420]"
+    name: "Armored Chad",
+    category: "Optichad",
+    bgColor: "bg-[#FB0420]",
+    img: chad1
   },
   {
     index: 1,
-    name: "Arbibabes",
-    bgColor: "bg-[#49AAF6]"
+    name: "Arbibabe",
+    category: "Arbibabe",
+    bgColor: "bg-[#49AAF6]",
+    img: arbibabe1
   },
   {
     index: 2,
-    name: "Brigades",
-    bgColor: "bg-[#80A5F8]"
+    name: "Brigader",
+    category: "Brigader",
+    bgColor: "bg-[#80A5F8]",
+    img: brigader1
   }
 ]
 
