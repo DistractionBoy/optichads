@@ -76,7 +76,15 @@ const CarouselThumbs: React.FC<PropType> = (props) => {
                     src={collection.img}
                     alt=""
                   />
-                  <div className="text-4xl font-bold">{collection.name}</div>
+                  <div>
+                    <div className="text-4xl font-bold">{collection.name}</div>
+                    <div className={`${collection.bgDescription} text-gray-100 p-2 rounded-xl my-4`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Obcaecati inventore sint neque asperiores? Dignissimos saepe culpa ipsam inventore dolorum. 
+                    Eaque corporis quisquam esse dicta incidunt commodi inventore dolores amet obcaecati.</div>
+                    <div className="p-2 rounded-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Obcaecati inventore sint neque asperiores? Dignissimos saepe culpa ipsam inventore dolorum. 
+                    Eaque corporis quisquam esse dicta incidunt commodi inventore dolores amet obcaecati.</div>
+                  </div>
                 </div>
             </div>
           ))}

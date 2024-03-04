@@ -19,21 +19,48 @@ const GROUPS = [
     name: "Armored Chad",
     category: "Optichad",
     bgColor: "bg-[#FB0420]",
+    bgDescription: "bg-red-600",
     img: chad1
   },
   {
     index: 1,
-    name: "Arbibabe",
-    category: "Arbibabe",
-    bgColor: "bg-[#49AAF6]",
-    img: arbibabe1
+    name: "Demon King",
+    category: "Optichad",
+    bgColor: "bg-[#FB0420]",
+    bgDescription: "bg-red-600",
+    img: chad2
   },
   {
     index: 2,
-    name: "Brigader",
+    name: "Berserker",
+    category: "Arbibabe",
+    bgColor: "bg-[#49AAF6]",
+    bgDescription: "bg-blue-400",
+    img: arbibabe1
+  },
+  {
+    index: 3,
+    name: "Succubus",
+    category: "Arbibabe",
+    bgColor: "bg-[#49AAF6]",
+    bgDescription: "bg-blue-400",
+    img: arbibabe2
+  },
+  {
+    index: 4,
+    name: "Wizard",
     category: "Brigader",
     bgColor: "bg-[#80A5F8]",
+    bgDescription: "bg-blue-400",
     img: brigader1
+  },
+  {
+    index: 5,
+    name: "Base King",
+    category: "Brigader",
+    bgColor: "bg-[#80A5F8]",
+    bgDescription: "bg-blue-400",
+    img: brigader2
   }
 ]
 
