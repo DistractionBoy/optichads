@@ -16,7 +16,7 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 const GROUPS = [
   {
     index: 0,
-    name: "Armored Chad",
+    name: "Armored",
     category: "Optichad",
     bgColor: "bg-[#FB0420]",
     bgDescription: "bg-red-600",
@@ -48,7 +48,7 @@ const GROUPS = [
   },
   {
     index: 4,
-    name: "Wizard",
+    name: "Wizard Cool",
     category: "Brigader",
     bgColor: "bg-[#80A5F8]",
     bgDescription: "bg-blue-400",

@@ -171,9 +171,6 @@
   --thumbs-slide-height: 6rem;
   margin-top: var(--thumbs-slide-spacing);
 }
-.embla-thumbs__viewport {
-  overflow: hidden;
-}
 .embla-thumbs__container {
   display: flex;
   flex-direction: row;

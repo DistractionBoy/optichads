@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from "next/image";
+import { divergentLinkButtonCSS } from "./button";
+import Link from "next/link";
 
 type PropType = {
   groups: Array<any>
@@ -70,60 +72,56 @@ const CarouselThumbs: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {groups.map((collection) => (
             <div className={`embla__slide h-full ${collection.bgColor}`} key={collection.name}>
-              <div className="relative p-32 flex gap-20">
+              <div className="relative p-24 flex gap-20">
                   <Image
-                    className="h-1/3 w-1/3 bg-white p-2 rounded-xl col-span-10"
+                    className="h-1/3 w-1/3 bg-white p-1 rounded-xl"
                     src={collection.img}
                     alt=""
                   />
                   <div>
-                    <div className="text-4xl font-bold">{collection.name}</div>
-                    <div className={`${collection.bgDescription} text-gray-100 p-2 rounded-xl my-4`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Obcaecati inventore sint neque asperiores? Dignissimos saepe culpa ipsam inventore dolorum. 
-                    Eaque corporis quisquam esse dicta incidunt commodi inventore dolores amet obcaecati.</div>
-                    <div className="p-2 rounded-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Obcaecati inventore sint neque asperiores? Dignissimos saepe culpa ipsam inventore dolorum. 
-                    Eaque corporis quisquam esse dicta incidunt commodi inventore dolores amet obcaecati.</div>
+                    <div className="text-4xl font-semibold">{collection.name}</div>
+                    <div className="font-extrabold">Collection: {collection.category}</div>
+                    <div className={`${collection.bgDescription} text-gray-100 p-2 rounded-xl my-4`}>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Obcaecati inventore sint neque asperiores? Dignissimos saepe culpa ipsam inventore dolorum. 
+                      Eaque corporis quisquam esse dicta incidunt commodi inventore dolores amet obcaecati.</div>
+                      <div className="p-2 rounded-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Obcaecati inventore sint neque asperiores? Dignissimos saepe culpa ipsam inventore dolorum. 
+                      Eaque corporis quisquam esse dicta incidunt commodi inventore dolores amet obcaecati.</div>
+                    <div className="mt-3 lg:mt-8">
+                      <Link
+                        href={`collections/${collection.category}`}
+                        className={divergentLinkButtonCSS}
+                        target="_blank"
+                      >
+                        Visit collections
+                      </Link>
                   </div>
                 </div>
+              </div>
             </div>
           ))}
           
         </div>
-        <div className="embla-thumbs ">
-        <div className="embla-thumbs__viewport" ref={emblaThumbsRef}>
-          <div className="embla-thumbs__container">
-            {groups.map((collection) => (
-              <div>
-                <Thumb
-                  key={collection.name}
-                  onClick={() => onThumbClick(collection)}
-                  selected={collection.index === selectedIndex}
-                  collection={collection}
-                />
-              </div>
-            ))}
+        <div className="-mt-16 mx-60 pb-10">
+          <div className="" ref={emblaThumbsRef}>
+            <div className="flex gap-4">
+              {groups.map((collection) => (
+                <div className="cursor-pointer">
+                    <Image
+                      key={collection.index}
+                      className="w-2/3 p-1 bg-gray-100 rounded-full hover:-translate-y-2 hover:scale-200 duration-300"
+                      onClick={() => onThumbClick(collection.index)}
+                      src={collection.img}
+                      alt=""
+                    />
+                    <div className="ml-3 font-semibold">{collection.name}</div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
       </div>
       </div>
-
-      {/* <div className="embla-thumbs ">
-        <div className="embla-thumbs__viewport" ref={emblaThumbsRef}>
-          <div className="embla-thumbs__container">
-            {groups.map((collection) => (
-              <div>
-                <Thumb
-                  key={collection.name}
-                  onClick={() => onThumbClick(collection)}
-                  selected={collection.index === selectedIndex}
-                  collection={collection}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
     </div>
   )
 }
