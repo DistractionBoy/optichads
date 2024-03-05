@@ -71,8 +71,8 @@ const CarouselThumbs: React.FC<PropType> = (props) => {
       <div className="embla__viewport" ref={emblaMainRef}>
         <div className="embla__container">
           {groups.map((collection) => (
-            <div className={`embla__slide h-full ${collection.bgColor}`} key={collection.name}>
-              <div className="relative p-24 flex gap-20">
+            <div className={`embla__slide h-full p-12`} key={collection.name}>
+              <div className={`relative p-16 flex gap-20 ${collection.bgColor} rounded-3xl`}>
                   <Image
                     className="h-1/3 w-1/3 bg-white p-1 rounded-xl"
                     src={collection.img}
@@ -103,7 +103,7 @@ const CarouselThumbs: React.FC<PropType> = (props) => {
           ))}
           
         </div>
-        <div className="-mt-16 mx-60 pb-10">
+        <div className="-mt-20 mx-60 pb-10">
           <div className="" ref={emblaThumbsRef}>
             <div className="flex gap-4">
               {groups.map((collection) => (

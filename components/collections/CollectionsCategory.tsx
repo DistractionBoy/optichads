@@ -34,7 +34,7 @@ const GROUPS = [
     index: 2,
     name: "Berserker",
     category: "Arbibabe",
-    bgColor: "bg-[#49AAF6]",
+    bgColor: "bg-blue-500",
     bgDescription: "bg-blue-400",
     img: arbibabe1
   },
@@ -42,7 +42,7 @@ const GROUPS = [
     index: 3,
     name: "Succubus",
     category: "Arbibabe",
-    bgColor: "bg-[#49AAF6]",
+    bgColor: "bg-blue-500",
     bgDescription: "bg-blue-400",
     img: arbibabe2
   },
@@ -50,16 +50,16 @@ const GROUPS = [
     index: 4,
     name: "Wizard Cool",
     category: "Brigader",
-    bgColor: "bg-[#80A5F8]",
-    bgDescription: "bg-blue-400",
+    bgColor: "bg-indigo-500",
+    bgDescription: "bg-indigo-400",
     img: brigader1
   },
   {
     index: 5,
     name: "Base King",
     category: "Brigader",
-    bgColor: "bg-[#80A5F8]",
-    bgDescription: "bg-blue-400",
+    bgColor: "bg-indigo-500",
+    bgDescription: "bg-indigo-400",
     img: brigader2
   }
 ]
