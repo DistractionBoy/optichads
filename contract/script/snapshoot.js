@@ -44,14 +44,24 @@ async function claimRewards() {
 }
 
 function writeLeafDataInJsonFile() {
+    let total = 0;
     const proofList = {};
     data.forEach(({ address, amount }) => {
         const proof = merkletree.getHexProof(ethers.keccak256(abiCoder.encode(["address", "uint256"], [address, amount])))
         proofList[address] = { proof, amount };
+        total++;
     });
+
     try {
         fs.writeFileSync('../opc-drop-permits.json', JSON.stringify(proofList), 'utf8');
-        console.log('JSON file has been written successfully');
+        console.log('opc-drop-permits JSON file has been written successfully');
+    } catch (err) {
+        console.error('Error writing JSON file:', err);
+    }
+
+    try {
+        fs.writeFileSync('../merkletree.json', JSON.stringify({ root: treeRoot, total }), 'utf8');
+        console.log('Merkletree JSON file has been written successfully');
     } catch (err) {
         console.error('Error writing JSON file:', err);
     }
