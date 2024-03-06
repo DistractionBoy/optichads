@@ -71,23 +71,19 @@ const CarouselThumbs: React.FC<PropType> = (props) => {
       <div className="embla__viewport" ref={emblaMainRef}>
         <div className="embla__container">
           {groups.map((collection) => (
-            <div className={`embla__slide h-full p-12`} key={collection.name}>
-              <div className={`relative p-16 flex gap-20 ${collection.bgColor} rounded-3xl`}>
+            <div className={`embla__slide h-full md:p-12 p-12 mt-12 md:mt-0`} key={collection.name}>
+              <div className={`relative md:p-16 p-12 flex md:gap-20 gap-2 ${collection.bgColor} rounded-3xl`}>
                   <Image
                     className="h-1/3 w-1/3 bg-white p-1 rounded-xl"
                     src={collection.img}
-                    alt=""
+                    alt={collection.name}
                   />
                   <div>
                     <div className="text-4xl font-semibold">{collection.name}</div>
                     <div className="font-extrabold">Collection: {collection.category}</div>
-                    <div className={`${collection.bgDescription} text-gray-100 p-2 rounded-xl my-4`}>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                      Obcaecati inventore sint neque asperiores? Dignissimos saepe culpa ipsam inventore dolorum. 
-                      Eaque corporis quisquam esse dicta incidunt commodi inventore dolores amet obcaecati.</div>
-                      <div className="p-2 rounded-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                      Obcaecati inventore sint neque asperiores? Dignissimos saepe culpa ipsam inventore dolorum. 
-                      Eaque corporis quisquam esse dicta incidunt commodi inventore dolores amet obcaecati.</div>
+                    <div className={`${collection.bgDescription} text-gray-100 p-2 rounded-xl my-4 hidden md:block`}>
+                    {collection.shortDescription}</div>
+                    <div className="p-2 rounded-xl hidden md:block">{collection.description}</div>
                     <div className="mt-3 lg:mt-8">
                       <Link
                         href={`collections/${collection.category}`}
@@ -103,19 +99,19 @@ const CarouselThumbs: React.FC<PropType> = (props) => {
           ))}
           
         </div>
-        <div className="-mt-20 mx-60 pb-10">
+        <div className="-mt-24 lg:mx-48 mx-12  pb-10 hidden md:block">
           <div className="" ref={emblaThumbsRef}>
             <div className="flex gap-4">
               {groups.map((collection) => (
-                <div className="cursor-pointer">
+                <div className="cursor-pointer" key={collection.index}>
                     <Image
                       key={collection.index}
                       className="w-2/3 p-1 bg-gray-100 rounded-full hover:-translate-y-2 hover:scale-200 duration-300"
                       onClick={() => onThumbClick(collection.index)}
                       src={collection.img}
-                      alt=""
+                      alt={collection.name}
                     />
-                    <div className="ml-3 font-semibold">{collection.name}</div>
+                    <div className="lg:ml-3 font-semibold lg:text-base text-sm ">{collection.name}</div>
                 </div>
               ))}
             </div>
