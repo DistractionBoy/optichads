@@ -179,8 +179,8 @@ const Bio = () => (
               <a href="https://twitter.com/DistractionBoy_?ref_src=twsrc%5Etfw">
                 @DistractionBoy_
               </a>{" "}
-              <a href="https://twitter.com/anish_katwal?ref_src=twsrc%5Etfw">
-                @anish_katwal
+              <a href="https://twitter.com/millynish7?ref_src=twsrc%5Etfw">
+                @millynish7
               </a>{" "}
               <a href="https://twitter.com/Dicaso5?ref_src=twsrc%5Etfw">
                 @Dicaso5

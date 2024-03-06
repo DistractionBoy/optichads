@@ -54,7 +54,7 @@ export default function Team() {
       role: "Discord Expert",
       imageUrl: millynish,
       bio: bio7,
-      twitterUrl: "https://x.com/anish_katwal",
+      twitterUrl: "https://x.com/millynish7",
       fullBioUrl: "/bios/millynish",
     },
     {
