@@ -10,7 +10,15 @@ import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useAccount } from "wagmi";
 import CustomConnectBtn from "@/components/CustomConnectBtn";
-import OpenClaimDialogBtn from "@/components/opc/OpenClaimDialogBtn";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const Bio = () => {
   const { address, isConnected } = useAccount();
@@ -29,8 +37,7 @@ const Bio = () => {
           <div className="prose xl:prose-xl prose-slate mx-12 lg:mx-8">
             <h2>Claim $OPC</h2>
             <p className="lead">
-              Claim your $OPC Below. Always do your own research, not financial
-              advice, yatta yatta, you know the thing.
+              Connect below (if not already connected) and claim your $OPC.
             </p>
             <Image
               className="aspect-[3/2] lg:aspect-square w-full rounded-2xl object-cover"
@@ -39,7 +46,29 @@ const Bio = () => {
               priority
             />
             {isConnected ? (
-              <OpenClaimDialogBtn chain="optimism" />
+              <Table>
+                <TableCaption>
+                  Hop on the scale, bro. Let&apos;s see how shredded you are
+                  going to get!
+                </TableCaption>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Group</TableHead>
+
+                    <TableHead className="text-right">Amount</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>OptiChads (14000 x 10)</TableCell>
+                    <TableCell className="text-right">1400000 $OPC</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Total</TableCell>
+                    <TableCell className="text-right">1400000 $OPC</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
             ) : (
               <CustomConnectBtn />
             )}
