@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import HeadMeta from "@/components/HeadMeta";
 import SimpleInnerLayout from "@/components/SimpleInnerLayout";
 import { TracingBeam } from "@/components/ui/tracing-beam";
-import livic from "@/public/images/livixi3.png";
+import livic from "@/public/images/livixi3.webp";
 
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
