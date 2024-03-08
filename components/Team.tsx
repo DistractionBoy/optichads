@@ -7,7 +7,7 @@ import lifestrike from "@/public/images/lifestrike.jpg";
 import dope from "@/public/images/dope.jpg";
 import beeps from "@/public/images/beeps.png";
 import millynish from "@/public/images/millynish.jpg";
-import livici3 from "@/public/images/livixi3.png";
+import livici3 from "@/public/images/livixi3.webp";
 import THREEt from "@/public/images/3t.jpg";
 import jasonfactor from "@/public/images/jasonfactor.webp";
 import shea from "@/public/images/11shea.jpeg";
