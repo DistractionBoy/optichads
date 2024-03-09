@@ -4,7 +4,7 @@ import useSWRMutation from "swr/mutation";
 import { TransactionRequest, ethers, verifyMessage } from "ethers";
 import { useAccount, useNetwork } from "wagmi";
 
-import seaportAbi from "@/lib/contracts/seaport_1_5_abi.json";
+import seaportAbi from "@/lib/contractABIs/seaport_1_5_abi.json";
 import { Button } from "../ui/button";
 import { sign } from "@/lib/helpers";
 

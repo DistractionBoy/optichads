@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import { Contract, TransactionReceipt, ethers, verifyMessage } from "ethers";
 import { useAccount, useNetwork } from "wagmi";
 
-import opchadclaim from "@/lib/contracts/opchadclaim.json";
+import opchadclaim from "@/lib/contractABIs/opchadclaim.json";
 import { Button, divergentLinkButtonCSS } from "../ui/button";
 import { sign } from "@/lib/helpers";
 
