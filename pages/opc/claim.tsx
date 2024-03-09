@@ -10,18 +10,10 @@ import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useAccount } from "wagmi";
 import CustomConnectBtn from "@/components/CustomConnectBtn";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import ClaimWhitelistTable from "@/components/opc/ClaimWhitelistTable";
 
-const Bio = () => {
-  const { address, isConnected } = useAccount();
+const Claim = () => {
+  const { isConnected } = useAccount();
 
   return (
     <>
@@ -45,33 +37,7 @@ const Bio = () => {
               alt=""
               priority
             />
-            {isConnected ? (
-              <Table>
-                <TableCaption>
-                  Hop on the scale, bro. Let&apos;s see how shredded you are
-                  going to get!
-                </TableCaption>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Group</TableHead>
-
-                    <TableHead className="text-right">Amount</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell>OptiChads (14000 x 10)</TableCell>
-                    <TableCell className="text-right">1400000 $OPC</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>Total</TableCell>
-                    <TableCell className="text-right">1400000 $OPC</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            ) : (
-              <CustomConnectBtn />
-            )}
+            {isConnected ? <ClaimWhitelistTable /> : <CustomConnectBtn />}
           </div>
         </TracingBeam>
       </SimpleInnerLayout>
@@ -81,4 +47,4 @@ const Bio = () => {
   );
 };
 
-export default Bio;
+export default Claim;
