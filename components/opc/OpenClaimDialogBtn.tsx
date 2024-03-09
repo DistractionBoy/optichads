@@ -66,12 +66,12 @@ const claimTokensClickHandler = async (
           from: userWalletAddress,
           data: "",
         };
-        connectedContract.runner?.sendTransaction({});
+        // connectedContract.runner?.sendTransaction({});
         console.log("contract: ", connectedContract);
         debugger;
 
-        const res: ethers.FunctionFragment =
-          connectedContract.interface.getFunction("claimRewards");
+        // const res: ethers.FunctionFragment =
+        //   connectedContract.interface.getFunction("claimRewards");
 
         setDialogOpen(false);
         return claimContract;
@@ -149,8 +149,8 @@ const OpenClaimDialogBtn = ({ chain }: OpenClaimDialogBtnProps) => {
                       console.log("contract: ", connectedContract);
                       debugger;
 
-                      const res: ethers.FunctionFragment =
-                        connectedContract.interface.getFunction("claimRewards");
+                      // const res: ethers.FunctionFragment =
+                      //   connectedContract.interface.getFunction("claimRewards");
 
                       debugger;
                     }
