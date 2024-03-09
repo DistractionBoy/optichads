@@ -1,10 +1,17 @@
 import { z } from "zod";
 
+const literalSchema = z.union([z.string(), z.number(), z.boolean(), z.null()]);
+type Literal = z.infer<typeof literalSchema>;
+type Json = Literal | { [key: string]: Json } | Json[];
+const jsonSchema: z.ZodType<Json> = z.lazy(() =>
+  z.union([literalSchema, z.array(jsonSchema), z.record(jsonSchema)])
+);
+
 const Claimer = z.object({
-  id: z.number(),
+  id: z.string().uuid(),
   address: z.string(),
   amount: z.number(),
-  proof: z.string(),
+  proof: z.string().optional(),
 });
 
 export type Claimer = z.infer<typeof Claimer>;

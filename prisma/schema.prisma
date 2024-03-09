@@ -8,8 +8,8 @@ datasource db {
 }
 
 model Claimer {
-  id      Int    @id @default(autoincrement())
-  address String @db.VarChar(255)
+  address String  @db.VarChar(255)
   amount  Int
-  proof   String
+  proof   String?
+  id      String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
 }
