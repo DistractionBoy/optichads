@@ -4,7 +4,7 @@ import babe from "@/public/images/rainbowhair-babe.png";
 const IntroText = () => (
   <div className="flex flex-col justify-center items-center bg-indigo-600">
     <div className="container flex justify-start items-stretch">
-      <article className="prose lg:prose-xl my-12 lg:my-16 xl:m-24 px-12 [&>p]:leading-relaxed ultrawide:self-center">
+      <article className="prose lg:prose-xl my-12 lg:my-16 xl:my-40 mx-6 lg:mx-24 px-12 [&>p]:leading-relaxed ultrawide:self-center">
         <h2 className="text-2xl md:text-4xl  text-white">
           The Premier L2 NFT Community
         </h2>
@@ -30,7 +30,7 @@ const IntroText = () => (
           the possibilities with the introduction of our native token, OPC!
         </p>
       </article>
-      <div className="hidden lg:flex h-[900px] desktop:h-[1220px] bg-white w-24" />
+      <div className="hidden lg:flex h-[1100px] desktop:h-[1220px] bg-white w-24" />
       <div className="hidden ultrawide:flex flex-col justify-end">
         <Image
           className="max-w-[900px]"

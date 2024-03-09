@@ -2,33 +2,70 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, install packages with
+
+```bash
+npm i
+```
+
+Then, run with
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+and visit `http://localhost:3000`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Updating the Postgresql db
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+To get schema updates, you need to establish a connection with the postgres db, then run a prisma db pull command. Below you can find a step by step walkthrough of how to sync your prisma files with a new or recently updated schema
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Create the postgres database connection string below.
 
-## Learn More
+```bash
+DATABASE_URL="postgresql://optichads:N8yqiPQYgx3n@optichads.c7lqmj6pk6yb.us-east-1.rds.amazonaws.com:5432/whitelist" npx prisma db pull
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. Then generate the TS definition files and the prisma client. Run the generate command:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx prisma generate
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The prisma client (PrismaClient) component has already been added to the project for you, so you can ignore the output after running the `generate` command. The other thing it did for you was install type definitions which Zod schemas ingest to ensure type safety end to end.
 
-## Deploy on Vercel
+## UI Frameworks
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Shadcn-UI
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Find components, install instructions and more at (their doc site)[https://ui.shadcn.com/docs]
+
+### Zod
+
+Zod is a set of function definitions that parse the values held in javascript constructs so the developer can know what to expect from Typescript types end to end. A function has been added to the project to help us define response types in `useSWR()` calls called TypedFetch
+
+```js
+// ./lib/TypedFetch.ts...
+import { useSWRConfig } from "swr";
+
+import type { z } from "zod";
+
+export function TypedFetch<T extends z.ZodTypeAny>(
+  scheme: T
+): (loc: string) => Promise<z.infer<T>> {
+  const { fetcher } = useSWRConfig() as any;
+  const f = fetcher ?? fetch;
+  return async (loc) => {
+    const data = await f(loc);
+    if ("error" in data) {
+      if (typeof data.error === "string") {
+        throw new Error(data.error);
+      }
+      throw new Error("Unknown error");
+    }
+    return scheme.parse(data);
+  };
+}
+```
+
+More on Zod in its (docs)[https://zod.dev/?id=basic-usage]

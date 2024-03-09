@@ -7,7 +7,7 @@ import lifestrike from "@/public/images/lifestrike.jpg";
 import dope from "@/public/images/dope.jpg";
 import beeps from "@/public/images/beeps.png";
 import millynish from "@/public/images/millynish.jpg";
-import livici3 from "@/public/images/livixi3.png";
+import livici3 from "@/public/images/livixi3.webp";
 import THREEt from "@/public/images/3t.jpg";
 import jasonfactor from "@/public/images/jasonfactor.webp";
 import shea from "@/public/images/11shea.jpeg";
@@ -71,6 +71,7 @@ export default function Team() {
       imageUrl: lifestrike,
       bio: bio4,
       twitterUrl: "https://x.com/lifesadream63",
+      fullBioUrl: "/bios/lifestrike",
     },
     {
       name: "Youngbeeps",
@@ -85,6 +86,7 @@ export default function Team() {
       imageUrl: dope,
       bio: bio5,
       twitterUrl: "https://x.com/dopesdope2021",
+      fullBioUrl: "/bios/dope",
     },
     {
       name: "3t",
@@ -98,6 +100,7 @@ export default function Team() {
       role: "Audio Production",
       twitterUrl: "https://x.com/11SheaX",
       imageUrl: shea,
+      fullBioUrl: "/bios/shea",
     },
     {
       name: "LiViCi3",
@@ -105,6 +108,7 @@ export default function Team() {
       imageUrl: livici3,
       bio: bio3,
       twitterUrl: "https://x.com/LiViXi3",
+      fullBioUrl: "/bios/LiViXi3",
     },
   ];
 
