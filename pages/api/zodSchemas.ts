@@ -11,7 +11,7 @@ export const Claimer = z.object({
   id: z.string().uuid(),
   address: z.string(),
   amount: z.number(),
-  proof: z.string().optional(),
+  proof: z.string().nullable(),
 });
 
 export type Claimer = z.infer<typeof Claimer>;
