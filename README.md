@@ -34,6 +34,8 @@ npx prisma generate
 
 The prisma client (PrismaClient) component has already been added to the project for you, so you can ignore the output after running the `generate` command. The other thing it did for you was install type definitions which Zod schemas ingest to ensure type safety end to end.
 
+3. Finally, to seed the database with the whitelist json data in ./contract/wl.json, make sure you are up to date on dependencies with `npm ci` and run `npx prisma db seed`. It will delete the old records and repopulate the Claimer table.
+
 ## UI Frameworks
 
 ### Shadcn-UI

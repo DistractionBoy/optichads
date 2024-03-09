@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import { Contract, TransactionReceipt, ethers, verifyMessage } from "ethers";
 import { useAccount, useNetwork } from "wagmi";
 
-import opchadclaim from "@/lib/contracts/opchadclaim.json";
+import opchadclaim from "@/lib/contractABIs/opchadclaim.json";
 import { Button, divergentLinkButtonCSS } from "../ui/button";
 import { sign } from "@/lib/helpers";
 
@@ -59,16 +59,22 @@ const claimTokensClickHandler = async (
           abi,
           signer
         );
-        const connectedContract = claimContract.connect(
-          signer as ethers.Signer
-        );
+
+        const connectedContract = claimContract.connect(signer);
+        const tx: ethers.TransactionRequest = {
+          to: "",
+          from: userWalletAddress,
+          data: "",
+        };
+        // connectedContract.runner?.sendTransaction({});
+        console.log("contract: ", connectedContract);
         debugger;
 
-        // const response = await connectedContract.claimRewards();
-        debugger;
-        // const receipt: TransactionReceipt = await response.wait();
+        // const res: ethers.FunctionFragment =
+        //   connectedContract.interface.getFunction("claimRewards");
+
         setDialogOpen(false);
-        // return receipt;
+        return claimContract;
       }
     );
 
@@ -128,7 +134,7 @@ const OpenClaimDialogBtn = ({ chain }: OpenClaimDialogBtnProps) => {
                 size="lg"
                 onClick={async () => {
                   if (userWalletAddress) {
-                    const receipt = await claimTokensClickHandler(
+                    const contract = await claimTokensClickHandler(
                       chain,
                       userWalletAddress,
                       chains,
@@ -136,6 +142,20 @@ const OpenClaimDialogBtn = ({ chain }: OpenClaimDialogBtnProps) => {
                     ).catch((e: any) => {
                       toast.error("An Error Occurred. You may try again.");
                     });
+                    if (contract) {
+                      const connectedContract = contract.connect(
+                        contract.runner
+                      );
+                      console.log("contract: ", connectedContract);
+                      debugger;
+
+                      // const res: ethers.FunctionFragment =
+                      //   connectedContract.interface.getFunction("claimRewards");
+
+                      debugger;
+                    }
+
+                    // const receipt: TransactionReceipt = await response.wait();
                     // if (receipt && receipt.hash) {
                     //   toast.success("Claim Successful!", {
                     //     description: `Tx: ${receipt?.hash}
@@ -152,7 +172,14 @@ const OpenClaimDialogBtn = ({ chain }: OpenClaimDialogBtnProps) => {
               </Button>
             </>
           ) : (
-            <div>Please connect your wallet.</div>
+            <>
+              <div>Please connect your wallet.</div>
+              <DialogClose asChild>
+                <Button type="button" variant="secondary" size="lg">
+                  Close
+                </Button>
+              </DialogClose>
+            </>
           )}
         </DialogFooter>
       </DialogContent>

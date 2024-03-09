@@ -7,11 +7,11 @@ const jsonSchema: z.ZodType<Json> = z.lazy(() =>
   z.union([literalSchema, z.array(jsonSchema), z.record(jsonSchema)])
 );
 
-const Claimer = z.object({
+export const Claimer = z.object({
   id: z.string().uuid(),
   address: z.string(),
   amount: z.number(),
-  proof: z.string().optional(),
+  proof: z.string().nullable(),
 });
 
 export type Claimer = z.infer<typeof Claimer>;
@@ -33,19 +33,19 @@ const NFTBase = z.object({
 
 export type NFT = z.infer<typeof NFTBase>;
 
-const Trait = z.object({
+export const Trait = z.object({
   trait_type: z.string(),
   display_type: z.number(),
   max_value: z.string(),
   value: z.number(),
 });
 
-const Owner = z.object({
+export const Owner = z.object({
   address: z.string(),
   quantity: z.number(),
 });
 
-const Rarity = z.object({
+export const Rarity = z.object({
   strategy_version: z.string(),
   rank: z.number(),
   score: z.number(),
@@ -57,7 +57,7 @@ const Rarity = z.object({
   }),
 });
 
-const NFTExpanded = z.object({
+export const NFTExpanded = z.object({
   nft: z.object({
     identifier: z.string(),
     collection: z.string(),
@@ -82,7 +82,7 @@ const NFTExpanded = z.object({
 
 export type NFTExpanded = z.infer<typeof NFTExpanded>;
 
-const NFTsBy = z.object({
+export const NFTsBy = z.object({
   nfts: z.array(NFTBase),
   next: z
     .string()

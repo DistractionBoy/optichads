@@ -10,10 +10,10 @@ import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useAccount } from "wagmi";
 import CustomConnectBtn from "@/components/CustomConnectBtn";
-import OpenClaimDialogBtn from "@/components/opc/OpenClaimDialogBtn";
+import ClaimWhitelistTable from "@/components/opc/ClaimWhitelistTable";
 
-const Bio = () => {
-  const { address, isConnected } = useAccount();
+const Claim = () => {
+  const { isConnected } = useAccount();
 
   return (
     <>
@@ -29,8 +29,7 @@ const Bio = () => {
           <div className="prose xl:prose-xl prose-slate mx-12 lg:mx-8">
             <h2>Claim $OPC</h2>
             <p className="lead">
-              Claim your $OPC Below. Always do your own research, not financial
-              advice, yatta yatta, you know the thing.
+              Connect below (if not already connected) and claim your $OPC.
             </p>
             <Image
               className="aspect-[3/2] lg:aspect-square w-full rounded-2xl object-cover"
@@ -38,11 +37,7 @@ const Bio = () => {
               alt=""
               priority
             />
-            {isConnected ? (
-              <OpenClaimDialogBtn chain="optimism" />
-            ) : (
-              <CustomConnectBtn />
-            )}
+            {isConnected ? <ClaimWhitelistTable /> : <CustomConnectBtn />}
           </div>
         </TracingBeam>
       </SimpleInnerLayout>
@@ -52,4 +47,4 @@ const Bio = () => {
   );
 };
 
-export default Bio;
+export default Claim;
