@@ -20,16 +20,23 @@ import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import {
   arbitrum,
+  arbitrumSepolia,
   base,
+  baseSepolia,
   mainnet,
   optimism,
+  optimismSepolia,
   polygon,
   sepolia,
   zora,
 } from "wagmi/chains";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 import { appWithTranslation } from "next-i18next";
 import Layout from "../components/Layout";
+import ErrorBoundary from "@/components/ErrorBoundary";
+
+const queryClient = new QueryClient();
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
@@ -37,9 +44,14 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
     polygon,
     optimism,
     arbitrum,
+    optimismSepolia,
+    baseSepolia,
+    arbitrumSepolia,
     base,
     zora,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true" ? [sepolia] : []),
+    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
+      ? [sepolia, optimismSepolia, baseSepolia, arbitrumSepolia]
+      : []),
   ],
   [publicProvider()]
 );
@@ -86,9 +98,13 @@ const App = ({ Component, pageProps }: AppProps) => {
           chains={chains}
           locale={locale}
         >
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <QueryClientProvider client={queryClient}>
+            <Layout>
+              <ErrorBoundary>
+                <Component {...pageProps} />
+              </ErrorBoundary>
+            </Layout>
+          </QueryClientProvider>
         </RainbowKitProvider>
       </WagmiConfig>
     </SWRConfig>
