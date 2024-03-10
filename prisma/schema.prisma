@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://optichads:N8yqiPQYgx3n@optichads.c7lqmj6pk6yb.us-east-1.rds.amazonaws.com:5432/whitelist?schema=public"
+  url      = env("DATABASE_URL")
 }
 
 model Claimer {
