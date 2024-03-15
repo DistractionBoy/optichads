@@ -16,6 +16,14 @@ export const Claimer = z.object({
 
 export type Claimer = z.infer<typeof Claimer>;
 
+export const Total = z.object({
+  id: z.string().uuid(),
+  address: z.string(),
+  amounts: z.array(z.number()),
+});
+
+export type Total = z.infer<typeof Total>;
+
 const NFTBase = z.object({
   identifier: z.string(),
   collection: z.string(),

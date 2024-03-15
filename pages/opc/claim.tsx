@@ -10,7 +10,7 @@ import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useAccount } from "wagmi";
 import CustomConnectBtn from "@/components/CustomConnectBtn";
-import ClaimWhitelistTable from "@/components/opc/ClaimWhitelistTable";
+import ClaimTotals from "@/components/opc/ClaimTotals";
 
 const Claim = () => {
   const { isConnected } = useAccount();
@@ -37,7 +37,7 @@ const Claim = () => {
               alt=""
               priority
             />
-            {isConnected ? <ClaimWhitelistTable /> : <CustomConnectBtn />}
+            {isConnected ? <ClaimTotals /> : <CustomConnectBtn />}
           </div>
         </TracingBeam>
       </SimpleInnerLayout>

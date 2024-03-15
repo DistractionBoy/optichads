@@ -12,7 +12,7 @@ export default async function handler(
     throw new Error("undefined params");
   }
   try {
-    const data = await prisma.claimer.findFirstOrThrow({
+    const data = await prisma.total.findFirstOrThrow({
       where: { address: { contains: address, mode: "insensitive" } },
     });
     res.status(200).json(data);

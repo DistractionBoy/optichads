@@ -30,7 +30,7 @@ const IntroText = () => (
           the possibilities with the introduction of our native token, OPC!
         </p>
       </article>
-      <div className="hidden lg:flex h-[1100px] desktop:h-[1220px] bg-white w-24" />
+      <div className="hidden lg:flex h-[1050px] desktop:h-[1340px] bg-white w-24" />
       <div className="hidden ultrawide:flex flex-col justify-end">
         <Image
           className="max-w-[900px]"
