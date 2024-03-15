@@ -21,8 +21,8 @@ const HotDeals = () => {
 
       <Carousel className="mx-6 mb-8 md:mb-16 lg:mb-24 xl:mb-36 desktop:mb-52">
         <CarouselContent>
-          <HotDealCarouselItemController slug="basebrigade" limit={2} />
           <HotDealCarouselItemController slug="optichads" limit={2} />
+          <HotDealCarouselItemController slug="basebrigade" limit={2} />
           <HotDealCarouselItemController slug="arbibabes" limit={2} />
           <HotDealCarouselItemController slug="optichads-song" limit={1} />
         </CarouselContent>

@@ -15,7 +15,7 @@ import {
 import { useAccount } from "wagmi";
 import { toast } from "sonner";
 
-const ClaimWhitelistTable = () => {
+const ClaimWithProof = () => {
   const { address } = useAccount();
   const { data, isLoading, error } = useSWR(
     address !== undefined ? `/api/whitelist?address=${address}` : undefined,
@@ -108,4 +108,4 @@ const ClaimWhitelistTable = () => {
   );
 };
 
-export default ClaimWhitelistTable;
+export default ClaimWithProof;
