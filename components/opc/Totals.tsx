@@ -14,6 +14,7 @@ import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useAccount } from "wagmi";
 import { toast } from "sonner";
+import { shortenHex } from "@/lib/utils";
 
 const Totals = () => {
   const { address } = useAccount();
@@ -25,7 +26,7 @@ const Totals = () => {
   if (isLoading) {
     return (
       <div className="flex flex-col">
-        <h1>For address {address}...</h1>
+        <h1>For address {address && shortenHex(address, 4)}...</h1>
       </div>
     );
   }
@@ -47,7 +48,7 @@ const Totals = () => {
   return (
     data && (
       <div className="flex flex-col">
-        <h1>For address {address}</h1>
+        <h2>For address {address && shortenHex(address, 4)}</h2>
         The table below shows how much $OPC you can claim based on your holdings
         in the specified collection.
         <Table>
@@ -60,8 +61,10 @@ const Totals = () => {
           <TableBody>
             {data.amounts.map((amount, idx) => (
               <TableRow key={idx}>
-                <TableCell>Community</TableCell>
-                <TableCell className="text-right">{amount} $OPC</TableCell>
+                <TableCell>{communities[idx]}</TableCell>
+                <TableCell className="text-right">
+                  {legend[idx](amount)} $OPC
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -72,3 +75,64 @@ const Totals = () => {
 };
 
 export default Totals;
+
+const legend = [
+  (n: number) => n * 14000,
+  (n: number) => n * 1400,
+  (n: number) => n * 1800,
+  (n: number) => (n * 420 >= 10800 ? 10800 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 4200 >= 4200 ? 4200 : n * 4200),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 42000 ? 42000 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 84000 ? 84000 : n * 420),
+  (n: number) => (n * 420 >= 42000 ? 42000 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => n,
+];
+
+const communities = [
+  "OptiChads",
+  "ArbiBabes",
+  "Base Brigade",
+  "OptiChads Song",
+  "ArbiBabes Song",
+  "Early Optimist",
+  "MetaBus",
+  "TickledPicklez",
+  "Bored Town",
+  "Apetimism",
+  "Crypto Testers",
+  "Motorheadz",
+  "OP Bunnies",
+  "Poop Nation",
+  "OP Orcas",
+  "Base Gods",
+  "Mochimons",
+  "Based Fellas",
+  "NFToshi",
+  "Collective Nouns",
+  "DogePixels",
+];
+
+/**
+ * OptiChads!A:A;ArbiBabes!A:A;BaseBrigade!A:A;OptiChadsSong!A:A;ArbiBabesSong!A:A;
+ * EarlyOptimist!A:A;MetaBus!A:A;TickledPicklez!A:A;BoredTown!A:A;Apetimism!A:A;
+ * CryptoTesters!A:A;Motorheadz!A:A;OPBunnies!A:A;PoopNation!A:A;OPOrcas!A:A;
+ * BaseGods!A:A;Mochimons!A:A;BasedFellas!A:A;NFToshi!A:A;CollectiveNouns!A:A;
+ * DogePixels!A:A
+ *
+ * =SUM(Multiply(B2,14000),Multiply(C2,1400),Multiply(D2,1800),MIN(Multiply(E2,420), 10800),Min(Multiply(F2,420), 4200),
+ * Min(Multiply(G2, 420), 4200),Min(Multiply(H2,4200), 4200),Min(Multiply(I2,420), 4200),Min(Multiply(J2,4200), 42000),Min(Multiply(K2,420), 4200),
+ * Min(Multiply(L2,4200), 84000),Min(Multiply(M2,4200), 42000),Min(Multiply(N2,420), 4200),Min(Multiply(O2,420), 4200),Min(Multiply(P2,420), 4200),
+ * Min(Multiply(Q2,420), 4200),Min(Multiply(R2,420), 4200),Min(Multiply(S2,420), 4200),Min(Multiply(T2,420), 4200),Min(Multiply(U2,420), 4200))
+ */

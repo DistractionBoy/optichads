@@ -13,6 +13,9 @@ import {
 } from "@/components/ui/table";
 import { useAccount } from "wagmi";
 import { toast } from "sonner";
+import { shortenHex } from "@/lib/utils";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 
 const ClaimWithProof = () => {
   const { address } = useAccount();
@@ -23,67 +26,41 @@ const ClaimWithProof = () => {
 
   if (isLoading) {
     return (
-      <Table>
-        <TableCaption className="animate-pulse">
-          Loading up the charts..
-        </TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Address</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            <TableCell>Loading...</TableCell>
-            <TableCell className="text-right">Loading...</TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+      <Alert variant="default">
+        <ExclamationTriangleIcon className="h-4 w-4" />
+        <AlertTitle>Loading...</AlertTitle>
+        <AlertDescription>Checking allocations...</AlertDescription>
+      </Alert>
     );
   }
 
   if (error) {
     toast(error.message);
     return (
-      <Table>
-        <TableCaption>
-          Sorry bro, we encountered an error but do another rep and you will be
-          fine.
-        </TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Address</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            <TableCell>ERROR</TableCell>
-            <TableCell className="text-right">ERROR</TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+      <Alert variant="destructive">
+        <ExclamationTriangleIcon className="h-4 w-4" />
+        <AlertTitle>Uh oh,</AlertTitle>
+        <AlertDescription>
+          We are sorry but it appears you did not have any holdings that
+          conributed towards this drop.
+        </AlertDescription>
+      </Alert>
     );
   }
 
   return (
     data && (
       <Table>
-        <TableCaption>
-          Hop on the scale, bro. Let&apos;s see how shredded you are going to
-          get!
-        </TableCaption>
+        <TableCaption>Hope you set a new max, bro.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead>Address</TableHead>
-
             <TableHead className="text-right">Amount</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableCell>{data.address}</TableCell>
+            <TableCell>{address && shortenHex(data.address)}</TableCell>
             <TableCell className="text-right">{data.amount} $OPC</TableCell>
           </TableRow>
         </TableBody>
