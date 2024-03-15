@@ -13,3 +13,9 @@ model Claimer {
   proof   String?
   id      String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
 }
+
+model Total {
+  id      String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  address String @db.VarChar(255)
+  amounts Int[]
+}

@@ -1,18 +1,22 @@
 const prismaClient = require("@prisma/client");
-const wl = require("./contract/wl.json");
+const whitelist = require("./contract/whitelist.json");
+const totals = require("./contract/totals.json");
 
 const { PrismaClient } = prismaClient;
 const prisma = new PrismaClient();
-
-const whitelistData = wl.data;
 
 async function load() {
   try {
     console.log(`Start seeding ...`);
     await prisma.claimer.deleteMany();
-    console.log("Deleted records in claimer table");
+    console.log("Deleted records in Claimer table");
+    await prisma.total.deleteMany();
+    console.log("Deleted records in Total table");
     await prisma.claimer.createMany({
-      data: whitelistData,
+      data: whitelist,
+    });
+    await prisma.total.createMany({
+      data: totals,
     });
     console.log(`Seeding finished.`);
   } catch (e) {
