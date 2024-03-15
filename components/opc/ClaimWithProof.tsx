@@ -1,7 +1,6 @@
 import useSWR from "swr";
 import { TypedFetch } from "@/lib/TypedFetch";
 import { Claimer } from "@/pages/api/zodSchemas";
-import { z } from "zod";
 
 import {
   Table,
@@ -19,7 +18,7 @@ const ClaimWithProof = () => {
   const { address } = useAccount();
   const { data, isLoading, error } = useSWR(
     address !== undefined ? `/api/whitelist?address=${address}` : undefined,
-    TypedFetch(z.array(Claimer))
+    TypedFetch(Claimer)
   );
 
   if (isLoading) {
