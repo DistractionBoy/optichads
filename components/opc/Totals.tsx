@@ -26,13 +26,12 @@ const Totals = () => {
   if (isLoading) {
     return (
       <div className="flex flex-col">
-        <h1>For address {address && shortenHex(address, 4)}...</h1>
+        <h2>For address {address && shortenHex(address, 4)}...</h2>
       </div>
     );
   }
 
   if (error) {
-    toast(error.message);
     return (
       <Alert variant="destructive">
         <ExclamationTriangleIcon className="h-4 w-4" />
@@ -59,14 +58,17 @@ const Totals = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {data.amounts.map((amount, idx) => (
-              <TableRow key={idx}>
-                <TableCell>{communities[idx]}</TableCell>
-                <TableCell className="text-right">
-                  {legend[idx](amount)} $OPC
-                </TableCell>
-              </TableRow>
-            ))}
+            {data.amounts.map(
+              (amount, idx) =>
+                amount > 0 && (
+                  <TableRow key={idx}>
+                    <TableCell>{communities[idx]}</TableCell>
+                    <TableCell className="text-right">
+                      {legend[idx](amount)} $OPC
+                    </TableCell>
+                  </TableRow>
+                )
+            )}
           </TableBody>
         </Table>
       </div>
@@ -82,20 +84,25 @@ const legend = [
   (n: number) => n * 1800,
   (n: number) => (n * 420 >= 10800 ? 10800 : n * 420),
   (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  // 2nd set
   (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
   (n: number) => (n * 4200 >= 4200 ? 4200 : n * 4200),
   (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
   (n: number) => (n * 420 >= 42000 ? 42000 : n * 420),
   (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
-  (n: number) => (n * 420 >= 84000 ? 84000 : n * 420),
-  (n: number) => (n * 420 >= 42000 ? 42000 : n * 420),
+  // 3rd
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 4200 >= 84000 ? 84000 : n * 4200),
+  (n: number) => (n * 420 >= 42000 ? 42000 : n * 4200),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  // 4th
   (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
   (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
   (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
   (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
   (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
-  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
-  (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
+  // 5th
   (n: number) => (n * 420 >= 4200 ? 4200 : n * 420),
   (n: number) => n,
 ];
@@ -122,6 +129,7 @@ const communities = [
   "NFToshi",
   "Collective Nouns",
   "DogePixels",
+  "Total",
 ];
 
 /**
@@ -131,8 +139,9 @@ const communities = [
  * BaseGods!A:A;Mochimons!A:A;BasedFellas!A:A;NFToshi!A:A;CollectiveNouns!A:A;
  * DogePixels!A:A
  *
- * =SUM(Multiply(B2,14000),Multiply(C2,1400),Multiply(D2,1800),MIN(Multiply(E2,420), 10800),Min(Multiply(F2,420), 4200),
- * Min(Multiply(G2, 420), 4200),Min(Multiply(H2,4200), 4200),Min(Multiply(I2,420), 4200),Min(Multiply(J2,4200), 42000),Min(Multiply(K2,420), 4200),
- * Min(Multiply(L2,4200), 84000),Min(Multiply(M2,4200), 42000),Min(Multiply(N2,420), 4200),Min(Multiply(O2,420), 4200),Min(Multiply(P2,420), 4200),
- * Min(Multiply(Q2,420), 4200),Min(Multiply(R2,420), 4200),Min(Multiply(S2,420), 4200),Min(Multiply(T2,420), 4200),Min(Multiply(U2,420), 4200))
+ * =SUM(Multiply(B1,14000),Multiply(C1,1400),Multiply(D1,1800),MIN(Multiply(E1,420), 10800),Min(Multiply(F1,420), 4200),
+ * Min(Multiply(G1, 420), 4200),Min(Multiply(H1,4200), 4200),Min(Multiply(I1,420), 4200),Min(Multiply(J1,4200), 42000),Min(Multiply(K1,420), 4200),
+ * Min(Multiply(L1,420), 4200),Min(Multiply(M1,4200), 84000),Min(Multiply(N1,4200), 42000),Min(Multiply(O1,420), 4200),Min(Multiply(P1,420), 4200),
+ * Min(Multiply(Q1,420), 4200),Min(Multiply(R1,420), 4200),Min(Multiply(S1,420), 4200),Min(Multiply(T1,420), 4200),Min(Multiply(U1,420), 4200),
+ * Min(Multiply(V1,420), 4200))
  */
