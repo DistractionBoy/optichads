@@ -8,14 +8,19 @@ datasource db {
 }
 
 model Claimer {
-  address String  @db.VarChar(255)
+  address String   @db.VarChar(255)
   amount  Int
-  proof   String?
-  id      String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id      String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  proof   String[]
 }
 
 model Total {
   id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   address String @db.VarChar(255)
   amounts Int[]
+}
+
+model Tree {
+  id   String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  root String @db.VarChar(255)
 }

@@ -41,6 +41,9 @@ const ClaimWithProof = () => {
       if (window.ethereum === null || window.ethereum === undefined) {
         throw new Error("wallet not connected");
       }
+      if (proof === null) {
+        throw new Error(`proof not found for user: ${address}`);
+      }
       const browserProvider = new ethers.BrowserProvider(
         window.ethereum,
         "optimism-sepolia"
@@ -49,8 +52,6 @@ const ClaimWithProof = () => {
       let chainID = await chains.filter(
         (obj) => obj.name == "Optimism Sepolia"
       );
-
-      debugger;
 
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
@@ -63,7 +64,7 @@ const ClaimWithProof = () => {
       const claimRewardsInterface = new ethers.Interface(claimAbi);
       const claimRewardsFragment =
         claimRewardsInterface.getFunction("claimRewards");
-      debugger;
+
       if (claimRewardsFragment === null) {
         throw new Error("function not present");
       } else {
@@ -103,8 +104,8 @@ const ClaimWithProof = () => {
         <ExclamationTriangleIcon className="h-4 w-4" />
         <AlertTitle>Uh oh,</AlertTitle>
         <AlertDescription>
-          We are sorry but it appears you did not have any holdings that
-          conributed towards this drop.
+          We are sorry but it appears that there was an error or you did not
+          have any holdings that conributed towards this drop.
         </AlertDescription>
       </Alert>
     );
