@@ -58,14 +58,17 @@ const Totals = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {data.amounts.map((amount, idx) => (
-              <TableRow key={idx}>
-                <TableCell>{communities[idx]}</TableCell>
-                <TableCell className="text-right">
-                  {legend[idx](amount)} $OPC
-                </TableCell>
-              </TableRow>
-            ))}
+            {data.amounts.map(
+              (amount, idx) =>
+                amount > 0 && (
+                  <TableRow key={idx}>
+                    <TableCell>{communities[idx]}</TableCell>
+                    <TableCell className="text-right">
+                      {legend[idx](amount)} $OPC
+                    </TableCell>
+                  </TableRow>
+                )
+            )}
           </TableBody>
         </Table>
       </div>
