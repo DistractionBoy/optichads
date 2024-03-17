@@ -1,7 +1,5 @@
-"use client";
 import useSWR from "swr";
 import { ExclamationTriangleIcon, LaptopIcon } from "@radix-ui/react-icons";
-import { Contract, ContractInterface } from "@ethersproject/contracts";
 
 import { TypedFetch } from "@/lib/TypedFetch";
 import { Claimer } from "@/pages/api/zodSchemas";

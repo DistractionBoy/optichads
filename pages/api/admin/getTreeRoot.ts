@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Tree } from "@prisma/client";
+
 const prisma = new PrismaClient();
 
 export default async function handler(
@@ -11,9 +12,7 @@ export default async function handler(
     throw new Error("undefined params");
   }
   try {
-    const data = await prisma.claimer.findFirstOrThrow({
-      where: { address: { contains: address, mode: "insensitive" } },
-    });
+    const data: Tree = await prisma.tree.findFirstOrThrow();
     res.status(200).json(data);
   } catch (e: any) {
     res.status(e.status || 500).json(e);
