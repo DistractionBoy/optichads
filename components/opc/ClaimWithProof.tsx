@@ -33,7 +33,7 @@ const ClaimWithProof = () => {
   const claimBtnClick = async (
     address: string,
     amount: number,
-    proof: string | null
+    proof: string[]
   ) => {
     try {
       if (window.ethereum === null || window.ethereum === undefined) {
