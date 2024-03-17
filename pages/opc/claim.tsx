@@ -25,21 +25,19 @@ const Claim = () => {
       <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
       <Navbar />
       <SimpleInnerLayout title="$OPC - Claim">
-        <TracingBeam className="px-0">
-          <div className="prose xl:prose-xl prose-slate mx-12 lg:mx-8">
-            <h2>Claim $OPC</h2>
-            <p className="lead">
-              Connect below (if not already connected) and claim your $OPC.
-            </p>
-            <Image
-              className="aspect-[3/2] lg:aspect-square w-full rounded-2xl object-cover"
-              src={opcPromo}
-              alt=""
-              priority
-            />
-            {isConnected ? <ClaimTotals /> : <CustomConnectBtn />}
-          </div>
-        </TracingBeam>
+        <div className="mx-12 text-slate-800">
+          <h2>Claim $OPC</h2>
+          <p className="lead">Connect below and claim your $OPC.</p>
+          <Image
+            className="aspect-[3/2] lg:aspect-square w-full rounded-2xl object-cover"
+            src={opcPromo}
+            alt=""
+            priority
+          />
+        </div>
+        <div className="mx-6">
+          {isConnected ? <ClaimTotals /> : <CustomConnectBtn />}
+        </div>
       </SimpleInnerLayout>
       <BackgroundBeams />
       <Footer />

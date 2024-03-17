@@ -15,7 +15,7 @@ model Claimer {
 }
 
 model Total {
-  id      String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   address String @db.VarChar(255)
   amounts Int[]
 }

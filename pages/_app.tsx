@@ -34,7 +34,6 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 import { appWithTranslation } from "next-i18next";
 import Layout from "../components/Layout";
-// import ErrorBoundary from "@/components/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
@@ -100,9 +99,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         >
           <QueryClientProvider client={queryClient}>
             <Layout>
-              {/* <ErrorBoundary> */}
               <Component {...pageProps} />
-              {/* </ErrorBoundary> */}
             </Layout>
           </QueryClientProvider>
         </RainbowKitProvider>
