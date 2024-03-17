@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import HeadMeta from "@/components/HeadMeta";
@@ -13,6 +13,13 @@ import ClaimTotals from "@/components/opc/ClaimTotals";
 
 const Claim = () => {
   const { isConnected } = useAccount();
+  const [connected, setConnected] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isConnected) {
+      setConnected(isConnected);
+    }
+  }, [isConnected]);
 
   return (
     <>
@@ -35,7 +42,7 @@ const Claim = () => {
           />
         </div>
         <div className="mx-6">
-          {isConnected ? <ClaimTotals /> : <CustomConnectBtn />}
+          {connected ? <ClaimTotals /> : <CustomConnectBtn />}
         </div>
       </SimpleInnerLayout>
       <BackgroundBeams />
