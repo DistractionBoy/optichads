@@ -11,7 +11,7 @@ export const Claimer = z.object({
   id: z.string().uuid(),
   address: z.string(),
   amount: z.number(),
-  proof: z.string().nullable(),
+  proof: z.array(z.string()),
 });
 
 export type Claimer = z.infer<typeof Claimer>;
@@ -23,6 +23,13 @@ export const Total = z.object({
 });
 
 export type Total = z.infer<typeof Total>;
+
+export const Tree = z.object({
+  id: z.string().uuid(),
+  root: z.string(),
+});
+
+export type Tree = z.infer<typeof Tree>;
 
 const NFTBase = z.object({
   identifier: z.string(),
