@@ -31,6 +31,14 @@ export const Tree = z.object({
 
 export type Tree = z.infer<typeof Tree>;
 
+export const GasEstimateResponse = z.object({
+  jsonrpc: z.string(),
+  id: z.number(),
+  result: z.string(),
+});
+
+export type GasEstimateResponse = z.infer<typeof GasEstimateResponse>;
+
 const NFTBase = z.object({
   identifier: z.string(),
   collection: z.string(),

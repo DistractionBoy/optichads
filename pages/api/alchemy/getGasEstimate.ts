@@ -1,10 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
-export type GasEstimateResponse = {
-  jsonrpc: string;
-  id: number;
-  result: `0x${string}`;
-};
+import { GasEstimateResponse } from "../zodSchemas";
 
 /**
  *
