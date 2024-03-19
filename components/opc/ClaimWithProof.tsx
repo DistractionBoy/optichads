@@ -30,12 +30,6 @@ const ClaimWithProof = () => {
       : undefined,
     TypedFetch(Claimer)
   );
-  const { data: gasEstimate, error: gasEstimateError } = useSWR(
-    userWalletAddress !== undefined
-      ? `/api/alchemy/getGasEstimate?chain=opt&from=${userWalletAddress}&to=${process.env.NEXT_PUBLIC_OPCHADCLAIM_CONTRACT}&value=0x0`
-      : undefined,
-    TypedFetch(GasEstimateResponse)
-  );
 
   const claimBtnClick = async (
     address: string,
@@ -69,13 +63,19 @@ const ClaimWithProof = () => {
       const claimRewardsInterface = new ethers.Interface(claimAbi);
       const claimRewardsFragment =
         claimRewardsInterface.getFunction("claimRewards");
-
+      debugger;
       if (claimRewardsFragment === null) {
         throw new Error("function not present");
       } else {
         const encodedData = claimRewardsInterface.encodeFunctionData(
           claimRewardsFragment,
-          [amount, proof]
+          [BigInt(991700000000000000000000),
+            [
+              "0x975fa0a80daf8dbb193ef6948391e19edbed218a9e99e417261805afecae1780",
+              "0x2f740e9adce1c46632626ac4d478c0503d8721431173f6f7f2fd494dd0d0ff26",
+              "0xc328702e65fd6e629071ab4ba12fb6ffa0dd58a7df15c60bb7ebb1da750f8c3b",
+            ],
+          ]
         );
         debugger;
         await sign(signer, "OPChadCoin Token Claim.").then(
@@ -91,19 +91,12 @@ const ClaimWithProof = () => {
             }
 
             const response: ethers.TransactionResponse =
-              gasEstimate !== undefined
-                ? await signer.sendTransaction({
-                    to: process.env.NEXT_PUBLIC_OPCHADCLAIM_CONTRACT,
-                    from: userWalletAddress,
-                    data: encodedData,
-                    gasPrice: gasEstimate.result,
-                  })
-                : await signer.sendTransaction({
-                    to: process.env.NEXT_PUBLIC_OPCHADCLAIM_CONTRACT,
-                    from: userWalletAddress,
-                    data: encodedData,
-                    gasPrice: "0x5208",
-                  });
+              await signer.sendTransaction({
+                to: process.env.NEXT_PUBLIC_OPCHADCLAIM_CONTRACT,
+                from: userWalletAddress,
+                data: encodedData,
+                gasPrice: "0x5208",
+              });
             const receipt = await response.wait();
             debugger;
             toast(receipt?.toJSON());
