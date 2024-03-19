@@ -2,7 +2,7 @@ import useSWR from "swr";
 import { ExclamationTriangleIcon, LaptopIcon } from "@radix-ui/react-icons";
 
 import { TypedFetch } from "@/lib/TypedFetch";
-import { Claimer } from "@/pages/api/zodSchemas";
+import { Claimer, GasEstimateResponse } from "@/pages/api/zodSchemas";
 
 import claimAbi from "@/lib/contractABIs/opchadclaim.json";
 import {
@@ -17,8 +17,9 @@ import { useAccount, useNetwork } from "wagmi";
 import { shortenHex } from "@/lib/utils";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import { Button } from "../ui/button";
-import { TransactionRequest, ethers } from "ethers";
+import { TransactionRequest, ethers, verifyMessage } from "ethers";
 import { toast } from "sonner";
+import { sign } from "@/lib/helpers";
 
 const ClaimWithProof = () => {
   const { chains } = useNetwork();
@@ -28,6 +29,12 @@ const ClaimWithProof = () => {
       ? `/api/whitelist?address=${userWalletAddress}`
       : undefined,
     TypedFetch(Claimer)
+  );
+  const { data: gasEstimate, error: gasEstimateError } = useSWR(
+    userWalletAddress !== undefined
+      ? `/api/alchemy/getGasEstimate?chain=opt&from=${userWalletAddress}&to=${process.env.NEXT_PUBLIC_OPCHADCLAIM_CONTRACT}&value=0x0`
+      : undefined,
+    TypedFetch(GasEstimateResponse)
   );
 
   const claimBtnClick = async (
@@ -71,15 +78,37 @@ const ClaimWithProof = () => {
           [amount, proof]
         );
         debugger;
-        const response: ethers.TransactionResponse =
-          await signer.sendTransaction({
-            to: process.env.NEXT_PUBLIC_OPCHADCLAIM_CONTRACT,
-            from: userWalletAddress,
-            data: encodedData,
-          });
-        const receipt = await response.wait();
-        debugger;
-        toast(receipt?.toJSON());
+        await sign(signer, "OPChadCoin Token Claim.").then(
+          async (signature) => {
+            const result = verifyMessage(
+              "OPChadCoin Token Claim.",
+              signature as string
+            );
+            if (result !== userWalletAddress) {
+              throw new Error(
+                "Singature failed, are you who you say you are bro?"
+              );
+            }
+
+            const response: ethers.TransactionResponse =
+              gasEstimate !== undefined
+                ? await signer.sendTransaction({
+                    to: process.env.NEXT_PUBLIC_OPCHADCLAIM_CONTRACT,
+                    from: userWalletAddress,
+                    data: encodedData,
+                    gasPrice: gasEstimate.result,
+                  })
+                : await signer.sendTransaction({
+                    to: process.env.NEXT_PUBLIC_OPCHADCLAIM_CONTRACT,
+                    from: userWalletAddress,
+                    data: encodedData,
+                    gasPrice: "0x5208",
+                  });
+            const receipt = await response.wait();
+            debugger;
+            toast(receipt?.toJSON());
+          }
+        );
       }
     } catch (e: any) {
       console.log("message: ", e.message);
