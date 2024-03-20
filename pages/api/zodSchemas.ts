@@ -19,7 +19,7 @@ export type Claimer = z.infer<typeof Claimer>;
 export const Total = z.object({
   id: z.string().uuid(),
   address: z.string(),
-  amounts: z.array(z.number()),
+  amounts: z.array(z.string()),
 });
 
 export type Total = z.infer<typeof Total>;
