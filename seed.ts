@@ -1,3 +1,5 @@
+const { toBigInt } = require("ethers");
+
 const { ethers, keccak256 } = require("ethers");
 const { MerkleTree } = require("merkletreejs");
 
@@ -37,16 +39,9 @@ async function load() {
     await prisma.tree.create({ data: { root: tree.getHexRoot() } });
     await prisma.claimer.createMany({
       data: whitelist.map(
-        ({
+        ({ address, amount }: { address: string; amount: number }) => ({
           address,
-          amount,
-        }: {
-          address: string;
-          amount: number;
-          proof: string[];
-        }) => ({
-          address,
-          amount,
+          amount: amount,
           proof: tree.getHexProof(
             ethers.keccak256(
               abiCoder.encode(["address", "uint256"], [address, amount])

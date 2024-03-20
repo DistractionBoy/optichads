@@ -9,7 +9,7 @@ datasource db {
 
 model Claimer {
   address String   @db.VarChar(255)
-  amount  Int
+  amount  String
   id      String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   proof   String[]
 }
