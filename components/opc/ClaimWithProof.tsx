@@ -17,9 +17,20 @@ import { useAccount, useNetwork } from "wagmi";
 import { shortenHex } from "@/lib/utils";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import { Button } from "../ui/button";
-import { TransactionRequest, ethers, verifyMessage } from "ethers";
+import { TransactionRequest, ethers, toBigInt, verifyMessage } from "ethers";
 import { toast } from "sonner";
 import { sign } from "@/lib/helpers";
+
+const proofConst = [
+  "0x965d3c8ca6137abce6633e24550ec648d5ef48e3c56ae9b649ecdbe94c1aab63",
+  "0x4cb92888ef71b538f61b10ed07a833a0140388389254462600d18500ff06ef4f",
+  "0x185fc02cadc465286268755023ac6870e1a399d63a248768e3e410c7d0a34890",
+  "0x55858754a0bb2356dbf7c63f0002c013daac5b27dcf41fd3ca58b3d4347188d7",
+  "0x5143286fc722f9d674334129634d01b2b8429e3e47f44fb612a04cdd4cac741a",
+  "0x2c6ea9b18de5bad1fb55163b74224bb4f690787b1504a105736a489cd1e3a1c0"
+]
+
+const amountConst = toBigInt("991700000000000000000000")
 
 const ClaimWithProof = () => {
   const { chains } = useNetwork();
@@ -69,13 +80,7 @@ const ClaimWithProof = () => {
       } else {
         const encodedData = claimRewardsInterface.encodeFunctionData(
           claimRewardsFragment,
-          [BigInt(991700000000000000000000),
-            [
-              "0x975fa0a80daf8dbb193ef6948391e19edbed218a9e99e417261805afecae1780",
-              "0x2f740e9adce1c46632626ac4d478c0503d8721431173f6f7f2fd494dd0d0ff26",
-              "0xc328702e65fd6e629071ab4ba12fb6ffa0dd58a7df15c60bb7ebb1da750f8c3b",
-            ],
-          ]
+          [amountConst, proofConst]
         );
         debugger;
         await sign(signer, "OPChadCoin Token Claim.").then(
