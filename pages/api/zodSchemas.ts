@@ -10,7 +10,7 @@ const jsonSchema: z.ZodType<Json> = z.lazy(() =>
 export const Claimer = z.object({
   id: z.string().uuid(),
   address: z.string(),
-  amount: z.number(),
+  amount: z.string(),
   proof: z.array(z.string()),
 });
 
@@ -19,7 +19,7 @@ export type Claimer = z.infer<typeof Claimer>;
 export const Total = z.object({
   id: z.string().uuid(),
   address: z.string(),
-  amounts: z.array(z.string()),
+  amounts: z.array(z.number()),
 });
 
 export type Total = z.infer<typeof Total>;
