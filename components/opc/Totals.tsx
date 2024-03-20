@@ -1,7 +1,11 @@
 import useSWR from "swr";
+import { useAccount } from "wagmi";
+import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
+import Image from "next/image";
+
 import { TypedFetch } from "@/lib/TypedFetch";
 import { Total } from "@/pages/api/zodSchemas";
-
+import opcPromo from "@/public/images/opc-claim-promo.png";
 import {
   Table,
   TableBody,
@@ -10,9 +14,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { useAccount } from "wagmi";
 import { shortenHex } from "@/lib/utils";
 
 /**
@@ -110,31 +112,47 @@ const Totals = () => {
 
   return (
     data && (
-      <div className="flex flex-col">
-        <h2>For address {address && shortenHex(address, 4)}</h2>
-        The table below shows how much $OPC you can claim based on your holdings
-        in the specified collection.
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Collection</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {data.amounts.map(
-              (amount, idx) =>
-                amount > 0 && (
-                  <TableRow key={idx}>
-                    <TableCell>{communities[idx]}</TableCell>
-                    <TableCell className="text-right">
-                      {legend[idx](amount)} $OPC
-                    </TableCell>
-                  </TableRow>
-                )
-            )}
-          </TableBody>
-        </Table>
+      <div className="flex flex-col mb-8">
+        <div className="prose xl:prose-xl mb-8">
+          <h2>For address {address && shortenHex(address, 4)}</h2>
+          <p>
+            The table below shows how much $OPC you can claim based on your
+            holdings in the specified collection.
+          </p>
+        </div>
+        <div className="flex flex-col md:flex-row space-y-4">
+          <div className="flex flex-1">
+            <Image
+              className="aspect-[3/2] lg:aspect-square w-full rounded-2xl object-cover"
+              src={opcPromo}
+              alt=""
+              priority
+            />
+          </div>
+          <div className="flex flex-1 px-4">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Collection</TableHead>
+                  <TableHead className="text-right">Amount</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {data.amounts.map(
+                  (amount, idx) =>
+                    amount > 0 && (
+                      <TableRow key={idx}>
+                        <TableCell>{communities[idx]}</TableCell>
+                        <TableCell className="text-right">
+                          {legend[idx](amount)} $OPC
+                        </TableCell>
+                      </TableRow>
+                    )
+                )}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
       </div>
     )
   );

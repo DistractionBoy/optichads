@@ -1,25 +1,22 @@
+import { useState } from "react";
+import { toast } from "sonner";
 import useSWR from "swr";
 import { ExclamationTriangleIcon, LaptopIcon } from "@radix-ui/react-icons";
+import { ethers, toBigInt, verifyMessage } from "ethers";
+import Pride from "react-canvas-confetti/dist/presets/pride";
 
 import { TypedFetch } from "@/lib/TypedFetch";
-import { Claimer, GasEstimateResponse } from "@/pages/api/zodSchemas";
+import { Claimer } from "@/pages/api/zodSchemas";
 
 import claimAbi from "@/lib/contractABIs/opchadclaim.json";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+
 import { useAccount, useNetwork } from "wagmi";
-import { shortenHex } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
-import { Button } from "../ui/button";
-import { TransactionRequest, ethers, toBigInt, verifyMessage } from "ethers";
-import { toast } from "sonner";
+import { Button, divergentLinkButtonCSS } from "../ui/button";
 import { sign } from "@/lib/helpers";
+import Image from "next/image";
+import opcSuccess from "@/public/images/opc-success.png";
 
 const proofConst = [
   "0x965d3c8ca6137abce6633e24550ec648d5ef48e3c56ae9b649ecdbe94c1aab63",
@@ -27,10 +24,10 @@ const proofConst = [
   "0x185fc02cadc465286268755023ac6870e1a399d63a248768e3e410c7d0a34890",
   "0x55858754a0bb2356dbf7c63f0002c013daac5b27dcf41fd3ca58b3d4347188d7",
   "0x5143286fc722f9d674334129634d01b2b8429e3e47f44fb612a04cdd4cac741a",
-  "0x2c6ea9b18de5bad1fb55163b74224bb4f690787b1504a105736a489cd1e3a1c0"
-]
+  "0x2c6ea9b18de5bad1fb55163b74224bb4f690787b1504a105736a489cd1e3a1c0",
+];
 
-const amountConst = toBigInt("991700000000000000000000")
+const amountConst = toBigInt("991700000000000000000000");
 
 const ClaimWithProof = () => {
   const { chains } = useNetwork();
@@ -40,6 +37,10 @@ const ClaimWithProof = () => {
       ? `/api/whitelist?address=${userWalletAddress}`
       : undefined,
     TypedFetch(Claimer)
+  );
+
+  const [receipt, setReceipt] = useState<ethers.TransactionReceipt | null>(
+    null
   );
 
   const claimBtnClick = async (
@@ -74,7 +75,6 @@ const ClaimWithProof = () => {
       const claimRewardsInterface = new ethers.Interface(claimAbi);
       const claimRewardsFragment =
         claimRewardsInterface.getFunction("claimRewards");
-      debugger;
       if (claimRewardsFragment === null) {
         throw new Error("function not present");
       } else {
@@ -82,9 +82,8 @@ const ClaimWithProof = () => {
           claimRewardsFragment,
           [amountConst, proofConst]
         );
-        debugger;
-        await sign(signer, "OPChadCoin Token Claim.").then(
-          async (signature) => {
+        await sign(signer, "OPChadCoin Token Claim.")
+          .then(async (signature) => {
             const result = verifyMessage(
               "OPChadCoin Token Claim.",
               signature as string
@@ -100,13 +99,19 @@ const ClaimWithProof = () => {
                 to: process.env.NEXT_PUBLIC_OPCHADCLAIM_CONTRACT,
                 from: userWalletAddress,
                 data: encodedData,
-                gasPrice: "0x5208",
               });
-            const receipt = await response.wait();
-            debugger;
-            toast(receipt?.toJSON());
-          }
-        );
+            const TxReceipt = await response.wait();
+            setReceipt(TxReceipt);
+          })
+          .catch((e) => {
+            if (e.message === "User rejected the request.") {
+              toast.error("Signature Rejected");
+            } else {
+              toast.error("Execution Revered due to an error", {
+                description: e.message ?? "Please try again",
+              });
+            }
+          });
       }
     } catch (e: any) {
       console.log("message: ", e.message);
@@ -139,30 +144,47 @@ const ClaimWithProof = () => {
   return (
     data &&
     userWalletAddress && (
-      <div>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Address</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell>
-                {userWalletAddress && shortenHex(data.address)}
-              </TableCell>
-              <TableCell className="text-right">{data.amount} $OPC</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+      <div className="flex flex-col">
         <Button
           onClick={() => {
             claimBtnClick(userWalletAddress, data.amount, data.proof);
           }}
+          className={cn(divergentLinkButtonCSS, "self-start my-6")}
         >
           Claim
         </Button>
+        {receipt && (
+          <div className="flex flex-col space-y-4 mt-12">
+            <div className="prose-xl">
+              <h2>NEW PERSONAL MAX!</h2>
+              <p>
+                Well done, Chad, you are one of the select few, the first one in
+                the gym, and the last one to leave.
+              </p>
+            </div>
+            <Image
+              className="aspect-[3/2] w-full rounded-2xl object-cover object-top max-w-[720px] self-center"
+              src={opcSuccess}
+              alt=""
+              priority
+            />
+            <Pride autorun={{ speed: 15 }} />
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full py-2 space-y-2">
+              <div className="flex min-w-[80px] font-semibold">Tx hash</div>
+              <div className="break-all">{receipt.hash}</div>
+            </div>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full py-2 space-y-2">
+              <div className="flex min-w-[80px] font-semibold">From</div>
+              <div className="break-all">{receipt.from}</div>
+            </div>
+            <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full py-2 space-y-2">
+              <div className="flex min-w-[80px] font-semibold">
+                Contract Address
+              </div>
+              <div className="break-all">{receipt.to}</div>
+            </div>
+          </div>
+        )}
       </div>
     )
   );
