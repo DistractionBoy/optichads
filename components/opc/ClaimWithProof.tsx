@@ -45,7 +45,7 @@ const ClaimWithProof = () => {
 
   const claimBtnClick = async (
     address: string,
-    amount: number,
+    amount: bigint,
     proof: string[]
   ) => {
     try {
@@ -80,7 +80,7 @@ const ClaimWithProof = () => {
       } else {
         const encodedData = claimRewardsInterface.encodeFunctionData(
           claimRewardsFragment,
-          [amountConst, proofConst]
+          [amount, proof]
         );
         await sign(signer, "OPChadCoin Token Claim.")
           .then(async (signature) => {
@@ -147,7 +147,11 @@ const ClaimWithProof = () => {
       <div className="flex flex-col">
         <Button
           onClick={() => {
-            claimBtnClick(userWalletAddress, data.amount, data.proof);
+            claimBtnClick(
+              userWalletAddress,
+              toBigInt(String(data.amount)),
+              data.proof
+            );
           }}
           className={cn(divergentLinkButtonCSS, "self-start my-6")}
         >
