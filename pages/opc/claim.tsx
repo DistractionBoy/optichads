@@ -3,9 +3,8 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import HeadMeta from "@/components/HeadMeta";
 import SimpleInnerLayout from "@/components/SimpleInnerLayout";
-import opcPromo from "@/public/images/opc-claim-promo.png";
 
-import Image from "next/image";
+import opcPromo from "@/public/images/opc-claim-promo.png";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useAccount } from "wagmi";
 import CustomConnectBtn from "@/components/CustomConnectBtn";
@@ -31,16 +30,6 @@ const Claim = () => {
       <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
       <Navbar />
       <SimpleInnerLayout title="$OPC - Claim">
-        <div className="prose xl:prose-xl desktop:prose-2xl mx-12 text-slate-800">
-          <h2>Claim $OPC</h2>
-          <p className="lead">Connect below and claim your $OPC.</p>
-          <Image
-            className="aspect-[3/2] lg:aspect-square w-full rounded-2xl object-cover"
-            src={opcPromo}
-            alt=""
-            priority
-          />
-        </div>
         <div className="mx-6">
           {connected ? <ClaimTotals /> : <CustomConnectBtn />}
         </div>

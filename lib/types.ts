@@ -73,3 +73,16 @@ export type WindowInstanceWithEthereum = Window &
 export type Quote = { quote: string; name: string };
 
 export type Quotes = Quote[];
+
+export type TRunAnimationParams = {
+  speed: number;
+  duration?: number;
+  delay?: number;
+};
+
+export type TConductorInstance = {
+  run: (params: TRunAnimationParams) => void;
+  shoot: () => void;
+  pause: () => void;
+  stop: () => void;
+};
