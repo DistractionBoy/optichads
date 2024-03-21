@@ -17,9 +17,9 @@ export default function UserMenu() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className={divergentLinkButtonCSS}>
-        <span className="sr-only">open account menu</span>
-        <Account />
+      <DropdownMenuTrigger asChild>
+        <><span className="sr-only">open account menu</span>
+        <Account /></>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40 mr-0">
         <DropdownMenuItem>

@@ -1,4 +1,5 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { divergentLinkButtonCSS } from "./ui/button";
 
 const Account = () => {
   return (
@@ -31,13 +32,13 @@ const Account = () => {
           >
             {(() => {
               if (!connected) {
-                return <span onClick={openConnectModal}>Connect Wallet</span>;
+                return <span onClick={openConnectModal} className={divergentLinkButtonCSS}>Connect Wallet</span>;
               }
               if (chain.unsupported) {
-                return <span onClick={openChainModal}>Wrong network</span>;
+                return <span onClick={openChainModal} className={divergentLinkButtonCSS}>Wrong network</span>;
               }
               return (
-                <span style={{ display: "flex", gap: 12 }}>
+                <span style={{ display: "flex", gap: 12 }} className={divergentLinkButtonCSS}>
                   <span>
                     {account.displayName}
                     {""}

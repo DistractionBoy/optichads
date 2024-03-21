@@ -149,7 +149,7 @@ const ClaimWithProof = () => {
           onClick={() => {
             claimBtnClick(
               userWalletAddress,
-              toBigInt(String(data.amount)),
+              toBigInt(data.amount),
               data.proof
             );
           }}
