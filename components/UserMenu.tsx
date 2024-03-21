@@ -30,9 +30,6 @@ export default function UserMenu() {
         </DropdownMenuItem>
         {isConnected && (
           <>
-            {/* <DropdownMenuLabel>My Account</DropdownMenuLabel> */}
-            {/* <DropdownMenuSeparator /> */}
-            {/* <DropdownMenuItem>Profile</DropdownMenuItem> */}
             <DropdownMenuItem onClick={() => disconnect()}>
               Disconnect
             </DropdownMenuItem>
