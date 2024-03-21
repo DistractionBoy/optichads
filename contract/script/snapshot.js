@@ -5,7 +5,7 @@ require("dotenv").config({ path: path.resolve(rootDir, "", ".env") });
 const fs = require("fs");
 const { ethers, keccak256, Contract } = require("ethers");
 const { MerkleTree } = require("merkletreejs");
-const { data } = require("../wl.json");
+const data = require("../wl.json");
 const OPCHAD_CLAIM_ABI = require("../abi/OPCHadClaim.json");
 const OPC_DROP_PERMITS = require("../opc-drop-permits.json");
 
