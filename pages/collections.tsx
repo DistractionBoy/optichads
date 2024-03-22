@@ -7,18 +7,22 @@ import Head from "next/head";
 import CollectionsCategory from "@/components/collections/CollectionsCategory";
 
 import Footer from "@/components/Footer";
+import SimpleInnerLayout from "@/components/SimpleInnerLayout";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const Collections: NextPage = () => {
   return (
     <>
-      <Head>
-        <HeadMeta />
-      </Head>
+      <HeadMeta
+        title="Collections"
+        description="Check out some of the best from our collections"
+      />
+      <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
       <Navbar />
-
-      <CollectionsCategory />
-      
-      <Footer />
+      <div className="flex flex-col justify-between">
+        <CollectionsCategory />
+        <Footer />
+      </div>
     </>
   );
 };

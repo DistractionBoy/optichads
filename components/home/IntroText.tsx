@@ -4,7 +4,7 @@ import babe from "@/public/images/rainbowhair-babe.png";
 const IntroText = () => (
   <div className="flex flex-col justify-center items-center bg-indigo-600">
     <div className="container flex justify-start items-stretch">
-      <article className="prose lg:prose-xl my-12 lg:my-16 xl:my-40 mx-6 lg:mx-24 px-12 [&>p]:leading-relaxed ultrawide:self-center">
+      <article className="prose-xl my-12 lg:my-16 xl:my-40 md:mx-6 lg:mx-24 md:px-12 [&>p]:leading-relaxed ultrawide:self-center">
         <h2 className="text-2xl md:text-4xl  text-white">
           The Premier L2 NFT Community
         </h2>

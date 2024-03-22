@@ -25,6 +25,7 @@ const Home: NextPage = () => {
   return (
     <>
       <HeadMeta />
+      <div className="bg-[#FB0420] flex w-screen h-[86px] z-10 absolute" />
       <Navbar />
       <WelcomeChad />
       <IntroText />
