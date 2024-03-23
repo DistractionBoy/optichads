@@ -31,6 +31,7 @@ export default function Team() {
   const bio7: any = t("chads:team_section.0.bio7");
   const bio8: any = t("chads:team_section.0.bio8");
   const bio9: any = t("chads:team_section.0.bio9");
+  const bio10: any = t("chads:team_section.0.bio10");
 
   const people: Person[] = [
     {
@@ -79,6 +80,7 @@ export default function Team() {
       imageUrl: beeps,
       bio: bio6,
       twitterUrl: "https://x.com/cryptonftbeeps",
+      fullBioUrl: "/bios/youngbeeps",
     },
     {
       name: "Dope",
@@ -100,6 +102,7 @@ export default function Team() {
       role: "Audio Production",
       twitterUrl: "https://x.com/11SheaX",
       imageUrl: shea,
+      bio: bio10,
       fullBioUrl: "/bios/shea",
     },
     {

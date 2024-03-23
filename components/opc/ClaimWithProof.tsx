@@ -146,8 +146,11 @@ const ClaimWithProof = () => {
     userWalletAddress && (
       <div className="flex flex-col">
         <p className="my-2 mx-6">
-          For best results on mobile, use the browser in a wallet app, and{" "}
-          <span className="font-bold">do not use Safari</span>.
+          For the best results on mobile, use the browser in a wallet app, and{" "}
+          <span className="font-bold">do not use Safari</span>. Do not forget to
+          fully disconnect one wallet if you have another wallet that you would
+          like to try. You will need a very small amount of ETH on the Optimism
+          Network to claim.
         </p>
         <Button
           onClick={() => {

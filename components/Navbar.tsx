@@ -16,7 +16,9 @@ const MenuBtnMobileCss = cn(
 
 export default function Navbar() {
   const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
-  const [visibleMobile, setVisibleMobile] = useState(true);
+  const [visibleMobile, setVisibleMobile] = useState<boolean>(
+    window.innerWidth < 640
+  );
 
   useEffect(() => {
     const toggleVisible = () => {
@@ -37,7 +39,7 @@ export default function Navbar() {
     <>
       <Disclosure
         as="nav"
-        className="flex flex-col flex-1 w-full items-around bg-transparent z-10 absolute"
+        className="flex flex-col flex-1 w-full items-around bg-transparent z-10 absolute pb-4"
       >
         {({ open }) => (
           <div className="flex justify-center items-center h-16 mt-2 container max-w-7xl px-4 sm:px-6 lg:px-8">

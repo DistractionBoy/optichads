@@ -15,7 +15,7 @@ export const divergentLinkButtonCSS = cn(
   "shadow-[0_6px_0_rgb(255,255,255)] hover:shadow-[0_2px_0px_rgb(255,255,255)] active:shadow-[0_1px_0px_rgb(0,0,0)] hover:translate-y-1 transition-all",
   "bg-[#FF0420] text-primary-foreground",
   "border border-4 border-black rounded-xl",
-  "h-9 px-8 py-4 my-2 lg:py-5 lg:my-3"
+  "h-9 px-8 py-5 my-3"
 );
 
 export const originalLinkButtonCSS = cn(
