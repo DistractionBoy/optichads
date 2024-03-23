@@ -34,7 +34,7 @@ const BioDicaso = () => {
       <SimpleInnerLayout title="Bios">
         <TracingBeam className="px-0">
           <div className="prose xl:prose-xl prose-slate mx-12 lg:mx-8">
-            <h2>Dicaso</h2>
+            <h2>{t("dicaso:bio.0.name")}</h2>
             <Image
               className="aspect-[3/2] lg:aspect-square w-full rounded-2xl object-cover"
               src={dicaso}
