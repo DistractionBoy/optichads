@@ -3,13 +3,13 @@ import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 
 import heroImg from "../public/images/hero-img.png";
-import UserMenu from "./UserMenu";
 import NavDrawer from "./NavDrawer";
 import { Button, divergentLinkButtonCSS } from "./ui/button";
 import { cn } from "@/lib/utils";
+import Account from "./Account";
 
 const MenuBtnMobileCss = cn(
-  "lg:hidden bg-[#FF0420] bg-opacity-100 absolute bottom-12 md:bottom-32 left-1/2 -translate-x-1/2 items-center",
+  "md:hidden md:relative bg-[#FF0420] bg-opacity-100 absolute bottom-12 md:bottom-32 left-1/2 -translate-x-1/2 items-center",
   "-translate-y-1/2 py-6 rounded flex px-8 space-x-4 outline outline-2",
   "shadow-[0_6px_0_rgb(255,255,255)] hover:shadow-[0_2px_0px_rgb(255,255,255)] active:shadow-[0_1px_0px_rgb(0,0,0)] transition-all"
 );
@@ -52,32 +52,33 @@ export default function Navbar() {
               </div>
             </div>
 
-            <UserMenu />
+            <Account />
           </div>
         )}
       </Disclosure>
       <NavDrawer isOpen={isOpenDrawer} setIsOpen={setIsOpenDrawer} />
 
-      <div className="block md:hidden">
-        <Button
-          id="mobileMenu"
-          className={MenuBtnMobileCss}
-          style={{ display: visibleMobile ? "flex" : "none" }}
-          onClick={() => {
-            setIsOpenDrawer(true);
-          }}
-        >
-          <Image
-            className="rounded-full bg-red-600"
-            src={heroImg}
-            alt="Workflow"
-            width={38}
-            height={38}
-            priority
-          />
-          <div className="text-xl font-bold">MENU</div>
-        </Button>
-      </div>
+      <Button
+        id="mobileMenu"
+        className={MenuBtnMobileCss}
+        style={{
+          display: visibleMobile ? "flex" : "none",
+          zIndex: visibleMobile ? 120 : 0,
+        }}
+        onClick={() => {
+          setIsOpenDrawer(true);
+        }}
+      >
+        <Image
+          className="rounded-full bg-red-600"
+          src={heroImg}
+          alt="Workflow"
+          width={38}
+          height={38}
+          priority
+        />
+        <div className="text-xl font-bold">MENU</div>
+      </Button>
     </>
   );
 }

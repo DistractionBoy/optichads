@@ -145,15 +145,15 @@ const ClaimWithProof = () => {
     data &&
     userWalletAddress && (
       <div className="flex flex-col">
+        <p className="my-2 mx-6">
+          For best results on mobile, use the browser in a wallet app, and{" "}
+          <span className="font-bold">do not use Safari</span>.
+        </p>
         <Button
           onClick={() => {
-            claimBtnClick(
-              userWalletAddress,
-              toBigInt(data.amount),
-              data.proof
-            );
+            claimBtnClick(userWalletAddress, toBigInt(data.amount), data.proof);
           }}
-          className={cn(divergentLinkButtonCSS, "self-start my-6")}
+          className={cn(divergentLinkButtonCSS, "self-start my-6 mx-6")}
         >
           Claim
         </Button>
