@@ -16,7 +16,7 @@ import {
   CardItem,
 } from "@/components/ui/three-d-card";
 
-const Bio = () => (
+const BioMillynish = () => (
   <>
     <HeadMeta
       title="Millynish's Corner"
@@ -155,4 +155,4 @@ const Bio = () => (
   </>
 );
 
-export default Bio;
+export default BioMillynish;

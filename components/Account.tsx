@@ -8,11 +8,10 @@ import {
 } from "./ui/dropdown-menu";
 import Link from "next/link";
 import { useDisconnect } from "wagmi";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { useRouter } from "next/router";
+import { Avatar, AvatarImage } from "./ui/avatar";
+import { cn } from "@/lib/utils";
 
 const Account = () => {
-  const router = useRouter();
   const { disconnect } = useDisconnect();
   return (
     <ConnectButton.Custom>
@@ -65,10 +64,15 @@ const Account = () => {
               }
               return (
                 <DropdownMenu>
-                  <DropdownMenuTrigger className={divergentLinkButtonCSS}>
+                  <DropdownMenuTrigger
+                    className={cn(
+                      divergentLinkButtonCSS,
+                      "space-x-2 pl-4 pr-6 mx-4"
+                    )}
+                  >
                     <span className="sr-only">open account menu</span>
                     {account.ensAvatar && (
-                      <Avatar>
+                      <Avatar className="size-6">
                         <AvatarImage src={`${account.ensAvatar}`} />
                       </Avatar>
                     )}
@@ -79,14 +83,10 @@ const Account = () => {
                         : ""}
                     </span>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-60 absolute left-0 -mt-1.5 font-semibold">
-                    <DropdownMenuItem onClick={() => router.push("/home")}>
-                      Home
-                    </DropdownMenuItem>
+                  <DropdownMenuContent className="w-60 rounded-xl absolute -left-12 mt-0.5 font-semibold [&_*]:text-xl [&>div]:py-3 [&>div]:px-4">
                     <DropdownMenuItem>
-                      <Link href="/collections">Collections</Link>
+                      <Link href="/home">Home</Link>
                     </DropdownMenuItem>
-
                     <DropdownMenuItem onClick={() => disconnect()}>
                       Disconnect
                     </DropdownMenuItem>

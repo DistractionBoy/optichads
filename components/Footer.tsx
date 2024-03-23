@@ -8,15 +8,15 @@ import Image from "next/image";
 
 const navigation = {
   main: [
-    { name: "Home", href: "/", current: true },
-    { name: "Collections", href: "/", current: false },
-    { name: "Music", href: "/", current: false },
-    { name: "Affiliates", href: "/", current: false },
+    { name: "Home", href: "/home", current: true },
+    { name: "Collections", href: "/collections", current: false },
+    // { name: "Music", href: "/", current: false },
+    // { name: "Affiliates", href: "/", current: false },
   ],
   second: [
-    { name: "Mint", href: "/", current: false },
-    { name: "Token", href: "/", current: false },
-    { name: "Staking", href: "/", current: false },
+    // { name: "Mint", href: "/", current: false },
+    { name: "Token", href: "/opc/claim", current: false },
+    // { name: "Staking", href: "/", current: false },
   ],
   social: [
     {

@@ -9,7 +9,7 @@ import lifestrike from "@/public/images/lifestrike.jpg";
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
-const Bio = () => (
+const BioLifestrike = () => (
   <>
     <HeadMeta
       title="Lifestrike's Corner"
@@ -54,4 +54,4 @@ const Bio = () => (
   </>
 );
 
-export default Bio;
+export default BioLifestrike;

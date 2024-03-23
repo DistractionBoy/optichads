@@ -9,7 +9,7 @@ import shea from "@/public/images/11shea.jpeg";
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
-const Bio = () => (
+const BioShea = () => (
   <>
     <HeadMeta
       title="Shea's Corner"
@@ -53,4 +53,4 @@ const Bio = () => (
   </>
 );
 
-export default Bio;
+export default BioShea;
