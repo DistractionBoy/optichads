@@ -20,7 +20,7 @@ const firstDefaultState: NavLink[] = [
 
 const secondDefaultState: NavLink[] = [
   // { name: "Mint", href: "/", current: false },
-  { name: "Token", href: "/", current: false },
+  { name: "Token", href: "/opc/claim", current: false },
   // { name: "Staking", href: "/", current: false },
 ];
 
