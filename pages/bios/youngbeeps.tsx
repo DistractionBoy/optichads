@@ -9,7 +9,7 @@ import beeps from "@/public/images/beeps.png";
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
-const Bio = () => (
+const BioYoungbeeps = () => (
   <>
     <HeadMeta
       title="Young Beeps's Corner"
@@ -81,4 +81,4 @@ const Bio = () => (
   </>
 );
 
-export default Bio;
+export default BioYoungbeeps;

@@ -96,7 +96,7 @@ const cards = [
   },
 ];
 
-const Bio = () => (
+const BioDistractionBoy = () => (
   <>
     <HeadMeta
       title="DistractionBoy's Corner"
@@ -232,4 +232,4 @@ const Bio = () => (
   </>
 );
 
-export default Bio;
+export default BioDistractionBoy;

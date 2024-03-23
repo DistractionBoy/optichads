@@ -9,7 +9,7 @@ import livic from "@/public/images/livixi3.webp";
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
-const Bio = () => (
+const BioLivic = () => (
   <>
     <HeadMeta
       title="LiViXi3's Corner"
@@ -58,4 +58,4 @@ const Bio = () => (
   </>
 );
 
-export default Bio;
+export default BioLivic;

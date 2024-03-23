@@ -9,7 +9,7 @@ import jasonFactor from "@/public/images/jasonfactor.webp";
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
-const Bio = () => (
+const BioJasonFactor = () => (
   <>
     <HeadMeta
       title="JasonFactor's Corner"
@@ -56,4 +56,4 @@ const Bio = () => (
   </>
 );
 
-export default Bio;
+export default BioJasonFactor;

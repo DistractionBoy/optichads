@@ -16,9 +16,7 @@ const MenuBtnMobileCss = cn(
 
 export default function Navbar() {
   const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
-  const [visibleMobile, setVisibleMobile] = useState<boolean>(
-    window.innerWidth < 640
-  );
+  const [visibleMobile, setVisibleMobile] = useState<boolean>(false);
 
   useEffect(() => {
     const toggleVisible = () => {
@@ -30,7 +28,7 @@ export default function Navbar() {
       }
     };
     // mobile device
-    if (window.innerWidth < 640) {
+    if (window && window.innerWidth < 640) {
       window.addEventListener("scroll", toggleVisible);
     }
   }, []);

@@ -9,7 +9,7 @@ import dope from "@/public/images/dope.jpg";
 import Image from "next/image";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
-const Bio = () => (
+const BioDope = () => (
   <>
     <HeadMeta
       title="Dope's Corner"
@@ -54,4 +54,4 @@ const Bio = () => (
   </>
 );
 
-export default Bio;
+export default BioDope;
