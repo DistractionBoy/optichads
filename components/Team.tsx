@@ -91,11 +91,12 @@ export default function Team() {
       fullBioUrl: "/bios/dope",
     },
     {
-      name: "3t",
-      role: "Developer",
-      imageUrl: THREEt,
-      bio: bio8,
-      twitterUrl: "https://x.com/Prod3t",
+      name: "LiViCi3",
+      role: "Advisor",
+      imageUrl: livici3,
+      bio: bio3,
+      twitterUrl: "https://x.com/LiViXi3",
+      fullBioUrl: "/bios/LiViXi3",
     },
     {
       name: "Shea",
@@ -106,12 +107,11 @@ export default function Team() {
       fullBioUrl: "/bios/shea",
     },
     {
-      name: "LiViCi3",
-      role: "Advisor",
-      imageUrl: livici3,
-      bio: bio3,
-      twitterUrl: "https://x.com/LiViXi3",
-      fullBioUrl: "/bios/LiViXi3",
+      name: "3t",
+      role: "Developer",
+      imageUrl: THREEt,
+      bio: bio8,
+      twitterUrl: "https://x.com/Prod3t",
     },
   ];
 
