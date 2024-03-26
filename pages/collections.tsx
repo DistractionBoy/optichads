@@ -3,12 +3,9 @@ import type { NextPage } from "next";
 import HeadMeta from "@/components/HeadMeta";
 import Navbar from "@/components/Navbar";
 
-import Head from "next/head";
 import CollectionsCategory from "@/components/collections/CollectionsCategory";
 
 import Footer from "@/components/Footer";
-import SimpleInnerLayout from "@/components/SimpleInnerLayout";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const Collections: NextPage = () => {
   return (
