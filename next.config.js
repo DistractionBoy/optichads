@@ -5,6 +5,7 @@ module.exports = {
   env: {
     RAINBOWKIT_PROJECTID: "9d903415c2b343d2348abe6ab7401bfa",
     ALCHEMY_OPT_SEPOLIA_BASEURL: "https://opt-sepolia.g.alchemy.com/v2/",
+    ALCHEMY_SEPOLIA_APIKEY: "x0PTIJ5bIbkZ32mfWpIiWWbPTH7lgp7l",
   },
   reactStrictMode: true,
   i18n,
