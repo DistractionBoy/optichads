@@ -15,7 +15,7 @@ const navigation = {
   ],
   second: [
     // { name: "Mint", href: "/", current: false },
-    { name: "Token", href: "/opc/claim", current: false },
+    { name: "Token", href: "/token", current: false },
     // { name: "Staking", href: "/", current: false },
   ],
   social: [

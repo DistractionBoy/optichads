@@ -10,7 +10,7 @@ import { useAccount } from "wagmi";
 import CustomConnectBtn from "@/components/CustomConnectBtn";
 import ClaimTotals from "@/components/opc/ClaimTotals";
 
-const Claim = () => {
+const Token = () => {
   const { isConnected } = useAccount();
   const [connected, setConnected] = useState<boolean>(false);
 
@@ -24,7 +24,7 @@ const Claim = () => {
     <>
       <HeadMeta
         title="Claim Page"
-        description="Claim your airdrop here! OptiChad holders get the largest claim percentages, but we opened up the drop to many L2 communities in hopes we can gain more traction for our NFT-focused OptiChads DAO."
+        description="Claim your airdrop here! OptiChad holders get the largest claim percentages, but we opened up the drop to many superchain communities to show our love for your support over the years."
         img={`${opcPromo.src}`}
       />
       <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
@@ -40,4 +40,4 @@ const Claim = () => {
   );
 };
 
-export default Claim;
+export default Token;
