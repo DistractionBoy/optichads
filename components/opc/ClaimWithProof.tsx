@@ -243,7 +243,9 @@ const ClaimWithProof = () => {
                 <div className="flex min-w-[80px] font-semibold">
                   Contract Address
                 </div>
-                <div className="break-all">{receipt.to}</div>
+                <div className="break-all">
+                  0x48a9f8b4b65a55CC46eA557a610acf227454Ab09
+                </div>
               </div>
             </div>
             <Link
