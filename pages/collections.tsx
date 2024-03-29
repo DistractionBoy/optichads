@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import CollectionsCategory from "@/components/collections/CollectionsCategory";
 
 import Footer from "@/components/Footer";
+import CollectionsCarousel from "@/components/home/CollectionsCarousel";
 
 const Collections: NextPage = () => {
   return (
@@ -17,7 +18,9 @@ const Collections: NextPage = () => {
       <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
       <Navbar />
       <div className="flex flex-col justify-between">
-        <CollectionsCategory />
+        <CollectionsCarousel />
+        <div className="bg-black flex w-screen h-px" />
+
         <Footer />
       </div>
     </>
