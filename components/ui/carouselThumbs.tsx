@@ -104,7 +104,7 @@ const CarouselThumbs: React.FC<PropType> = (props) => {
                       className={divergentLinkButtonCSS}
                       target="_blank"
                     >
-                      Visit collection on OpenSea
+                      View collection
                     </Link>
                   </div>
                 </div>
