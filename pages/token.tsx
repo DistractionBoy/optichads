@@ -15,7 +15,7 @@ const dexScreener = `
 {#dexscreener-embed{padding-bottom:65%;}}#dexscreener-embed 
 iframe{position:absolute;width:100%;height:100%;top:0;left:0;border:0;}</style><div id="dexscreener-embed">
 <iframe src="https://dexscreener.com/optimism/0x96AFC6ec69d599bc8Bf3c606a2D72EA89DD4ecbE?embed=1&theme=dark"></iframe></div>
-`
+`;
 
 const Token = () => {
   const { isConnected } = useAccount();
@@ -37,8 +37,12 @@ const Token = () => {
       <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
       <Navbar />
       <SimpleInnerLayout title="$OPC - Claim">
-        <div dangerouslySetInnerHTML={{__html: dexScreener.replace(/(<? *script)/gi, 'illegalscript')}} >
-        </div>
+        <div
+          className="-mt-12"
+          dangerouslySetInnerHTML={{
+            __html: dexScreener.replace(/(<? *script)/gi, "illegalscript"),
+          }}
+        />
         <div className="mx-6 py-8">
           {connected ? <ClaimTotals /> : <CustomConnectBtn />}
         </div>
