@@ -47,7 +47,7 @@ const GROUPS = [
     img: chad2,
   },
   {
-    index: 4,
+    index: 2,
     name: "Wizard Cool",
     slug: "basebrigade",
     collection: "Base Brigade",
@@ -65,7 +65,7 @@ const GROUPS = [
     img: brigader1,
   },
   {
-    index: 5,
+    index: 3,
     name: "Base King",
     slug: "basebrigade",
     collection: "Base Brigade",
@@ -84,7 +84,7 @@ const GROUPS = [
     img: brigader2,
   },
   {
-    index: 2,
+    index: 4,
     name: "Berserker",
     slug: "arbibabes",
     collection: "Arbibabes",
@@ -103,7 +103,7 @@ const GROUPS = [
     img: arbibabe1,
   },
   {
-    index: 3,
+    index: 5,
     name: "Succubus",
     slug: "arbibabes",
     collection: "Arbibabes",
