@@ -43,9 +43,10 @@ const Token = () => {
             __html: dexScreener.replace(/(<? *script)/gi, "illegalscript"),
           }}
         />
-        <div className="mx-6 py-8">
+
+        {/* <div className="mx-6 py-8">
           {connected ? <ClaimTotals /> : <CustomConnectBtn />}
-        </div>
+        </div> */}
       </SimpleInnerLayout>
       <BackgroundBeams />
       <Footer />
