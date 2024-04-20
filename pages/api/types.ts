@@ -440,3 +440,9 @@ export type FrameMetadataType = {
  * Note: exported as public Type
  */
 export type FrameMetadataResponse = Record<string, string>;
+
+export type AlchemyCommonResponse = {
+  jsonrpc: string;
+  id: number;
+  result: `0x${string}`;
+}
