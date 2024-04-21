@@ -24,7 +24,7 @@ const Account = () => {
   );
 
   let token = data?.result.tokenBalances[0].tokenBalance;
-  token = parseFloat(parseInt(token) * 1e-18).toFixed(2)
+  token = parseFloat((parseInt(token) * 1e-18).toFixed(2))
 
   return (
     <ConnectButton.Custom>

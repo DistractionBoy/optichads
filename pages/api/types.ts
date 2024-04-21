@@ -444,5 +444,5 @@ export type FrameMetadataResponse = Record<string, string>;
 export type AlchemyCommonResponse = {
   jsonrpc: string;
   id: number;
-  result: `0x${string}`;
+  result: any;
 }
