@@ -11,7 +11,7 @@ import { useDisconnect, useAccount } from "wagmi";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { cn } from "@/lib/utils";
 import useSWR from "swr";
-import { AlchemyCommonResponse } from "@/pages/api/types";
+import { AlchemyCommonResponse } from "@/pages/api/zodSchemas";
 
 const Account = () => {
   const { disconnect } = useDisconnect();

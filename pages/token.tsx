@@ -10,7 +10,7 @@ import { useAccount } from "wagmi";
 import CustomConnectBtn from "@/components/CustomConnectBtn";
 import ClaimTotals from "@/components/opc/ClaimTotals";
 import useSWR from "swr";
-import { AlchemyCommonResponse } from "@/pages/api/types";
+import { AlchemyCommonResponse } from "@/pages/api/zodSchemas";
 
 
 const dexScreener = `

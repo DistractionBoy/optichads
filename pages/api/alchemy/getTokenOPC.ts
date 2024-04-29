@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { AlchemyCommonResponse } from "@/pages/api/types";
+import { AlchemyCommonResponse } from "@/pages/api/zodSchemas";
 /**
  *
  * @param req
