@@ -11,20 +11,25 @@ import { useDisconnect, useAccount } from "wagmi";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { cn } from "@/lib/utils";
 import useSWR from "swr";
-import { AlchemyCommonResponse } from "@/pages/api/types";
+import { TypedFetch } from "@/lib/TypedFetch";
+import { AlchemyCommonResponse } from "@/pages/api/zodSchemas";
+
+const getTokenBal = (data: AlchemyCommonResponse) => {
+  let token = data.result.tokenBalances[0].tokenBalance;
+  token = parseFloat((parseInt(token) * 1e-18).toFixed(2));
+  return token;
+};
 
 const Account = () => {
   const { disconnect } = useDisconnect();
   const { address } = useAccount();
 
-  const {
-    data
-  } = useSWR<AlchemyCommonResponse>(
-    address !== undefined ? `/api/alchemy/getTokenOPC?chain=opt&address=${address}` : undefined
+  const { data } = useSWR(
+    address !== undefined
+      ? `/api/alchemy/getTokenOPC?chain=opt&address=${address}`
+      : undefined,
+    TypedFetch(AlchemyCommonResponse)
   );
-
-  let token = data?.result.tokenBalances[0].tokenBalance;
-  token = parseFloat((parseInt(token) * 1e-18).toFixed(2))
 
   return (
     <ConnectButton.Custom>
@@ -100,9 +105,11 @@ const Account = () => {
                     <DropdownMenuItem>
                       <Link href="/home">Home</Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                    Balance: {token} $OPC
-                    </DropdownMenuItem>
+                    {data && (
+                      <DropdownMenuItem>
+                        Balance: {getTokenBal(data)} $OPC
+                      </DropdownMenuItem>
+                    )}
                     <DropdownMenuItem onClick={() => disconnect()}>
                       Disconnect
                     </DropdownMenuItem>
