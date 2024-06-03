@@ -1,5 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { AlchemyCommonResponse } from "@/pages/api/types";
+
+const options: RequestInit = {
+  method: "POST",
+  headers: { accept: "application/json", "content-type": "application/json" },
+  body: JSON.stringify({
+    id: "42",
+    jsonrpc: "2.0",
+    method: "alchemy_getTokenBalances",
+  }),
+};
+
 /**
  *
  * @param req
@@ -18,14 +29,12 @@ export default async function handler(
   const options: RequestInit = {
     method: "POST",
     headers: { accept: "application/json", "content-type": "application/json" },
-    body: JSON.stringify({ id: "42", jsonrpc: "2.0", method: "alchemy_getTokenBalances",
-      "params": [
-        `${address}`,
-        [
-          `${process.env.OPCHAD_CONTRACT}`
-        ]
-      ]
-     }),
+    body: JSON.stringify({
+      id: "42",
+      jsonrpc: "2.0",
+      method: "alchemy_getTokenBalances",
+      params: [`${address}`, [`${process.env.OPCHAD_CONTRACT}`]],
+    }),
   };
 
   try {
