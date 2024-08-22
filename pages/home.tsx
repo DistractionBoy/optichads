@@ -22,7 +22,6 @@ export async function getStaticProps({ locale }: any) {
 }
 
 const Home: NextPage = () => {
-  // const { t } = useTranslation();
   return (
     <>
       <HeadMeta />
