@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import HeadMeta from "@/components/HeadMeta";
 import SimpleInnerLayout from "@/components/SimpleInnerLayout";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import opcPromo from "@/public/images/opc-claim-promo.png";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -16,6 +17,14 @@ const dexScreener = `
 iframe{position:absolute;width:100%;height:100%;top:0;left:0;border:0;}</style><div id="dexscreener-embed">
 <iframe src="https://dexscreener.com/optimism/0x96AFC6ec69d599bc8Bf3c606a2D72EA89DD4ecbE?embed=1&theme=dark"></iframe></div>
 `;
+
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["chads", "babes", "common"])),
+    },
+  };
+}
 
 const Token = () => {
   const { isConnected } = useAccount();

@@ -2,11 +2,20 @@ import type { NextPage } from "next";
 
 import HeadMeta from "@/components/HeadMeta";
 import Navbar from "@/components/Navbar";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import CollectionsCategory from "@/components/collections/CollectionsCategory";
 
 import Footer from "@/components/Footer";
 import CollectionsCarousel from "@/components/home/CollectionsCarousel";
+
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["chads", "babes", "common"])),
+    },
+  };
+}
 
 const Collections: NextPage = () => {
   return (
