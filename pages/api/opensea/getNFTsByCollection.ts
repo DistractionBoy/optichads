@@ -21,14 +21,20 @@ export default async function handler(
   res: NextApiResponse<NFTsBy>
 ) {
   const { collection_slug, limit, next } = req.query;
+  let params;
   if (!collection_slug) {
     throw new Error("undefined params");
   }
-  const params = serialize({ limit, next });
+  if (limit) {
+    params = serialize({ limit });
+  }
+  if (next) {
+    params += `&next=${next}`;
+  }
 
   try {
     const url = `https://api.opensea.io/api/v2/collection/${collection_slug}/nfts${
-      params && params
+      params ? params : ``
     }`;
     const response = await fetch(url, options);
     const data: NFTsBy = await response.json();

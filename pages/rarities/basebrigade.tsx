@@ -1,12 +1,13 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 
 import HeadMeta from "@/components/HeadMeta";
 import Navbar from "@/components/Navbar";
-
 import Footer from "@/components/Footer";
-import CollectionsCarousel from "@/components/home/CollectionsCarousel";
+import RaritiesList from "@/components/rarities/RaritiesList";
 
 const Collections: NextPage = () => {
+  const { pathname } = useRouter();
   return (
     <>
       <HeadMeta
@@ -16,8 +17,7 @@ const Collections: NextPage = () => {
       <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
       <Navbar />
       <div className="flex flex-col justify-between">
-        <CollectionsCarousel />
-        <div className="bg-black flex w-screen h-px" />
+        <RaritiesList collection="basebrigade" />
         <Footer />
       </div>
     </>
