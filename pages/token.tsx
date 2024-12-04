@@ -9,6 +9,9 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useAccount } from "wagmi";
 import CustomConnectBtn from "@/components/CustomConnectBtn";
 import ClaimTotals from "@/components/opc/ClaimTotals";
+import useSWR from "swr";
+import { AlchemyCommonResponse } from "@/pages/api/zodSchemas";
+
 
 const dexScreener = `
 <style>#dexscreener-embed{position:relative;width:100%;padding-bottom:125%;}@media(min-width:1400px)
@@ -18,7 +21,7 @@ iframe{position:absolute;width:100%;height:100%;top:0;left:0;border:0;}</style><
 `;
 
 const Token = () => {
-  const { isConnected } = useAccount();
+  const { isConnected, address } = useAccount();
   const [connected, setConnected] = useState<boolean>(false);
 
   useEffect(() => {
@@ -26,7 +29,16 @@ const Token = () => {
       setConnected(isConnected);
     }
   }, [isConnected]);
+  
+  const {
+    data
+  } = useSWR<AlchemyCommonResponse>(
+    address !== undefined ? `/api/alchemy/getTokenOPC?chain=opt&address=${address}` : undefined
+  );
 
+  let token = data?.result.tokenBalances[0].tokenBalance;
+  token = parseFloat((parseInt(token) * 1e-18).toFixed(2))
+  
   return (
     <>
       <HeadMeta
@@ -37,8 +49,9 @@ const Token = () => {
       <div className="bg-[#FB0420] flex w-screen h-[86px] z-10" />
       <Navbar />
       <SimpleInnerLayout title="$OPC - Claim">
+      {isConnected && data && <div className="-mt-20 mb-2 text-black">Your token balance: {token} $OPC</div>}
         <div
-          className="-mt-12"
+          className=""
           dangerouslySetInnerHTML={{
             __html: dexScreener.replace(/(<? *script)/gi, "illegalscript"),
           }}
