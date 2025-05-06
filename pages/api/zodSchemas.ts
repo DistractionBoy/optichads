@@ -116,3 +116,11 @@ export const NFTsBy = z.object({
 });
 
 export type NFTsBy = z.infer<typeof NFTsBy>;
+
+export const AlchemyCommonResponse = z.object({
+  jsonrpc: z.string(),
+  id: z.string(),
+  result: z.any(),
+});
+
+export type AlchemyCommonResponse = z.infer<typeof AlchemyCommonResponse>;

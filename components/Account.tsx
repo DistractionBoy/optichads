@@ -7,12 +7,25 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import Link from "next/link";
-import { useDisconnect } from "wagmi";
+import { useDisconnect, useAccount } from "wagmi";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { cn } from "@/lib/utils";
+import useSWR from "swr";
+import { AlchemyCommonResponse } from "@/pages/api/zodSchemas";
 
 const Account = () => {
   const { disconnect } = useDisconnect();
+  const { address } = useAccount();
+
+  const {
+    data
+  } = useSWR<AlchemyCommonResponse>(
+    address !== undefined ? `/api/alchemy/getTokenOPC?chain=opt&address=${address}` : undefined
+  );
+
+  let token = data?.result.tokenBalances[0].tokenBalance;
+  token = parseFloat((parseInt(token) * 1e-18).toFixed(2))
+
   return (
     <ConnectButton.Custom>
       {({
@@ -83,9 +96,12 @@ const Account = () => {
                         : ""}
                     </span>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-60 rounded-xl absolute -left-12 mt-0.5 font-semibold [&_*]:text-xl [&>div]:py-3 [&>div]:px-4">
+                  <DropdownMenuContent className="w-80 rounded-xl absolute -left-20 mt-0.5 font-semibold [&_*]:text-xl [&>div]:py-3 [&>div]:px-4">
                     <DropdownMenuItem>
                       <Link href="/home">Home</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                    Balance: {token} $OPC
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => disconnect()}>
                       Disconnect
